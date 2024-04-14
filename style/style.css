@@ -69,20 +69,74 @@
    width: 100%;
  }
 
- nav ul {
-   list-style: none;
-   text-decoration: none;
- }
-
- nav ul li {
-   display: inline;
-   margin: 24px;
+.navbar {
+  overflow: hidden;
+}
+.navbar a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: var(--black);
+}
+.drop-menu {
+  float: left;
+  overflow: hidden;
+}
+.drop-menu .drop-btn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 14px;
+  font-family: "Lexend", sans-serif;
+  cursor: pointer;
+  background-color: transparent;
+  letter-spacing: 1px;
+  color: var(--black);
 }
 
- nav ul li a {
-   text-decoration: none;
-   letter-spacing: 1px;
-   color: var(--black);
+.drop-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 10;
+}
+.drop-menu:hover .drop-content {
+  display: block;
+}
+.column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 250px;
+  background-color: #ffffff;
+}
+.column a {
+  display: block;
+  float: none;
+  color: #000000;
+  text-align: left;
+}
+.column h3 {
+  color: #000000;
+  padding: 10px;
+}
+.column a:hover {
+  color: #fff;
+  background: #373737;
+}
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+ .logo-nav {
+  width: 15%;
  }
 
  .logo-nav img {
@@ -95,6 +149,7 @@
    align-items: center;
    position: relative;
  }
+
  
  .search-nav input[type="search"] {
    width: 150px;
