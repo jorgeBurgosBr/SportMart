@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+:root {
+   --ppal: #f5f5f5;
+   --contraste: #0171E3;
+   --texto: "Lexend", sans-serif;
+ }
+ 
+ /* Reset styles */
+ * {
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+ }
+
+ body {
+   display: grid;
+   width: 100%;
+   grid-template-areas: 
+      "head"
+      "nav";
+   grid-template-rows: 1fr 1.5fr;
+   font-family: var(--texto);
+ }
+
+ body > header {
+   grid-area: head;
+   background-color: var(--ppal);
+   display: flex;
+   justify-content: end;
+   padding: 10px;
+ }
+
+ header > button {
+   font-family: var(--texto);
+   font-size: 14px;
+   font-weight: 500;
+   background-color: var(--ppal);
+   padding: 2px 8px;
+   cursor: pointer;
+   border: none;
+   border-right: 1px solid black;
+ }
+
+ .bttn-regis {
+   border-right: none;
+   margin-right: 14px;
+ }
+
+ .bttn-flag {
+   border-right: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ body > nav {
+   grid-area: nav;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-decoration: none;
+   padding: 14px;
+ }
+
+ nav ul {
+   list-style: none;
+   text-decoration: none;
+ }
+
+ nav ul li {
+   display: inline;
+   margin: 24px;
+}
+
+ nav ul li a {
+   text-decoration: none;
+ }
+
