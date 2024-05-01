@@ -39,7 +39,7 @@ header > button {
   font-size: 14px;
   font-weight: 500;
   background-color: var(--ppal);
-  padding: 2px 18px;
+  padding: 2px 8px;
   cursor: pointer;
   border: none;
   border-right: 1px solid black;
@@ -201,15 +201,13 @@ section img {
               transform 20ms ease-in-out 0ms;
 }
 
-.popup .close-btn,
-.popup-regis .close-btn {
+.popup .close-btn i,
+.popup-regis .close-btn i {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 15px;
-  height: 15px;
-  background: #888;
-  color: #eee;
+  top: 18px;
+  right: 15px;
+  color: #FF0202;
+  font-size: 19px;
   text-align: center;
   line-height: 15px;
   border-radius: 15px;
