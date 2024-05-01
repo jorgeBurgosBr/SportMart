@@ -20,9 +20,8 @@ body {
   grid-template-areas:
     "head"
     "nav"
-    "banner"
-    "slider";
-  grid-template-rows: 1fr 1.5fr auto 6fr;
+    "banner";
+  grid-template-rows: 1fr 1.5fr auto;
   font-family: var(--texto);
 }
 
@@ -174,114 +173,11 @@ body > nav {
 
 section {
   grid-area: banner;
-  height: 70vh;
+  height: auto;
   overflow: hidden;
 }
 
 section img {
   width: 100%;
   height: auto;
-}
-
-/* ///////////////////////////////////////////////////////////////////////////// */
-
-.container {
-  grid-area: slider;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slider {
-  position: relative;
-  overflow: hidden;
-  width: 600px;
-  height: 400px;
-  margin: 0 auto;
-}
-
-.slide-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Alinea las imágenes verticalmente con los botones */
-  transition: transform 0.5s ease;
-}
-
-.slide {
-  flex: 0 0 23%;
-  max-width: 23%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  margin: 0 5px;
-}
-
-.slide img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
-.arrow {
-  top: 37%; /* Alinea verticalmente con el centro del contenedor */
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 24px;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.arrow-left {
-  left: 2%; /* Alinea a 2% desde la izquierda */
-}
-
-.arrow-right {
-  right: 2%; /* Alinea a 2% desde la derecha */
-}
-
-/* RUNNING */
-.clothes-shoes-accessories {
-  display: flex;
-  justify-content: center;
-}
-.clothes {
-  width: 33%;
-  height: auto;
-}
-.shoes {
-  width: 33%;
-  height: auto;
-}
-.accessories {
-  width: 33%;
-  height: auto;
-}
-.clothes-shoes-accessories img {
-  width: 100%;
-}
-
-.road-trail-track {
-  display: flex;
-  justify-content: center;
-}
-.road {
-  width: 33%;
-  height: auto;
-}
-.trail {
-  width: 33%;
-  height: auto;
-}
-.track {
-  width: 33%;
-  height: auto;
-}
-.road-trail-track img {
-  width: 100%;
 }
