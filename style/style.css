@@ -31,6 +31,7 @@ body > header {
   display: flex;
   justify-content: end;
   padding: 10px;
+  gap: 10px;
 }
 
 header > button {
@@ -38,7 +39,7 @@ header > button {
   font-size: 14px;
   font-weight: 500;
   background-color: var(--ppal);
-  padding: 2px 8px;
+  padding: 2px 18px;
   cursor: pointer;
   border: none;
   border-right: 1px solid black;
@@ -180,4 +181,111 @@ section {
 section img {
   width: 100%;
   height: auto;
+}
+
+/* ---------- LOGIN Y REGISTER ---------- */
+.popup,
+.popup-regis {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%) scale(1.25);
+  width: 380px;
+  padding: 20px 30px;
+  background: #fff;
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+
+.popup .close-btn,
+.popup-regis .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  background: #888;
+  color: #eee;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup .form h2,
+.popup-regis .form h2 {
+  text-align: center;
+  color: #222;
+  margin: 10px 0px 20px;
+  font-size: 25px;
+}
+
+.popup .form .form-element,
+.popup-regis .form .form-element {
+  margin: 15px 0px;
+}
+
+.popup .form .form-element label,
+.popup-regis .form .form-element label {
+  font-size: 14px;
+  color: #222;
+}
+
+.popup .form .form-element input[type="text"],
+.popup .form .form-element input[type="password"],
+.popup-regis .form .form-element input[type="text"],
+.popup-regis .form .form-element input[type="password"] {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.popup .form .form-element input[type="checkbox"],
+.popup-regis .form .form-element input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.popup .form .form-element button,
+.popup-regis .form .form-element button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #222;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.popup .form .form-element a,
+.popup-regis .form .form-element a {
+  display: block;
+  text-align: right;
+  font-size: 15px;
+  color: #0171e3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.popup-regis,
+.popup {
+  transition: top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+              transform 20ms ease-in-out 0ms;
+}
+
+.popup-regis.active2,
+.popup.activa {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
