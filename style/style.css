@@ -78,11 +78,10 @@ body > nav {
   letter-spacing: 1px;
   color: var(--black);
 }
+
 .drop-menu {
   float: left;
   overflow: hidden;
-}
-.drop-menu .drop-btn {
   font-size: 16px;
   border: none;
   outline: none;
@@ -92,6 +91,10 @@ body > nav {
   background-color: transparent;
   letter-spacing: 1px;
   color: var(--black);
+}
+
+.menu-ppal a {
+  margin-left: 50px;
 }
 
 .drop-content {
