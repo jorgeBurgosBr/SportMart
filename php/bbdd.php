@@ -9,7 +9,7 @@ function existeBBDD()
    try {
       if ($bd->conectar()) {
          $conexion = $bd->getConexion();
-         $sql = "SHOW DATABASE LIKE 'SportMart'";
+         $sql = "SHOW DATABASES LIKE 'sportmart'";
          $result = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
          if (mysqli_num_rows($result) > 0) {
             $flag = true;
@@ -29,8 +29,8 @@ function crearBD()
       if ($bd->conectar()) {
          $conexion =  $bd->getConexion();
          $createSql = [
-            "CREATE DATABASE  SportMart;",
-            "USE SportMart;",
+            "CREATE DATABASE sportmart;",
+            "USE sportmart;",
             "CREATE TABLE CLIENTE (
                id_cliente INT AUTO_INCREMENT,
                nombre VARCHAR(255) NOT NULL,
@@ -50,7 +50,7 @@ function crearBD()
                PRIMARY KEY (id_producto)
                );",
             "CREATE TABLE FAVORITOS (
-               id_favorito INT AUTO_INCREMET,
+               id_favorito INT AUTO_INCREMENT,
                id_cliente INT,
                id_producto INT,
                PRIMARY KEY (id_favorito),
@@ -90,7 +90,64 @@ function crearBD()
                FOREIGN KEY (id_pedido) REFERENCES DETALLES_PEDIDO(id_pedido)
                );"
          ];
-         $insertSql = [];
+         $insertSql = [
+            // Insertar datos en la tabla CLIENTE
+            "INSERT INTO CLIENTE (nombre, apellidos, correo, telefono) VALUES
+    ('Juan', 'González', 'juan@example.com', '123456789'),
+    ('María', 'Martínez', 'maria@example.com', '987654321'),
+    ('Pedro', 'Sánchez', 'pedro@example.com', '456789123'),
+    ('Laura', 'López', 'laura@example.com', '789123456');",
+
+            // Insertar datos en la tabla PRODUCTO
+            "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, talla, sexo) VALUES
+    ('Camiseta deportiva', 'Camiseta de algodón transpirable', 25.99, 'camiseta.jpg', 'M', 'Hombre'),
+    ('Zapatillas running', 'Zapatillas para correr con suela amortiguada', 89.99, 'zapatillas.jpg', '42', 'Hombre'),
+    ('Leggings deportivos', 'Leggings ajustados para entrenamiento', 19.99, 'leggings.jpg', 'S', 'Mujer'),
+    ('Balón de fútbol', 'Balón oficial de tamaño 5', 14.99, 'balon.jpg', NULL, NULL);",
+
+            // Insertar datos en la tabla FAVORITOS
+            "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
+    (1, 1),
+    (1, 3),
+    (2, 2),
+    (3, 4);",
+
+            // Insertar datos en la tabla CARRITO
+            "INSERT INTO CARRITO (id_cliente, id_producto, cantidad) VALUES
+    (1, 2, 2),
+    (2, 3, 1),
+    (3, 1, 3),
+    (4, 4, 1);",
+
+            // Insertar datos en la tabla CATEGORIA
+            "INSERT INTO CATEGORIA (categoria, id_producto) VALUES
+    ('Ropa deportiva', 1),
+    ('Calzado', 2),
+    ('Ropa', 3),
+    ('Accesorios', 4);",
+
+            // Insertar datos en la tabla DETALLES_PEDIDO
+            "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
+    (1, 2),
+    (2, 1),
+    (3, 3),
+    (4, 1);",
+
+            // Insertar datos en la tabla DIRECCION_ENVIO
+            "INSERT INTO DIRECCION_ENVIO (id_pedido, direccion) VALUES
+    (1, 'Calle Principal 123, Ciudad'),
+    (2, 'Avenida Central 456, Ciudad'),
+    (3, 'Plaza Mayor 789, Ciudad'),
+    (4, 'Calle Secundaria 321, Ciudad');",
+
+            // Insertar datos en la tabla METODO_PAGO
+            "INSERT INTO METODO_PAGO (id_pedido, n_tarjeta, fecha, nombre) VALUES
+    (1, '1234-5678-9012-3456', '2024-05-02', 'Juan González'),
+    (2, '2345-6789-0123-4567', '2024-05-02', 'María Martínez'),
+    (3, '3456-7890-1234-5678', '2024-05-02', 'Pedro Sánchez'),
+    (4, '4567-8901-2345-6789', '2024-05-02', 'Laura López');"
+         ];
+
          // Ejecutar las consultas de inserción de datos
          ejecutarSentencias($conexion, $createSql);
          ejecutarSentencias($conexion, $insertSql);
