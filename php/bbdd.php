@@ -16,7 +16,7 @@ function existeBBDD()
          }
       }
    } catch (Exception $e) {
-      echo $e->getMessage();
+      // echo $e->getMessage();
    }
    $bd->cerrar();
    return $flag;
@@ -154,7 +154,7 @@ function crearBD()
          $bd->cerrar();
       }
    } catch (Exception $e) {
-      echo $e->getMessage();
+         // echo $e->getMessage();
    }
 }
 function ejecutarSentencias($conexion, $sentencias)
