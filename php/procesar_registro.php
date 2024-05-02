@@ -18,8 +18,7 @@ if ($bd->conectar()) {
       $telefono = mysqli_real_escape_string($conn, $_POST['telefono']);
       $correo = mysqli_real_escape_string($conn, $_POST['email']);
       $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-      // $contrasena_hash = password_hash($password, PASSWORD_DEFAULT);
+      $contrasena_hash = password_hash($password, PASSWORD_DEFAULT);
 
       // Comprobar si el usuario ya existe en la base de datos
       $sql = mysqli_query($conn, "SELECT * FROM cliente WHERE correo = '$correo'");
@@ -28,8 +27,8 @@ if ($bd->conectar()) {
          $respuesta['error'] = 'El correo ya está registrado';
       } else {
          //Insertamos los datos en la BBDD
-         $sql2 = mysqli_query($conn, "INSERT INTO cliente (nombre, apellidos, correo, telefono) 
-                                    VALUES ('$nombre', '$apellidos', '$correo', '$telefono')");
+         $sql2 = mysqli_query($conn, "INSERT INTO cliente (nombre, apellidos, correo, telefono, password) 
+                                    VALUES ('$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
 
          // // Recojo el id del paciente
          // $row = mysqli_fetch_assoc($sql3);
@@ -38,7 +37,7 @@ if ($bd->conectar()) {
 
          if ($sql2) { 
             $respuesta['success'] = true;
-            $_SESSION['id_usuario'] = $id_original;
+            // $_SESSION['id_usuario'] = $id_original;
          }
       }
       header('Content-Type: application/json');
