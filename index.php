@@ -65,7 +65,7 @@ require_once 'php/bbdd.php';
     <section><img src="img/banner_newbalance.jpg" alt="" /></section>
 
     <!-- ------------------------ LOGIN ------------------------ -->
-    <div class="popup">
+    <!-- <div class="popup">
       <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
       <div class="form">
          <h2>Inicia sesión</h2>
@@ -85,55 +85,65 @@ require_once 'php/bbdd.php';
             <button>Sign In</button>
          </div>
          <div class="form-element">
-            <a href="#">Olvidaste tu contraseña?</a>
+            <a href="#" id="registrate">Sin cuenta? Regístrate aquí</a>
          </div>
       </div>
-   </div>
+   </div> -->
+   <div class="popup">
+   <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+  <p>Inicia sesión</p>
+  <form id="form-login">
+    <div class="form-element">
+      <input required name="email" type="text">
+      <label>Email</label>
+    </div>
+    <div class="form-element">
+      <input required name="password" type="password">
+      <label>Contraseña</label>
+    </div>
+    <button class="btn-submit">Enviar</button>
+  </form>
+  <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+</div>
 
     <!-- ------------------------ REGISTRO ------------------------ -->
-   <div class="popup-regis">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <form class="form" id="form-signup" action="" method="">
-         <h2>Regístrate</h2>
-         <div class="form-element">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre" required>
-         </div>
-         <div class="form-element">
-            <label for="nombre">Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos" placeholder="Introduce tus apellidos" required>
-         </div>
-         <div class="form-element">
-            <label for="nombre">Teléfono</label>
-            <input type="text" name="telefono" id="telefono" placeholder="Introduce tu teléfono" required>
-         </div>
-         <div class="form-element">
-            <label for="email-registro">Email</label>
-            <input type="text" name="email" id="email-registro" placeholder="Introduce el email" required>
-         </div>
-         <div class="form-element">
-            <label for="password-registro">Contraseña</label>
-            <input placeholder="Introduce contraseña" id="password-registro" name="password" type="password" required>
-         </div>
-         <div class="form-element">
-            <button type="submit" id="signup-submit">Sign Up</button>
-         </div>
-         <div class="form-element">
-            <a href="#">Ya tienes cuenta?</a>
-         </div>
-      </form>
-      </div>
-   </div>
+    <div class="popup-regis">
+   <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+  <p>Regístrate</p>
+  <form id="form-signup">
+    <div class="form-element">
+      <input required name="nombre" type="text">
+      <label>Nombre</label>
+    </div>
+    <div class="form-element">
+      <input required name="apellidos" type="text">
+      <label>Apellidos</label>
+    </div>
+    <div class="form-element">
+      <input required name="telefono" type="text">
+      <label>Teléfono</label>
+    </div>
+    <div class="form-element">
+      <input required name="email" type="text">
+      <label>Correo</label>
+    </div>
+    <div class="form-element">
+      <input required name="password" type="password">
+      <label>Contraseña</label>
+    </div>
+    <button type="submit" class="btn-submit">Enviar</button>
+  </form>
+  <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+</div>
 
    <div class="popup-message">
-  <div class="popup-content">
+   <div class="popup-content">
     <span class="close-popup-message">&times;</span>
-    <p id="popup-text">This is a pop-up message!</p>
+    <p id="popup-text"></p>
   </div>
 </div>
 
    <script src="js/script.js"></script>
-   <script src="js/script_regist.js"></script>
-   <script src="js/script_login.js"></script>
+   <script src="js/script_home.js"></script>
 </body>
 </html>

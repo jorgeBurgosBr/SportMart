@@ -37,6 +37,7 @@ function crearBD()
                apellidos VARCHAR(255) NOT NULL,
                correo VARCHAR(255) NOT NULL,
                telefono VARCHAR(255) NOT NULL,
+               password VARCHAR(255) NOT NULL,
                PRIMARY KEY (id_cliente)
                );",
             "CREATE TABLE PRODUCTO (

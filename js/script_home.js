@@ -1,10 +1,35 @@
+// ------------------ LOGIN
+document.querySelector("#show-login").addEventListener("click", function () {
+   document.querySelector(".popup").classList.add("activa");
+   document.querySelector(".popup-regis").classList.remove("active2");
+});
+
+document.querySelector(".popup .close-btn").addEventListener("click", function () {
+   document.querySelector(".popup").classList.remove("activa");
+});
+
+document.querySelector("#registrate").addEventListener("click", function (event) {
+   event.preventDefault();
+   document.querySelector(".popup-regis").classList.add("active2");
+   document.querySelector(".popup").classList.remove("activa");
+
+});
+
+// ------------------ REGISTRO
 document.querySelector("#show-regis").addEventListener("click", function () {
    document.querySelector(".popup-regis").classList.add("active2");
+   document.querySelector(".popup").classList.remove("activa");
 });
 
 document.querySelector(".popup-regis .close-btn").addEventListener("click", function () {
    document.querySelector(".popup-regis").classList.remove("active2");
 });
+document.querySelector("#acceder-login").addEventListener("click", function (event) {
+   event.preventDefault();
+   document.querySelector(".popup").classList.add("activa");
+   document.querySelector(".popup-regis").classList.remove("active2");
+});
+
 
 const forms = {
    "form-login": document.getElementById("form-login"),
@@ -28,11 +53,11 @@ function procesarFormRegistro(formulario) {
          // mostrarErrorRegistro(data.success);
          // Si se produjo el registro redirigimos al login
          if (data.success) {
-            document.querySelector(".popup-login").classList.add("activa");
-            document.querySelector(".popup-signup").classList.remove("active2");
+            document.querySelector(".popup").classList.add("activa");
+            document.querySelector(".popup-regis").classList.remove("active2");
             // mostramos pop-up de éxito
             document.querySelector(".popup-message").style.display = "block";
-            document.querySelector("#popup-text").textContent = "¡Registro exitoso!";
+            document.querySelector("#popup-text").textContent = "¡Te has registrado correctamente!";
          }
       })
       .catch(error => console.error('Fetch error: ', error));
