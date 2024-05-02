@@ -25,11 +25,11 @@ function procesarFormRegistro(formulario) {
       .then(response => response.json())
       .then(data => {
          // Añadimos o quitamos error en función de data.success
-         mostrarErrorRegistro(data.success);
+         // mostrarErrorRegistro(data.success);
          // Si se produjo el registro redirigimos al login
          if (data.success) {
-            document.querySelector(".popup-login").classList.add("active");
-            document.querySelector(".popup-signup").classList.remove("active");
+            document.querySelector(".popup-login").classList.add("activa");
+            document.querySelector(".popup-signup").classList.remove("active2");
             // mostramos pop-up de éxito
             document.querySelector(".popup-message").style.display = "block";
             document.querySelector("#popup-text").textContent = "¡Registro exitoso!";
