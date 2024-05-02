@@ -1,3 +1,6 @@
+<?php
+require_once 'php/bbdd.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,28 +93,44 @@
     <!-- ------------------------ REGISTRO ------------------------ -->
    <div class="popup-regis">
       <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <div class="form">
+      <form class="form" id="form-signup" action="" method="">
          <h2>Regístrate</h2>
          <div class="form-element">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Introduce tu nombre">
+            <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre" required>
+         </div>
+         <div class="form-element">
+            <label for="nombre">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Introduce tus apellidos" required>
+         </div>
+         <div class="form-element">
+            <label for="nombre">Teléfono</label>
+            <input type="text" name="telefono" id="telefono" placeholder="Introduce tu teléfono" required>
          </div>
          <div class="form-element">
             <label for="email-registro">Email</label>
-            <input type="text" id="email-registro" placeholder="Introduce el email">
+            <input type="text" name="email" id="email-registro" placeholder="Introduce el email" required>
          </div>
          <div class="form-element">
             <label for="password-registro">Contraseña</label>
-            <input placeholder="Introduce contraseña" id="password-registro" name="password" type="password">
+            <input placeholder="Introduce contraseña" id="password-registro" name="password" type="password" required>
          </div>
          <div class="form-element">
-            <button>Sign Up</button>
+            <button type="submit" id="signup-submit">Sign Up</button>
          </div>
          <div class="form-element">
             <a href="#">Ya tienes cuenta?</a>
          </div>
+      </form>
       </div>
    </div>
+
+   <div class="popup-message">
+  <div class="popup-content">
+    <span class="close-popup-message">&times;</span>
+    <p id="popup-text">This is a pop-up message!</p>
+  </div>
+</div>
 
    <script src="js/script.js"></script>
    <script src="js/script_regist.js"></script>
