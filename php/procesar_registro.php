@@ -30,14 +30,14 @@ if ($bd->conectar()) {
          $sql2 = mysqli_query($conn, "INSERT INTO cliente (nombre, apellidos, correo, telefono, password) 
                                     VALUES ('$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
 
-         // // Recojo el id del paciente
+         // // Recojo el id del cliente
          // $row = mysqli_fetch_assoc($sql3);
-         // $id_original = $row['id_paciente'];
+         // $id_original = $row['id_cliente'];
 
 
          if ($sql2) { 
             $respuesta['success'] = true;
-            // $_SESSION['id_usuario'] = $id_original;
+            // $_SESSION['id_cliente'] = $id_original;
          }
       }
       header('Content-Type: application/json');

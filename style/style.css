@@ -187,8 +187,6 @@ section img {
 }
 
 /* ---------- LOGIN Y REGISTER ---------- */
-
-
 .popup,
 .popup-regis {
   position: absolute;
@@ -251,7 +249,7 @@ section img {
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
@@ -324,6 +322,18 @@ section img {
   background: transparent;
   color: #aaa;
   border-radius: 5px;
+}
+
+#error-password-signup{
+  list-style-type: none;
+  margin-top: -25px;
+}
+#error-password-signup #tituloError{
+  font-size: 16px;
+}
+#error-password-signup li{
+  color: red;
+  font-size: 14px;
 }
 
 /* POP-UP MESSAGE */
