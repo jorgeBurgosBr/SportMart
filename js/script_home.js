@@ -14,6 +14,18 @@ forms["form-signup"].addEventListener("submit", function (event) {
    mostrarPopupExito();
 });
 
+forms["form-login"].addEventListener("submit", function (event) {
+   // Previene que se envíe directamente
+   event.preventDefault();
+   clearErroresLogin();
+   // Valida el formulario
+   if (validacionLogin()) {
+      procesarFormLogin(forms["form-login"]);
+   } else {
+      return;
+   }
+});
+
 
 function validacionSignup() {
    let flag = true;
@@ -89,7 +101,26 @@ function validacionSignup() {
       flag = false;
    }
    return flag;
+}
 
+function validacionLogin() {
+
+   // Recojo campos validados
+   let correoValid = validarCorreo(document.getElementById("email_login"));
+
+   // Recojo span de error
+   const errorCorreoLogin = document.getElementById("error-login");
+
+   if (!correoValid) {
+      errorCorreoLogin.textContent = "❌ Introduce un correo electrónico válido";
+      errorCorreoLogin.style.marginTop = "-18px";
+      errorCorreoLogin.style.marginBottom = "5px";
+      errorCorreoLogin.style.display = "block";
+      errorCorreoLogin.style.color = "red";
+      document.getElementById("email_login").style.borderBottom = "2px solid red";
+      return false;
+   }
+   return true;
 }
 
 function procesarFormRegistro(formulario) {
@@ -110,6 +141,54 @@ function procesarFormRegistro(formulario) {
       })
       .catch(error => console.error('Fetch error: ', error));
 }
+
+function mostrarErrorRegistro(flag) {
+   const errorCorreoSignup = document.querySelector("#error-email-signup");
+   if (!flag) {
+      errorCorreoSignup.textContent = "❌ El correo introducido ya existe";
+      errorCorreoSignup.style.display = "block";
+      errorCorreoSignup.style.color = "red";
+      errorCorreoSignup.style.marginTop = "-25px";
+      document.getElementById("email-signup").style.borderBottom = "2px solid red";
+   } else {
+      errorCorreoSignup.textContent = "";
+      document.getElementById("email-signup").style.borderBottom = "1px solid #fff";
+   }
+}
+
+function procesarFormLogin(formulario) {
+   const formData = new FormData(formulario);
+   fetch('./php/procesar_login.php', {
+      method: 'POST',
+      body: formData,
+   })
+      .then(response => {
+         return response.json()
+      })
+      .then(data => {
+         if (!data.success) {
+            mostrarErrorLogin(true, data.error);
+         } else {
+            window.location.href = "./php/pruebaLogin.php";
+         }
+      }).catch(error => console.error('Fetch error: ', error));
+}
+
+function mostrarErrorLogin(flag, error) {
+   const errorLogin = document.querySelector("#error-login");
+
+   if (flag) {
+      if (error === "correo" || error === "contrasena") {
+         errorLogin.textContent = "❌ Correo o contraseña incorrectos.";
+         errorLogin.style.marginTop = "-25px";
+         errorLogin.style.marginBottom = "5px";
+         errorLogin.style.display = "block";
+         errorLogin.style.fontSize = "14px"
+         errorLogin.style.color = "red";
+      }
+   }
+}
+
 
 // VALIDACION DE FORMULARIO
 function validarNombre(nombre) {
@@ -151,6 +230,17 @@ function clearErroresSignup() {
    // Limpiamos errores contraseña
    errorContrasenaSignup.innerHTML = "";
    document.getElementById("password-signup").style.borderBottom = "1px solid #fff";
+}
+
+function clearErroresLogin() {
+   // Recojo span de error
+   const errorLogin = document.querySelector("#error-login");
+
+   errorLogin.textContent = "";
+   errorLogin.style.marginTop = "initial";
+   errorLogin.style.marginBottom = "initial";
+   errorLogin.style.display = "initial";
+   document.getElementById("email_login").style.borderBottom = "1px solid #fff";
 }
 
 
@@ -216,7 +306,7 @@ document.querySelector("#acceder-login").addEventListener("click", function (eve
 });
 
 
-function mostrarPopupExito() {
+function mostrarPopupExito() {   
    document.querySelector(".popup").classList.add("activa");
    document.querySelector(".popup-regis").classList.remove("active2");
    // Mostramos pop-up de éxito

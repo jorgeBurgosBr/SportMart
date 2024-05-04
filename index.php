@@ -70,13 +70,14 @@ require_once 'php/bbdd.php';
   <p>Inicia sesión</p>
   <form id="form-login">
     <div class="form-element">
-      <input required name="email" type="text">
+      <input required name="email-login" id="email_login" type="text">
       <label>Email</label>
     </div>
     <div class="form-element">
-      <input required name="password" type="password">
+      <input required name="password-login" id="password_login" type="password">
       <label>Contraseña</label>
     </div>
+    <span id="error-login"></span>
     <button class="btn-submit">Enviar</button>
   </form>
   <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>

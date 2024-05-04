@@ -22,7 +22,7 @@ if ($bd->conectar()) {
       // Generar el ID del cliente
       $ultimo_id_query = mysqli_query($conn, "SELECT MAX(id_cliente) AS max_id FROM cliente");
       $ultimo_id_result = mysqli_fetch_assoc($ultimo_id_query);
-      $nuevo_id = $ultimo_id_result['max_id'] + 1;
+      $id_cliente = $ultimo_id_result['max_id'] + 1;
 
       // Comprobar si el usuario ya existe en la base de datos
       $sql = mysqli_query($conn, "SELECT * FROM cliente WHERE correo = '$correo'");
@@ -32,16 +32,11 @@ if ($bd->conectar()) {
       } else {
          // Insertar los datos en la BBDD con el nuevo ID generado
          $sql2 = mysqli_query($conn, "INSERT INTO cliente (id_cliente, nombre, apellidos, correo, telefono, password) 
-                                    VALUES ('$nuevo_id', '$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
-
-                                    
-         // // Recojo el id del cliente
-         // $row = mysqli_fetch_assoc($sql3);
-         // $id_original = $row['id_cliente'];
+                                    VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
 
          if ($sql2) { 
             $respuesta['success'] = true;
-            // $_SESSION['id_cliente'] = $nuevo_id;
+            $_SESSION['id_cliente'] = $id_cliente;
          }
       }
       header('Content-Type: application/json');
