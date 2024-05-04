@@ -65,30 +65,6 @@ require_once 'php/bbdd.php';
     <section><img src="img/banner_newbalance.jpg" alt="" /></section>
 
     <!-- ------------------------ LOGIN ------------------------ -->
-    <!-- <div class="popup">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <div class="form">
-         <h2>Inicia sesión</h2>
-         <div class="form-element">
-            <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Introduce el email">
-         </div>
-         <div class="form-element">
-            <label for="password">Contraseña</label>
-            <input placeholder="Introduce contraseña" id="password" name="password" type="password">
-         </div>
-         <div class="form-element">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Recuérdame</label>
-         </div>
-         <div class="form-element">
-            <button>Sign In</button>
-         </div>
-         <div class="form-element">
-            <a href="#" id="registrate">Sin cuenta? Regístrate aquí</a>
-         </div>
-      </div>
-   </div> -->
    <div class="popup">
    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
   <p>Inicia sesión</p>
@@ -112,24 +88,29 @@ require_once 'php/bbdd.php';
   <p>Regístrate</p>
   <form id="form-signup">
     <div class="form-element">
-      <input required name="nombre" type="text">
+      <input required name="nombre" id="nombre-signup" type="text">
       <label>Nombre</label>
+      <span id="error-nombre-signup"></span>
     </div>
     <div class="form-element">
-      <input required name="apellidos" type="text">
+      <input required name="apellidos" id="apellidos-signup" type="text">
       <label>Apellidos</label>
+      <span id="error-apellidos-signup"></span>
     </div>
     <div class="form-element">
-      <input required name="telefono" type="text">
+      <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
       <label>Teléfono</label>
+      <span id="error-telefono-signup"></span>
     </div>
     <div class="form-element">
-      <input required name="email" type="text">
+      <input required name="email" id="email-signup" type="text">
       <label>Correo</label>
+      <span id="error-email-signup"></span>
     </div>
     <div class="form-element">
-      <input required name="password" type="password">
+      <input required name="password" id="password-signup" type="password">
       <label>Contraseña</label>
+      <ul id="error-password-signup"></ul>
     </div>
     <button type="submit" class="btn-submit">Enviar</button>
   </form>
