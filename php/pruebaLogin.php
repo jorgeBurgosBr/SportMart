@@ -9,7 +9,7 @@ session_start();
    <title>Login</title>
 </head>
 <body>
-<h1>Login con ID numero <?php echo $_SESSION['id_cliente']; ?></h1>
+<h1>Login con nombre <?php echo $_SESSION['nombre']; ?> e ID <?php echo $_SESSION['id_cliente']; ?></h1>
 
 </body>
 </html>

@@ -37,6 +37,7 @@ if ($bd->conectar()) {
          if ($sql2) { 
             $respuesta['success'] = true;
             $_SESSION['id_cliente'] = $id_cliente;
+            $_SESSION['nombre'] = $nombre;
          }
       }
       header('Content-Type: application/json');
