@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjeta de Producto</title>
+<link rel="stylesheet" href="style/menuGym.css">
+
+</head>
+<body>
+    <header>
+        <button>Ayuda</button>
+        <button id="show-login">Inicia sesión</button>
+        <button id="show-regis" class="bttn-regis">Regístrate</button>
+        <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+  </header>
+  <nav class="navbar">
+     <div class="container-nav">
+       <div class="logo-nav">
+         <img src="img/logo.png" alt="" />
+       </div>
+       <div class="drop-menu">
+        <div class="menu-ppal">
+           <a href="index.html">Novedades</a>
+           <a href="home_running.html">Running</a>
+           <a href="">Gimnasio</a>
+           <a href="">Boxeo/MMA</a>
+        </div>
+         <div class="drop-content">
+           <div class="row">
+             <div class="column">
+               <h3>Últimas novedades</h3>
+               <a href="">Zapatillas</a>
+               <a href="">Camisetas</a>
+               <a href="">Accesorios</a>
+             </div>
+             <div class="column">
+               <h3>Suplementación</h3>
+               <a href="">Pre-entreno</a>
+               <a href="">Post-entreno</a>
+               <a href="">Barritas energéticas</a>
+             </div>
+             <div class="column">
+               <h3>Artes marciales</h3>
+               <a href="">Guantes</a>
+               <a href="">Bucales</a>
+               <a href="">Accesorios</a>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="search-nav">
+         <input type="search" name="search" id="" placeholder="Buscar" />
+         <i class="ri-search-line"></i>
+         <i class="ri-heart-line"></i>
+         <i class="ri-shopping-cart-line"></i>
+       </div>
+     </div>
+   </nav>
+
+   <!-- CONTENIDO -->
+   <section><img src="img/banner_newbalance.jpg" alt="" /></section>
+
+
+  <div class="popup">
+  <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+ <p>Inicia sesión</p>
+ <form id="form-login">
+   <div class="form-element">
+     <input required name="email" type="text">
+     <label>Email</label>
+   </div>
+   <div class="form-element">
+     <input required name="password" type="password">
+     <label>Contraseña</label>
+   </div>
+   <button class="btn-submit">Enviar</button>
+ </form>
+ <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+</div>
+
+   <!-- ------------------------ REGISTRO ------------------------ -->
+   <div class="popup-regis">
+  <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+ <p>Regístrate</p>
+ <form id="form-signup">
+   <div class="form-element">
+     <input required name="nombre" type="text">
+     <label>Nombre</label>
+   </div>
+   <div class="form-element">
+     <input required name="apellidos" type="text">
+     <label>Apellidos</label>
+   </div>
+   <div class="form-element">
+     <input required name="telefono" type="text">
+     <label>Teléfono</label>
+   </div>
+   <div class="form-element">
+     <input required name="email" type="text">
+     <label>Correo</label>
+   </div>
+   <div class="form-element">
+     <input required name="password" type="password">
+     <label>Contraseña</label>
+   </div>
+   <button type="submit" class="btn-submit">Enviar</button>
+ </form>
+ <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+</div>
+
+  <div class="popup-message">
+  <div class="popup-content">
+   <span class="close-popup-message">&times;</span>
+   <p id="popup-text"></p>
+ </div>
+</div>
+
+  <script src="js/script.js"></script>
+  <script src="js/script_home.js"></script>
+<div class="scroll imgBox" style="--time: 40s">
+    <div class="content_scrolling">
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+    </div>
+
+<div class="content_scrolling">
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+    </div>
+  </div>
+  
+  <script>
+    const slider = document.querySelector('.slider');
+    const slideContainer = document.querySelector('.slide-container');
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+  
+    function moveSlide(direction) {
+     
+        currentIndex = (currentIndex + 1) % (slides.length - 3);
+      
+      const offset = -currentIndex * (slides[0].offsetWidth + 10); // añadido el 10px de margen
+      slideContainer.style.transform = `translateX(${offset}px)`;
+    }
+  
+    // Mover las diapositivas cada 3 segundos
+    setInterval(() => {
+      moveSlide('right'); // Cambiar 'right' por 'left' si quieres que vaya hacia atrás primero.
+    }, 2500);
+  </script>
+  
+    <!--Esto es el apartado de las 5 cartas -->
+
+    <div class="contenedor">
+        <div class="carta carta1">
+            <h2>Título de la carta 1</h2>
+            <button class="ver-mas">Ver más</button>
+        </div>
+
+        <div class="carta carta2">
+            <h2>Título de la carta 2</h2>
+            <button class="ver-mas">Ver más</button>
+        </div>
+
+        <div class="carta carta3">
+            <h2>Título de la carta 3</h2>
+            <button class="ver-mas">Ver más</button>
+        </div>
+    </div>
+
+    <!-- Separación entre las cartas -->
+    <div style="margin-top: 20px;"></div>
+
+    <!-- Cartas más grandes -->
+    <div class="contenedor">
+        <div class="carta carta-grande carta4">
+            <h2>Título de la carta 4</h2>
+            <button class="ver-mas">Ver más</button>
+        </div>
+
+        <div class="carta carta-grande carta5">
+            <h2>Título de la carta 5</h2>
+            <button class="ver-mas">Ver más</button>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="contenedor-slider">
+    
+        <div class="slider-productos">
+          <div class="contenedor-slides">
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://agongym.com/cdn/shop/products/AGONGYMMAN-SEPT2022-6618_grande.jpg?v=1704281886" alt="Camiseta Sin Mangas">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta Sin Mangas</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/y0pys5jfozblhxlsqzxq/dri-fit-camiseta-deportiva-jBhLHX.png" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://cdn.shopify.com/s/files/1/0156/6146/files/HeavyMetalDropArmTankGSBlackA4A8G-BB2J-0209_d96fd9d0-8590-481f-be82-27f2b7499064.jpg?v=1702281426" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://cdn.shopify.com/s/files/1/0156/6146/files/RUCHEDTRAININGSPORTSBRA-BLACK.A-EditHK_ZH_ZH_HK_5ca62a66-8404-408e-956a-2380d2611646.jpg?v=1697798490" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://mabegonutricionydeporte.com/5696-large_default/camiseta-manga-corta-oversize-stone-agongym.jpg" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://i.pinimg.com/736x/c1/a7/d7/c1a7d7c4434de2f24bfad907a9e829be.jpg" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://cdn.shopify.com/s/files/1/0185/2846/9056/products/RuchedTrainingSportsBraSlateLavenderB2A7A-PBPK-1305.525.jpg?v=1682069601" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://www.dhresource.com/webp/m/0x0/f2/albu/g19/M00/99/B5/rBVap2BRxf6AXc3tAAMNevnQxKY805.jpg" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://www.alphafit.pe/cdn/shop/files/bividi-deportivo-hombre-ropa-deportiva-hombre-alphafit-peru-1-33513672802517_620x.jpg?v=1703183243" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://gymratswear.com/cdn/shop/files/DONTSKIPLEGDAYBLACK.png?v=1704486311" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-producto">
+                <div class="card-producto">
+                    <img class="imagen-producto" src="https://www.gregnkita.com/wp-content/uploads/2022/05/sudaderas-agon-gym-mujer-sudadera-essential-agongym-negro.jpg" alt="Nombre del Producto">
+                    <div class="contenido-producto">
+                        <div class="titulo-producto">Camiseta</div>
+                        <div class="precio-producto">$20.00</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    <div class="contenedor-flechas">
+        <div class="flecha izquierda" onclick="moverSlide('izquierda')">&lt;</div>
+        <div class="flecha derecha" onclick="moverSlide('derecha')">&gt;</div>
+    </div>
+      
+    <script>
+        const sliderProductos = document.querySelector('.slider-productos');
+        const contenedorSlides = document.querySelector('.contenedor-slides');
+        const slidesProducto = document.querySelectorAll('.slide-producto');
+        let indiceActual = 0;
+      
+        function moverSlide(direccion) {
+            const anchoSlide = slidesProducto[0].offsetWidth; // Ancho de cada slide
+            const margenSlide = 10; // Margen entre los slides
+    
+            if (direccion === 'izquierda') {
+                indiceActual = Math.max(indiceActual - 1, 0);
+            } else {
+                indiceActual = Math.min(indiceActual + 1, slidesProducto.length - 1);
+            }
+    
+            const desplazamiento = -indiceActual * (anchoSlide + margenSlide);
+            contenedorSlides.style.transform = `translateX(${desplazamiento}px)`;
+        }
+    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Footer Design</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+  <footer class="footer">
+     <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">Menu Principal</a></li>
+            <li><a href="#">GYM</a></li>
+            <li><a href="#">BOX</a></li>
+            <li><a href="#">RUN</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+     </div>
+  </footer>
+
+</body>
+</html>
+
+</body>
+</html>
