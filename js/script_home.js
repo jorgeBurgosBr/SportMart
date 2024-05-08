@@ -210,7 +210,6 @@ function mostrarErrorLogin(flag, error) {
    }
 }
 
-
 // VALIDACION DE FORMULARIO
 function validarNombre(nombre) {
    return /\d/.test(nombre.value) ? false : true;

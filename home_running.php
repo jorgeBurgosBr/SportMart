@@ -15,7 +15,7 @@ if (isset($_SESSION['nombre'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/style.css" class="css" />
+  <link rel="stylesheet" href="style/style.css"/>
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <script src="js/libreria/jquery.js"></script>
@@ -70,7 +70,7 @@ if (isset($_SESSION['nombre'])) {
         </div>
       </div>
       <div class="search-nav">
-        <input type="search" name="search" id="" placeholder="Buscar" />
+        <input type="search" name="search" id="" placeholder="Buscar" autocomplete="off"/>
         <i class="ri-search-line"></i>
         <button class="btn-nav"><i class="ri-heart-line"></i></button>
         <button class="btn-nav"><i class="ri-shopping-cart-line"></i></button>

@@ -9,11 +9,11 @@
 
 /* Cambiar el color del texto de autocompletado */
 input:-webkit-autofill {
-  -webkit-text-fill-color: #ffff !important;
+  -webkit-text-fill-color: #000000 !important;
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px rgba(0,0,0,.9) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px rgb(255, 255, 255) inset !important;
 }
 
 /* Reset styles */
@@ -218,6 +218,104 @@ section img {
   height: auto;
 }
 
+/* LOGOS MARCAS */
+.scroll {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid white;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.content_scrolling {
+  p {
+    color: aliceblue;
+    font-size: 25px;
+  }
+
+  img {
+    width: 200px;
+    height: 100px;
+    padding: 4px;
+  }
+
+  .event_start {
+    margin-left: 15px;
+    margin-left: -4px;
+  }
+
+  .event_end {
+    margin-right: 15px;
+    margin-left: 4px;
+  }
+
+  .logo {
+    margin-left: 55px;
+    margin-right: 55px;
+    height: 26;
+    width: 150px;
+  }
+}
+.scroll div {
+  white-space: nowrap;
+  animation: scroll var(--time) linear infinite;
+  animation-delay: calc(var(--time) * -1);
+}
+
+.scroll div:nth-child(2) {
+  animation: scroll2 var(--time) linear infinite;
+  animation-delay: calc(var(--time) / -2);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.scroll div span {
+  display: inline-flex;
+  margin: 10px;
+  letter-spacing: 0.2em;
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.scroll div span:hover {
+  background: #40ff06;
+  cursor: pointer;
+}
+
+.imgBox div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgBox img {
+  /* max-width: 100px; */
+  scale: 0.8;
+}
+
 /* ---------- LOGIN Y REGISTER ---------- */
 .popup,
 .popup-regis {
@@ -229,7 +327,7 @@ section img {
   padding: 40px;
   margin: 20px auto;
   transform: translate(-50%, -55%);
-  background: rgba(0,0,0,.9);
+  background: #ffff;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
@@ -264,7 +362,7 @@ section img {
 .popup-regis p {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: var(--black);
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
@@ -280,10 +378,10 @@ section img {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--black);
   margin-bottom: 50px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--black);
   outline: none;
   background: transparent;
 }
@@ -295,7 +393,7 @@ section img {
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--black);
   pointer-events: none;
   transition: .5s;
 }
@@ -306,7 +404,7 @@ section img {
 .popup-regis .form-element input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #fff;
+  color: var(--black);
   font-size: 12px;
 }
 
@@ -318,21 +416,21 @@ section img {
   font-weight: bold;
   cursor: pointer;
   width: 100%;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--ppal);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: var(--contraste);
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   margin-top: 40px;
-  letter-spacing: 3px
+  letter-spacing: 3px;
+  border: 1px solid transparent;
 }
 
 .popup .btn-submit:hover,
 .popup-regis .btn-submit:hover {
-  background: #fff;
-  color: #272727;
+  background: #0172e37c;
+  color: #000000;
 }
 
 .popup p:last-child,
@@ -344,7 +442,7 @@ section img {
 
 .popup a.a2,
 .popup-regis a.a2 {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   text-align: left;
 }
@@ -352,7 +450,7 @@ section img {
 .popup a.a2:hover,
 .popup-regis a.a2:hover {
   background: transparent;
-  color: #aaa;
+  color: #0000005b;
   border-radius: 5px;
 }
 
@@ -383,7 +481,6 @@ section img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: none;
 }
-
 
 .popup-content {
   position: relative;
@@ -474,6 +571,15 @@ section img {
 }
 
 @media screen and (max-width: 480px) {
+
+  .content_scrolling img{
+    width: 100px;
+    height: 50px;
+  }
+
+  .scroll {
+    height: 5vh;
+  }
 
   .search-nav input[type="search"] {
     height: 12px;
