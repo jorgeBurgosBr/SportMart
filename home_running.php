@@ -1,3 +1,14 @@
+<?php
+session_start();
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['nombre'])) {
+  $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
+  $textoBotonRegistrarse = "Cerrar sesión";
+} else {
+  $textoBotonLogin = "Inicia sesión";
+  $textoBotonRegistrarse = "Regístrate";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,23 +26,23 @@
     <title>SportMart</title>
   </head>
   <body>
-    <header>
-      <button>Ayuda</button>
-      <button>Inicia sesión</button>
-      <button class="bttn-regis">Regístrate</button>
-      <button class="bttn-flag">ES <img src="img/espana.png" alt="" /></button>
-    </header>
+  <header>
+         <button>Ayuda</button>
+         <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
+         <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
+         <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+   </header>
     <nav class="navbar">
       <div class="container-nav">
         <div class="logo-nav">
-          <img src="img/logo.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </div>
         <div class="drop-menu">
           <div class="menu-ppal">
             <a href="index.php">Novedades</a>
-            <a href="home_running.html">Running</a>
-            <a href="">Gimnasio</a>
-            <a href="">Boxeo/MMA</a>
+            <a class="nav-button" href="home_running.php">Running</a>
+            <a class="nav-button" href="">Gimnasio</a>
+            <a class="nav-button" href="home_boxeo.php">Boxeo/MMA</a>
          </div>
           <div class="drop-content">
             <div class="row">
@@ -309,7 +320,7 @@
       </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/script_home.js"></script>
     <script src="js/script_running.js"></script>
   </body>
 </html>

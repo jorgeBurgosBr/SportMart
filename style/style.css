@@ -31,7 +31,6 @@ body > header {
   display: flex;
   justify-content: end;
   padding: 10px;
-  gap: 10px;
 }
 
 header > button {
@@ -39,7 +38,7 @@ header > button {
   font-size: 14px;
   font-weight: 500;
   background-color: var(--ppal);
-  padding: 2px 8px;
+  padding: 2px 16px;
   cursor: pointer;
   border: none;
   border-right: 1px solid black;
@@ -47,7 +46,7 @@ header > button {
 
 .bttn-regis {
   border-right: none;
-  margin-right: 14px;
+  /* margin-right: 14px; */
 }
 
 .bttn-flag {
@@ -55,6 +54,10 @@ header > button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.disabled-button {
+  color: #000000; 
 }
 
 body > nav {
@@ -93,20 +96,31 @@ body > nav {
   color: var(--black);
 }
 
-.menu-ppal a {
-  margin-left: 50px;
-}
-
 .drop-content {
   display: none;
   position: absolute;
   width: 100%;
+  top: 12%;
   left: 0;
   z-index: 10;
 }
 .drop-menu:hover .drop-content {
   display: block;
 }
+
+.menu-ppal {
+  /* margin-left: 50px; */
+  display: flex;
+  gap: 45px;
+}
+.nav-button {
+  border-bottom: 2px solid transparent;
+}
+
+.nav-button:hover {
+  border-bottom-color: red;
+}
+
 .column {
   display: flex;
   justify-content: center;
@@ -139,12 +153,13 @@ body > nav {
 }
 
 .logo-nav {
-  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-nav img {
-  max-width: 80px;
-  max-height: 60px;
+  max-width: 180px;
 }
 
 .search-nav {
@@ -370,3 +385,17 @@ section img {
 }
 
 
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  body > header {
+    height: 5vh;
+  }
+
+  header > button {
+    font-size: 12px;
+  }
+
+  body > nav {
+    padding: 5px;
+  }
+}
