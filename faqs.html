@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjeta de Producto</title>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+  color: #333;
+  background: #fcfcfc;
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+}
+
+.faq-header{
+  font-size: 42px;
+  border-bottom: 1px dotted #ccc;
+  padding: 24px;
+}
+
+.faq-content {
+  margin: 0 auto;
+}
+
+.faq-question {
+  padding: 20px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.panel-title {
+  font-size: 24px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 0 48px;
+  display: block;
+  cursor: pointer;
+}
+
+.panel-content {
+  font-size: 20px;
+  padding: 0px 14px;
+  margin: 0 40px;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.panel:checked ~ .panel-content{
+  height: auto;
+  opacity: 1;
+  padding: 14px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 4px;
+  z-index: 5;
+  font-size: 42px;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.panel:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.panel {
+  display: none;
+}
+
+</style>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+</style>
+
+<body>
+<div class="faq-header">FAQS</div>
+
+<div class="faq-content">
+  <div class="faq-question">
+    <input id="q1" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q1" class="panel-title">¿Cuál es la política de devolución de productos en la tienda?</label>
+    <div class="panel-content">Nuestra política de devolución permite devoluciones dentro de los 30 días posteriores a la compra, siempre y cuando los productos estén en su estado original y con el comprobante de compra. <a href="">Devoluciones</a></div>
+  </div>
+  
+  <div class="faq-question">
+    <input id="q2" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q2" class="panel-title">¿Ofrecen envíos internacionales?</label>
+    <div class="panel-content">Sí, ofrecemos envíos internacionales a la mayoría de los países. Puedes verificar la disponibilidad al momento de realizar la compra.</div>
+  </div>
+  
+  <div class="faq-question">
+    <input id="q3" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q3" class="panel-title">¿Cómo puedo encontrar el tamaño adecuado para mis prendas?</label>
+    <div class="panel-content">Consulta nuestra guía de tallas en línea para ayudarte a encontrar el tamaño adecuado. También puedes visitar una de nuestras tiendas físicas para probarte diferentes modelos<a href="" target="_blank">Guia de tallas</a></div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q4" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q4" class="panel-title">¿Qué tipo de garantía ofrecen en sus productos?</label>
+    <div class="panel-content">Garantizamos la calidad de nuestros productos. Si experimentas algún problema de fabricación, contáctanos y estaremos encantados de ayudarte.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q5" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q5" class="panel-title">¿Cuál es la política de privacidad de la tienda en línea?</label>
+    <div class="panel-content">Nuestra política de privacidad detalla cómo recopilamos, utilizamos y protegemos tu información personal. Puedes encontrar más detalles en nuestro sitio web.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q6" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q6" class="panel-title">¿Ofrecen descuentos para estudiantes o miembros del ejército?</label>
+    <div class="panel-content">Sí, ofrecemos descuentos especiales para estudiantes y miembros del ejército. Verifica tu elegibilidad durante el proceso de compra.</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q7" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q7" class="panel-title">¿Qué medidas toman para garantizar la seguridad de mis datos de pago en línea?</label>
+    <div class="panel-content">Utilizamos tecnologías de encriptación y cumplimos con los estándares de seguridad de la industria para proteger tus datos de pago</div>
+  </div>
+
+  <div class="faq-question">
+    <input id="q8" type="checkbox" class="panel">
+    <div class="plus">+</div>
+    <label for="q8" class="panel-title">¿Puedo realizar cambios en mi pedido después de haberlo realizado?</label>
+    <div class="panel-content">Si tu pedido aún no ha sido procesado, es posible que podamos realizar cambios. Por favor, contáctanos lo antes posible para solicitar modificaciones.</div>
+  </div>
+</div>
+
+<br><br>
+
+<footer class="footer">
+    <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>company</h4>
+         <ul>
+           <li><a href="#">Sobre Nosotros</a></li>
+           <li><a href="#">Contacto</a></li>
+           <li><a href="#">Privacidad</a></li>
+           <li><a href="#">Log In</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>get help</h4>
+         <ul>
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">Tallas</a></li>
+           <li><a href="#">Returns</a></li>
+           <li><a href="#">envio</a></li>
+           <li><a href="#">payment options</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>online shop</h4>
+         <ul>
+           <li><a href="#">Menu</a></li>
+           <li><a href="#">Gimnasio</a></li>
+           <li><a href="#">Running</a></li>
+           <li><a href="#">Boxeo</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>follow us</h4>
+         <div class="social-links">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+         </div>
+       </div>
+     </div>
+    </div>
+ </footer>
+
+</body>
+
+</html>
