@@ -11,7 +11,8 @@ if ($bd->conectar()) {
       $respuesta = [
          "success" => false,
          "error" => null,
-         "tipo" => null
+         "tipo" => null,
+         "nombreUsuario" => null 
       ];
 
       $correo = mysqli_real_escape_string($conn, $_POST['email-login']);
@@ -25,9 +26,12 @@ if ($bd->conectar()) {
             // La contraseña es correcta
             $respuesta["success"] = true;
 
-            // Alamacenamos el id en una sesión
+            // Almacenamos el id y el nombre en sesiones
             $_SESSION['id_cliente'] = $fila['id_cliente'];
             $_SESSION['nombre'] = $fila['nombre'];
+
+            // Pasamos el nombre de usuario a la respuesta
+            $respuesta["nombreUsuario"] = $fila['nombre'];
          } else {
             // La contraseña es incorrecta
             $respuesta["error"] = "contrasena";

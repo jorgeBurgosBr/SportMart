@@ -26,6 +26,25 @@ forms["form-login"].addEventListener("submit", function (event) {
    }
 });
 
+document.getElementById("show-regis").addEventListener("click", function() {
+   if (this.textContent === "Cerrar sesión") {
+      // Realizar el logout
+      fetch('./php/procesar_logout.php')
+         .then(response => response.json())
+         .then(data => {
+            if (data.success) {
+               // Recargar la página después de cerrar sesión
+               window.location.reload();
+            }
+         })
+         .catch(error => console.error('Fetch error: ', error));
+   } else {
+      // Si el usuario no ha iniciado sesión, mostrar el formulario de registro
+      document.querySelector(".popup-regis").classList.add("active2");
+      document.querySelector(".popup").classList.remove("activa");
+   }
+});
+
 
 function validacionSignup() {
    let flag = true;
@@ -166,10 +185,12 @@ function procesarFormLogin(formulario) {
          return response.json()
       })
       .then(data => {
+         console.log(data); // Verifica si la respuesta del servidor es correcta
          if (!data.success) {
             mostrarErrorLogin(true, data.error);
          } else {
-            window.location.href = "./php/pruebaLogin.php";
+            // Redirige o realiza cualquier otra acción necesaria
+            window.location.href = "./index.php";
          }
       }).catch(error => console.error('Fetch error: ', error));
 }

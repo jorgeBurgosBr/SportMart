@@ -1,5 +1,4 @@
 <?php
-require_once 'php/bbdd.php';
 session_start();
 // Verificar si el usuario ha iniciado sesión
 if (isset($_SESSION['nombre'])) {
@@ -9,6 +8,7 @@ if (isset($_SESSION['nombre'])) {
   $textoBotonLogin = "Inicia sesión";
   $textoBotonRegistrarse = "Regístrate";
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +71,7 @@ if (isset($_SESSION['nombre'])) {
     </nav>
 
     <!-- CONTENIDO -->
-    <section><img src="img/banner_newbalance.jpg" alt="" /></section>
+    <section><img src="img/boxeo.jpeg" alt="" /></section>
 
     <!-- ------------------------ LOGIN ------------------------ -->
    <div class="popup">
@@ -133,6 +133,8 @@ if (isset($_SESSION['nombre'])) {
     <p id="popup-text"></p>
   </div>
 </div>
+
+   <script src="js/script.js"></script>
    <script src="js/script_home.js"></script>
 </body>
 </html>
