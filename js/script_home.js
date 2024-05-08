@@ -42,9 +42,9 @@ document.getElementById("show-regis").addEventListener("click", function() {
       // Si el usuario no ha iniciado sesión, mostrar el formulario de registro
       document.querySelector(".popup-regis").classList.add("active2");
       document.querySelector(".popup").classList.remove("activa");
+      document.querySelector(".menu-ppal").classList.remove("active")
    }
 });
-
 
 function validacionSignup() {
    let flag = true;
@@ -267,37 +267,51 @@ function clearErroresLogin() {
 
 // POP-UP MESSAGE
 document.addEventListener('DOMContentLoaded', function () {
+   // Código para el menú hamburguesa
+   var menuToggle = document.querySelector('.menu-toggle');
+   var menuPpal = document.querySelector('.menu-ppal');
+   var navbar = document.querySelector('.navbar');
+ 
+   menuToggle.addEventListener('click', function () {
+      menuPpal.classList.toggle('active');
+      navbar.classList.toggle('overflow-visible');
+   });
+ 
+   // Código para cerrar el popup
    var popupMessage = document.querySelector('.popup-message');
    var closeButton = document.querySelector('.popup-message .close-popup-message');
-
+ 
    closeButton.addEventListener('click', function () {
-      popupMessage.style.display = 'none';
+     popupMessage.style.display = 'none';
    });
-
+ 
+   // Código para el desplazamiento suave
    var scrollLinks = document.querySelectorAll(".scroll-link");
-
+ 
    // Agrega un evento de clic a cada enlace
    scrollLinks.forEach(function(link) {
      link.addEventListener("click", function(e) {
        e.preventDefault();
-
+ 
        // Obtén el ID del objetivo desde el atributo 'data-target'
        var targetId = this.getAttribute("data-target");
-
+ 
        // Encuentra el elemento con el ID correspondiente
        var targetElement = document.getElementById(targetId);
-
+ 
        targetElement.scrollIntoView({
          behavior: "smooth"
        });
      });
    });
-});
+ });
+ 
 
 // ------------------ LOGIN
 document.querySelector("#show-login").addEventListener("click", function () {
    document.querySelector(".popup").classList.add("activa");
    document.querySelector(".popup-regis").classList.remove("active2");
+   document.querySelector(".menu-ppal").classList.remove("active")
 });
 
 document.querySelector(".popup .close-btn").addEventListener("click", function () {
@@ -308,13 +322,13 @@ document.querySelector("#registrate").addEventListener("click", function (event)
    event.preventDefault();
    document.querySelector(".popup-regis").classList.add("active2");
    document.querySelector(".popup").classList.remove("activa");
-
 });
 
 // ------------------ REGISTRO
 document.querySelector("#show-regis").addEventListener("click", function () {
    document.querySelector(".popup-regis").classList.add("active2");
    document.querySelector(".popup").classList.remove("activa");
+   document.querySelector(".menu-ppal").classList.remove("active")
 });
 
 document.querySelector(".popup-regis .close-btn").addEventListener("click", function () {
