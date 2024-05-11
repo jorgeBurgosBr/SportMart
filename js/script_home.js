@@ -347,3 +347,24 @@ function mostrarPopupExito() {
    document.querySelector(".popup-message").style.display = "block";
    document.querySelector("#popup-text").textContent = "¡Te has registrado correctamente!";
 }
+// Obtener referencia al botón del carrito
+const btnCarrito = document.getElementById('cart-icon');
+
+// Manejar el evento de clic en el botón del carrito
+btnCarrito.addEventListener('click', function() {
+    // Hacer la solicitud Fetch a procesar_registro.php
+    fetch('./php/procesar_registro.php')
+        .then(response => response.json())
+        .then(data => {
+            // Verificar la respuesta del servidor
+            if (data.logged_in) {
+               document.querySelector('.cart').classList.add('active')
+            } else {
+                // Si el usuario no ha iniciado sesión, agregar una clase activa al popup
+                document.querySelector(".popup").classList.add("activa");
+            }
+        })
+        .catch(error => {
+            console.error('Error al procesar la solicitud:', error);
+        });
+});

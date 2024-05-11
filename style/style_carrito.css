@@ -1,50 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  scroll-padding-top: 2rem;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-}
 :root {
   --main-color: #fd4646;
   --text-color: #171427;
   --bg-color: #fff;
-}
-img {
-  width: 100%;
-}
-body {
-  color: var(--text-color);
-}
-.container {
-  max-width: 1068px;
-  margin: auto;
-  width: 100%;
-}
-section {
-  padding: 4rem 0 3rem;
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--bg-color);
-  box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
-  z-index: 100;
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-.logo {
-  font-size: 1.1rem;
-  color: var(--text-color);
-  font-weight: 400;
+  --ppal: #f5f5f5;
+  --black: #000000;
+  --contraste: #0171e3;
+  --texto: "Lexend", sans-serif;
 }
 #cart-icon {
   font-size: 1.8rem;
@@ -61,6 +22,7 @@ header {
   background: var(--bg-color);
   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
   transition: 0.3s;
+  z-index: 100000;
 }
 .cart.active {
   right: 0;
@@ -97,14 +59,14 @@ header {
 }
 .cart-quantity {
   border: 1px solid var(--text-color);
-  outline-color: var(--main-color);
+  outline-color: var(--contraste);
   width: 2.4rem;
   text-align: center;
   font-size: 1rem;
 }
 .cart-remove {
   font-size: 24px;
-  color: var(--main-color);
+  color: var(--contraste);
   cursor: pointer;
 }
 .total {
@@ -125,14 +87,14 @@ header {
   margin: 1.5rem auto 0 auto;
   padding: 12px 20px;
   border: none;
-  background: var(--main-color);
+  background: var(--black);
   color: var(--bg-color);
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
 }
 .btn-buy:hover {
-  background: var(--text-color);
+  background: var(--contraste);
 }
 #close-cart {
   position: absolute;

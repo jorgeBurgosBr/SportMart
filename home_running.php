@@ -15,12 +15,15 @@ if (isset($_SESSION['nombre'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style/style.css"/>
+  <link rel="stylesheet" href="style/style.css" />
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
+  <link rel="stylesheet" href="style/style_carrito.css" />
+
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>SportMart</title>
 </head>
 
@@ -70,10 +73,26 @@ if (isset($_SESSION['nombre'])) {
         </div>
       </div>
       <div class="search-nav">
-        <input type="search" name="search" id="" placeholder="Buscar" autocomplete="off"/>
+        <input type="search" name="search" id="" placeholder="Buscar" autocomplete="off" />
         <i class="ri-search-line"></i>
         <button class="btn-nav"><i class="ri-heart-line"></i></button>
-        <button class="btn-nav"><i class="ri-shopping-cart-line"></i></button>
+        <button class="btn-nav" id="cart-icon"><i class="ri-shopping-cart-line"></i></button>
+        <!-- Cart Icon -->
+        <!-- Cart -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+          <!-- Content -->
+          <div class="cart-content"></div>
+          <!-- Total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!-- Buy Bottom -->
+          <button type="button" class="btn-buy">Buy Now</button>
+          <!-- Cart close -->
+          <i class="bx bx-x" id="close-cart"></i>
+        </div>
       </div>
     </div>
   </nav>
@@ -322,69 +341,70 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
 
-      <!-- ------------------------ LOGIN ------------------------ -->
-  <div class="popup">
-    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-    <p>Inicia sesión</p>
-    <form id="form-login">
-      <div class="form-element">
-        <input required name="email-login" id="email_login" type="text">
-        <label>Email</label>
-      </div>
-      <div class="form-element">
-        <input required name="password-login" id="password_login" type="password">
-        <label>Contraseña</label>
-      </div>
-      <span id="error-login"></span>
-      <button class="btn-submit">Enviar</button>
-    </form>
-    <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
-  </div>
-
-  <!-- ------------------------ REGISTRO ------------------------ -->
-  <div class="popup-regis">
-    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-    <p>Regístrate</p>
-    <form id="form-signup">
-      <div class="form-element">
-        <input required name="nombre" id="nombre-signup" type="text">
-        <label>Nombre</label>
-        <span id="error-nombre-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="apellidos" id="apellidos-signup" type="text">
-        <label>Apellidos</label>
-        <span id="error-apellidos-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-        <label>Teléfono</label>
-        <span id="error-telefono-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="email" id="email-signup" type="text">
-        <label>Correo</label>
-        <span id="error-email-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="password" id="password-signup" type="password">
-        <label>Contraseña</label>
-        <ul id="error-password-signup"></ul>
-      </div>
-      <button type="submit" class="btn-submit">Enviar</button>
-    </form>
-    <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
-  </div>
-
-  <div class="popup-message">
-    <div class="popup-content">
-      <span class="close-popup-message">&times;</span>
-      <p id="popup-text"></p>
+    <!-- ------------------------ LOGIN ------------------------ -->
+    <div class="popup">
+      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+      <p>Inicia sesión</p>
+      <form id="form-login">
+        <div class="form-element">
+          <input required name="email-login" id="email_login" type="text">
+          <label>Email</label>
+        </div>
+        <div class="form-element">
+          <input required name="password-login" id="password_login" type="password">
+          <label>Contraseña</label>
+        </div>
+        <span id="error-login"></span>
+        <button class="btn-submit">Enviar</button>
+      </form>
+      <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
     </div>
-  </div>
+
+    <!-- ------------------------ REGISTRO ------------------------ -->
+    <div class="popup-regis">
+      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+      <p>Regístrate</p>
+      <form id="form-signup">
+        <div class="form-element">
+          <input required name="nombre" id="nombre-signup" type="text">
+          <label>Nombre</label>
+          <span id="error-nombre-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="apellidos" id="apellidos-signup" type="text">
+          <label>Apellidos</label>
+          <span id="error-apellidos-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
+          <label>Teléfono</label>
+          <span id="error-telefono-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="email" id="email-signup" type="text">
+          <label>Correo</label>
+          <span id="error-email-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="password" id="password-signup" type="password">
+          <label>Contraseña</label>
+          <ul id="error-password-signup"></ul>
+        </div>
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+      <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+    </div>
+
+    <div class="popup-message">
+      <div class="popup-content">
+        <span class="close-popup-message">&times;</span>
+        <p id="popup-text"></p>
+      </div>
+    </div>
 
     <script src="js/script_home.js"></script>
     <script src="js/script_running.js"></script>
+    <script src="js/script_carrito.js"></script>
 </body>
 
 </html>
