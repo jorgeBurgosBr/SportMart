@@ -18,7 +18,11 @@ if (isset($_SESSION['nombre'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/lightslider.css" />
+  <link rel="stylesheet" href="style/style_carrito.css" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
   <title>SportMart</title>
 </head>
 
@@ -71,7 +75,23 @@ if (isset($_SESSION['nombre'])) {
         <input type="search" name="search" id="" placeholder="Buscar" autocomplete="off" />
         <i class="ri-search-line"></i>
         <button class="btn-nav"><i class="ri-heart-line"></i></button>
-        <button class="btn-nav"><i class="ri-shopping-cart-line"></i></button>
+        <button class="btn-nav" id="cart-icon"><i class="ri-shopping-cart-line"></i></button>
+        <!-- Cart Icon -->
+        <!-- Cart -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+          <!-- Content -->
+          <div class="cart-content"></div>
+          <!-- Total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!-- Buy Bottom -->
+          <button type="button" class="btn-buy">Buy Now</button>
+          <!-- Cart close -->
+          <i class="bx bx-x" id="close-cart"></i>
+        </div>
       </div>
     </div>
   </nav>
@@ -79,79 +99,79 @@ if (isset($_SESSION['nombre'])) {
   <!-- CONTENIDO -->
   <section><img src="img/boxeo.jpeg" alt="" /></section>
   <div class="scroll imgBox" style="--time: 40s">
-      <div class="content_scrolling">
-        <img src="img/logo_nike.png" class="event_start" alt="" />
+    <div class="content_scrolling">
+      <img src="img/logo_nike.png" class="event_start" alt="" />
 
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
 
-        <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
 
-        <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
 
-        <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_asics.png" class="event_start" alt="" />
 
-        <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_nike.png" class="event_start" alt="" />
 
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
 
-        <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
 
-        <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
 
-        <img src="img/logo_asics.png" class="event_start" alt="" />
-        <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_nike.png" class="event_start" alt="" />
 
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
 
-        <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
 
-        <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
 
-        <img src="img/logo_asics.png" class="event_start" alt="" />
-      </div>
-      <div class="content_scrolling">
-        <img src="img/logo_nike.png" class="event_start" alt="" />
-
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-        <img src="img/logo_new_balance.png" class="event_start" alt="" />
-
-        <img src="img/logo_hoka.png" class="event_start" alt="" />
-
-        <img src="img/logo_salomon.png" class="event_start" alt="" />
-
-        <img src="img/logo_asics.png" class="event_start" alt="" />
-
-        <img src="img/logo_nike.png" class="event_start" alt="" />
-
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-        <img src="img/logo_new_balance.png" class="event_start" alt="" />
-
-        <img src="img/logo_hoka.png" class="event_start" alt="" />
-
-        <img src="img/logo_salomon.png" class="event_start" alt="" />
-
-        <img src="img/logo_asics.png" class="event_start" alt="" />
-        <img src="img/logo_nike.png" class="event_start" alt="" />
-
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-        <img src="img/logo_new_balance.png" class="event_start" alt="" />
-
-        <img src="img/logo_hoka.png" class="event_start" alt="" />
-
-        <img src="img/logo_salomon.png" class="event_start" alt="" />
-
-        <img src="img/logo_asics.png" class="event_start" alt="" />
-      </div>
+      <img src="img/logo_asics.png" class="event_start" alt="" />
     </div>
+    <div class="content_scrolling">
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_nike.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+
+      <img src="img/logo_hoka.png" class="event_start" alt="" />
+
+      <img src="img/logo_salomon.png" class="event_start" alt="" />
+
+      <img src="img/logo_asics.png" class="event_start" alt="" />
+    </div>
+  </div>
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
@@ -213,6 +233,8 @@ if (isset($_SESSION['nombre'])) {
     </div>
   </div>
   <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+
 </body>
 
 </html>

@@ -8,6 +8,7 @@ if ($bd->conectar()) {
    $bd->seleccionarContexto('sportmart');
 
    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      // Lógica para manejar solicitudes POST
       $respuesta = [
          'success' => false,
          'error' => null
@@ -34,7 +35,7 @@ if ($bd->conectar()) {
          $sql2 = mysqli_query($conn, "INSERT INTO cliente (id_cliente, nombre, apellidos, correo, telefono, password) 
                                     VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
 
-         if ($sql2) { 
+         if ($sql2) {
             $respuesta['success'] = true;
             $_SESSION['id_cliente'] = $id_cliente;
             $_SESSION['nombre'] = $nombre;
@@ -42,6 +43,12 @@ if ($bd->conectar()) {
       }
       header('Content-Type: application/json');
       echo json_encode($respuesta);
+   } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+      // Lógica para manejar solicitudes GET
+      $respuesta = [
+         'logged_in' => isset($_SESSION['nombre'])
+      ];
+      header('Content-Type: application/json');
+      echo json_encode($respuesta);
    }
 }
-?>
