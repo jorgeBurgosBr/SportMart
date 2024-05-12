@@ -183,7 +183,7 @@
    padding-top: 40px;
    padding-bottom: 40px;
  }
- .tutulo-centrado {
+ .titulo-centrado {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -305,7 +305,12 @@ a {
  @media screen and (max-width: 480px) {
 
    .banner-ppal {
-      padding: 1rem 0 1.5rem;
+      padding: 1rem 0 1.2rem;
+   }
+
+   .titulo-centrado {
+      font-size: 20px;
+      padding: 30px 0 50px;
    }
  
    .content_scrolling img{

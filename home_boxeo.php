@@ -101,7 +101,7 @@ if (isset($_SESSION['nombre'])) {
 
   <!-- CONTENIDO -->
   <section class="banner-ppal"><img src="img/banner_boxeo.jpg" alt="" /></section>
-  <h1 class="tutulo-centrado">Las mejores marcas a tu disposición</h1>
+  <h1 class="titulo-centrado">Las mejores marcas a tu disposición</h1>
   <div class="scroll imgBox" style="--time: 40s">
       <div class="content_scrolling">
         <img src="img/logo_everlas.png" class="event_start" alt="" />
