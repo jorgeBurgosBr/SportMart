@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="style/contacto.css" />
+</head>
+<body>
+    <header>
+        <button>Ayuda</button>
+        <button id="show-login">Inicia sesión</button>
+        <button id="show-regis" class="bttn-regis">Regístrate</button>
+        <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+  </header>
+  <nav class="navbar">
+     <div class="container-nav">
+       <div class="logo-nav">
+         <img src="img/logo.png" alt="" />
+       </div>
+       <div class="drop-menu">
+        <div class="menu-ppal">
+           <a href="index.html">Novedades</a>
+           <a href="home_running.html">Running</a>
+           <a href="">Gimnasio</a>
+           <a href="">Boxeo/MMA</a>
+        </div>
+         <div class="drop-content">
+           <div class="row">
+             <div class="column">
+               <h3>Últimas novedades</h3>
+               <a href="">Zapatillas</a>
+               <a href="">Camisetas</a>
+               <a href="">Accesorios</a>
+             </div>
+             <div class="column">
+               <h3>Suplementación</h3>
+               <a href="">Pre-entreno</a>
+               <a href="">Post-entreno</a>
+               <a href="">Barritas energéticas</a>
+             </div>
+             <div class="column">
+               <h3>Artes marciales</h3>
+               <a href="">Guantes</a>
+               <a href="">Bucales</a>
+               <a href="">Accesorios</a>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="search-nav">
+         <input type="search" name="search" id="" placeholder="Buscar" />
+         <i class="ri-search-line"></i>
+         <i class="ri-heart-line"></i>
+         <i class="ri-shopping-cart-line"></i>
+       </div>
+     </div>
+   </nav>
+
+
+
+  
+
+    <div class="login-box">
+        <h2>Contacto</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" id="nameInput" name="name" required="">
+            <label>Nombre</label>
+            <div class="contenedor-name error"></div>
+          </div>
+          <div class="user-box">
+            <input type="text" id="emailInput" name="email" required="">
+            <label>Email</label>
+            <div class="contenedor-email error"></div>
+          </div>
+          <div class="user-box">
+            <textarea id="motivoInput" name="motivo" rows="4" required=""></textarea>
+            <label>Motivo de Contacto:</label>
+            <div class="contenedor-textarea error"></div>
+          </div>
+          
+        <button type="submit" id="noStyle">Submit</button>
+          
+        
+        </form>
+       
+
+
+      </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const formulario = document.querySelector('.contacto-formulario');
+            const emailInput = document.querySelector('#emailInput');
+            const nombreInput = document.querySelector('#nameInput');
+            const motivoInput = document.querySelector('#motivoInput');
+            const errorEmail = document.querySelector('.contenedor-email');
+            const errorName = document.querySelector('.contenedor-name');
+            const errorTextarea = document.querySelector('.contenedor-textarea');
+
+            emailInput.addEventListener('blur', function() {
+                validarMail();
+            });
+
+            nombreInput.addEventListener('blur', function() {
+                validarName();
+            });
+
+            motivoInput.addEventListener('blur', function() {
+                validarMotivo();
+            });
+
+            formulario.addEventListener('submit', function(event) {
+                const errorEmail = validarMail();
+                const errorNombre = validarName();
+                const errorMotivo = validarMotivo();
+
+                if (errorEmail || errorNombre || errorMotivo) {
+                    event.preventDefault();
+                }
+            });
+
+            function validarMail() {
+                const errores = document.querySelectorAll('.error.mail');
+                errores.forEach(error => {
+                    error.remove();
+                });
+
+                const email = emailInput.value.trim();
+
+                if (email == '') {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('mail');
+                    error.textContent = "EL EMAIL ES OBLIGATORIO, NO PUEDE ESTAR VACIO";
+                    errorEmail.appendChild(error);
+                    return true;
+                }
+
+                if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('mail');
+                    error.textContent = "EMAIL INVÁLIDO O CONTIENE CARÁCTERES NO PERMITIDOS";
+                    errorEmail.appendChild(error);
+                    return true;
+                }
+
+                return false;
+            }
+
+            function validarName() {
+                const errores = document.querySelectorAll('.error.name');
+                errores.forEach(error => {
+                    error.remove();
+                });
+
+                const name = nombreInput.value.trim();
+
+                if (name == '') {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('name');
+                    error.textContent = "EL NOMBRE ES OBLIGATORIO";
+                    errorName.appendChild(error);
+                    return true;
+                }
+
+                if (/\d/.test(name)) {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('name');
+                    error.textContent = "EL NOMBRE NO PUEDE TENER NÚMEROS";
+                    errorName.appendChild(error);
+                    return true;
+                }
+
+                return false;
+            }
+
+            function validarMotivo() {
+                const errores = document.querySelectorAll('.error.motivo');
+                errores.forEach(error => {
+                    error.remove();
+                });
+
+                const motivo = motivoInput.value.trim();
+
+                if (motivo == '') {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('motivo');
+                    error.textContent = "POR FAVOR, INDICA EL MOTIVO DE CONTACTO";
+                    errorTextarea.appendChild(error);
+                    return true;
+                }
+
+                if (motivo.length > 256) {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('motivo');
+                    error.textContent = "HAS SUPERADO EL LIMITE DE CARÁCTERES PERMITIDOS";
+                    errorTextarea.appendChild(error);
+                    return true;
+                }
+
+                return false;
+            }
+        });
+    </script>
+    
+    
+
+    <footer class="footer">
+      <div class="container">
+       <div class="row">
+         <div class="footer-col">
+           <h4>company</h4>
+           <ul>
+             <li><a href="#">about us</a></li>
+             <li><a href="#">privacy policy</a></li>
+           </ul>
+         </div>
+         <div class="footer-col">
+           <h4>get help</h4>
+           <ul>
+             <li><a href="faqs.html">FAQ</a></li>
+             <li><a href="PagosInfo.html">Metodos de Pago</a></li>
+             <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
+             <li><a href="contacto.html">Contacto</a></li>
+           </ul>
+         </div>
+         <div class="footer-col">
+           <h4>online shop</h4>
+           <ul>
+             <li><a href="#">Menu Gym</a></li>
+             <li><a href="#">Menu Running</a></li>
+             <li><a href="#">Menu Fighting</a></li>
+           </ul>
+         </div>
+         <div class="footer-col">
+           <h4>follow us</h4>
+           <div class="social-links">
+             <a href="#"><i class="fab fa-facebook-f"></i></a>
+             <a href="#"><i class="fab fa-twitter"></i></a>
+             <a href="#"><i class="fab fa-instagram"></i></a>
+             <a href="#"><i class="fab fa-youtube"></i></a>
+           </div>
+         </div>
+       </div>
+      </div>
+   </footer>
+</body>
+</html>
