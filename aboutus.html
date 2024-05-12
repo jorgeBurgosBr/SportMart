@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Cards</title>
+<style>
+/* CSS */
+/* PEN STYLES */
+* {
+  box-sizing: border-box;
+}
+
+.cont {
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, .1);
+  margin-bottom: 1.6%;
+  background: #fff;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+}
+.blog-card a {
+  color: inherit;
+}
+.blog-card a:hover {
+  color:  #0171e3;
+}
+.blog-card:hover .photo {
+  transform: scale(1.3) rotate(3deg);
+}
+.blog-card .meta {
+  position: relative;
+  z-index: 0;
+  height: 200px;
+}
+.blog-card .photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .2s;
+}
+.blog-card .details,
+.blog-card .details ul {
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+.blog-card .details {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  margin: auto;
+  transition: left .2s;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: .9rem;
+}
+.blog-card .details a {
+  text-decoration: dotted underline;
+}
+.blog-card .details ul li {
+  display: inline-block;
+}
+.blog-card .details .author:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "\f007";
+}
+.blog-card .details .date:before {
+  font-family: FontAwesome;
+  margin-right: 10px;
+  content: "\f133";
+}
+.blog-card .details .tags ul:before {
+  font-family: FontAwesome;
+  content: "\f02b";
+  margin-right: 10px;
+}
+.blog-card .details .tags li {
+  margin-right: 2px;
+}
+.blog-card .details .tags li:first-child {
+  margin-left: -4px;
+}
+.blog-card .description {
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.blog-card .description h1,
+.blog-card .description h2 {
+  font-family: Poppins, sans-serif;
+}
+.blog-card .description h1 {
+  line-height: 1;
+  margin: 0;
+  font-size: 1.7rem;
+}
+.blog-card .description h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #a2a2a2;
+  margin-top: 5px;
+}
+.blog-card .description .read-more {
+  text-align: right;
+}
+.blog-card .description .read-more a {
+  color:  #0171e3;
+  display: inline-block;
+  position: relative;
+}
+.blog-card .description .read-more a:after {
+  content: "\f061";
+  font-family: FontAwesome;
+  margin-left: -10px;
+  opacity: 0;
+  vertical-align: middle;
+  transition: margin .3s, opacity .3s;
+}
+.blog-card .description .read-more a:hover:after {
+  margin-left: 5px;
+  opacity: 1;
+}
+.blog-card p {
+  position: relative;
+  margin: 1rem 0 0;
+}
+.blog-card p:first-of-type {
+  margin-top: 1.25rem;
+}
+.blog-card p:first-of-type:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  background:  #0171e3;
+  width: 35px;
+  top: -0.75rem;
+  border-radius: 3px;
+}
+.blog-card:hover .details {
+  left: 0%;
+}
+
+@media (min-width: 440px) {
+  .blog-card {
+    flex-direction: row;
+    max-width: 700px;
+  }
+  .blog-card .meta {
+    flex-basis: 40%;
+    height: auto;
+  }
+  .blog-card .description {
+    flex-basis: 60%;
+  }
+  .blog-card .description:before {
+    transform: skewX(-3deg);
+    content: "";
+    background: #fff;
+    width: 30px;
+    position: absolute;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  .blog-card.alt {
+    flex-direction: row-reverse;
+  }
+  .blog-card.alt .description:before {
+    left: inherit;
+    right: -10px;
+    transform: skew(3deg);
+  }
+  .blog-card.alt .details {
+    padding-left: 25px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #000000;
+    padding: 70px 0;
+    
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #0171e3;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+/*Menu gym*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+:root {
+  --ppal: #f5f5f5;
+  --black: #000000;
+  --contraste: #0171e3;
+  --texto: "Lexend", sans-serif;
+}
+
+/* Reset styles */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "head"
+    "nav"
+    "banner";
+  grid-template-rows: 1fr 1.5fr auto;
+  font-family: var(--texto);
+}
+
+body > header {
+  grid-area: head;
+  background-color: var(--ppal);
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+  gap: 10px;
+}
+
+header > button {
+  font-family: var(--texto);
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--ppal);
+  padding: 2px 8px;
+  cursor: pointer;
+  border: none;
+  border-right: 1px solid black;
+}
+
+.bttn-regis {
+  border-right: none;
+  margin-right: 14px;
+}
+
+.bttn-flag {
+  border-right: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body > nav {
+  grid-area: nav;
+  text-decoration: none;
+  padding: 14px;
+}
+
+.container-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar {
+  overflow: hidden;
+}
+.navbar a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: var(--black);
+}
+
+.drop-menu {
+  float: left;
+  overflow: hidden;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 14px;
+  font-family: "Lexend", sans-serif;
+  cursor: pointer;
+  background-color: transparent;
+  letter-spacing: 1px;
+  color: var(--black);
+}
+
+.menu-ppal a {
+  margin-left: 50px;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 10;
+}
+.drop-menu:hover .drop-content {
+  display: block;
+}
+.column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 250px;
+  background-color: #ffffff;
+}
+.column a {
+  display: block;
+  float: none;
+  color: #000000;
+  text-align: left;
+}
+.column h3 {
+  color: #000000;
+  padding: 10px;
+}
+.column a:hover {
+  color: #fff;
+  background: #373737;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo-nav {
+  width: 15%;
+}
+
+.logo-nav img {
+  max-width: 80px;
+  max-height: 60px;
+}
+
+.search-nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-nav input[type="search"] {
+  width: 150px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 24px;
+  background-color: var(--ppal);
+  border: none;
+  border-radius: 10px;
+}
+
+.search-nav .ri-search-line {
+  position: absolute;
+  left: 8px;
+}
+
+.ri-heart-line,
+.ri-shopping-cart-line {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+section {
+  grid-area: banner;
+  height: auto;
+  overflow: hidden;
+}
+
+section img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- LOGIN Y REGISTER ---------- */
+
+
+.popup,
+.popup-regis {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  opacity: 0;
+  width: 400px;
+  padding: 40px;
+  margin: 20px auto;
+  transform: translate(-50%, -55%);
+  background: rgba(0,0,0,.9);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.popup .close-btn i,
+.popup-regis .close-btn i {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  color: #9e1919;
+  font-size: 22px;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.popup .close-btn i:hover,
+.popup-regis .close-btn i:hover {
+  color: #FF0202;
+}
+
+.popup-regis.active2,
+.popup.activa {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup p,
+.popup-regis p {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.popup .form-element,
+.popup-regis .form-element {
+  position: relative;
+}
+
+.popup .form-element input,
+.popup-regis .form-element input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.popup .form-element label,
+.popup-regis .form-element label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.popup .form-element input:focus ~ label,
+.popup .form-element input:valid ~ label,
+.popup-regis .form-element input:focus ~ label,
+.popup-regis .form-element input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+.popup form .btn-submit,
+.popup-regis form .btn-submit {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  background-color: transparent;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 40px;
+  letter-spacing: 3px
+}
+
+.popup .btn-submit:hover,
+.popup-regis .btn-submit:hover {
+  background: #fff;
+  color: #272727;
+}
+
+.popup p:last-child,
+.popup-regis p:last-child {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.popup a.a2,
+.popup-regis a.a2 {
+  color: #fff;
+  text-decoration: none;
+  text-align: left;
+}
+
+.popup a.a2:hover,
+.popup-regis a.a2:hover {
+  background: transparent;
+  color: #aaa;
+  border-radius: 5px;
+}
+
+/* POP-UP MESSAGE */
+.popup-message {
+  width: fit-content;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #d0ffd8;
+  border: 1px solid #77ff87;
+  border-radius: 5px;
+  font-weight: bolder;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+
+.popup-content {
+  position: relative;
+  margin: 8px;
+}
+
+.close-popup-message {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  cursor: pointer;
+}
+
+.close-popup-message:hover {
+  color: red; 
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  <header>
+    <button>Ayuda</button>
+    <button id="show-login">Inicia sesión</button>
+    <button id="show-regis" class="bttn-regis">Regístrate</button>
+    <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+</header>
+<nav class="navbar">
+ <div class="container-nav">
+   <div class="logo-nav">
+     <img src="img/logo.png" alt="" />
+   </div>
+   <div class="drop-menu">
+    <div class="menu-ppal">
+       <a href="index.html">Novedades</a>
+       <a href="home_running.html">Running</a>
+       <a href="">Gimnasio</a>
+       <a href="">Boxeo/MMA</a>
+    </div>
+     <div class="drop-content">
+       <div class="row">
+         <div class="column">
+           <h3>Últimas novedades</h3>
+           <a href="">Zapatillas</a>
+           <a href="">Camisetas</a>
+           <a href="">Accesorios</a>
+         </div>
+         <div class="column">
+           <h3>Suplementación</h3>
+           <a href="">Pre-entreno</a>
+           <a href="">Post-entreno</a>
+           <a href="">Barritas energéticas</a>
+         </div>
+         <div class="column">
+           <h3>Artes marciales</h3>
+           <a href="">Guantes</a>
+           <a href="">Bucales</a>
+           <a href="">Accesorios</a>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="search-nav">
+     <input type="search" name="search" id="" placeholder="Buscar" />
+     <i class="ri-search-line"></i>
+     <i class="ri-heart-line"></i>
+     <i class="ri-shopping-cart-line"></i>
+   </div>
+ </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+  <!-- HTML -->
+  <div class="cont">
+    <div class="blog-card alt">
+      <div class="meta">
+        <div class="photo" style="background-image: url(img/pablo.jpg)"></div>
+        <ul class="details">
+          <li class="author"><a href="#">Jane Doe</a></li>
+          <li class="date">July. 15, 2015</li>
+          <li class="tags">
+            <ul>
+              <li><a href="#">Learn</a></li>
+              <li><a href="#">Code</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="description">
+        <h1>Mastering the Language</h1>
+        <h2>Java is not the same as JavaScript</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+        <p class="read-more">
+          <a href="#">Read More</a>
+        </p>
+      </div>
+    </div>
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url(img/Jorge.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">Jorge</a></li>
+        <li class="date">Madrid</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">Apis</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Coder</h1>
+      <h2>Jorge // Creador y Programador </h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
+  <div class="blog-card alt">
+    <div class="meta">
+      <div class="photo" style="background-image: url(img/josep.jpg)"></div>
+      <ul class="details">
+        <li class="author"><a href="#">Josep</a></li>
+        <li class="date">Mallorca</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>Diseñador grafico</h1>
+      <h2>Josep // Creador y Diseñador</h2>
+      <p>Josep, un apasionado diseñador gráfico, ha asumido la emocionante tarea de dar vida a una web dedicada al mundo del deporte. Con su dominio de HTML, CSS y JavaScript, ha creado una experiencia visualmente atractiva y funcional para los amantes del deporte.</p>
+      <p class="read-more">
+        <a href="#">Read More</a>
+      </p>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+     <div class="row">
+       <div class="footer-col">
+         <h4>company</h4>
+         <ul>
+           <li><a href="#">about us</a></li>
+           <li><a href="#">privacy policy</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>get help</h4>
+         <ul>
+           <li><a href="faqs.html">FAQ</a></li>
+           <li><a href="PagosInfo.html">Metodos de Pago</a></li>
+           <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
+           <li><a href="contacto.html">Contacto</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>online shop</h4>
+         <ul>
+           <li><a href="#">Menu Gym</a></li>
+           <li><a href="#">Menu Running</a></li>
+           <li><a href="#">Menu Fighting</a></li>
+         </ul>
+       </div>
+       <div class="footer-col">
+         <h4>follow us</h4>
+         <div class="social-links">
+           <a href="#"><i class="fab fa-facebook-f"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+         </div>
+       </div>
+     </div>
+    </div>
+ </footer>
+</body>
+</html>

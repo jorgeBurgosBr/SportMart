@@ -4,193 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarjeta de Producto</title>
+<link rel="stylesheet" href="style/faqs.css" />
+<link rel="stylesheet" href="style/menuGym.css" />
 </head>
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Raleway);
-
-body {
-  color: #333;
-  background: #fcfcfc;
-  font-family: 'Raleway', sans-serif;
-  overflow-x: hidden;
-}
-
-.faq-header{
-  font-size: 42px;
-  border-bottom: 1px dotted #ccc;
-  padding: 24px;
-}
-
-.faq-content {
-  margin: 0 auto;
-}
-
-.faq-question {
-  padding: 20px 0;
-  border-bottom: 1px dotted #ccc;
-}
-
-.panel-title {
-  font-size: 24px;
-  width: 100%;
-  position: relative;
-  margin: 0;
-  padding: 10px 10px 0 48px;
-  display: block;
-  cursor: pointer;
-}
-
-.panel-content {
-  font-size: 20px;
-  padding: 0px 14px;
-  margin: 0 40px;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  position: relative;
-  opacity: 0;
-  -webkit-transition: .4s ease;
-  -moz-transition: .4s ease;
-  -o-transition: .4s ease;
-  transition: .4s ease;
-}
-
-.panel:checked ~ .panel-content{
-  height: auto;
-  opacity: 1;
-  padding: 14px;
-}
-
-.plus {
-  position: absolute;
-  margin-left: 20px;
-  margin-top: 4px;
-  z-index: 5;
-  font-size: 42px;
-  line-height: 100%;
-  -webkit-user-select: none;    
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  -webkit-transition: .2s ease;
-  -moz-transition: .2s ease;
-  -o-transition: .2s ease;
-  transition: .2s ease;
-}
-
-.panel:checked ~ .plus {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.panel {
-  display: none;
-}
-
-</style>
-
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-  line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
-}
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-.container{
-  max-width: 1170px;
-  margin:auto;
-}
-.row{
-  display: flex;
-  flex-wrap: wrap;
-}
-ul{
-  list-style: none;
-}
-.footer{
-  background-color: #24262b;
-    padding: 70px 0;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-  font-size: 18px;
-  color: #ffffff;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-  font-weight: 500;
-  position: relative;
-}
-.footer-col h4::before{
-  content: '';
-  position: absolute;
-  left:0;
-  bottom: -10px;
-  background-color: #e91e63;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
-}
-.footer-col ul li:not(:last-child){
-  margin-bottom: 10px;
-}
-.footer-col ul li a{
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
-  color: #bbbbbb;
-  display: block;
-  transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-  color: #ffffff;
-  padding-left: 8px;
-}
-.footer-col .social-links a{
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255,255,255,0.2);
-  margin:0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-  color: #24262b;
-  background-color: #ffffff;
-}
-
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
-}
-
-</style>
 
 <body>
+  <header>
+    <button>Ayuda</button>
+    <button id="show-login">Inicia sesión</button>
+    <button id="show-regis" class="bttn-regis">Regístrate</button>
+    <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+</header>
+<nav class="navbar">
+ <div class="container-nav">
+   <div class="logo-nav">
+     <img src="img/logo.png" alt="" />
+   </div>
+   <div class="drop-menu">
+    <div class="menu-ppal">
+       <a href="index.html">Novedades</a>
+       <a href="home_running.html">Running</a>
+       <a href="">Gimnasio</a>
+       <a href="">Boxeo/MMA</a>
+    </div>
+     <div class="drop-content">
+       <div class="row">
+         <div class="column">
+           <h3>Últimas novedades</h3>
+           <a href="">Zapatillas</a>
+           <a href="">Camisetas</a>
+           <a href="">Accesorios</a>
+         </div>
+         <div class="column">
+           <h3>Suplementación</h3>
+           <a href="">Pre-entreno</a>
+           <a href="">Post-entreno</a>
+           <a href="">Barritas energéticas</a>
+         </div>
+         <div class="column">
+           <h3>Artes marciales</h3>
+           <a href="">Guantes</a>
+           <a href="">Bucales</a>
+           <a href="">Accesorios</a>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="search-nav">
+     <input type="search" name="search" id="" placeholder="Buscar" />
+     <i class="ri-search-line"></i>
+     <i class="ri-heart-line"></i>
+     <i class="ri-shopping-cart-line"></i>
+   </div>
+ </div>
+</nav>
 <div class="faq-header">FAQS</div>
 
 <div class="faq-content">
@@ -254,48 +121,44 @@ ul{
 <br><br>
 
 <footer class="footer">
-    <div class="container">
-     <div class="row">
-       <div class="footer-col">
-         <h4>company</h4>
-         <ul>
-           <li><a href="#">Sobre Nosotros</a></li>
-           <li><a href="#">Contacto</a></li>
-           <li><a href="#">Privacidad</a></li>
-           <li><a href="#">Log In</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>get help</h4>
-         <ul>
-           <li><a href="#">FAQ</a></li>
-           <li><a href="#">Tallas</a></li>
-           <li><a href="#">Returns</a></li>
-           <li><a href="#">envio</a></li>
-           <li><a href="#">payment options</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>online shop</h4>
-         <ul>
-           <li><a href="#">Menu</a></li>
-           <li><a href="#">Gimnasio</a></li>
-           <li><a href="#">Running</a></li>
-           <li><a href="#">Boxeo</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>follow us</h4>
-         <div class="social-links">
-           <a href="#"><i class="fab fa-facebook-f"></i></a>
-           <a href="#"><i class="fab fa-twitter"></i></a>
-           <a href="#"><i class="fab fa-instagram"></i></a>
-           <a href="#"><i class="fab fa-youtube"></i></a>
-         </div>
+  <div class="container">
+   <div class="row">
+     <div class="footer-col">
+       <h4>company</h4>
+       <ul>
+         <li><a href="#">about us</a></li>
+         <li><a href="#">privacy policy</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>get help</h4>
+       <ul>
+         <li><a href="faqs.html">FAQ</a></li>
+         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
+         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
+         <li><a href="contacto.html">Contacto</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>online shop</h4>
+       <ul>
+         <li><a href="#">Menu Gym</a></li>
+         <li><a href="#">Menu Running</a></li>
+         <li><a href="#">Menu Fighting</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>follow us</h4>
+       <div class="social-links">
+         <a href="#"><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="#"><i class="fab fa-instagram"></i></a>
+         <a href="#"><i class="fab fa-youtube"></i></a>
        </div>
      </div>
-    </div>
- </footer>
+   </div>
+  </div>
+</footer>
 
 </body>
 

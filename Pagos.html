@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pago</title>
+    <link rel="stylesheet" href="style/Pagos.css">
+</head>
+<body class="main-login">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div class="grid-login">
+        <div class="grid-p1" style="position: relative;">
+            <div class="flex flex-gap-20 flex-align-v nav-top-left">
+                <div></div>
+            </div> <!-- .flex -->
+
+            <div class="flex flex-column">
+                <div class="prueba">
+                    <img src="build/img/loginImg.png" alt="">
+                </div>
+            </div>
+        </div> 
+
+        <div class="grid-p2">
+            <div class="contenedor-p2">
+                <h3>Metodos de pago</h3>
+                <p>Ingresa tus detalles para hacer tu compra</p>
+                <div class="container">
+                    <div class="left-image"></div>
+                    <div id="smart-button-container">
+                        <!-- Aquí va tu botón PayPal -->
+                        <div style="text-align: center;">
+                            <div id="paypal-button-container"></div>
+                        </div>
+                    </div>
+                    <br><br><br><br>
+                    <a href="" class="exit">Exit</a>
+                </div>
+                
+                <!-- Aquí va el script de PayPal -->
+                <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD" data-sdk-integration-source="button-factory"></script>
+                <script>
+                    function initPayPalButton() {
+                        paypal.Buttons({
+                            style: {
+                                shape: 'rect',
+                                color: 'gold',
+                                layout: 'vertical',
+                                label: 'pay',
+                                commit: true
+                            },
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        "description": "LA DESCRIPCION DE TU PRODUCTO",
+                                        "amount": {"currency_code": "USD", "value": 15}
+                                    }] //Aqui es donde tenemos que poner lo que tenemos que pagar 
+                                });
+                            },
+                            onApprove: function(data, actions) {
+                                return actions.order.capture().then(function(orderData) {
+                                    // Full available details
+                                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                    actions.redirect('LA URL DE TU PAGINA DE GRACIAS');
+                                });
+                            },
+                            onError: function(err) {
+                                console.log(err);
+                            }
+                        }).render('#paypal-button-container');
+                    }
+                    initPayPalButton();
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
