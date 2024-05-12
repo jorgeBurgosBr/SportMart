@@ -19,6 +19,7 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
+  <link rel="stylesheet" href="style/footer.css">
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
@@ -174,23 +175,29 @@ if (isset($_SESSION['nombre'])) {
     </div>
     <h2 class="h2">¿Qué te interesa?</h2>
     <div class="clothes-shoes-accessories">
+      <a href="">
       <div class="clothes">
         <img src="img/clothes.png" alt="Running clothes" />
         <div class="sub-contenedor">
           <h4 class="sub-titulo">Ropa</h4>
         </div>
+        </a>
       </div>
       <div class="shoes">
+        <a href="">
         <img src="img/running_shoes.png" alt="Running shoes" />
         <div class="sub-contenedor">
           <h4 class="sub-titulo">Zapatillas</h4>
         </div>
+        </a>
       </div>
       <div class="accessories">
+        <a href="">
         <img src="img/accessories.png" alt="Running accessories" />
         <div class="sub-contenedor">
           <h4 class="sub-titulo">Accesorios</h4>
         </div>
+        </a>
       </div>
     </div>
     <h2 class="h2">Lo más vendido</h2>
@@ -340,6 +347,46 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
 
+    <footer class="footer">
+  <div class="container">
+   <div class="row">
+     <div class="footer-col">
+       <h4>Nosotros</h4>
+       <ul>
+         <li><a href="#">Sobre nosotros</a></li>
+         <li><a href="#">Politicas de privacidad</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Ayuda</h4>
+       <ul>
+         <li><a href="faqs.php">FAQ</a></li>
+         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
+         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
+         <li><a href="contacto.html">Contacto</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Tienda Online</h4>
+       <ul>
+         <li><a href="home_gym.php">Gym</a></li>
+         <li><a href="home_running.php">Running</a></li>
+         <li><a href="home_boxeo.php">Boxeo</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Síguenos</h4>
+       <div class="social-links">
+         <a href="#"><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="#"><i class="fab fa-instagram"></i></a>
+         <a href="#"><i class="fab fa-youtube"></i></a>
+       </div>
+     </div>
+   </div>
+  </div>
+</footer>
+</footer>
     <!-- ------------------------ LOGIN ------------------------ -->
     <div class="popup">
       <div class="close-btn"><i class="ri-close-circle-fill"></i></div>

@@ -24,6 +24,16 @@
 .clothes-shoes-accessories img {
   width: 100%;
 }
+
+.clothes-shoes-accessories a {
+  text-decoration: none;
+  color: #333;
+}
+
+.clothes-shoes-accessories a:hover {
+  color: #0171e3;
+}
+
 .sub-contenedor {
   width: 90%;
   padding: 16px 0 0;
