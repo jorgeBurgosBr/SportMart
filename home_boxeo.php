@@ -17,12 +17,13 @@ if (isset($_SESSION['nombre'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/style_boxeo.css">
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
+  <script src="js/libreria/jquery.js"></script>
+  <script src="js/libreria/lightslider.js"></script>
   <title>SportMart</title>
 </head>
 
@@ -36,7 +37,9 @@ if (isset($_SESSION['nombre'])) {
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
+        <a href="#">
         <img src="img/sportmart.png" alt="" />
+        </a>
       </div>
       <div class="menu-toggle">
         <i class="ri-menu-line"></i>
@@ -97,81 +100,238 @@ if (isset($_SESSION['nombre'])) {
   </nav>
 
   <!-- CONTENIDO -->
-  <section><img src="img/boxeo.jpeg" alt="" /></section>
+  <section class="banner-ppal"><img src="img/boxeo.jpeg" alt="" /></section>
+  <h1 class="tutulo-centrado">Las mejores marcas a tu disposición</h1>
   <div class="scroll imgBox" style="--time: 40s">
-    <div class="content_scrolling">
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <div class="content_scrolling">
+        <img src="img/logo_everlas.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+        <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+        <img src="img/logo_venum.png" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+        <img src="img/logo_cleto.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+        <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
 
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+        <img src="img/logo_everlas.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+        <img src="img/logo_adidas.png" class="event_start" alt="" />
+        
+        <img src="img/logo_venum.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+        <img src="img/logo_cleto.png" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+        <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+        <img src="img/logo_everlas.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+        <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+        <img src="img/logo_venum.png" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+        <img src="img/logo_cleto.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+        <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
+      </div>
+      <div class="content_scrolling">
+      <img src="img/logo_everlas.png" class="event_start" alt="" />
+
+        <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+        <img src="img/logo_venum.png" class="event_start" alt="" />
+
+        <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+        <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
+
+        <img src="img/logo_everlas.png" class="event_start" alt="" />
+
+        <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+        <img src="img/logo_venum.png" class="event_start" alt="" />
+
+        <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+        <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
+
+        <img src="img/logo_everlas.png" class="event_start" alt="" />
+
+        <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+        <img src="img/logo_venum.png" class="event_start" alt="" />
+
+        <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+        <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
+      </div>
     </div>
-    <div class="content_scrolling">
-      <img src="img/logo_nike.png" class="event_start" alt="" />
-
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
-
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
-
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
-
-      <img src="img/logo_asics.png" class="event_start" alt="" />
-
-      <img src="img/logo_nike.png" class="event_start" alt="" />
-
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
-
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
-
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
-
-      <img src="img/logo_asics.png" class="event_start" alt="" />
-      <img src="img/logo_nike.png" class="event_start" alt="" />
-
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
-
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
-
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
-
-      <img src="img/logo_asics.png" class="event_start" alt="" />
     </div>
+  <h2 class="h2">¿Qué te interesa?</h2>
+  <div class="clothes-shoes-accessories">
+  <div class="clothes">
+    <a href="#">
+      <img src="img/guantes.jpg" alt="Guantes boxeo" />
+      <div class="sub-contenedor">
+        <h4 class="sub-titulo">Guantes</h4>
+      </div>
+    </a>
   </div>
+  <div class="shoes">
+    <a href="#">
+      <img src="img/ropa-mma.jpg" alt="Ropa MMA" />
+      <div class="sub-contenedor">
+        <h4 class="sub-titulo">Ropa deportiva</h4>
+      </div>
+    </a>
+  </div>
+  <div class="accessories">
+    <a href="#">
+      <img src="img/accesorios-mma.jpg" alt="Accesorios MMA" />
+      <div class="sub-contenedor">
+        <h4 class="sub-titulo">Accesorios</h4>
+      </div>
+    </a>
+  </div>
+  </div>
+  <h2 class="h2">Lo más vendido</h2>
+  <div class="slider">
+      <ul id="autoWidth" class="cs-hidden">
+        <li class="item-a">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/track.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-b">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-d">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-e">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-f">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-g">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Buy Now</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23$</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
@@ -234,7 +394,6 @@ if (isset($_SESSION['nombre'])) {
   </div>
   <script src="js/script_home.js"></script>
   <script src="js/script_carrito.js"></script>
-
 </body>
 
 </html>
