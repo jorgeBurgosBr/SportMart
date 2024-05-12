@@ -114,10 +114,10 @@ if (isset($_SESSION['nombre'])) {
 
         <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-
         <img src="img/logo_everlas.png" class="event_start" alt="" />
 
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
+        
         <img src="img/logo_adidas.png" class="event_start" alt="" />
         
         <img src="img/logo_venum.png" class="event_start" alt="" />
@@ -126,9 +126,9 @@ if (isset($_SESSION['nombre'])) {
 
         <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-
+        
         <img src="img/logo_everlas.png" class="event_start" alt="" />
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
 
         <img src="img/logo_adidas.png" class="event_start" alt="" />
 
@@ -151,9 +151,9 @@ if (isset($_SESSION['nombre'])) {
 
         <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-
+        
         <img src="img/logo_everlas.png" class="event_start" alt="" />
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
 
         <img src="img/logo_adidas.png" class="event_start" alt="" />
 
@@ -163,9 +163,9 @@ if (isset($_SESSION['nombre'])) {
 
         <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-
+        
         <img src="img/logo_everlas.png" class="event_start" alt="" />
+        <img src="img/logo_ufc.png" class="event_start" alt="" />
 
         <img src="img/logo_adidas.png" class="event_start" alt="" />
 
