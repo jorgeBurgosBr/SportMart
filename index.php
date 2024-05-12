@@ -19,6 +19,7 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
+  <link rel="stylesheet" href="style/footer.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -45,7 +46,7 @@ if (isset($_SESSION['nombre'])) {
         <div class="menu-ppal">
           <a class="nav-button" href="index.php">Novedades</a>
           <a class="nav-button" href="home_running.php">Running</a>
-          <a class="nav-button" href="">Gimnasio</a>
+          <a class="nav-button" href="home_gym.php">Gimnasio</a>
           <a class="nav-button" href="home_boxeo.php">Boxeo/MMA</a>
         </div>
         <div class="drop-content">
@@ -98,7 +99,45 @@ if (isset($_SESSION['nombre'])) {
 
   <!-- CONTENIDO -->
   <section><img src="img/banner_newbalance.jpg" alt="" /></section>
-
+  <footer class="footer">
+  <div class="container">
+   <div class="row">
+     <div class="footer-col">
+       <h4>Nosotros</h4>
+       <ul>
+         <li><a href="#">Sobre nosotros</a></li>
+         <li><a href="#">Politicas de privacidad</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Ayuda</h4>
+       <ul>
+         <li><a href="faqs.php">FAQ</a></li>
+         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
+         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
+         <li><a href="contacto.html">Contacto</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Tienda Online</h4>
+       <ul>
+         <li><a href="home_gym.php">Gym</a></li>
+         <li><a href="home_running.php">Running</a></li>
+         <li><a href="home_boxeo.php">Boxeo</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>Síguenos</h4>
+       <div class="social-links">
+         <a href="#"><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="#"><i class="fab fa-instagram"></i></a>
+         <a href="#"><i class="fab fa-youtube"></i></a>
+       </div>
+     </div>
+   </div>
+  </div>
+</footer>
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
