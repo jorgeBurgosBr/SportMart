@@ -26,6 +26,25 @@ forms["form-login"].addEventListener("submit", function (event) {
    }
 });
 
+document.getElementById("show-regis").addEventListener("click", function() {
+   if (this.textContent === "Cerrar sesión") {
+      // Realizar el logout
+      fetch('./php/procesar_logout.php')
+         .then(response => response.json())
+         .then(data => {
+            if (data.success) {
+               // Recargar la página después de cerrar sesión
+               window.location.reload();
+            }
+         })
+         .catch(error => console.error('Fetch error: ', error));
+   } else {
+      // Si el usuario no ha iniciado sesión, mostrar el formulario de registro
+      document.querySelector(".popup-regis").classList.add("active2");
+      document.querySelector(".popup").classList.remove("activa");
+      document.querySelector(".menu-ppal").classList.remove("active")
+   }
+});
 
 function validacionSignup() {
    let flag = true;
@@ -166,10 +185,12 @@ function procesarFormLogin(formulario) {
          return response.json()
       })
       .then(data => {
+         console.log(data); // Verifica si la respuesta del servidor es correcta
          if (!data.success) {
             mostrarErrorLogin(true, data.error);
          } else {
-            window.location.href = "./php/pruebaLogin.php";
+            // Redirige o realiza cualquier otra acción necesaria
+            window.location.href = "./index.php";
          }
       }).catch(error => console.error('Fetch error: ', error));
 }
@@ -188,7 +209,6 @@ function mostrarErrorLogin(flag, error) {
       }
    }
 }
-
 
 // VALIDACION DE FORMULARIO
 function validarNombre(nombre) {
@@ -246,37 +266,51 @@ function clearErroresLogin() {
 
 // POP-UP MESSAGE
 document.addEventListener('DOMContentLoaded', function () {
+   // Código para el menú hamburguesa
+   var menuToggle = document.querySelector('.menu-toggle');
+   var menuPpal = document.querySelector('.menu-ppal');
+   var navbar = document.querySelector('.navbar');
+ 
+   menuToggle.addEventListener('click', function () {
+      menuPpal.classList.toggle('active');
+      navbar.classList.toggle('overflow-visible');
+   });
+ 
+   // Código para cerrar el popup
    var popupMessage = document.querySelector('.popup-message');
    var closeButton = document.querySelector('.popup-message .close-popup-message');
-
+ 
    closeButton.addEventListener('click', function () {
-      popupMessage.style.display = 'none';
+     popupMessage.style.display = 'none';
    });
-
+ 
+   // Código para el desplazamiento suave
    var scrollLinks = document.querySelectorAll(".scroll-link");
-
+ 
    // Agrega un evento de clic a cada enlace
    scrollLinks.forEach(function(link) {
      link.addEventListener("click", function(e) {
        e.preventDefault();
-
+ 
        // Obtén el ID del objetivo desde el atributo 'data-target'
        var targetId = this.getAttribute("data-target");
-
+ 
        // Encuentra el elemento con el ID correspondiente
        var targetElement = document.getElementById(targetId);
-
+ 
        targetElement.scrollIntoView({
          behavior: "smooth"
        });
      });
    });
-});
+ });
+ 
 
 // ------------------ LOGIN
 document.querySelector("#show-login").addEventListener("click", function () {
    document.querySelector(".popup").classList.add("activa");
    document.querySelector(".popup-regis").classList.remove("active2");
+   document.querySelector(".menu-ppal").classList.remove("active")
 });
 
 document.querySelector(".popup .close-btn").addEventListener("click", function () {
@@ -287,13 +321,13 @@ document.querySelector("#registrate").addEventListener("click", function (event)
    event.preventDefault();
    document.querySelector(".popup-regis").classList.add("active2");
    document.querySelector(".popup").classList.remove("activa");
-
 });
 
 // ------------------ REGISTRO
 document.querySelector("#show-regis").addEventListener("click", function () {
    document.querySelector(".popup-regis").classList.add("active2");
    document.querySelector(".popup").classList.remove("activa");
+   document.querySelector(".menu-ppal").classList.remove("active")
 });
 
 document.querySelector(".popup-regis .close-btn").addEventListener("click", function () {
@@ -313,3 +347,24 @@ function mostrarPopupExito() {
    document.querySelector(".popup-message").style.display = "block";
    document.querySelector("#popup-text").textContent = "¡Te has registrado correctamente!";
 }
+// Obtener referencia al botón del carrito
+const btnCarrito = document.getElementById('cart-icon');
+
+// Manejar el evento de clic en el botón del carrito
+btnCarrito.addEventListener('click', function() {
+    // Hacer la solicitud Fetch a procesar_registro.php
+    fetch('./php/procesar_registro.php')
+        .then(response => response.json())
+        .then(data => {
+            // Verificar la respuesta del servidor
+            if (data.logged_in) {
+               document.querySelector('.cart').classList.add('active')
+            } else {
+                // Si el usuario no ha iniciado sesión, agregar una clase activa al popup
+                document.querySelector(".popup").classList.add("activa");
+            }
+        })
+        .catch(error => {
+            console.error('Error al procesar la solicitud:', error);
+        });
+});
