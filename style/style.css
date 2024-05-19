@@ -57,6 +57,7 @@ header > button {
 div#google_translate_element div.goog-te-gadget-simple{
   font-size:14px;
   font-family: var(--texto);
+  color: #000000;
 }
 
 div#google_translate_element div.goog-te-gadget-simple{
@@ -66,7 +67,21 @@ div#google_translate_element div.goog-te-gadget-simple{
 
 div#google_translate_element div.goog-te-gadget-simple {
   border: none;
+  cursor: pointer;
 }
+
+.goog-te-gadget-icon,.goog-te-banner-frame  {
+  display: none;
+}
+
+body > div.skiptranslate {
+  display: none;
+}
+
+body {
+  top: 0px !important;
+}
+
 .bttn-regis {
   border-right: none;
   /* margin-right: 14px; */
