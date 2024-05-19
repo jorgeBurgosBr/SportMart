@@ -20,8 +20,10 @@ if (isset($_SESSION['nombre'])) {
 <link rel="stylesheet" href="style/style_running.css" />
 <link rel="stylesheet" href="style/lightslider.css" />
 <link rel="stylesheet" href="style/style_carrito.css" />
+<script src="js/libreria/jquery.js"></script>
+<script src="js/libreria/lightslider.js"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
+<script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
                 pageLanguage: 'es',
@@ -31,13 +33,20 @@ if (isset($_SESSION['nombre'])) {
             'google_translate_element');
     }
   </script>
-<script src="js/libreria/jquery.js"></script>
-<script src="js/libreria/lightslider.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<style>
+    @media screen and (max-width: 480px) { 
+  .popup-regis.active2 {
+    top: 16%;
+  }
+}
+  </style>
+  <title>SportMart</title>
 </head>
 <body>
-<header>
+   <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
@@ -108,100 +117,103 @@ if (isset($_SESSION['nombre'])) {
     </div>
   </nav>
    <!-- CONTENIDO -->
-   <section class="banner-ppal"><img src="img/banner_gym.jpg" alt="" /></section>
+   <br><br>
+   <section class="banner-ppal"><img src="img/banner_gym.jpg" id="portada"alt="" /></section>
 
 <div class="scroll imgBox" style="--time: 40s">
     <div class="content_scrolling">
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_agon.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_gym.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_hsn.jpg" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_myp.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_echt.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_gasp.png" class="event_start" alt="" />
 
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_agon.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_gym.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_hsn.jpg" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_myp.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_echt.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_gasp.png" class="event_start" alt="" />
+      <img src="img/logo_agon.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_gym.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_hsn.jpg" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_myp.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_echt.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_gasp.png" class="event_start" alt="" />
     </div>
 
 <div class="content_scrolling">
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_agon.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_gym.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_hsn.jpg" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_myp.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_echt.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_gasp.png" class="event_start" alt="" />
 
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_agon.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_gym.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_hsn.jpg" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_myp.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_echt.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
-      <img src="img/logo_nike.png" class="event_start" alt="" />
+      <img src="img/logo_gasp.png" class="event_start" alt="" />
+      <img src="img/logo_agon.png" class="event_start" alt="" />
 
-      <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_gym.png" class="event_start" alt="" />
 
-      <img src="img/logo_new_balance.png" class="event_start" alt="" />
+      <img src="img/logo_hsn.jpg" class="event_start" alt="" />
 
-      <img src="img/logo_hoka.png" class="event_start" alt="" />
+      <img src="img/logo_myp.png" class="event_start" alt="" />
 
-      <img src="img/logo_salomon.png" class="event_start" alt="" />
+      <img src="img/logo_echt.png" class="event_start" alt="" />
 
-      <img src="img/logo_asics.png" class="event_start" alt="" />
+      <img src="img/logo_gasp.png" class="event_start" alt="" />
     </div>
   </div>
 
-    <!--Esto es el apartado de las 5 cartas -->
+  <br><br>
 
+    <!--Esto es el apartado de las 5 cartas -->
+    <h2 class="h2">Comprar</h2>
     <div class="contenedor">
         <div class="carta carta1">
-            <h2>Título de la carta 1</h2>
-            <button class="ver-mas">Ver más</button>
+           
+          <a href="#" class="ver-mas">Camisetas</a>
         </div>
 
         <div class="carta carta2">
-            <h2>Título de la carta 2</h2>
-            <button class="ver-mas">Ver más</button>
+            
+            <a class="ver-mas">Pantalones</a>
         </div>
 
         <div class="carta carta3">
-            <h2>Título de la carta 3</h2>
-            <button class="ver-mas">Ver más</button>
+            
+            <a class="ver-mas">Suplementación</a>
         </div>
     </div>
 
@@ -211,13 +223,11 @@ if (isset($_SESSION['nombre'])) {
     <!-- Cartas más grandes -->
     <div class="contenedor">
         <div class="carta carta-grande carta4">
-            <h2>Título de la carta 4</h2>
-            <button class="ver-mas">Ver más</button>
+            <a class="ver-mas">Ver más</a>
         </div>
 
         <div class="carta carta-grande carta5">
-            <h2>Título de la carta 5</h2>
-            <button class="ver-mas">Ver más</button>
+            <a class="ver-mas">Dieta</a>
         </div>
     </div>
     <br><br>
@@ -228,7 +238,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-a">
           <div class="box">
             <div class="slide-img">
-              <img src="img/track.png" alt="" />
+              <img src="img/rock.jpg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>
@@ -245,7 +255,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-b">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/bum.jpg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>
@@ -262,7 +272,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-c">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/kim.jpg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>
@@ -279,7 +289,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-d">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/andoni.jpg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>
@@ -296,7 +306,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-e">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/pre.jpg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>
@@ -313,7 +323,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-f">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/joan.jpeg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>
@@ -330,7 +340,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-g">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/coleman.jpg" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Buy Now</a>
               </div>

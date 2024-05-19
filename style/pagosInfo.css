@@ -101,8 +101,11 @@ ul{
 .titulo {
     font-size: 32px;
     font-weight: bold;
-    color: #333;
+    color: #0171e3;
     margin-bottom: 20px;
+}
+strong{
+  color: #0171e3;
 }
 
 .texto {
