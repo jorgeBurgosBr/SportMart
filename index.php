@@ -98,7 +98,7 @@ if (isset($_SESSION['nombre'])) {
   </nav>
 
   <!-- CONTENIDO -->
-  <section><img src="img/banner_newbalance.jpg" alt="" /></section>
+  <section class="banner-ppal"><img src="img/banner_newbalance.jpg" alt="" /></section>
   <footer class="footer">
   <div class="container">
    <div class="row">

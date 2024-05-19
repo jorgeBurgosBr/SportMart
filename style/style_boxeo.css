@@ -291,16 +291,6 @@ a {
      opacity: 1;
    }
  }
- .slider {
-   width: 95%;
-   height: auto;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   overflow: hidden;
-   margin-left: auto;
-   margin-right: auto;
- }
 
  @media screen and (max-width: 480px) {
 

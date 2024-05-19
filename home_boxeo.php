@@ -22,10 +22,28 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
   <link rel="stylesheet" href="style/footer.css">
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,es,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element');
+    }
+  </script>
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    @media screen and (max-width: 480px) { 
+  .popup-regis.active2 {
+    top: 16%;
+  }
+}
+  </style>
   <title>SportMart</title>
 </head>
 
@@ -34,7 +52,7 @@ if (isset($_SESSION['nombre'])) {
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-    <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+<div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
@@ -208,8 +226,6 @@ if (isset($_SESSION['nombre'])) {
     </a>
   </div>
   </div>
-
-  
   <h2 class="h2">Lo más vendido</h2>
     <div class="slider">
       <ul id="autoWidth" class="cs-hidden">

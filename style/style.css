@@ -39,6 +39,7 @@ body > header {
   background-color: var(--ppal);
   display: flex;
   justify-content: end;
+  align-items: center;
   padding: 10px;
 }
 
@@ -53,6 +54,19 @@ header > button {
   border-right: 1px solid black;
 }
 
+div#google_translate_element div.goog-te-gadget-simple{
+  font-size:14px;
+  font-family: var(--texto);
+}
+
+div#google_translate_element div.goog-te-gadget-simple{
+  background-color:transparent;
+  font-family: var(--texto);
+}
+
+div#google_translate_element div.goog-te-gadget-simple {
+  border: none;
+}
 .bttn-regis {
   border-right: none;
   /* margin-right: 14px; */
@@ -117,9 +131,9 @@ body > nav {
 
 .drop-content {
   display: none;
+  margin-top: 10px;
   position: absolute;
   width: 100%;
-  top: 12%;
   left: 0;
   z-index: 10;
 }
@@ -128,7 +142,6 @@ body > nav {
 }
 
 .menu-ppal {
-  /* margin-left: 50px; */
   display: flex;
   gap: 45px;
 }
@@ -207,13 +220,13 @@ body > nav {
   margin-right: 10px;
 }
 
-section {
+.banner-ppal {
   grid-area: banner;
   height: auto;
   overflow: hidden;
 }
 
-section img {
+.banner-ppal img {
   width: 100%;
   height: auto;
 }
@@ -255,7 +268,7 @@ section img {
 
 .popup-regis.active2,
 .popup.activa {
-  top: 50%;
+  top: 15%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
@@ -550,6 +563,10 @@ section img {
   }
 
   .popup.activa {
-    top: 40%;
+    top: 12%;
+  }
+
+  .popup-regis.active2 {
+    top: 13%;
   }
 }
