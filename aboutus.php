@@ -1,9 +1,45 @@
+<?php
+session_start();
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['nombre'])) {
+  $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
+  $textoBotonRegistrarse = "Cerrar sesión";
+} else {
+  $textoBotonLogin = "Inicia sesión";
+  $textoBotonRegistrarse = "Regístrate";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog Cards</title>
+<link rel="stylesheet" href="style/style_carrito.css" />
+<link rel="stylesheet" href="style/style.css" />
+<script src="js/libreria/jquery.js"></script>
+<script src="js/libreria/lightslider.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,es,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element');
+    }
+  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<style>
+    @media screen and (max-width: 480px) { 
+  .popup-regis.active2 {
+    top: 16%;
+  }
+}
+  </style>
 <style>
 /* CSS */
 /* PEN STYLES */
@@ -295,439 +331,79 @@ ul{
 }
 
 
-
-
-
-
-
-
-
-
-/*Menu gym*/
-
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
-
-:root {
-  --ppal: #f5f5f5;
-  --black: #000000;
-  --contraste: #0171e3;
-  --texto: "Lexend", sans-serif;
-}
-
-/* Reset styles */
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-body {
-  display: grid;
-  width: 100%;
-  grid-template-areas:
-    "head"
-    "nav"
-    "banner";
-  grid-template-rows: 1fr 1.5fr auto;
-  font-family: var(--texto);
-}
-
-body > header {
-  grid-area: head;
-  background-color: var(--ppal);
-  display: flex;
-  justify-content: end;
-  padding: 10px;
-  gap: 10px;
-}
-
-header > button {
-  font-family: var(--texto);
-  font-size: 14px;
-  font-weight: 500;
-  background-color: var(--ppal);
-  padding: 2px 8px;
-  cursor: pointer;
-  border: none;
-  border-right: 1px solid black;
-}
-
-.bttn-regis {
-  border-right: none;
-  margin-right: 14px;
-}
-
-.bttn-flag {
-  border-right: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body > nav {
-  grid-area: nav;
-  text-decoration: none;
-  padding: 14px;
-}
-
-.container-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.navbar {
-  overflow: hidden;
-}
-.navbar a {
-  text-decoration: none;
-  letter-spacing: 1px;
-  color: var(--black);
-}
-
-.drop-menu {
-  float: left;
-  overflow: hidden;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  padding: 14px;
-  font-family: "Lexend", sans-serif;
-  cursor: pointer;
-  background-color: transparent;
-  letter-spacing: 1px;
-  color: var(--black);
-}
-
-.menu-ppal a {
-  margin-left: 50px;
-}
-
-.drop-content {
-  display: none;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  z-index: 10;
-}
-.drop-menu:hover .drop-content {
-  display: block;
-}
-.column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 250px;
-  background-color: #ffffff;
-}
-.column a {
-  display: block;
-  float: none;
-  color: #000000;
-  text-align: left;
-}
-.column h3 {
-  color: #000000;
-  padding: 10px;
-}
-.column a:hover {
-  color: #fff;
-  background: #373737;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.logo-nav {
-  width: 15%;
-}
-
-.logo-nav img {
-  max-width: 80px;
-  max-height: 60px;
-}
-
-.search-nav {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.search-nav input[type="search"] {
-  width: 150px;
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-right: 24px;
-  background-color: var(--ppal);
-  border: none;
-  border-radius: 10px;
-}
-
-.search-nav .ri-search-line {
-  position: absolute;
-  left: 8px;
-}
-
-.ri-heart-line,
-.ri-shopping-cart-line {
-  font-size: 24px;
-  margin-right: 10px;
-}
-
-section {
-  grid-area: banner;
-  height: auto;
-  overflow: hidden;
-}
-
-section img {
-  width: 100%;
-  height: auto;
-}
-
-/* ---------- LOGIN Y REGISTER ---------- */
-
-
-.popup,
-.popup-regis {
-  position: absolute;
-  top: -150%;
-  left: 50%;
-  opacity: 0;
-  width: 400px;
-  padding: 40px;
-  margin: 20px auto;
-  transform: translate(-50%, -55%);
-  background: rgba(0,0,0,.9);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
-}
-
-.popup .close-btn i,
-.popup-regis .close-btn i {
-  position: absolute;
-  top: 18px;
-  right: 15px;
-  color: #9e1919;
-  font-size: 22px;
-  text-align: center;
-  line-height: 15px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.popup .close-btn i:hover,
-.popup-regis .close-btn i:hover {
-  color: #FF0202;
-}
-
-.popup-regis.active2,
-.popup.activa {
-  top: 50%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-.popup p,
-.popup-regis p {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.popup .form-element,
-.popup-regis .form-element {
-  position: relative;
-}
-
-.popup .form-element input,
-.popup-regis .form-element input {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-}
-
-.popup .form-element label,
-.popup-regis .form-element label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.popup .form-element input:focus ~ label,
-.popup .form-element input:valid ~ label,
-.popup-regis .form-element input:focus ~ label,
-.popup-regis .form-element input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #fff;
-  font-size: 12px;
-}
-
-.popup form .btn-submit,
-.popup-regis form .btn-submit {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 100%;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  background-color: transparent;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin-top: 40px;
-  letter-spacing: 3px
-}
-
-.popup .btn-submit:hover,
-.popup-regis .btn-submit:hover {
-  background: #fff;
-  color: #272727;
-}
-
-.popup p:last-child,
-.popup-regis p:last-child {
-  color: #aaa;
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-.popup a.a2,
-.popup-regis a.a2 {
-  color: #fff;
-  text-decoration: none;
-  text-align: left;
-}
-
-.popup a.a2:hover,
-.popup-regis a.a2:hover {
-  background: transparent;
-  color: #aaa;
-  border-radius: 5px;
-}
-
-/* POP-UP MESSAGE */
-.popup-message {
-  width: fit-content;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #d0ffd8;
-  border: 1px solid #77ff87;
-  border-radius: 5px;
-  font-weight: bolder;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
-}
-
-
-.popup-content {
-  position: relative;
-  margin: 8px;
-}
-
-.close-popup-message {
-  position: absolute;
-  top: -15px;
-  right: -10px;
-  cursor: pointer;
-}
-
-.close-popup-message:hover {
-  color: red; 
-}
-
-
-
-
-
-
-
-
-
-
 </style>
 </head>
 <body>
-  <header>
-    <button>Ayuda</button>
-    <button id="show-login">Inicia sesión</button>
-    <button id="show-regis" class="bttn-regis">Regístrate</button>
-    <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
-</header>
-<nav class="navbar">
- <div class="container-nav">
-   <div class="logo-nav">
-     <img src="img/logo.png" alt="" />
-   </div>
-   <div class="drop-menu">
-    <div class="menu-ppal">
-       <a href="index.html">Novedades</a>
-       <a href="home_running.html">Running</a>
-       <a href="">Gimnasio</a>
-       <a href="">Boxeo/MMA</a>
+<header>
+    <button id="show-help">Ayuda</button>
+    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
+    <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
+<div id="google_translate_element"></div>
+  </header>
+  <nav class="navbar">
+    <div class="container-nav">
+      <div class="logo-nav">
+        <a href="#">
+        <img src="img/sportmart.png" alt="" />
+        </a>
+      </div>
+      <div class="menu-toggle">
+        <i class="ri-menu-line"></i>
+      </div>
+      <div class="drop-menu">
+        <div class="menu-ppal">
+          <a class="nav-button" href="index.php">Novedades</a>
+          <a class="nav-button" href="home_running.php">Running</a>
+          <a class="nav-button" href="home_gym.php">Gimnasio</a>
+          <a class="nav-button" href="home_boxeo.php">Boxeo/MMA</a>
+        </div>
+        <div class="drop-content">
+          <div class="row">
+            <div class="column">
+              <h3>Últimas novedades</h3>
+              <a class="nav-button" href="">Zapatillas</a>
+              <a class="nav-button" href="">Camisetas</a>
+              <a class="nav-button" href="">Accesorios</a>
+            </div>
+            <div class="column">
+              <h3>Suplementación</h3>
+              <a class="nav-button" href="">Pre-entreno</a>
+              <a class="nav-button" href="">Post-entreno</a>
+              <a class="nav-button" href="">Barritas energéticas</a>
+            </div>
+            <div class="column">
+              <h3>Artes marciales</h3>
+              <a class="nav-button" href="">Guantes</a>
+              <a class="nav-button" href="">Bucales</a>
+              <a class="nav-button" href="">Accesorios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="search-nav">
+        <input type="search" name="search" id="" placeholder="Buscar" autocomplete="off" />
+        <i class="ri-search-line"></i>
+        <button class="btn-nav"><i class="ri-heart-line"></i></button>
+        <button class="btn-nav" id="cart-icon"><i class="ri-shopping-cart-line"></i></button>
+        <!-- Cart Icon -->
+        <!-- Cart -->
+        <div class="cart">
+          <h2 class="cart-title">Your Cart</h2>
+          <!-- Content -->
+          <div class="cart-content"></div>
+          <!-- Total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!-- Buy Bottom -->
+          <button type="button" class="btn-buy">Buy Now</button>
+          <!-- Cart close -->
+          <i class="bx bx-x" id="close-cart"></i>
+        </div>
+      </div>
     </div>
-     <div class="drop-content">
-       <div class="row">
-         <div class="column">
-           <h3>Últimas novedades</h3>
-           <a href="">Zapatillas</a>
-           <a href="">Camisetas</a>
-           <a href="">Accesorios</a>
-         </div>
-         <div class="column">
-           <h3>Suplementación</h3>
-           <a href="">Pre-entreno</a>
-           <a href="">Post-entreno</a>
-           <a href="">Barritas energéticas</a>
-         </div>
-         <div class="column">
-           <h3>Artes marciales</h3>
-           <a href="">Guantes</a>
-           <a href="">Bucales</a>
-           <a href="">Accesorios</a>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="search-nav">
-     <input type="search" name="search" id="" placeholder="Buscar" />
-     <i class="ri-search-line"></i>
-     <i class="ri-heart-line"></i>
-     <i class="ri-shopping-cart-line"></i>
-   </div>
- </div>
-</nav>
-
+  </nav>
 
 
 
@@ -814,7 +490,66 @@ section img {
 
 
 
+<!-- ------------------------ LOGIN ------------------------ -->
+<div class="popup">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Inicia sesión</p>
+    <form id="form-login">
+      <div class="form-element">
+        <input required name="email-login" id="email_login" type="text">
+        <label>Email</label>
+      </div>
+      <div class="form-element">
+        <input required name="password-login" id="password_login" type="password">
+        <label>Contraseña</label>
+      </div>
+      <span id="error-login"></span>
+      <button class="btn-submit">Enviar</button>
+    </form>
+    <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+  </div>
 
+  <!-- ------------------------ REGISTRO ------------------------ -->
+  <div class="popup-regis">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Regístrate</p>
+    <form id="form-signup">
+      <div class="form-element">
+        <input required name="nombre" id="nombre-signup" type="text">
+        <label>Nombre</label>
+        <span id="error-nombre-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="apellidos" id="apellidos-signup" type="text">
+        <label>Apellidos</label>
+        <span id="error-apellidos-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
+        <label>Teléfono</label>
+        <span id="error-telefono-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="email" id="email-signup" type="text">
+        <label>Correo</label>
+        <span id="error-email-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="password" id="password-signup" type="password">
+        <label>Contraseña</label>
+        <ul id="error-password-signup"></ul>
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+  </div>
+
+  <div class="popup-message">
+    <div class="popup-content">
+      <span class="close-popup-message">&times;</span>
+      <p id="popup-text"></p>
+    </div>
+  </div>
 
 
 
@@ -861,5 +596,69 @@ section img {
      </div>
     </div>
  </footer>
+
+ <!-- ------------------------ LOGIN ------------------------ -->
+ <div class="popup">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Inicia sesión</p>
+    <form id="form-login">
+      <div class="form-element">
+        <input required name="email-login" id="email_login" type="text">
+        <label>Email</label>
+      </div>
+      <div class="form-element">
+        <input required name="password-login" id="password_login" type="password">
+        <label>Contraseña</label>
+      </div>
+      <span id="error-login"></span>
+      <button class="btn-submit">Enviar</button>
+    </form>
+    <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+  </div>
+
+  <!-- ------------------------ REGISTRO ------------------------ -->
+  <div class="popup-regis">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Regístrate</p>
+    <form id="form-signup">
+      <div class="form-element">
+        <input required name="nombre" id="nombre-signup" type="text">
+        <label>Nombre</label>
+        <span id="error-nombre-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="apellidos" id="apellidos-signup" type="text">
+        <label>Apellidos</label>
+        <span id="error-apellidos-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
+        <label>Teléfono</label>
+        <span id="error-telefono-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="email" id="email-signup" type="text">
+        <label>Correo</label>
+        <span id="error-email-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="password" id="password-signup" type="password">
+        <label>Contraseña</label>
+        <ul id="error-password-signup"></ul>
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+  </div>
+
+  <div class="popup-message">
+    <div class="popup-content">
+      <span class="close-popup-message">&times;</span>
+      <p id="popup-text"></p>
+    </div>
+  </div>
+  <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+  <script src="js/script_running.js"></script>
 </body>
 </html>

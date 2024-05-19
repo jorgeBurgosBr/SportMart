@@ -164,25 +164,24 @@
 
 /* Definición de las imágenes de fondo para cada carta */
 .carta.carta1 {
-    background-image: url('https://uddingstonphysiotherapy.co.uk/wp-content/uploads/bb-plugin/cache/uddingstron-physiotherapy-gym-img-9-portrait-1e856601c1a25da61670f43d981990f1-3j0rgliwn8uf.jpg');
+  background-image: url('../img/cami.jpg');
 }
 
 .carta.carta2 {
-    background-image: url('https://media.revistagq.com/photos/5ca5f48bf552a1fefe32e5bf/master/pass/la_importancia_de_tener_un_gym_buddy_1372.jpg');
+  background-image: url('../img/pant.jpg');
 }
 
 .carta.carta3 {
-    background-image: url('https://goldsgymsandton.co.za/wp-content/uploads/2023/09/01-The-Mecca-of-Bodybuilding.jpg');
+  background-image: url('../img/sup.jpg');
 }
 
 .carta.carta4 {
-    background-image: url('https://www.lavanguardia.com/andro4all/hero/2021/06/Mejores-8-aplicaciones-para-el-gimnasio-ponte-en-forma-con-tu-movil.jpg?width=1200&aspect_ratio=16:9');
+  background-image: url('../img/diet.jpg');
 }
 
 .carta.carta5 {
-    background-image: url('https://www.teambath.com/wp-content/uploads/2023/07/Gym-slideshow-images-0723_4.jpg');
+  background-image: url('../img/ex.jpg');
 }
-
 /* Efecto de desenfoque solo para la imagen de fondo */
 .carta::after {
     content: "";

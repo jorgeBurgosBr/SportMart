@@ -10,11 +10,17 @@ if (isset($_SESSION['nombre'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarjeta de Producto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/pagosInfo.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/style_carrito.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>SportMart</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -25,24 +31,9 @@ if (isset($_SESSION['nombre'])) {
             'google_translate_element');
     }
   </script>
+   
   
-<link rel="stylesheet" href="style/faqs.css" />
-<link rel="stylesheet" href="style/menuGym.css" />
-<link rel="stylesheet" href="style/style.css">
-<link rel="stylesheet" href="style/style_carrito.css">
-<script src="js/libreria/jquery.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
-<style>
-    @media screen and (max-width: 480px) { 
-  .popup-regis.active2 {
-    top: 16%;
-  }
-}
-  </style>
 </head>
-
 <body>
 <header>
     <button id="show-help">Ayuda</button>
@@ -114,69 +105,76 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </nav>
-<div class="faq-header">FAQS</div>
 
-<div class="faq-content">
-  <div class="faq-question">
-    <input id="q1" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q1" class="panel-title">¿Cuál es la política de devolución de productos en la tienda?</label>
-    <div class="panel-content">Nuestra política de devolución permite devoluciones dentro de los 30 días posteriores a la compra, siempre y cuando los productos estén en su estado original y con el comprobante de compra. <a href="">Devoluciones</a></div>
-  </div>
-  
-  <div class="faq-question">
-    <input id="q2" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q2" class="panel-title">¿Ofrecen envíos internacionales?</label>
-    <div class="panel-content">Sí, ofrecemos envíos internacionales a la mayoría de los países. Puedes verificar la disponibilidad al momento de realizar la compra.</div>
-  </div>
-  
-  <div class="faq-question">
-    <input id="q3" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q3" class="panel-title">¿Cómo puedo encontrar el tamaño adecuado para mis prendas?</label>
-    <div class="panel-content">Consulta nuestra guía de tallas en línea para ayudarte a encontrar el tamaño adecuado. También puedes visitar una de nuestras tiendas físicas para probarte diferentes modelos<a href="" target="_blank">Guia de tallas</a></div>
-  </div>
+<div class="contenedor">
+        <div class="titulo">Pagos Seguros y Confiables</div>
+        <div class="texto">
+            ¡Bienvenido a nuestra tienda online! En [Nombre de la Tienda], nos enorgullecemos de ofrecerte la mejor experiencia de compra posible, y eso incluye garantizar la seguridad de tus pagos en línea.
+            <br><br>
+            Queremos que compres con total tranquilidad, por lo que hemos implementado las últimas tecnologías de seguridad para proteger tus transacciones. Utilizamos un avanzado sistema de encriptación SSL (Secure Sockets Layer) para asegurar que tus datos personales y financieros estén protegidos en todo momento. Puedes estar seguro de que tus información está segura con nosotros.
+            <br><br>
+            Además, para brindarte aún más opciones y comodidad al pagar, hemos incorporado varias opciones de pago seguras y confiables. Entre ellas se incluyen:
+            <br><br>
+            <strong>PayPal:</strong> PayPal es una de las plataformas de pago más reconocidas y seguras del mundo. Con PayPal, puedes realizar tus compras con solo unos pocos clics, sin tener que ingresar tus detalles financieros en nuestro sitio web. PayPal protege tus datos y procesa tus pagos de manera segura, para que puedas comprar con total confianza.
+            <br><br>
+            <strong>Pago por tarjeta:</strong> Además de PayPal, también puedes optar por pagar directamente con tarjeta de crédito o débito. Utilizamos el mismo método de tarjeta de crédito utilizado por PayPal, que está protegido por las más estrictas medidas de seguridad, garantizando que tus datos estén siempre seguros y protegidos.
+            <br><br>
+            En [Nombre de la Tienda], tu seguridad es nuestra prioridad número uno. Puedes confiar en nosotros para brindarte una experiencia de compra en línea segura y sin preocupaciones. ¡Explora nuestra amplia selección de productos y realiza tu compra hoy mismo con total confianza!
+        </div>
+        
 
-  <div class="faq-question">
-    <input id="q4" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q4" class="panel-title">¿Qué tipo de garantía ofrecen en sus productos?</label>
-    <div class="panel-content">Garantizamos la calidad de nuestros productos. Si experimentas algún problema de fabricación, contáctanos y estaremos encantados de ayudarte.</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q5" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q5" class="panel-title">¿Cuál es la política de privacidad de la tienda en línea?</label>
-    <div class="panel-content">Nuestra política de privacidad detalla cómo recopilamos, utilizamos y protegemos tu información personal. Puedes encontrar más detalles en nuestro sitio web.</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q6" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q6" class="panel-title">¿Ofrecen descuentos para estudiantes o miembros del ejército?</label>
-    <div class="panel-content">Sí, ofrecemos descuentos especiales para estudiantes y miembros del ejército. Verifica tu elegibilidad durante el proceso de compra.</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q7" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q7" class="panel-title">¿Qué medidas toman para garantizar la seguridad de mis datos de pago en línea?</label>
-    <div class="panel-content">Utilizamos tecnologías de encriptación y cumplimos con los estándares de seguridad de la industria para proteger tus datos de pago</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q8" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q8" class="panel-title">¿Puedo realizar cambios en mi pedido después de haberlo realizado?</label>
-    <div class="panel-content">Si tu pedido aún no ha sido procesado, es posible que podamos realizar cambios. Por favor, contáctanos lo antes posible para solicitar modificaciones.</div>
-  </div>
+    <div class="imagenes">
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 1">
+        </div>
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/5437587/pexels-photo-5437587.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 2">
+        </div>
+        <div class="imagen">
+            <img src="https://images.pexels.com/photos/6347707/pexels-photo-6347707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen 3">
+        </div>
+    </div>
 </div>
 
-<br><br>
-
-
+<footer class="footer">
+  <div class="container">
+   <div class="row">
+     <div class="footer-col">
+       <h4>company</h4>
+       <ul>
+         <li><a href="#">about us</a></li>
+         <li><a href="#">privacy policy</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>get help</h4>
+       <ul>
+         <li><a href="faqs.html">FAQ</a></li>
+         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
+         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
+         <li><a href="contacto.html">Contacto</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>online shop</h4>
+       <ul>
+         <li><a href="#">Menu Gym</a></li>
+         <li><a href="#">Menu Running</a></li>
+         <li><a href="#">Menu Fighting</a></li>
+       </ul>
+     </div>
+     <div class="footer-col">
+       <h4>follow us</h4>
+       <div class="social-links">
+         <a href="#"><i class="fab fa-facebook-f"></i></a>
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="#"><i class="fab fa-instagram"></i></a>
+         <a href="#"><i class="fab fa-youtube"></i></a>
+       </div>
+     </div>
+   </div>
+  </div>
+</footer>
 <!-- ------------------------ LOGIN ------------------------ -->
 <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
@@ -237,47 +235,8 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
-
-  <footer class="footer">
-  <div class="container">
-   <div class="row">
-     <div class="footer-col">
-       <h4>Nosotros</h4>
-       <ul>
-         <li><a href="#">Sobre nosotros</a></li>
-         <li><a href="#">Politicas de privacidad</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Ayuda</h4>
-       <ul>
-         <li><a href="faqs.php">FAQ</a></li>
-         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
-         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
-         <li><a href="contacto.html">Contacto</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Tienda Online</h4>
-       <ul>
-         <li><a href="home_gym.php">Gym</a></li>
-         <li><a href="home_running.php">Running</a></li>
-         <li><a href="home_boxeo.php">Boxeo</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Síguenos</h4>
-       <div class="social-links">
-         <a href="#"><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><i class="fab fa-twitter"></i></a>
-         <a href="#"><i class="fab fa-instagram"></i></a>
-         <a href="#"><i class="fab fa-youtube"></i></a>
-       </div>
-     </div>
-   </div>
-  </div>
-</footer>
-<script src="js/script_home.js"></script>
+  <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+  <script src="js/script_running.js"></script>
 </body>
-
 </html>
