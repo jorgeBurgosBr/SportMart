@@ -584,4 +584,8 @@ body > nav {
   .popup-regis.active2 {
     top: 13%;
   }
+
+  div#google_translate_element div.goog-te-gadget-simple {
+    font-size: 10px;
+  }
 }
