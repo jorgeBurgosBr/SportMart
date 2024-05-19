@@ -21,16 +21,23 @@ if (isset($_SESSION['nombre'])) {
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>SportMart</title>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'en,es,pt',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            },
-            'google_translate_element');
-    }
-  </script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'es',
+                    includedLanguages: 'en,es,pt',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google_translate_element');
+        }
+    </script>
+    <style>
+    @media screen and (max-width: 480px) { 
+  .popup-regis.active2 {
+    top: 16%;
+  }
+}
+  </style>
    
   
 </head>

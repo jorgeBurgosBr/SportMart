@@ -15,25 +15,23 @@ if (isset($_SESSION['nombre'])) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog Cards</title>
-<link rel="stylesheet" href="style/style_carrito.css" />
 <link rel="stylesheet" href="style/style.css" />
-<script src="js/libreria/jquery.js"></script>
-<script src="js/libreria/lightslider.js"></script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'en,es,pt',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            },
-            'google_translate_element');
-    }
-  </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-<style>
+    <link rel="stylesheet" href="style/style_carrito.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>SportMart</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                    pageLanguage: 'es',
+                    includedLanguages: 'en,es,pt',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                },
+                'google_translate_element');
+        }
+    </script>
+    <style>
     @media screen and (max-width: 480px) { 
   .popup-regis.active2 {
     top: 16%;
@@ -47,6 +45,10 @@ if (isset($_SESSION['nombre'])) {
   box-sizing: border-box;
 }
 
+body {
+  overflow-y: auto; /* Permitir desplazamiento vertical cuando el contenido excede el tamaño de la pantalla */
+}
+
 .cont {
   background: #f1f1f1;
   display: flex;
@@ -54,7 +56,7 @@ if (isset($_SESSION['nombre'])) {
   font-size: 1rem;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Cambiado a min-height para ajustarse al tamaño de la pantalla */
 }
 
 .blog-card {
@@ -419,24 +421,21 @@ ul{
       <div class="meta">
         <div class="photo" style="background-image: url(img/pablo.jpg)"></div>
         <ul class="details">
-          <li class="author"><a href="#">Jane Doe</a></li>
-          <li class="date">July. 15, 2015</li>
+          <li class="author"><a href="#">Pablo</a></li>
+          <li class="date">Madrid</li>
           <li class="tags">
             <ul>
-              <li><a href="#">Learn</a></li>
-              <li><a href="#">Code</a></li>
-              <li><a href="#">JavaScript</a></li>
+              <li><a href="#">JS</a></li>
+              <li><a href="#">PHP</a></li>
             </ul>
           </li>
         </ul>
       </div>
       <div class="description">
-        <h1>Mastering the Language</h1>
-        <h2>Java is not the same as JavaScript</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-        <p class="read-more">
-          <a href="#">Read More</a>
-        </p>
+        <h1>Diseñador de la BD</h1>
+        <h2>Pablo // Creador y cordinador de la BD</h2>
+        <p>Pablo, un experto programador especializado en PHP y JavaScript, ha demostrado ser el mejor en la gestión de bases de datos. Su dominio en estas tecnologías le permite desarrollar soluciones robustas y eficientes para aplicaciones web, garantizando un rendimiento óptimo y una experiencia de usuario fluida.</p>
+        
       </div>
     </div>
   <div class="blog-card">
@@ -454,11 +453,11 @@ ul{
       </ul>
     </div>
     <div class="description">
-      <h1>Coder</h1>
+      <h1>Programador</h1>
       <h2>Jorge // Creador y Programador </h2>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
+      <p> Jorge, un talentoso programador especializado en JavaScript y APIs, ha desarrollado una web dedicada al deporte. Con su dominio en estas tecnologías, ha creado una plataforma eficiente y dinámica que ofrece una experiencia interactiva y personalizada para los aficionados deportivos.</p>
       <p class="read-more">
-        <a href="#">Read More</a>
+        
       </p>
     </div>
   </div>
@@ -481,7 +480,7 @@ ul{
       <h2>Josep // Creador y Diseñador</h2>
       <p>Josep, un apasionado diseñador gráfico, ha asumido la emocionante tarea de dar vida a una web dedicada al mundo del deporte. Con su dominio de HTML, CSS y JavaScript, ha creado una experiencia visualmente atractiva y funcional para los amantes del deporte.</p>
       <p class="read-more">
-        <a href="#">Read More</a>
+       
       </p>
     </div>
   </div>

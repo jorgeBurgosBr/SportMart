@@ -15,6 +15,15 @@ if (isset($_SESSION['nombre'])) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarjeta de Producto</title>
+
+  
+<link rel="stylesheet" href="style/faqs.css" />
+<link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/style_carrito.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>SportMart</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -25,15 +34,6 @@ if (isset($_SESSION['nombre'])) {
             'google_translate_element');
     }
   </script>
-  
-<link rel="stylesheet" href="style/faqs.css" />
-<link rel="stylesheet" href="style/menuGym.css" />
-<link rel="stylesheet" href="style/style.css">
-<link rel="stylesheet" href="style/style_carrito.css">
-<script src="js/libreria/jquery.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
 <style>
     @media screen and (max-width: 480px) { 
   .popup-regis.active2 {
