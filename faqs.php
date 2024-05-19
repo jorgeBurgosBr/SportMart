@@ -15,6 +15,16 @@ if (isset($_SESSION['nombre'])) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarjeta de Producto</title>
+<script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,es,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element');
+    }
+  </script>
 <link rel="stylesheet" href="style/faqs.css" />
 <link rel="stylesheet" href="style/menuGym.css" />
 <link rel="stylesheet" href="style/style.css">
@@ -24,11 +34,11 @@ if (isset($_SESSION['nombre'])) {
 </head>
 
 <body>
-  <header>
+<header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-    <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
