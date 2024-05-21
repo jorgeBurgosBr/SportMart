@@ -35,7 +35,7 @@ if (isset($_SESSION['nombre'])) {
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-  <header>
+<header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
@@ -106,16 +106,16 @@ if (isset($_SESSION['nombre'])) {
     </div>
   </nav>
 
-   <div class="contenedor">
+  <div class="contenedor">
     <div class="titulo">Devoluciones Sin Preocupaciones</div>
     <div class="texto">
-        En AgonGym, entendemos que las cosas pueden tomar su tiempo. Por eso, ¡te ofrecemos devoluciones incluso después de 30 días! Nuestro compromiso es asegurarnos de que estés completamente satisfecho con tu compra.
+        En SportMart, entendemos que las cosas pueden tomar su tiempo. Por eso, ¡te ofrecemos devoluciones incluso después de 30 días! Nuestro compromiso es asegurarnos de que estés completamente satisfecho con tu compra.
         <br><br>
         Además, hemos establecido una colaboración especial con Correos para hacer que el proceso de devolución sea aún más conveniente para ti. ¡Envía tus paquetes de vuelta sin preocuparte por los costos de envío!
     </div>
     <div class="titulo">Envío Seguro y Conveniente</div>
     <div class="texto">
-        En AgonGym, nos preocupamos por la seguridad y la conveniencia de tus envíos. Es por eso que confiamos en los servicios de Correos y Correos Express para garantizar que tus paquetes lleguen a destino de manera rápida y segura.
+        En SportMart, nos preocupamos por la seguridad y la conveniencia de tus envíos. Es por eso que confiamos en los servicios de Correos y Correos Express para garantizar que tus paquetes lleguen a destino de manera rápida y segura.
         <br><br>
         Nuestra colaboración con estas reconocidas empresas de mensajería nos permite ofrecerte una variedad de opciones de envío para adaptarnos a tus necesidades. Desde envíos estándar hasta servicios exprés, tenemos la solución perfecta para ti.
         <br><br>
@@ -123,6 +123,7 @@ if (isset($_SESSION['nombre'])) {
         <br><br>
         Con tarifas que se ajustan a tu presupuesto y un sistema de seguimiento en tiempo real, puedes estar tranquilo sabiendo que tu paquete está en buenas manos. No importa si estás enviando un pequeño accesorio o un gran pedido, Correos y Correos Express son la opción más segura y confiable.
     </div>
+</div>
         
 
         <div class="imagenes">
@@ -146,6 +147,7 @@ if (isset($_SESSION['nombre'])) {
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
+          <li><a href="tallas.html">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">

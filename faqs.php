@@ -115,6 +115,12 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </nav>
+  <style>
+    #enlace{
+      text-decoration: none;
+      color:blue;
+    }
+    </style>
 <div class="faq-header">FAQS</div>
 
 <div class="faq-content">
@@ -122,7 +128,7 @@ if (isset($_SESSION['nombre'])) {
     <input id="q1" type="checkbox" class="panel">
     <div class="plus">+</div>
     <label for="q1" class="panel-title">¿Cuál es la política de devolución de productos en la tienda?</label>
-    <div class="panel-content">Nuestra política de devolución permite devoluciones dentro de los 30 días posteriores a la compra, siempre y cuando los productos estén en su estado original y con el comprobante de compra. <a href="">Devoluciones</a></div>
+    <div class="panel-content">Nuestra política de devolución permite devoluciones dentro de los 30 días posteriores a la compra, siempre y cuando los productos estén en su estado original y con el comprobante de compra.  </div> 
   </div>
   
   <div class="faq-question">
@@ -136,7 +142,7 @@ if (isset($_SESSION['nombre'])) {
     <input id="q3" type="checkbox" class="panel">
     <div class="plus">+</div>
     <label for="q3" class="panel-title">¿Cómo puedo encontrar el tamaño adecuado para mis prendas?</label>
-    <div class="panel-content">Consulta nuestra guía de tallas en línea para ayudarte a encontrar el tamaño adecuado. También puedes visitar una de nuestras tiendas físicas para probarte diferentes modelos<a href="" target="_blank">Guia de tallas</a></div>
+    <div class="panel-content">Consulta nuestra guía de tallas en línea para ayudarte a encontrar el tamaño adecuado. También puedes visitar una de nuestras tiendas físicas para probarte diferentes modelos</div>
   </div>
 
   <div class="faq-question">
@@ -247,6 +253,7 @@ if (isset($_SESSION['nombre'])) {
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
+          <li><a href="tallas.html">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">
