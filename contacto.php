@@ -62,7 +62,7 @@ if (isset($_SESSION['nombre'])) {
             height: 90vh;
         }
         
-        .container {
+        .containerr {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -143,18 +143,15 @@ if (isset($_SESSION['nombre'])) {
         .formulario button:hover {
             background-color: #444;
         }
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
+        *{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
-.containerr{
+.container{
   max-width: 1170px;
   margin:auto;
 }
-
 .row{
   display: flex;
   flex-wrap: wrap;
@@ -167,7 +164,6 @@ ul{
     padding: 70px 0;
     
 }
-
 .footer-col{
    width: 25%;
    padding: 0 15px;
@@ -236,7 +232,6 @@ ul{
     width: 100%;
 }
 }
-
 
 
 
@@ -319,7 +314,7 @@ ul{
   </nav>
   <br><br><br>
     <div class="centrado">
-        <div class="container">
+        <div class="containerr">
             <div class="texto">
                 <h3>Pregunta y nosotros te ayudamos</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Phasellus in metus at lorem venenatis gravida at at enim. Quisque id fermentum dui. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae libero at mauris dapibus varius.</p>
