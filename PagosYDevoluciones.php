@@ -32,7 +32,7 @@ if (isset($_SESSION['nombre'])) {
             'google_translate_element');
     }
   </script>
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <header>
@@ -139,44 +139,44 @@ if (isset($_SESSION['nombre'])) {
 </div>
 
 <footer class="footer">
-    <div class="container">
-     <div class="row">
-       <div class="footer-col">
-         <h4>company</h4>
-         <ul>
-           <li><a href="#">about us</a></li>
-           <li><a href="#">privacy policy</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>get help</h4>
-         <ul>
-           <li><a href="faqs.html">FAQ</a></li>
-           <li><a href="PagosInfo.html">Metodos de Pago</a></li>
-           <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
-           <li><a href="contacto.html">Contacto</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>online shop</h4>
-         <ul>
-           <li><a href="#">Menu Gym</a></li>
-           <li><a href="#">Menu Running</a></li>
-           <li><a href="#">Menu Fighting</a></li>
-         </ul>
-       </div>
-       <div class="footer-col">
-         <h4>follow us</h4>
-         <div class="social-links">
-           <a href="#"><i class="fab fa-facebook-f"></i></a>
-           <a href="#"><i class="fab fa-twitter"></i></a>
-           <a href="#"><i class="fab fa-instagram"></i></a>
-           <a href="#"><i class="fab fa-youtube"></i></a>
-         </div>
-       </div>
-     </div>
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="aboutus.php">About Us</a></li>
+          <li><a href="privacidad.php">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="faqs.php">FAQ</a></li>
+          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Online Shop</h4>
+        <ul>
+          <li><a href="home_gym.php">Menu Gym</a></li>
+          <li><a href="home_boxeo.php">Menu Running</a></li>
+          <li><a href="home_running.php">Menu Fighting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
     </div>
- </footer>
+  </div>
+</footer>
 
  <!-- ------------------------ LOGIN ------------------------ -->
 <div class="popup">

@@ -26,7 +26,7 @@ if (isset($_SESSION['nombre'])) {
 
   <title>SportMart</title>
 </head>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <body>
   <header>
     <button id="show-help">Ayuda</button>
@@ -101,41 +101,41 @@ if (isset($_SESSION['nombre'])) {
   <section class="banner-ppal"><img src="img/banner_newbalance.jpg" alt="" /></section>
   <footer class="footer">
   <div class="container">
-   <div class="row">
-     <div class="footer-col">
-       <h4>Nosotros</h4>
-       <ul>
-         <li><a href="#">Sobre nosotros</a></li>
-         <li><a href="#">Politicas de privacidad</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Ayuda</h4>
-       <ul>
-         <li><a href="faqs.php">FAQ</a></li>
-         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
-         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
-         <li><a href="contacto.html">Contacto</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Tienda Online</h4>
-       <ul>
-         <li><a href="home_gym.php">Gym</a></li>
-         <li><a href="home_running.php">Running</a></li>
-         <li><a href="home_boxeo.php">Boxeo</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Síguenos</h4>
-       <div class="social-links">
-         <a href="#"><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><i class="fab fa-twitter"></i></a>
-         <a href="#"><i class="fab fa-instagram"></i></a>
-         <a href="#"><i class="fab fa-youtube"></i></a>
-       </div>
-     </div>
-   </div>
+    <div class="row">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="aboutus.php">About Us</a></li>
+          <li><a href="privacidad.php">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="faqs.php">FAQ</a></li>
+          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Online Shop</h4>
+        <ul>
+          <li><a href="home_gym.php">Menu Gym</a></li>
+          <li><a href="home_boxeo.php">Menu Running</a></li>
+          <li><a href="home_running.php">Menu Fighting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
   <!-- ------------------------ LOGIN ------------------------ -->

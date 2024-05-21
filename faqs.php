@@ -15,6 +15,15 @@ if (isset($_SESSION['nombre'])) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarjeta de Producto</title>
+
+  
+<link rel="stylesheet" href="style/faqs.css" />
+<link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/style_carrito.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>SportMart</title>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -25,15 +34,7 @@ if (isset($_SESSION['nombre'])) {
             'google_translate_element');
     }
   </script>
-  
-<link rel="stylesheet" href="style/faqs.css" />
-<link rel="stylesheet" href="style/menuGym.css" />
-<link rel="stylesheet" href="style/style.css">
-<link rel="stylesheet" href="style/style_carrito.css">
-<script src="js/libreria/jquery.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
     @media screen and (max-width: 480px) { 
   .popup-regis.active2 {
@@ -240,41 +241,41 @@ if (isset($_SESSION['nombre'])) {
 
   <footer class="footer">
   <div class="container">
-   <div class="row">
-     <div class="footer-col">
-       <h4>Nosotros</h4>
-       <ul>
-         <li><a href="#">Sobre nosotros</a></li>
-         <li><a href="#">Politicas de privacidad</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Ayuda</h4>
-       <ul>
-         <li><a href="faqs.php">FAQ</a></li>
-         <li><a href="PagosInfo.html">Metodos de Pago</a></li>
-         <li><a href="PagosYDevoluciones.html">Devoluciones</a></li>
-         <li><a href="contacto.html">Contacto</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Tienda Online</h4>
-       <ul>
-         <li><a href="home_gym.php">Gym</a></li>
-         <li><a href="home_running.php">Running</a></li>
-         <li><a href="home_boxeo.php">Boxeo</a></li>
-       </ul>
-     </div>
-     <div class="footer-col">
-       <h4>Síguenos</h4>
-       <div class="social-links">
-         <a href="#"><i class="fab fa-facebook-f"></i></a>
-         <a href="#"><i class="fab fa-twitter"></i></a>
-         <a href="#"><i class="fab fa-instagram"></i></a>
-         <a href="#"><i class="fab fa-youtube"></i></a>
-       </div>
-     </div>
-   </div>
+    <div class="row">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="aboutus.php">About Us</a></li>
+          <li><a href="privacidad.php">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="faqs.php">FAQ</a></li>
+          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+          <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Online Shop</h4>
+        <ul>
+          <li><a href="home_gym.php">Menu Gym</a></li>
+          <li><a href="home_boxeo.php">Menu Running</a></li>
+          <li><a href="home_running.php">Menu Fighting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
 <script src="js/script_home.js"></script>
