@@ -24,12 +24,12 @@ if (isset($_SESSION['nombre'])) {
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'en,es,pt',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            },
-            'google_translate_element');
+      new google.translate.TranslateElement({
+          pageLanguage: 'es',
+          includedLanguages: 'en,es,pt',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element');
     }
   </script>
   <script src="js/libreria/jquery.js"></script>
@@ -39,21 +39,22 @@ if (isset($_SESSION['nombre'])) {
   <title>SportMart</title>
   <style>
     .popup-regis.active2,
-.popup.activa {
-  top: 10%;
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-@media screen and (max-width: 480px) { 
-  .popup-regis.active2 {
-    top: 12%;
-  }
-}
+    .popup.activa {
+      top: 10%;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    @media screen and (max-width: 480px) {
+      .popup-regis.active2 {
+        top: 12%;
+      }
+    }
   </style>
 </head>
 
 <body>
-<header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
