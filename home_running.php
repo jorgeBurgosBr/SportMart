@@ -20,17 +20,26 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
-  <link rel="stylesheet" href="style/footer.css">
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-          pageLanguage: 'es',
-          includedLanguages: 'en,es,pt',
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        },
-        'google_translate_element');
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
     }
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'en,es,pt',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadGoogleTranslate();
+    });
   </script>
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
@@ -412,7 +421,6 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </div>
-</footer>
     <!-- ------------------------ LOGIN ------------------------ -->
     <div class="popup">
       <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
