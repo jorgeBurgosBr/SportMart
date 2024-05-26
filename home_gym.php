@@ -34,7 +34,7 @@ if (isset($_SESSION['nombre'])) {
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
+            includedLanguages: 'en,es,pt,it,fr,de',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }

@@ -33,7 +33,7 @@ if (isset($_SESSION['nombre'])) {
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
+            includedLanguages: 'en,es,pt,it,fr,de',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
@@ -42,11 +42,10 @@ if (isset($_SESSION['nombre'])) {
       loadGoogleTranslate();
     });
   </script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="js/libreria/jquery.js"></script>
-  <script src="js/libreria/lightslider.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
   <style>
   .popup.active {
     top: 20%;
@@ -240,131 +239,18 @@ if (isset($_SESSION['nombre'])) {
   </div>
   </div>
   <h2 class="h2">Lo más vendido</h2>
-    <div class="slider">
-      <ul id="autoWidth" class="cs-hidden">
-        <li class="item-a">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/track.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-        <li class="item-b">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-        <li class="item-c">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-        <li class="item-d">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-        <li class="item-e">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-        <li class="item-f">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-        <li class="item-g">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
-              </div>
-              <a href="#" class="price">23$</a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <!-- <div class="slider">
+    <ul id="autoWidth" class="cs-hidden product-list">
+    </ul>
+</div> -->
+
+<div class="container">
+  <div class="slide-container">
+    <div class="card-wrapper"></div>
+  </div>
+</div>
     <footer class="footer">
-  <div class="container">
+  <div class="container-footer">
     <div class="row">
       <div class="footer-col">
         <h4>Company</h4>
@@ -463,9 +349,13 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
+  <script src="js/libreria/swiper-bundle.min.js"></script>
+  <script src="js/script_carrusel_boxeo.js"></script>
+  <!-- <script src="js/libreria/jquery.js"></script>
+  <script src="js/libreria/lightslider.js"></script> -->
   <script src="js/script_home.js"></script>
   <script src="js/script_carrito.js"></script>
-  <script src="js/script_running.js"></script>
+  <!-- <script src="js/script_running.js"></script> -->
 </body>
 
 </html>

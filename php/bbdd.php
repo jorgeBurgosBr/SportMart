@@ -101,10 +101,17 @@ function crearBD()
 
             // Insertar datos en la tabla PRODUCTO
             "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, talla, sexo) VALUES
-    ('Camiseta deportiva', 'Camiseta de algodón transpirable', 25.99, 'camiseta.jpg', 'M', 'Hombre'),
-    ('Zapatillas running', 'Zapatillas para correr con suela amortiguada', 89.99, 'zapatillas.jpg', '42', 'Hombre'),
-    ('Leggings deportivos', 'Leggings ajustados para entrenamiento', 19.99, 'leggings.jpg', 'S', 'Mujer'),
-    ('Balón de fútbol', 'Balón oficial de tamaño 5', 14.99, 'balon.jpg', NULL, NULL);",
+   ('Camiseta Everlast', 'Camiseta de algodón transpirable', 25.99, 'camiseta_everlast.jpg', NULL, NULL),
+   ('Zapatillas nike', 'Zapatillas para correr con suela amortiguada', 89.99, 'zapatillas_nike.jpg', NULL, NULL),
+   ('Leggings deportivos', 'Leggings ajustados para entrenamiento', 19.99, 'leggings.jpg', NULL, NULL),
+   ('Guantes CHARLIE', 'Guantes de cuero para entrenamiento de boxeo', 45.99, './img/accesorios/guantes_charlie.jpg', NULL, NULL),
+   ('Guantes EVERLAST', 'Guantes de cuero para entrenamiento de boxeo', 35.99, './img/accesorios/guantes_everlast.jpeg', NULL, NULL),
+   ('Protector bucal', 'Protector bucal para boxeo con funda', 9.99, './img/accesorios/protector_bucal.jpg', NULL, NULL),
+   ('Nike Hyperko 2', 'Zapatillas de boxeo', 129.99, './img/accesorios/zapatillas_boxeo_nike.jpg', NULL, NULL),
+   ('Camiseta Adidas', 'Camiseta ligera y transpirable para correr', 29.99, 'camiseta_running.jpg', NULL, NULL),
+   ('Reloj Garmin', 'Reloj GPS con monitor de frecuencia cardíaca', 199.99, 'reloj_gps.jpg', NULL, NULL),
+   ('Mancuernas ajustables', 'Mancuernas con peso ajustable de 2 a 20 kg', 75.99, 'mancuernas.jpg', NULL, NULL),
+   ('Straps', 'Straps ajustables', 25.99, 'straps.jpg', NULL, NULL);",
 
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
