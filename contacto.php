@@ -43,7 +43,7 @@ if (isset($_SESSION['nombre'])) {
       .esp{
         margin-bottom: 10px;
       }
-            body {
+            .fondo {
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
@@ -312,6 +312,7 @@ ul{
       </div>
     </div>
   </nav>
+  <div class="fondo">
   <br><br><br>
     <div class="centrado">
         <div class="containerr">
@@ -342,127 +343,133 @@ ul{
             </div>
         </div>
     </div>
+    
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const formulario = document.querySelector('.contacto-formulario');
-          const emailInput = document.querySelector('#emailInput');
-          const nombreInput = document.querySelector('#nameInput');
-          const motivoInput = document.querySelector('#motivoInput');
-          const errorEmail = document.querySelector('.contenedor-email');
-          const errorName = document.querySelector('.contenedor-name');
-          const errorTextarea = document.querySelector('.contenedor-textarea');
+        document.addEventListener("DOMContentLoaded", function() {
+            const formulario = document.querySelector('.contacto-formulario');
+            const emailInput = document.querySelector('#emailInput');
+            const nombreInput = document.querySelector('#nameInput');
+            const motivoInput = document.querySelector('#motivoInput');
+            const errorEmail = document.querySelector('.contenedor-email');
+            const errorName = document.querySelector('.contenedor-name');
+            const errorTextarea = document.querySelector('.contenedor-textarea');
 
-          emailInput.addEventListener('blur', function() {
-              validarMail();
-          });
+            emailInput.addEventListener('blur', function() {
+                validarMail();
+            });
 
-          nombreInput.addEventListener('blur', function() {
-              validarName();
-          });
+            nombreInput.addEventListener('blur', function() {
+                validarName();
+            });
 
-          motivoInput.addEventListener('blur', function() {
-              validarMotivo();
-          });
+            motivoInput.addEventListener('blur', function() {
+                validarMotivo();
+            });
 
-          formulario.addEventListener('submit', function(event) {
-              const errorEmail = validarMail();
-              const errorNombre = validarName();
-              const errorMotivo = validarMotivo();
+            formulario.addEventListener('submit', function(event) {
+                const errorEmail = validarMail();
+                const errorNombre = validarName();
+                const errorMotivo = validarMotivo();
 
-              if (errorEmail || errorNombre || errorMotivo) {
-                  event.preventDefault();
-              }
-          });
+                if (errorEmail || errorNombre || errorMotivo) {
+                    event.preventDefault();
+                }
+            });
 
-          function validarMail() {
-              const errores = document.querySelectorAll('.error.mail');
-              errores.forEach(error => {
-                  error.remove();
-              });
+            function validarMail() {
+                const errores = document.querySelectorAll('.error.mail');
+                errores.forEach(error => {
+                    error.remove();
+                });
 
-              const email = emailInput.value.trim();
+                const email = emailInput.value.trim();
 
-              if (email == '') {
-                  const error = document.createElement('p');
-                  error.classList.add('error');
-                  error.classList.add('mail');
-                  error.textContent = "EL EMAIL ES OBLIGATORIO, NO PUEDE ESTAR VACIO";
-                  errorEmail.appendChild(error);
-                  return true;
-              }
+                if (email == '') {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('mail');
+                    error.textContent = "EL EMAIL ES OBLIGATORIO, NO PUEDE ESTAR VACIO";
+                    error.style.color = 'red';
+                    errorEmail.appendChild(error);
+                    return true;
+                }
 
-              if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-                  const error = document.createElement('p');
-                  error.classList.add('error');
-                  error.classList.add('mail');
-                  error.textContent = "EMAIL INVÁLIDO O CONTIENE CARÁCTERES NO PERMITIDOS";
-                  errorEmail.appendChild(error);
-                  return true;
-              }
+                if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('mail');
+                    error.textContent = "EMAIL INVÁLIDO O CONTIENE CARÁCTERES NO PERMITIDOS";
+                    error.style.color = 'red';
+                    errorEmail.appendChild(error);
+                    return true;
+                }
 
-              return false;
-          }
+                return false;
+            }
 
-          function validarName() {
-              const errores = document.querySelectorAll('.error.name');
-              errores.forEach(error => {
-                  error.remove();
-              });
+            function validarName() {
+                const errores = document.querySelectorAll('.error.name');
+                errores.forEach(error => {
+                    error.remove();
+                });
 
-              const name = nombreInput.value.trim();
+                const name = nombreInput.value.trim();
 
-              if (name == '') {
-                  const error = document.createElement('p');
-                  error.classList.add('error');
-                  error.classList.add('name');
-                  error.textContent = "EL NOMBRE ES OBLIGATORIO";
-                  errorName.appendChild(error);
-                  return true;
-              }
+                if (name == '') {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('name');
+                    error.textContent = "EL NOMBRE ES OBLIGATORIO";
+                    error.style.color = 'red';
+                    errorName.appendChild(error);
+                    return true;
+                }
 
-              if (/\d/.test(name)) {
-                  const error = document.createElement('p');
-                  error.classList.add('error');
-                  error.classList.add('name');
-                  error.textContent = "EL NOMBRE NO PUEDE TENER NÚMEROS";
-                  errorName.appendChild(error);
-                  return true;
-              }
+                if (/\d/.test(name)) {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('name');
+                    error.textContent = "EL NOMBRE NO PUEDE TENER NÚMEROS";
+                    error.style.color = 'red';
+                    errorName.appendChild(error);
+                    return true;
+                }
 
-              return false;
-          }
+                return false;
+            }
 
-          function validarMotivo() {
-              const errores = document.querySelectorAll('.error.motivo');
-              errores.forEach(error => {
-                  error.remove();
-              });
+            function validarMotivo() {
+                const errores = document.querySelectorAll('.error.motivo');
+                errores.forEach(error => {
+                    error.remove();
+                });
 
-              const motivo = motivoInput.value.trim();
+                const motivo = motivoInput.value.trim();
 
-              if (motivo == '') {
-                  const error = document.createElement('p');
-                  error.classList.add('error');
-                  error.classList.add('motivo');
-                  error.textContent = "POR FAVOR, INDICA EL MOTIVO DE CONTACTO";
-                  errorTextarea.appendChild(error);
-                  return true;
-              }
+                if (motivo == '') {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('motivo');
+                    error.textContent = "POR FAVOR, INDICA EL MOTIVO DE CONTACTO";
+                    error.style.color = 'red';
+                    errorTextarea.appendChild(error);
+                    return true;
+                }
 
-              if (motivo.length > 256) {
-                  const error = document.createElement('p');
-                  error.classList.add('error');
-                  error.classList.add('motivo');
-                  error.textContent = "HAS SUPERADO EL LIMITE DE CARÁCTERES PERMITIDOS";
-                  errorTextarea.appendChild(error);
-                  return true;
-              }
+                if (motivo.length > 256) {
+                    const error = document.createElement('p');
+                    error.classList.add('error');
+                    error.classList.add('motivo');
+                    error.textContent = "HAS SUPERADO EL LIMITE DE CARÁCTERES PERMITIDOS";
+                    error.style.color = 'red';
+                    errorTextarea.appendChild(error);
+                    return true;
+                }
 
-              return false;
-          }
-      });
-  </script>
-
+                return false;
+            }
+        });
+    </script>
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
@@ -535,7 +542,7 @@ ul{
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.html">Tallas</a></li>
+          <li><a href="tallas.php">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -567,7 +574,7 @@ ul{
     </div>
   </div>
 </footer>
-
+</div>
 <script src="js/script_running.js"></script>
 <script src="js/script_home.js"></script>
 

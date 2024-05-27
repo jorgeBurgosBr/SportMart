@@ -1,3 +1,15 @@
+<?php
+session_start();
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['nombre'])) {
+  $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
+  $textoBotonRegistrarse = "Cerrar sesión";
+} else {
+  $textoBotonLogin = "Inicia sesión";
+  $textoBotonRegistrarse = "Regístrate";
+}
+?>
+
 
 
 <!DOCTYPE html>
@@ -1332,7 +1344,7 @@ ul{
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.html">Tallas</a></li>
+          <li><a href="tallas.php">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">
