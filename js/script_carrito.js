@@ -1,7 +1,7 @@
 // Cart
-let cartIcon = document.querySelector('#cart-icon')
-let cart = document.querySelector('.cart')
-let closeCart = document.querySelector('#close-cart')
+let cartIcon = document.querySelector('#cart-icon');
+let cart = document.querySelector('.cart');
+let closeCart = document.querySelector('#close-cart');
 
 // Open Cart
 // cartIcon.onclick = () => {
@@ -9,7 +9,7 @@ let closeCart = document.querySelector('#close-cart')
 // }
 // Close Cart
 closeCart.onclick = () => {
-   cart.classList.remove('active')
+   cart.classList.remove('active');
 }
 
 // Cart Working JS
@@ -43,6 +43,7 @@ function ready() {
    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
 
 }
+
 // Buy Button
 function buyButtonClicked() {
    alert("Your Order is placed")
@@ -76,10 +77,10 @@ function addToCartClicked(event) {
    var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
    var price = shopProducts.getElementsByClassName('price')[0].innerText;
    var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+   console.log(title, price, productImg)
    addProductToCart(title, price, productImg)
    updateTotal();
 }
-
 
 function addProductToCart(title, price, productImg) {
    var cartShopBox = document.createElement("div");
@@ -117,14 +118,11 @@ function updateTotal() {
       var cartBox = cartBoxes[i];
       var priceElement = cartBox.getElementsByClassName('cart-price')[0];
       var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
-      var price = parseFloat(priceElement.innerText.replace("$", ""));
+      var price = parseFloat(priceElement.innerText.replace("€", ""));
       var quantity = quantityElement.value;
       total = total + price * quantity;
    }
-      // If price Contain some Cents Value
-      total = Math.round(total * 100) / 100;
-
-      document.getElementsByClassName('total-price')[0].innerHTML = "$" + total;
-   
-
+   // If price contains some cents value
+   total = Math.round(total * 100) / 100;
+   document.getElementsByClassName('total-price')[0].innerText = total + " €";
 }

@@ -46,10 +46,16 @@ function crearBD()
                descripcion TEXT,
                precio DECIMAL(10, 2) NOT NULL,
                imagen VARCHAR(255),
-               talla VARCHAR(255),
                sexo ENUM('Hombre', 'Mujer') NOT NULL,
                PRIMARY KEY (id_producto)
                );",
+            "CREATE TABLE VARIANTE (
+               id_variante INT AUTO_INCREMENT,
+               id_producto INT,
+               talla VARCHAR(50),
+               PRIMARY KEY (id_variante),
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
+            );",
             "CREATE TABLE FAVORITOS (
                id_favorito INT AUTO_INCREMENT,
                id_cliente INT,
@@ -66,12 +72,17 @@ function crearBD()
                FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente)
                );",
             "CREATE TABLE CATEGORIA (
-               id_categoria INT  AUTO_INCREMENT, 
+               id_categoria INT AUTO_INCREMENT, 
                categoria VARCHAR(150) UNIQUE,
+               PRIMARY KEY (id_categoria)
+            );",
+            "CREATE TABLE PRODUCTO_CATEGORIA (
                id_producto INT,
-               PRIMARY KEY (id_categoria),
-               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
-               );",
+               id_categoria INT,
+               PRIMARY KEY (id_producto, id_categoria),
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
+               FOREIGN KEY (id_categoria) REFERENCES CATEGORIA(id_categoria)
+            );",
             "CREATE TABLE DETALLES_PEDIDO (
                id_pedido INT AUTO_INCREMENT,
                id_producto INT NOT NULL,
@@ -100,12 +111,22 @@ function crearBD()
     ('Laura', 'López', 'laura@example.com', '789123456');",
 
             // Insertar datos en la tabla PRODUCTO
-            "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, talla, sexo) VALUES
-    ('Camiseta deportiva', 'Camiseta de algodón transpirable', 25.99, 'camiseta.jpg', 'M', 'Hombre'),
-    ('Zapatillas running', 'Zapatillas para correr con suela amortiguada', 89.99, 'zapatillas.jpg', '42', 'Hombre'),
-    ('Leggings deportivos', 'Leggings ajustados para entrenamiento', 19.99, 'leggings.jpg', 'S', 'Mujer'),
-    ('Balón de fútbol', 'Balón oficial de tamaño 5', 14.99, 'balon.jpg', NULL, NULL);",
-
+            "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, sexo) VALUES
+               ('Camiseta deportiva', 'Camiseta de algodón transpirable', 25.99, './img/logo_hoka.png', 'Hombre'),
+               ('Zapatillas running', 'Zapatillas para correr con suela amortiguada', 89.99, './img/logo_hoka.png', 'Hombre'),
+               ('Leggings deportivos', 'Leggings ajustados para entrenamiento', 19.99, './img/logo_hoka.png', 'Mujer'),
+               ('Balón de fútbol', 'Balón oficial de tamaño 5', 14.99, './img/logo_hoka.png', 'Hombre');",
+            "INSERT INTO VARIANTE (id_producto, talla) VALUES
+               (1, 'S'),
+               (1, 'M'),
+               (1, 'L'),
+               (2, '40'),
+               (2, '42'),
+               (2, '44'),
+               (3, 'S'),
+               (3, 'M'),
+               (3, 'L'),
+               (4, NULL);",
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
     (1, 1),
@@ -121,11 +142,19 @@ function crearBD()
     (4, 4, 1);",
 
             // Insertar datos en la tabla CATEGORIA
-            "INSERT INTO CATEGORIA (categoria, id_producto) VALUES
-    ('Ropa deportiva', 1),
-    ('Calzado', 2),
-    ('Ropa', 3),
-    ('Accesorios', 4);",
+            "INSERT INTO CATEGORIA (categoria) VALUES
+    ('Ropa deportiva'),
+    ('Calzado'),
+    ('Ropa'),
+    ('Accesorios');",
+
+            // Insertar datos en la tabla PRODUCTO_CATEGORIA
+            "INSERT INTO PRODUCTO_CATEGORIA (id_producto, id_categoria) VALUES
+    (1, 1),  -- Camiseta deportiva -> Ropa deportiva
+    (2, 2),  -- Zapatillas running -> Calzado
+    (3, 1),  -- Leggings deportivos -> Ropa deportiva
+    (3, 3),  -- Leggings deportivos -> Ropa
+    (4, 4);  -- Balón de fútbol -> Accesorios",
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
@@ -155,9 +184,10 @@ function crearBD()
          $bd->cerrar();
       }
    } catch (Exception $e) {
-         // echo $e->getMessage();
+      // echo $e->getMessage();
    }
 }
+
 function ejecutarSentencias($conexion, $sentencias)
 {
    foreach ($sentencias as $sql) {
@@ -175,7 +205,8 @@ function ejecutarSentencias($conexion, $sentencias)
       }
    }
 }
-// Crea tablas e inserta datos solo si no existe Ambulatorio
+
+// Crea tablas e inserta datos solo si no existe sportmart
 if (!existeBBDD()) {
    crearBD();
 }
