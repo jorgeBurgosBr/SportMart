@@ -22,6 +22,11 @@ if (isset($_SESSION['nombre'])) {
 <link rel="stylesheet" href="style/style_carrito.css" />
 <script src="js/libreria/jquery.js"></script>
 <script src="js/libreria/lightslider.js"></script>
+<script src="js/libreria/jquery.js"></script>
+<script src="js/libreria/lightslider.js"></script>
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
@@ -429,6 +434,10 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
+<!-- Whatsapp -->
+<a href="https://api.whatsapp.com/send?phone=620365035" class="btn-wsp" target="_blank">
+			<i class="fa fa-whatsapp icono"></i>
+		</a>
 
   <footer class="footer">
   <div class="container">
