@@ -239,10 +239,10 @@ if (isset($_SESSION['nombre'])) {
   </div>
   </div>
   <h2 class="h2">Lo más vendido</h2>
-  <!-- <div class="slider">
+  <div class="slider">
     <ul id="autoWidth" class="cs-hidden product-list">
     </ul>
-</div> -->
+</div>
 
 <div class="container">
   <div class="slide-container">
@@ -351,11 +351,11 @@ if (isset($_SESSION['nombre'])) {
   </div>
   <script src="js/libreria/swiper-bundle.min.js"></script>
   <script src="js/script_carrusel_boxeo.js"></script>
-  <!-- <script src="js/libreria/jquery.js"></script>
-  <script src="js/libreria/lightslider.js"></script> -->
+  <script src="js/libreria/jquery.js"></script>
+  <script src="js/libreria/lightslider.js"></script>
   <script src="js/script_home.js"></script>
   <script src="js/script_carrito.js"></script>
-  <!-- <script src="js/script_running.js"></script> -->
+  <script src="js/script_running.js"></script>
 </body>
 
 </html>
