@@ -65,12 +65,13 @@ function crearBD()
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
                   );",
             "CREATE TABLE CARRITO (
-               id_cliente INT PRIMARY KEY,
+               id_carrito INT AUTO_INCREMENT PRIMARY KEY,
+               id_cliente INT,
                id_producto INT,
                cantidad INT NOT NULL,
-               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
-               FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente)
-               );",
+               FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
+            );",
             "CREATE TABLE CATEGORIA (
                id_categoria INT AUTO_INCREMENT, 
                categoria VARCHAR(150) UNIQUE,
