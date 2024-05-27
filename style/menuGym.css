@@ -387,6 +387,13 @@
       color: #24262b;
       background-color: #ffffff;
     }
+
+  .popup-regis.active2,
+.popup.activa {
+  top: 15%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
     
     /*responsive*/
     @media(max-width: 767px){
