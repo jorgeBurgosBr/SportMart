@@ -20,6 +20,8 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style/whatsapp.css" />
   <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
@@ -131,6 +133,11 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </nav>
+
+  <!-- Whatsapp -->
+<a href="https://api.whatsapp.com/send?phone=620365035" class="btn-wsp" target="_blank">
+			<i class="fa fa-whatsapp icono"></i>
+		</a>
   <!-- CONTENIDO -->
   <section class="banner-ppal"><img src="img/banner_newbalance.jpg" alt="" /></section>
   <h1 class="tutulo-centrado">Tenemos todo lo que necesitas</h2>

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 .error-message {
     color: red;
     font-size: 0.9em;
@@ -16,8 +17,8 @@
 }
 
 .button:hover {
-    background-color: rgb(255, 208, 0);
-    color: rgb(12, 12, 22);
+    background-color: #0171e3;
+    color: white;
 }
 
 .button {
@@ -28,6 +29,8 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "Lexend", sans-serif
+    
 }
 
 .grid-login {
@@ -148,7 +151,7 @@ body {
 }
 
 .exit:hover {
-    background-color: rgb(255, 208, 0);
+    background-color: #0171e3;
     color: white;
 }
 
@@ -202,4 +205,96 @@ body {
     .grid-login .grid-p2 {
         order: 2;
     }
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+.collapse-area {
+    background: #D7D8DC;
+}
+.panel {
+    margin-top: 0px ;
+    border-radius: 0px;
+    border: none;
+    border-bottom-color: #D7D8DC;
+    box-shadow: 0 0px 0px 0 transparent ;
+}
+.panel .panel-heading {
+    border-radius: 0px ;
+    background: #f5f6f8;
+    padding: 0px ;
+    border-bottom: 0px solid #DDDEE2;
+}
+.panel .panel-heading .panel-title a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 23px 15px;
+    font-weight: 300;
+    color: #60626d;
+    background-color: #ffffff;
+    line-height: 29px;
+    position: relative;
+    cursor: pointer;
+}
+.panel .panel-heading .panel-title a:hover,
+.panel .panel-heading .panel-title a:active {
+    text-decoration: none;
+    transition: all 0.4s;
+    color: #9a4a5a;
+}
+.panel .panel-heading .panel-title a span {
+    float: left;
+    margin-top: 15px;
+    margin-right: 30px;
+    transition: all 0.4s;
+}
+.panel .panel-heading .panel-title a .bar,
+.panel .panel-heading .panel-title a .bar:after {
+    border-width: 1px;
+    border-style: solid;
+    width: 21px;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+.panel .panel-heading .panel-title a .bar:after {
+    content: "";
+    height: 0;
+    position: absolute;
+    top: 38px;
+    left: 15px;
+}
+.panel .panel-heading .panel-title a.collapsed {
+    background-color: #f5f6f8 ;
+    border-bottom: 1px solid #eeeef3;
+    position: relative;
+    transition: all 0.4s;
+}
+.panel .panel-heading .panel-title a.collapsed .bar {
+    border-color: #75767F;
+}
+.panel .panel-heading .panel-title a.collapsed .bar:after {
+    transform: rotate(90deg);
+    border-color: #75767F;
+    transition: all 0.4s;
+}
+.panel-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+.panel-collapse.show {
+    max-height: 500px; /* Ajusta esto según el contenido */
+}
+.panel-collapse .panel-body {
+    background-color: #ffffff;
+    border: 0px solid ;
+    line-height: 26px;
+    font-weight: 300;
+    margin-left: 50px;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    color: #60626d;
 }
