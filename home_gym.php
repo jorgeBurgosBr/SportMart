@@ -20,6 +20,7 @@ if (isset($_SESSION['nombre'])) {
 <link rel="stylesheet" href="style/style_running.css" />
 <link rel="stylesheet" href="style/lightslider.css" />
 <link rel="stylesheet" href="style/style_carrito.css" />
+<link rel="stylesheet" href="style/whatsapp.css" />
 <script src="js/libreria/jquery.js"></script>
 <script src="js/libreria/lightslider.js"></script>
 <script src="js/libreria/jquery.js"></script>
@@ -62,7 +63,7 @@ if (isset($_SESSION['nombre'])) {
   <title>SportMart</title>
 </head>
 <body>
-   <header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
