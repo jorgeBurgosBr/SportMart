@@ -69,6 +69,7 @@ function crearBD()
                id_cliente INT,
                id_producto INT,
                cantidad INT NOT NULL,
+               talla VARCHAR(50), -- Columna para almacenar la talla del producto
                FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
             );",
@@ -106,10 +107,10 @@ function crearBD()
          $insertSql = [
             // Insertar datos en la tabla CLIENTE
             "INSERT INTO CLIENTE (nombre, apellidos, correo, telefono) VALUES
-    ('Juan', 'González', 'juan@example.com', '123456789'),
-    ('María', 'Martínez', 'maria@example.com', '987654321'),
-    ('Pedro', 'Sánchez', 'pedro@example.com', '456789123'),
-    ('Laura', 'López', 'laura@example.com', '789123456');",
+               ('Juan', 'González', 'juan@example.com', '123456789'),
+               ('María', 'Martínez', 'maria@example.com', '987654321'),
+               ('Pedro', 'Sánchez', 'pedro@example.com', '456789123'),
+               ('Laura', 'López', 'laura@example.com', '789123456');",
 
             // Insertar datos en la tabla PRODUCTO
             "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, sexo) VALUES
@@ -127,56 +128,56 @@ function crearBD()
                (3, 'S'),
                (3, 'M'),
                (3, 'L'),
-               (4, NULL);",
+               (4, 'M');",
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
-    (1, 1),
-    (1, 3),
-    (2, 2),
-    (3, 4);",
+               (1, 1),
+               (1, 3),
+               (2, 2),
+               (3, 4);",
 
             // Insertar datos en la tabla CARRITO
-            "INSERT INTO CARRITO (id_cliente, id_producto, cantidad) VALUES
-    (1, 2, 2),
-    (2, 3, 1),
-    (3, 1, 3),
-    (4, 4, 1);",
+            "INSERT INTO CARRITO (id_cliente, id_producto, cantidad, talla) VALUES
+               (1, 2, 2, '42'), 
+               (2, 3, 1, 'L'), 
+               (3, 1, 3, 'S'),
+               (4, 4, 1, 'M');",
 
             // Insertar datos en la tabla CATEGORIA
             "INSERT INTO CATEGORIA (categoria) VALUES
-    ('Ropa deportiva'),
-    ('Calzado'),
-    ('Ropa'),
-    ('Accesorios');",
+               ('Ropa deportiva'),
+               ('Calzado'),
+               ('Ropa'),
+               ('Accesorios');",
 
             // Insertar datos en la tabla PRODUCTO_CATEGORIA
             "INSERT INTO PRODUCTO_CATEGORIA (id_producto, id_categoria) VALUES
-    (1, 1),  -- Camiseta deportiva -> Ropa deportiva
-    (2, 2),  -- Zapatillas running -> Calzado
-    (3, 1),  -- Leggings deportivos -> Ropa deportiva
-    (3, 3),  -- Leggings deportivos -> Ropa
-    (4, 4);  -- Balón de fútbol -> Accesorios",
+               (1, 1),  -- Camiseta deportiva -> Ropa deportiva
+               (2, 2),  -- Zapatillas running -> Calzado
+               (3, 1),  -- Leggings deportivos -> Ropa deportiva
+               (3, 3),  -- Leggings deportivos -> Ropa
+               (4, 4);  -- Balón de fútbol -> Accesorios",
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
-    (1, 2),
-    (2, 1),
-    (3, 3),
-    (4, 1);",
+               (1, 2),
+               (2, 1),
+               (3, 3),
+               (4, 1);",
 
             // Insertar datos en la tabla DIRECCION_ENVIO
             "INSERT INTO DIRECCION_ENVIO (id_pedido, direccion) VALUES
-    (1, 'Calle Principal 123, Ciudad'),
-    (2, 'Avenida Central 456, Ciudad'),
-    (3, 'Plaza Mayor 789, Ciudad'),
-    (4, 'Calle Secundaria 321, Ciudad');",
+               (1, 'Calle Principal 123, Ciudad'),
+               (2, 'Avenida Central 456, Ciudad'),
+               (3, 'Plaza Mayor 789, Ciudad'),
+               (4, 'Calle Secundaria 321, Ciudad');",
 
             // Insertar datos en la tabla METODO_PAGO
             "INSERT INTO METODO_PAGO (id_pedido, n_tarjeta, fecha, nombre) VALUES
-    (1, '1234-5678-9012-3456', '2024-05-02', 'Juan González'),
-    (2, '2345-6789-0123-4567', '2024-05-02', 'María Martínez'),
-    (3, '3456-7890-1234-5678', '2024-05-02', 'Pedro Sánchez'),
-    (4, '4567-8901-2345-6789', '2024-05-02', 'Laura López');"
+               (1, '1234-5678-9012-3456', '2024-05-02', 'Juan González'),
+               (2, '2345-6789-0123-4567', '2024-05-02', 'María Martínez'),
+               (3, '3456-7890-1234-5678', '2024-05-02', 'Pedro Sánchez'),
+               (4, '4567-8901-2345-6789', '2024-05-02', 'Laura López');"
          ];
 
          // Ejecutar las consultas de inserción de datos

@@ -13,7 +13,7 @@ if (isset($_SESSION['nombre'])) {
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style/style.css" />
@@ -30,11 +30,11 @@ if (isset($_SESSION['nombre'])) {
     }
 
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,pt',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -219,7 +219,8 @@ if (isset($_SESSION['nombre'])) {
       </a>
     </div>
     <div class="shoes">
-      <a href="">
+      <a href="productos.php?categoria=calzado">
+
         <img src="img/running_shoes.png" alt="Running shoes" />
         <div class="sub-contenedor">
           <h4 class="sub-titulo">Zapatillas</h4>
@@ -383,108 +384,108 @@ if (isset($_SESSION['nombre'])) {
     </div>
 
     <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.html">Tallas</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Help</h4>
-        <ul>
-          <li><a href="faqs.php">FAQ</a></li>
-          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Online Shop</h4>
-        <ul>
-          <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Running</a></li>
-          <li><a href="home_running.php">Menu Fighting</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="aboutus.php">About Us</a></li>
+              <li><a href="privacidad.php">Privacy Policy</a></li>
+              <li><a href="tallas.html">Tallas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Get Help</h4>
+            <ul>
+              <li><a href="faqs.php">FAQ</a></li>
+              <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+              <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+              <li><a href="contacto.php">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Online Shop</h4>
+            <ul>
+              <li><a href="home_gym.php">Menu Gym</a></li>
+              <li><a href="home_boxeo.php">Menu Running</a></li>
+              <li><a href="home_running.php">Menu Fighting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-    <!-- ------------------------ LOGIN ------------------------ -->
-    <div class="popup">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Inicia sesión</p>
-      <form id="form-login">
-        <div class="form-element">
-          <input required name="email-login" id="email_login" type="text">
-          <label>Email</label>
-        </div>
-        <div class="form-element">
-          <input required name="password-login" id="password_login" type="password">
-          <label>Contraseña</label>
-        </div>
-        <span id="error-login"></span>
-        <button class="btn-submit">Enviar</button>
-      </form>
-      <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
-    </div>
+      <!-- ------------------------ LOGIN ------------------------ -->
+      <div class="popup">
+        <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+        <p>Inicia sesión</p>
+        <form id="form-login">
+          <div class="form-element">
+            <input required name="email-login" id="email_login" type="text">
+            <label>Email</label>
+          </div>
+          <div class="form-element">
+            <input required name="password-login" id="password_login" type="password">
+            <label>Contraseña</label>
+          </div>
+          <span id="error-login"></span>
+          <button class="btn-submit">Enviar</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+      </div>
 
-    <!-- ------------------------ REGISTRO ------------------------ -->
-    <div class="popup-regis">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Regístrate</p>
-      <form id="form-signup">
-        <div class="form-element">
-          <input required name="nombre" id="nombre-signup" type="text">
-          <label>Nombre</label>
-          <span id="error-nombre-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="apellidos" id="apellidos-signup" type="text">
-          <label>Apellidos</label>
-          <span id="error-apellidos-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-          <label>Teléfono</label>
-          <span id="error-telefono-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="email" id="email-signup" type="text">
-          <label>Correo</label>
-          <span id="error-email-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="password" id="password-signup" type="password">
-          <label>Contraseña</label>
-          <ul id="error-password-signup"></ul>
-        </div>
-        <button type="submit" class="btn-submit">Enviar</button>
-      </form>
-      <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
-    </div>
-
-    <div class="popup-message">
-      <div class="popup-content">
-        <span class="close-popup-message">&times;</span>
-        <p id="popup-text"></p>
+      <!-- ------------------------ REGISTRO ------------------------ -->
+      <div class="popup-regis">
+        <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+        <p>Regístrate</p>
+        <form id="form-signup">
+          <div class="form-element">
+            <input required name="nombre" id="nombre-signup" type="text">
+            <label>Nombre</label>
+            <span id="error-nombre-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="apellidos" id="apellidos-signup" type="text">
+            <label>Apellidos</label>
+            <span id="error-apellidos-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
+            <label>Teléfono</label>
+            <span id="error-telefono-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="email" id="email-signup" type="text">
+            <label>Correo</label>
+            <span id="error-email-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="password" id="password-signup" type="password">
+            <label>Contraseña</label>
+            <ul id="error-password-signup"></ul>
+          </div>
+          <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+        <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
       </div>
-    </div>
 
-    <script src="js/script_home.js"></script>
-    <script src="js/script_running.js"></script>
-    <script src="js/script_carrito.js"></script>
+      <div class="popup-message">
+        <div class="popup-content">
+          <span class="close-popup-message">&times;</span>
+          <p id="popup-text"></p>
+        </div>
+      </div>
+
+      <script src="js/script_home.js"></script>
+      <script src="js/script_running.js"></script>
+      <script src="js/script_carrito.js"></script>
 </body>
 
 </html>
