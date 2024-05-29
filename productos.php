@@ -239,6 +239,7 @@ if (isset($_SESSION['nombre'])) {
         <p id="popup-text"></p>
       </div>
     </div>
+    <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
 </body>
 <script src="js/script_home.js"></script>
 <script src="js/script_running.js"></script>

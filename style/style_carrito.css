@@ -149,7 +149,6 @@
 }
 .add-cart {
   position: absolute;
-  bottom: 0;
   right: 0;
   background: var(--text-color);
   color: var(--bg-color);

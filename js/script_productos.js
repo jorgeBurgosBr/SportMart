@@ -13,7 +13,8 @@ function addToCartClickedd(event) {
     var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
     var price = shopProducts.getElementsByClassName('price')[0].innerText.replace("€", "").trim();
     var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
-    var id_cliente = 1; // Reemplaza con el ID del cliente actual
+    var customerInfoElement = document.getElementById('customer-info');
+    var id_cliente = customerInfoElement.getAttribute('data-id-cliente');
     var id_producto = shopProducts.getAttribute('data-id-producto'); // Supongamos que cada producto tiene este atributo
     var cantidad = 1;
     var talla = 'M'; // Reemplaza con la talla seleccionada, si corresponde
@@ -86,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             data.forEach(producto => {
                 const productoDiv = document.createElement('div');
                 productoDiv.className = 'product-box';
+                productoDiv.setAttribute('data-id-producto', producto.id_producto); // Agregar el atributo data-id-producto
                 productoDiv.innerHTML = `
                     <img class="product-img" src="${producto.imagen}" alt="${producto.nombre}">
                     <h2 class="product-title">${producto.nombre}</h2>

@@ -121,8 +121,8 @@ function crearBD()
                ('Guantes Charlie', 'Guantes de cuero para entrenamiento de boxeo', 69.99, './img/accesorios/guantes_charlie.webp', 'Unisex'),
                ('Guantes Everlast', 'Guantes para entrenamiento de boxeo', 35.99, './img/accesorios/guantes_everlast.webp', 'Unisex'),
                ('Protector bucal', 'Protector bucal para boxeo con funda', 9.99, './img/accesorios/protector_bucal.webp', 'Unisex'),
-               ('Nike Hyperko 2', 'Zapatillas de boxeo hombre', 129.99, './img/accesorios/zapatillas_boxeo_nike.webp', 'Hombre'),
-               ('Adidas Box Hog 3', 'Zapatillas de boxeo mujer', 109.99, './img/accesorios/zapatillas_boxeo_adidas.webp', 'Mujer'),
+               ('Nike Hyperko 2', 'Zapatillas de boxeo hombre', 129.99, './img/calzado/zapatillas_boxeo_nike.webp', 'Hombre'),
+               ('Adidas Box Hog 3', 'Zapatillas de boxeo mujer', 109.99, './img/calzado/zapatillas_boxeo_adidas.webp', 'Mujer'),
                ('Camiseta Adidas', 'Camiseta ligera y transpirable para correr', 29.99, './img/ropadeportiva/camiseta_adidas.webp', 'Mujer'),
                ('Vendas Charlie', 'Vendas para deporte de contacto, 3M', 24.99, './img/accesorios/vendas-charlie.webp', 'Unisex'),
                ('Camiseta UFC', 'Camiseta para entrenamiento (Authentic Fight Week)', 44.99, './img/ropadeportiva/camiseta_ufc.webp', 'Hombre'),
@@ -237,7 +237,7 @@ function crearBD()
                (21, 2), -- Pantalones gymshark
                (22, 1), -- Adidas The total
                (23, 3), -- Straps
-               (24, 3); --Botella proteínas", 
+               (24, 3); --Botella proteínas",
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
