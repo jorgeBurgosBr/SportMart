@@ -26,8 +26,6 @@ if (isset($_SESSION['nombre'])) {
 <script src="js/libreria/jquery.js"></script>
 <script src="js/libreria/lightslider.js"></script>
 <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
@@ -40,7 +38,7 @@ if (isset($_SESSION['nombre'])) {
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
+            includedLanguages: 'en,es,pt,it,fr,de',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
@@ -255,119 +253,119 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-a">
           <div class="box">
             <div class="slide-img">
-              <img src="img/rock.jpg" alt="" />
+              <img src="img/ropa/camiseta_agongym.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta Agongym</a>
+                <span>Transpirable, ideal para entrenar</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">29.95€</a>
             </div>
           </div>
         </li>
         <li class="item-b">
           <div class="box">
             <div class="slide-img">
-              <img src="img/bum.jpg" alt="" />
+              <img src="img/ropa/top_agongym.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Top Agongym</a>
+                <span>Premium top, blanco</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">29.95€</a>
             </div>
           </div>
         </li>
         <li class="item-c">
           <div class="box">
             <div class="slide-img">
-              <img src="img/kim.jpg" alt="" />
+              <img src="img/ropa/pantalones_gymshark.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Pantalones Gymshark</a>
+                <span>Joggers cómodos para entrenar o streetwear</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">50.95€</a>
             </div>
           </div>
         </li>
         <li class="item-d">
           <div class="box">
             <div class="slide-img">
-              <img src="img/andoni.jpg" alt="" />
+              <img src="img/calzado/zapatillas_power_adidas.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Adidas The Total</a>
+                <span>Powerlifting, Crossfit</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">88.99€</a>
             </div>
           </div>
         </li>
         <li class="item-e">
           <div class="box">
             <div class="slide-img">
-              <img src="img/pre.jpg" alt="" />
+              <img src="img/ropa/leggins_mp.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Leggins MyProtein</a>
+                <span>Leggings ajustados para entrenamiento</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">19.99€</a>
             </div>
           </div>
         </li>
         <li class="item-f">
           <div class="box">
             <div class="slide-img">
-              <img src="img/joan.jpeg" alt="" />
+              <img src="img/accesorios/straps_gym.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Straps</a>
+                <span>Correas para levantamiento de peso</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">11.99€</a>
             </div>
           </div>
         </li>
         <li class="item-g">
           <div class="box">
             <div class="slide-img">
-              <img src="img/coleman.jpg" alt="" />
+              <img src="img/accesorios/shaker_gym.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Botella para proteínas</a>
+                <span>Botella mezclador</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">15.95€</a>
             </div>
           </div>
         </li>
