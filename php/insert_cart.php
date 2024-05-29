@@ -2,26 +2,38 @@
 session_start();
 require_once 'conecta.php';
 
-$bd = new BaseDeDatos();
 $id_cliente = $_SESSION['id_cliente'];
 
-if ($bd->conectar()) {
-   $conn = $bd->getConexion();
-   $bd->seleccionarContexto('sportmart');
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   $id_cliente = $_POST['id_cliente'];
+   $id_producto = $_POST['id_producto'];
+   $cantidad = $_POST['cantidad'];
+   $talla = $_POST['talla'];
+
+   agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla);
+}
+
+
+
+function agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla)
+{
+   $bd = new BaseDeDatos();
 
    try {
       if ($bd->conectar()) {
-         $conexion = $bd->getConexion();
-
+         $conn = $bd->getConexion();
+         $bd->seleccionarContexto('sportmart');
          // Preparar la consulta SQL
          $sql = "INSERT INTO CARRITO (id_cliente, id_producto, cantidad, talla) 
                     VALUES (?, ?, ?, ?)
                     ON DUPLICATE KEY UPDATE cantidad = cantidad + VALUES(cantidad)";
 
          // Preparar la sentencia
-         $stmt = $conexion->prepare($sql);
+         $stmt = $conn->prepare($sql);
          if ($stmt === false) {
-            throw new Exception("Error preparando la consulta: " . $conexion->error);
+            throw new Exception("Error preparando la consulta: " . $conn->error);
          }
 
          // Bind de los parámetros
@@ -33,7 +45,6 @@ if ($bd->conectar()) {
          } else {
             throw new Exception("Error ejecutando la consulta: " . $stmt->error);
          }
-
          // Cerrar la sentencia
          $stmt->close();
          $bd->cerrar();
@@ -41,13 +52,4 @@ if ($bd->conectar()) {
    } catch (Exception $e) {
       echo "Error: " . $e->getMessage();
    }
-}
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   $id_cliente = $_POST['id_cliente'];
-   $id_producto = $_POST['id_producto'];
-   $cantidad = $_POST['cantidad'];
-   $talla = $_POST['talla'];
-
-   agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla);
 }

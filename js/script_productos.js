@@ -7,27 +7,40 @@ function preparado() {
         button.addEventListener('click', addToCartClickedd);
     }
 }
-// Add to cart
 function addToCartClickedd(event) {
     var button = event.target;
     var shopProducts = button.parentElement;
     var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
-    var price = shopProducts.getElementsByClassName('price')[0].innerText;
-   var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
-    var cantidad;
+    var price = shopProducts.getElementsByClassName('price')[0].innerText.replace("€", "").trim();
+    var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
+    var id_cliente = 1; // Reemplaza con el ID del cliente actual
+    var id_producto = shopProducts.getAttribute('data-id-producto'); // Supongamos que cada producto tiene este atributo
+    var cantidad = 1;
+    var talla = 'M'; // Reemplaza con la talla seleccionada, si corresponde
+
     addProductToCart(title, price, productImg, cantidad);
     updateTotal();
+
+    // Enviar solicitud AJAX para agregar el producto al carrito en la base de datos
+    fetch('php/insert_cart.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `id_cliente=${id_cliente}&id_producto=${id_producto}&cantidad=${cantidad}&talla=${talla}`
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
 }
 
 function addProductToCart(title, price, productImg, cantidad) {
-    
     var cartShopBox = document.createElement("div");
     cartShopBox.classList.add('cart-box');
 
     var cartItems = document.getElementsByClassName("cart-content")[0];
     var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
     for (var i = 0; i < cartItemsNames.length; i++) {
-        console.log("Comparing:", cartItemsNames[i].innerText.trim(), "with", title);
         if (cartItemsNames[i].innerText.trim() === title) {
             alert("You have already added this item to the cart");
             return;
@@ -37,7 +50,7 @@ function addProductToCart(title, price, productImg, cantidad) {
         <img src="${productImg}" alt="" class="cart-img" />
         <div class="detail-box">
             <div class="cart-product-title">${title}</div>
-            <div class="cart-price">${price}</div>
+            <div class="cart-price">${price} €</div>
             <input type="number" value="${cantidad || 1}" class="cart-quantity" />
         </div>
         <!-- Remove Cart -->

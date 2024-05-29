@@ -33,7 +33,7 @@ function ready() {
             addProductToCart(producto.nombre, producto.precio, producto.imagen, producto.cantidad)
          })
       })
-   .catch(error => console.error('Error:', error));
+//    .catch(error => console.error('Error:', error));
 
     // Quantity Changes
     var quantityInputs = document.getElementsByClassName('cart-quantity');
