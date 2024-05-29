@@ -3,15 +3,11 @@ let cartIcon = document.querySelector('#cart-icon');
 let cart = document.querySelector('.cart');
 let closeCart = document.querySelector('#close-cart');
 
-// Open Cart
-cartIcon.onclick = () => {
-    cart.classList.add('active');
-};
-
 // Close Cart
 closeCart.onclick = () => {
     cart.classList.remove('active');
 };
+
 // Function to add event listeners
 function ready() {
     // Remove Items From Cart
@@ -19,44 +15,52 @@ function ready() {
     for (var i = 0; i < removeCartButtons.length; i++) {
         var button = removeCartButtons[i];
         button.addEventListener('click', removeCartItem);
-   }
-   //Import bbdd products of the cart
-   fetch(`php/get_cart.php`)
-      .then(response => {
-         if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-         }
-         return response.json();
-      })
-      .then(data => {
-         data.forEach(producto => {
-            addProductToCart(producto.nombre, producto.precio, producto.imagen, producto.cantidad)
-         })
-      })
-//    .catch(error => console.error('Error:', error));
-
-    // Quantity Changes
-    var quantityInputs = document.getElementsByClassName('cart-quantity');
-    for (var i = 0; i < quantityInputs.length; i++) {
-        var input = quantityInputs[i];
-        input.addEventListener('change', quantityChanged);
     }
+   
+    // Import bbdd products of the cart
+    fetch(`php/get_cart.php`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(producto => {
+                addProductToCart(producto.nombre, producto.precio, producto.imagen, producto.cantidad, producto.id_producto)
+            });
+            // Attach change event listeners after products are added to the cart
+            attachQuantityChangeListeners();
+        })
+        .catch(error => console.error('Error:', error));
+
     // Add to Cart
     var addCart = document.getElementsByClassName('add-cart');
     for (var i = 0; i < addCart.length; i++) {
         var button = addCart[i];
         button.addEventListener('click', addToCartClicked);
     }
+
     // Add to Wishlist
     var addWishlist = document.getElementsByClassName('add-wishlist');
     for (var i = 0; i < addWishlist.length; i++) {
         var button = addWishlist[i];
         button.addEventListener('click', addToWishlistClicked);
     }
+
     // Buy Button Work
     var buyButton = document.getElementsByClassName('btn-buy');
     if (buyButton.length > 0) {
         buyButton[0].addEventListener('click', buyButtonClicked);
+    }
+}
+
+// Attach change event listeners to quantity inputs
+function attachQuantityChangeListeners() {
+    var quantityInputs = document.getElementsByClassName('cart-quantity');
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i];
+        input.addEventListener('change', quantityChanged);
     }
 }
 
@@ -84,25 +88,43 @@ function quantityChanged(event) {
         input.value = 1;
     }
     updateTotal();
+
+    // Get the product ID and customer ID
+    var cartBox = input.parentElement.parentElement;
+    var id_producto = cartBox.querySelector('.cart-product-title').getAttribute('data-id-producto');
+    var id_cliente = document.getElementById('customer-info').getAttribute('data-id-cliente');
+    var cantidad = input.value;
+
+    // Send AJAX request to update the quantity in the database
+    fetch('php/update_cart_quantity.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `id_cliente=${id_cliente}&id_producto=${id_producto}&cantidad=${cantidad}`
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
 }
 
-function addProductToCart(title, price, productImg, cantidad) {
+function addProductToCart(title, price, productImg, cantidad, id_producto) {
     var cartShopBox = document.createElement("div");
     cartShopBox.classList.add('cart-box');
     var cartItems = document.getElementsByClassName("cart-content")[0];
     var cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
-   for (var i = 0; i < cartItemsNames.length; i++) {
-                   console.log(cartItemsNames[i].innerText);
 
+    for (var i = 0; i < cartItemsNames.length; i++) {
         if (cartItemsNames[i].innerText == title) {
             alert("You have already added this item to the cart");
             return;
         }
     }
+
     var cartBoxContent = `
         <img src="${productImg}" alt="" class="cart-img" />
         <div class="detail-box">
-            <div class="cart-product-title">${title}</div>
+            <div class="cart-product-title" data-id-producto="${id_producto}">${title}</div>
             <div class="cart-price">${price}</div>
             <input type="number" value="${cantidad || 1}" class="cart-quantity" />
         </div>
@@ -141,7 +163,6 @@ function addToWishlistClicked(event) {
     var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
     var price = shopProducts.getElementsByClassName('price')[0].innerText;
     var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
-   //  console.log('Wishlist:', title, price, productImg);
     addProductToWishlist(title, price, productImg);
 }
 
@@ -177,5 +198,5 @@ function removeWishlistItem(event) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-   ready();
+    ready();
 });
