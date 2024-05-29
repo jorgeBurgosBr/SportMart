@@ -46,8 +46,7 @@ if (isset($_SESSION['nombre'])) {
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-  <!-- <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" /> -->
-  <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css" /> -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <style>
   .popup.active {
     top: 20%;
@@ -245,9 +244,128 @@ if (isset($_SESSION['nombre'])) {
   </div>
   <h2 class="h2">Lo más vendido</h2>
   <div class="slider">
-    <ul id="autoWidth" class="cs-hidden product-list">
-    </ul>
-</div>
+      <ul id="autoWidth" class="cs-hidden">
+        <li class="item-a">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/accesorios/guantes_charlie.webp" alt="Guantes CHARLIE" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Guantes CHARLIE</a>
+                <span>Guantes de cuero para entrenamiento de boxeo</span>
+              </div>
+              <a href="#" class="price">69,99€</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-b">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/accesorios/protector_bucal.webp" alt="Protector bucal" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Protector bucal</a>
+                <span>Protector bucal para boxeo con funda</span>
+              </div>
+              <a href="#" class="price">9,99€</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-c">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/accesorios/guantes_everlast.webp" alt="Guantes EVERLAST" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Guantes EVERLAST</a>
+                <span>Guantes para entrenamiento de boxeo iniciación</span>
+              </div>
+              <a href="#" class="price">35,99€</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-d">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/accesorios/zapatillas_boxeo_nike.webp" alt="Nike Hyperko 2" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Nike Hyperko 2</a>
+                <span>Zapatillas de boxeo</span>
+              </div>
+              <a href="#" class="price">129,99€</a>
+            </div>
+          </div>
+        </li> 
+        <li class="item-e">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23€</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-f">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23€</a>
+            </div>
+          </div>
+        </li>
+        <li class="item-g">
+          <div class="box">
+            <div class="slide-img">
+              <img src="img/running_shoes.png" alt="" />
+              <div class="overlay">
+                <a href="#" class="buy-btn">Comprar</a>
+              </div>
+            </div>
+            <div class="detail-box">
+              <div class="type">
+                <a href="#">Chaqueta negra</a>
+                <span>New arrival</span>
+              </div>
+              <a href="#" class="price">23€</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
 
 <div class="container">
   <div class="slide-container">
@@ -354,8 +472,7 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
-  <!-- <script src="js/libreria/swiper-bundle.min.js"></script> -->
-  <script src="js/script_carrusel_boxeo.js"></script>
+  <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <script src="js/script_home.js"></script>
