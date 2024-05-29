@@ -123,7 +123,7 @@ if (isset($_SESSION['nombre'])) {
         <br><br>
         Con tarifas que se ajustan a tu presupuesto y un sistema de seguimiento en tiempo real, puedes estar tranquilo sabiendo que tu paquete está en buenas manos. No importa si estás enviando un pequeño accesorio o un gran pedido, Correos y Correos Express son la opción más segura y confiable.
     </div>
-</div>
+
         
 
         <div class="imagenes">
@@ -138,7 +138,6 @@ if (isset($_SESSION['nombre'])) {
         </div>
     </div>
 </div>
-
 <footer class="footer">
   <div class="container">
     <div class="row">
@@ -147,7 +146,7 @@ if (isset($_SESSION['nombre'])) {
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.html">Tallas</a></li>
+          <li><a href="tallas.php">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -163,8 +162,8 @@ if (isset($_SESSION['nombre'])) {
         <h4>Online Shop</h4>
         <ul>
           <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Running</a></li>
-          <li><a href="home_running.php">Menu Fighting</a></li>
+          <li><a href="home_boxeo.php">Menu Fighting</a></li>
+          <li><a href="home_running.php">Menu Runinng</a></li>
         </ul>
       </div>
       <div class="footer-col">
