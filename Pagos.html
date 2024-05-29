@@ -3,77 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Pago</title>
+    <title>Métodos de Pago</title>
     <link rel="stylesheet" href="style/Pagos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+       
+    </style>
 </head>
 <body class="main-login">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div class="grid-login">
         <div class="grid-p1" style="position: relative;">
-            <div class="flex flex-gap-20 flex-align-v nav-top-left">
-                <div></div>
-            </div> <!-- .flex -->
-
+            <div class="flex flex-gap-20 flex-align-v nav-top-left"></div>
+            <div id="contenedor">
+                <div class="cart-item">
+                    <img src="https://appleheadteam.com/wp-content/uploads/2023/07/portrait-of-a-man-standing-in-the-dark-while-wearing-custom-sportswear-mockup-a16797.jpg" alt="Producto 1">
+                    <div class="item-details">
+                        <p><strong>Nombre del Producto 1</strong></p>
+                        <p>Descripción del producto 1.</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="cart-item">
+                    <img src="https://appleheadteam.com/wp-content/uploads/2023/07/portrait-of-a-man-standing-in-the-dark-while-wearing-custom-sportswear-mockup-a16797.jpg" alt="Producto 2">
+                    <div class="item-details">
+                        <p><strong>Nombre del Producto 2</strong></p>
+                        <p>Descripción del producto 2.</p>
+                    </div>
+                </div>
+                <hr>
+            </div>
             <div class="flex flex-column">
                 <div class="prueba">
                     <img src="build/img/loginImg.png" alt="">
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="grid-p2">
             <div class="contenedor-p2">
-                <h3>Metodos de pago</h3>
-                <p>Ingresa tus detalles para hacer tu compra</p>
-                <div class="container">
-                    <div class="left-image"></div>
-                    <div id="smart-button-container">
-                        <!-- Aquí va tu botón PayPal -->
-                        <div style="text-align: center;">
-                            <div id="paypal-button-container"></div>
+                <h3>Métodos de pago</h3>
+                <p>Elige un método de pago para continuar</p>
+                
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseOne" class="collapsed">
+                                    <span class="bar"></span>
+                                    Pago con Tarjeta de Crédito
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <form id="payment-form">
+                                    <div class="payment-form">
+                                        <label for="card-number">Número de Tarjeta</label>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9123 4567">
+                                        <div class="error-message" id="card-number-error"></div>
+                                        <div class="card-details">
+                                            <div>
+                                                <label for="card-expiry">Fecha de Vencimiento</label>
+                                                <input type="text" id="card-expiry" placeholder="MM/AA">
+                                                <div class="error-message" id="card-expiry-error"></div>
+                                            </div>
+                                            <div>
+                                                <label for="card-cvv">CVV</label>
+                                                <input type="text" id="card-cvv" placeholder="123">
+                                                <div class="error-message" id="card-cvv-error"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <button type="submit" class="button">Pagar</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <br><br><br><br>
-                    <a href="" class="exit">Exit</a>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapseTwo" class="collapsed">
+                                    <span class="bar"></span>
+                                    Pago con PayPal
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div id="paypal-button-container"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Aquí va el script de PayPal -->
-                <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD" data-sdk-integration-source="button-factory"></script>
-                <script>
-                    function initPayPalButton() {
-                        paypal.Buttons({
-                            style: {
-                                shape: 'rect',
-                                color: 'gold',
-                                layout: 'vertical',
-                                label: 'pay',
-                                commit: true
-                            },
-                            createOrder: function(data, actions) {
-                                return actions.order.create({
-                                    purchase_units: [{
-                                        "description": "LA DESCRIPCION DE TU PRODUCTO",
-                                        "amount": {"currency_code": "USD", "value": 15}
-                                    }] //Aqui es donde tenemos que poner lo que tenemos que pagar 
-                                });
-                            },
-                            onApprove: function(data, actions) {
-                                return actions.order.capture().then(function(orderData) {
-                                    // Full available details
-                                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                                    actions.redirect('LA URL DE TU PAGINA DE GRACIAS');
-                                });
-                            },
-                            onError: function(err) {
-                                console.log(err);
-                            }
-                        }).render('#paypal-button-container');
-                    }
-                    initPayPalButton();
-                </script>
+
+                <br><br><br><br>
+                <a href="" class="exit">Salir</a>
             </div>
         </div>
     </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+        function initPayPalButton() {
+            paypal.Buttons({
+                style: {
+                    shape: 'rect',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'pay',
+                    commit: true
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            "description": "Descripción de tu producto",
+                            "amount": { "currency_code": "USD", "value": 15 }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(orderData) {
+                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                        actions.redirect('URL de tu página de gracias');
+                    });
+                },
+                onError: function(err) {
+                    console.log(err);
+                }
+            }).render('#paypal-button-container');
+        }
+        initPayPalButton();
+    </script>
+
+    <script>
+        document.getElementById('card-number').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 16);
+        });
+
+        document.getElementById('card-expiry').addEventListener('input', function(e) {
+            var value = e.target.value.replace(/[^\d]/g, '');
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2);
+            }
+            e.target.value = value.substring(0, 5);
+        });
+
+        document.getElementById('card-cvv').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 3);
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var cardNumber = document.getElementById('card-number').value;
+            var cardExpiry = document.getElementById('card-expiry').value;
+            var cardCvv = document.getElementById('card-cvv').value;
+
+            var isValid = true;
+
+            if (cardNumber.length !== 16) {
+                document.getElementById('card-number-error').innerText = 'El número de tarjeta debe tener 16 dígitos.';
+                isValid = false;
+            } else {
+                document.getElementById('card-number-error').innerText = '';
+            }
+
+            if (!/^\d{2}\/\d{2}$/.test(cardExpiry)) {
+                document.getElementById('card-expiry-error').innerText = 'La fecha de vencimiento debe estar en el formato MM/AA.';
+                isValid = false;
+            } else {
+                document.getElementById('card-expiry-error').innerText = '';
+            }
+
+            if (cardCvv.length !== 3) {
+                document.getElementById('card-cvv-error').innerText = 'El CVV debe tener 3 dígitos.';
+                isValid = false;
+            } else {
+                document.getElementById('card-cvv-error').innerText = '';
+            }
+
+            if (isValid) {
+                alert('Formulario enviado correctamente.');
+                // Aquí puedes agregar la lógica para enviar el formulario si todos los campos son válidos
+                // e.target.submit();
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.panel-title a').forEach(function(element) {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                var panelCollapse = this.getAttribute('href');
+                var panel = document.querySelector(panelCollapse);
+
+                if (panel.classList.contains('show')) {
+                    panel.classList.remove('show');
+                } else {
+                    document.querySelectorAll('.panel-collapse').forEach(function(panel) {
+                        panel.classList.remove('show');
+                    });
+                    panel.classList.add('show');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

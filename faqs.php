@@ -253,7 +253,7 @@ if (isset($_SESSION['nombre'])) {
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.html">Tallas</a></li>
+          <li><a href="tallas.php">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -269,8 +269,8 @@ if (isset($_SESSION['nombre'])) {
         <h4>Online Shop</h4>
         <ul>
           <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Running</a></li>
-          <li><a href="home_running.php">Menu Fighting</a></li>
+          <li><a href="home_boxeo.php">Menu Fighting</a></li>
+          <li><a href="home_running.php">Menu Runinng</a></li>
         </ul>
       </div>
       <div class="footer-col">

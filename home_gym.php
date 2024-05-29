@@ -20,8 +20,14 @@ if (isset($_SESSION['nombre'])) {
 <link rel="stylesheet" href="style/style_running.css" />
 <link rel="stylesheet" href="style/lightslider.css" />
 <link rel="stylesheet" href="style/style_carrito.css" />
+<link rel="stylesheet" href="style/whatsapp.css" />
 <script src="js/libreria/jquery.js"></script>
 <script src="js/libreria/lightslider.js"></script>
+<script src="js/libreria/jquery.js"></script>
+<script src="js/libreria/lightslider.js"></script>
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
@@ -57,7 +63,7 @@ if (isset($_SESSION['nombre'])) {
   <title>SportMart</title>
 </head>
 <body>
-   <header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
@@ -429,6 +435,10 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
+<!-- Whatsapp -->
+<a href="https://api.whatsapp.com/send?phone=620365035" class="btn-wsp" target="_blank">
+			<i class="fa fa-whatsapp icono"></i>
+		</a>
 
   <footer class="footer">
   <div class="container">
@@ -438,7 +448,7 @@ if (isset($_SESSION['nombre'])) {
         <ul>
           <li><a href="aboutus.php">About Us</a></li>
           <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.html">Tallas</a></li>
+          <li><a href="tallas.php">Tallas</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -454,8 +464,8 @@ if (isset($_SESSION['nombre'])) {
         <h4>Online Shop</h4>
         <ul>
           <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Running</a></li>
-          <li><a href="home_running.php">Menu Fighting</a></li>
+          <li><a href="home_boxeo.php">Menu Fighting</a></li>
+          <li><a href="home_running.php">Menu Runinng</a></li>
         </ul>
       </div>
       <div class="footer-col">
