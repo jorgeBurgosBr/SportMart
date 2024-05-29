@@ -178,7 +178,20 @@ function crearBD()
                (17, 'M'),
                (17, 'L'),
                (18, '42'),
-               (18, '43');",
+               (18, '43'),
+               (19, 'M'),
+               (19, 'L'),
+               (20, 'S'),
+               (20, 'M'),
+               (21, 'S'),
+               (21, 'M'),
+               (21, 'L'),
+               (22, '40'),
+               (22, '41'),
+               (22, '42'),
+               (22, '43'),
+               (23, 'M'),
+               (24, 'M');",
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
                (1, 1),
@@ -205,7 +218,7 @@ function crearBD()
                (2, 1), -- Zapatillas Ultraboost
                (3, 2), -- Leggins deportivos
                (4, 3), -- Guantes MMA Venum
-               (5, 3); -- Guantes charlie
+               (5, 3), -- Guantes charlie
                (6, 3), -- Guantes everlast
                (7, 3), -- Protector Bucal
                (8, 1), -- Nike Hyperco
@@ -218,7 +231,13 @@ function crearBD()
                (15, 3), -- Gafas Oakley
                (16, 2), -- Leggins Nike
                (17, 2), -- Camiseta Hoka
-               (18, 1); -- New Balance Fresh Foam", 
+               (18, 1), -- New Balance Fresh Foam
+               (19, 2), -- Camiseta Agongym
+               (20, 2), -- Top Agongym
+               (21, 2), -- Pantalones gymshark
+               (22, 1), -- Adidas The total
+               (23, 3), -- Straps
+               (24, 3); --Botella proteínas", 
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
