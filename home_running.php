@@ -242,119 +242,119 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-a">
           <div class="box">
             <div class="slide-img">
-              <img src="img/track.png" alt="" />
+              <img src="img/ropa/camiseta_adidas.webp" alt="Camiseta Adidas" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta Adidas</a>
+                <span>Camiseta ligera y transpirable para correr</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">29,99€</a>
             </div>
           </div>
         </li>
         <li class="item-b">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/reloj_garmin.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Garmin Forerunner 955</a>
+                <span>Reloj inteligente premium para carrera</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">499,99€</a>
             </div>
           </div>
         </li>
         <li class="item-c">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_asics.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Asics Gel-Cumulus 26</a>
+                <span>Comodidad y rendimiento en cada paso</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">128,99€</a>
             </div>
           </div>
         </li>
         <li class="item-d">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/gafas_oakley.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Gafas Oakley Radar</a>
+                <span>Gafas polarizadas especiales para running</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">205,99€</a>
             </div>
           </div>
         </li>
         <li class="item-e">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/ropa/leggins_nike.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Leggins Nike</a>
+                <span>Leggings ajustados para entrenamiento</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">39,99€</a>
             </div>
           </div>
         </li>
         <li class="item-f">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/ropa/camiseta_hoka.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta Hoka</a>
+                <span>Camiseta 100% algodón</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">32,99€</a>
             </div>
           </div>
         </li>
         <li class="item-g">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_newbalance.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">New Balance Fresh Foam X</a>
+                <span>Nueva tecnología incorporada</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">119,95$</a>
             </div>
           </div>
         </li>

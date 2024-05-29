@@ -29,14 +29,6 @@ if (isset($_SESSION['nombre'])) {
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
-    function loadGoogleTranslate() {
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true;
-      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      document.head.appendChild(script);
-    }
-
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
@@ -44,7 +36,6 @@ if (isset($_SESSION['nombre'])) {
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
-
     document.addEventListener("DOMContentLoaded", function() {
       loadGoogleTranslate();
     });
@@ -257,15 +248,15 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/rock.jpg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta Agongym</a>
+                <span>Transpirable, ideal para entrenar</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">29,95€</a>
             </div>
           </div>
         </li>
@@ -274,7 +265,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/bum.jpg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -282,7 +273,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Chaqueta negra</a>
                 <span>New arrival</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">23€</a>
             </div>
           </div>
         </li>
@@ -291,7 +282,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/kim.jpg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -299,7 +290,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Chaqueta negra</a>
                 <span>New arrival</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">23€</a>
             </div>
           </div>
         </li>
@@ -308,7 +299,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/andoni.jpg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -316,7 +307,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Chaqueta negra</a>
                 <span>New arrival</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">23€</a>
             </div>
           </div>
         </li>
@@ -325,7 +316,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/pre.jpg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -333,7 +324,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Chaqueta negra</a>
                 <span>New arrival</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">23€</a>
             </div>
           </div>
         </li>
@@ -342,7 +333,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/joan.jpeg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -350,7 +341,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Chaqueta negra</a>
                 <span>New arrival</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">23€</a>
             </div>
           </div>
         </li>
@@ -359,7 +350,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/coleman.jpg" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -367,7 +358,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Chaqueta negra</a>
                 <span>New arrival</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">23€</a>
             </div>
           </div>
         </li>

@@ -372,6 +372,10 @@ ul{
   transform: translate(-50%, -50%) scale(1);
 }
 
+.slider {
+  margin-bottom: 40px;
+}
+
 
  @media screen and (max-width: 480px) {
 

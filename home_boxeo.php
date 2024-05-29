@@ -255,7 +255,7 @@ if (isset($_SESSION['nombre'])) {
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Guantes CHARLIE</a>
+                <a href="#">Guantes Charlie</a>
                 <span>Guantes de cuero para entrenamiento de boxeo</span>
               </div>
               <a href="#" class="price">69,99€</a>
@@ -289,7 +289,7 @@ if (isset($_SESSION['nombre'])) {
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Guantes EVERLAST</a>
+                <a href="#">Guantes Everlast</a>
                 <span>Guantes para entrenamiento de boxeo iniciación</span>
               </div>
               <a href="#" class="price">35,99€</a>
@@ -299,7 +299,7 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-d">
           <div class="box">
             <div class="slide-img">
-              <img src="img/accesorios/zapatillas_boxeo_nike.webp" alt="Nike Hyperko 2" />
+              <img src="img/calzado/zapatillas_boxeo_nike.webp" alt="Nike Hyperko 2" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Comprar</a>
               </div>
@@ -307,7 +307,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="detail-box">
               <div class="type">
                 <a href="#">Nike Hyperko 2</a>
-                <span>Zapatillas de boxeo</span>
+                <span>Zapatillas de boxeo hombre</span>
               </div>
               <a href="#" class="price">129,99€</a>
             </div>
@@ -316,62 +316,57 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-e">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_boxeo_adidas.webp" alt="" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Adidas Box Hog 3</a>
+                <span>Zapatillas de boxeo mujer</span>
               </div>
-              <a href="#" class="price">23€</a>
+              <a href="#" class="price">109,99€</a>
             </div>
           </div>
         </li>
         <li class="item-f">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/vendas-charlie.webp" alt="Vendas boxeo" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Vendas Charlie</a>
+                <span>Vendas para deporte de contacto, 3M</span>
               </div>
-              <a href="#" class="price">23€</a>
+              <a href="#" class="price">24,99€</a>
             </div>
           </div>
         </li>
         <li class="item-g">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/ropa/camiseta_ufc.webp" alt="Camiseta UFC" />
               <div class="overlay">
                 <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta UFC</a>
+                <span>Camiseta para entrenamiento</span>
               </div>
-              <a href="#" class="price">23€</a>
+              <a href="#" class="price">44,99€</a>
             </div>
           </div>
         </li>
       </ul>
     </div>
 
-<div class="container">
-  <div class="slide-container">
-    <div class="card-wrapper"></div>
-  </div>
-</div>
     <footer class="footer">
   <div class="container-footer">
     <div class="row">
