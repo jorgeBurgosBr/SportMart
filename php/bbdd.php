@@ -116,7 +116,7 @@ function crearBD()
             "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, sexo) VALUES
                ('Camiseta técnica Nike', 'Camiseta manga larga mujer', 46.95, './img/ropa/camiseta_tecnica_nike.webp', 'Mujer'),
                ('Ultraboost light', 'Zapatillas para correr con suela amortiguada', 89.99, './img/calzado/zapatillas_adidas.webp', 'Unisex'),
-               ('Leggings deportivos', 'Leggings ajustados para entrenamiento', 19.99, './img/logo_hoka.png', 'Mujer'),
+               ('Leggings MyProtein', 'Leggings ajustados para entrenamiento', 19.99, './img/ropa/leggins_mp.webp', 'Mujer'),
                ('Venum Impact 2.0', 'Guantes MMA Venum', 40.99, './img/accesorios/guantes_venum.webp', 'Unisex'),
                ('Guantes Charlie', 'Guantes de cuero para entrenamiento de boxeo', 69.99, './img/accesorios/guantes_charlie.webp', 'Unisex'),
                ('Guantes Everlast', 'Guantes para entrenamiento de boxeo', 35.99, './img/accesorios/guantes_everlast.webp', 'Unisex'),
@@ -135,7 +135,9 @@ function crearBD()
                ('Camiseta Agongym', 'Transpirable, ideal para entrenar', 29.95, './img/ropa/camiseta_agongym.webp', 'Hombre'),
                ('Top Agongym', 'Premium top, blanco', 29.95, './img/ropa/top_agongym.webp', 'Mujer'),
                ('Pantalones Gymshark', 'Joggers cómodos para entrenar o streetwear', 50.95, './img/ropa/pantalones_gymshark.webp', 'Unisex'),
-               ('Adidas The Total', 'Powerlifting, Crossfit', 88.99, './img/calzado/zapatillas_power_adidas.webp', 'Hombre');",
+               ('Adidas The Total', 'Powerlifting, Crossfit', 88.99, './img/calzado/zapatillas_power_adidas.webp', 'Hombre'),
+               ('Straps', 'Correas para levantamiento de peso', 11.99, './img/accesorios/straps_gym.webp', 'Unisex'),
+               ('Botella para proteinas', 'Botella mezclador', 15.95, './img/accesorios/shaker_gym.webp', 'Unisex');",
 
             "INSERT INTO VARIANTE (id_producto, talla) VALUES
                (1, 'S'),

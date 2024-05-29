@@ -258,7 +258,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Guantes Charlie</a>
                 <span>Guantes de cuero para entrenamiento de boxeo</span>
               </div>
-              <a href="#" class="price">69,99€</a>
+              <a href="#" class="price">69.99€</a>
             </div>
           </div>
         </li>
@@ -275,7 +275,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Protector bucal</a>
                 <span>Protector bucal para boxeo con funda</span>
               </div>
-              <a href="#" class="price">9,99€</a>
+              <a href="#" class="price">9.99€</a>
             </div>
           </div>
         </li>
@@ -292,7 +292,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Guantes Everlast</a>
                 <span>Guantes para entrenamiento de boxeo iniciación</span>
               </div>
-              <a href="#" class="price">35,99€</a>
+              <a href="#" class="price">35.99€</a>
             </div>
           </div>
         </li>
@@ -309,7 +309,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Nike Hyperko 2</a>
                 <span>Zapatillas de boxeo hombre</span>
               </div>
-              <a href="#" class="price">129,99€</a>
+              <a href="#" class="price">129.99€</a>
             </div>
           </div>
         </li> 
@@ -326,7 +326,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Adidas Box Hog 3</a>
                 <span>Zapatillas de boxeo mujer</span>
               </div>
-              <a href="#" class="price">109,99€</a>
+              <a href="#" class="price">109.99€</a>
             </div>
           </div>
         </li>
@@ -343,7 +343,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Vendas Charlie</a>
                 <span>Vendas para deporte de contacto, 3M</span>
               </div>
-              <a href="#" class="price">24,99€</a>
+              <a href="#" class="price">24.99€</a>
             </div>
           </div>
         </li>
@@ -360,7 +360,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Camiseta UFC</a>
                 <span>Camiseta para entrenamiento</span>
               </div>
-              <a href="#" class="price">44,99€</a>
+              <a href="#" class="price">44.99€</a>
             </div>
           </div>
         </li>

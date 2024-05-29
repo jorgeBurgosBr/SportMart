@@ -252,7 +252,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Camiseta Adidas</a>
                 <span>Camiseta ligera y transpirable para correr</span>
               </div>
-              <a href="#" class="price">29,99€</a>
+              <a href="#" class="price">29.99€</a>
             </div>
           </div>
         </li>
@@ -269,7 +269,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Garmin Forerunner 955</a>
                 <span>Reloj inteligente premium para carrera</span>
               </div>
-              <a href="#" class="price">499,99€</a>
+              <a href="#" class="price">499.99€</a>
             </div>
           </div>
         </li>
@@ -286,7 +286,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Asics Gel-Cumulus 26</a>
                 <span>Comodidad y rendimiento en cada paso</span>
               </div>
-              <a href="#" class="price">128,99€</a>
+              <a href="#" class="price">128.99€</a>
             </div>
           </div>
         </li>
@@ -303,7 +303,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Gafas Oakley Radar</a>
                 <span>Gafas polarizadas especiales para running</span>
               </div>
-              <a href="#" class="price">205,99€</a>
+              <a href="#" class="price">205.99€</a>
             </div>
           </div>
         </li>
@@ -320,7 +320,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Leggins Nike</a>
                 <span>Leggings ajustados para entrenamiento</span>
               </div>
-              <a href="#" class="price">39,99€</a>
+              <a href="#" class="price">39.99€</a>
             </div>
           </div>
         </li>
@@ -337,7 +337,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">Camiseta Hoka</a>
                 <span>Camiseta 100% algodón</span>
               </div>
-              <a href="#" class="price">32,99€</a>
+              <a href="#" class="price">32.99€</a>
             </div>
           </div>
         </li>
@@ -354,7 +354,7 @@ if (isset($_SESSION['nombre'])) {
                 <a href="#">New Balance Fresh Foam X</a>
                 <span>Nueva tecnología incorporada</span>
               </div>
-              <a href="#" class="price">119,95$</a>
+              <a href="#" class="price">119.95$</a>
             </div>
           </div>
         </li>
