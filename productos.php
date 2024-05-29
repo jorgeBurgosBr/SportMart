@@ -20,12 +20,46 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
-  <link rel="stylesheet" href="style/footer.css">
+  <!-- <script>
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,pt',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadGoogleTranslate();
+    });
+  </script> -->
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <title>Shopping Cart</title>
+  <title>SportMart</title>
+  <!-- <style>
+    .popup-regis.active2,
+    .popup.activa {
+      top: 10%;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    @media screen and (max-width: 480px) {
+      .popup-regis.active2 {
+        top: 12%;
+      }
+    }
+  </style> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -35,7 +69,7 @@ if (isset($_SESSION['nombre'])) {
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-    <button class="bttn-flag">ES <img src="img/espana.png" alt=""></button>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
@@ -100,132 +134,115 @@ if (isset($_SESSION['nombre'])) {
     </div>
   </nav>
   <!-- Shop -->
-  <section class="shop container">
+  <section class="shop containerr">
     <h2 class="section-title">Shop Products</h2>
     <!-- Content -->
-    <div class="shop-content">
-      <!-- Box 1 -->
-      <div class="product-box">
-        <img src="img/logo_nike.jpg" alt="" class="product-img" />
-        <h2 class="product-title">Aeroready shirt</h2>
-        <span class="price">25$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 2 -->
-      <div class="product-box">
-        <img src="img/logo_salomon.png" alt="" class="product-img" />
-        <h2 class="product-title">Wireless earbuds</h2>
-        <span class="price">45$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 3 -->
-      <div class="product-box">
-        <img src="img/logo_nike.png" alt="" class="product-img" />
-        <h2 class="product-title">hooded parka</h2>
-        <span class="price">95$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 4 -->
-      <div class="product-box">
-        <img src="img/logo_hoka.png" alt="" class="product-img" />
-        <h2 class="product-title">straw metal bottle</h2>
-        <span class="price">27$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 5 -->
-      <div class="product-box">
-        <img src="img/logo_adidas.png" alt="" class="product-img" />
-        <h2 class="product-title">Silver metal</h2>
-        <span class="price">15$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 6 -->
-      <div class="product-box">
-        <img src="img/logo_asics.png" alt="" class="product-img" />
-        <h2 class="product-title">back hat</h2>
-        <span class="price">55$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 7 -->
-      <div class="product-box">
-        <img src="img/logo_hoka.png" alt="" class="product-img" />
-        <h2 class="product-title">Backpack</h2>
-        <span class="price">75$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-      <!-- Box 8 -->
-      <div class="product-box">
-        <img src="img/logo_new_balance.png" alt="" class="product-img" />
-        <h2 class="product-title">ultraboost 22</h2>
-        <span class="price">205$</span>
-        <i class="bx bx-shopping-bag add-cart"></i>
-      </div>
-    </div>
+    <div class="shop-content"></div>
   </section>
-  <!-- ------------------------ LOGIN ------------------------ -->
-  <div class="popup">
-    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-    <p>Inicia sesión</p>
-    <form id="form-login">
-      <div class="form-element">
-        <input required name="email-login" id="email_login" type="text">
-        <label>Email</label>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.php">About Us</a></li>
+            <li><a href="privacidad.php">Privacy Policy</a></li>
+            <li><a href="tallas.html">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="faqs.php">FAQ</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="home_gym.php">Menu Gym</a></li>
+            <li><a href="home_boxeo.php">Menu Running</a></li>
+            <li><a href="home_running.php">Menu Fighting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="form-element">
-        <input required name="password-login" id="password_login" type="password">
-        <label>Contraseña</label>
-      </div>
-      <span id="error-login"></span>
-      <button class="btn-submit">Enviar</button>
-    </form>
-    <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
-  </div>
-
-  <!-- ------------------------ REGISTRO ------------------------ -->
-  <div class="popup-regis">
-    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-    <p>Regístrate</p>
-    <form id="form-signup">
-      <div class="form-element">
-        <input required name="nombre" id="nombre-signup" type="text">
-        <label>Nombre</label>
-        <span id="error-nombre-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="apellidos" id="apellidos-signup" type="text">
-        <label>Apellidos</label>
-        <span id="error-apellidos-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-        <label>Teléfono</label>
-        <span id="error-telefono-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="email" id="email-signup" type="text">
-        <label>Correo</label>
-        <span id="error-email-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="password" id="password-signup" type="password">
-        <label>Contraseña</label>
-        <ul id="error-password-signup"></ul>
-      </div>
-      <button type="submit" class="btn-submit">Enviar</button>
-    </form>
-    <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
-  </div>
-
-  <div class="popup-message">
-    <div class="popup-content">
-      <span class="close-popup-message">&times;</span>
-      <p id="popup-text"></p>
     </div>
-  </div>
+    <!-- ------------------------ LOGIN ------------------------ -->
+    <div class="popup">
+      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+      <p>Inicia sesión</p>
+      <form id="form-login">
+        <div class="form-element">
+          <input required name="email-login" id="email_login" type="text">
+          <label>Email</label>
+        </div>
+        <div class="form-element">
+          <input required name="password-login" id="password_login" type="password">
+          <label>Contraseña</label>
+        </div>
+        <span id="error-login"></span>
+        <button class="btn-submit">Enviar</button>
+      </form>
+      <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+    </div>
 
-  <script src="js/script_home.js"></script>
-  <script src="js/script_running.js"></script>
-  <script src="js/script_carrito.js"></script>
+    <!-- ------------------------ REGISTRO ------------------------ -->
+    <div class="popup-regis">
+      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+      <p>Regístrate</p>
+      <form id="form-signup">
+        <div class="form-element">
+          <input required name="nombre" id="nombre-signup" type="text">
+          <label>Nombre</label>
+          <span id="error-nombre-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="apellidos" id="apellidos-signup" type="text">
+          <label>Apellidos</label>
+          <span id="error-apellidos-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
+          <label>Teléfono</label>
+          <span id="error-telefono-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="email" id="email-signup" type="text">
+          <label>Correo</label>
+          <span id="error-email-signup"></span>
+        </div>
+        <div class="form-element">
+          <input required name="password" id="password-signup" type="password">
+          <label>Contraseña</label>
+          <ul id="error-password-signup"></ul>
+        </div>
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+      <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+    </div>
+
+    <div class="popup-message">
+      <div class="popup-content">
+        <span class="close-popup-message">&times;</span>
+        <p id="popup-text"></p>
+      </div>
+    </div>
 </body>
+<script src="js/script_home.js"></script>
+<script src="js/script_running.js"></script>
+<script src="js/script_productos.js"></script>
+<script src="js/script_carrito.js"></script>
 
 </html>
