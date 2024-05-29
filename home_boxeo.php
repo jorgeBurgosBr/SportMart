@@ -43,11 +43,11 @@ if (isset($_SESSION['nombre'])) {
     document.addEventListener("DOMContentLoaded", function() {
       loadGoogleTranslate();
     });
-  </script>
+  </script> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <!-- <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" /> -->
+  <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css" /> -->
   <style>
   .popup.active {
     top: 20%;
@@ -244,10 +244,10 @@ if (isset($_SESSION['nombre'])) {
   </div>
   </div>
   <h2 class="h2">Lo más vendido</h2>
-  <!-- <div class="slider">
+  <div class="slider">
     <ul id="autoWidth" class="cs-hidden product-list">
     </ul>
-</div> -->
+</div>
 
 <div class="container">
   <div class="slide-container">
@@ -354,13 +354,13 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
-  <script src="js/libreria/swiper-bundle.min.js"></script>
+  <!-- <script src="js/libreria/swiper-bundle.min.js"></script> -->
   <script src="js/script_carrusel_boxeo.js"></script>
-  <!-- <script src="js/libreria/jquery.js"></script>
-  <script src="js/libreria/lightslider.js"></script> -->
+  <script src="js/libreria/jquery.js"></script>
+  <script src="js/libreria/lightslider.js"></script>
   <script src="js/script_home.js"></script>
   <script src="js/script_carrito.js"></script>
-  <!-- <script src="js/script_running.js"></script> -->
+  <script src="js/script_running.js"></script>
 </body>
 
 </html>
