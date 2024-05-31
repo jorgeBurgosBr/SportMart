@@ -316,27 +316,29 @@ ul{
   <br><br><br>
     <div class="centrado">
         <div class="containerr">
-            <div class="texto">
-                <h3>Pregunta y nosotros te ayudamos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Phasellus in metus at lorem venenatis gravida at at enim. Quisque id fermentum dui. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae libero at mauris dapibus varius.</p>
-                <h3>Pregunta y nosotros te ayudamos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nulla facilisi. Phasellus in metus at lorem venenatis gravida at at enim. Quisque id fermentum dui. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae libero at mauris dapibus varius.</p>
-                <h3>SportMart@gmail.com</h3>
-            </div>
+        <div class="texto">
+    <h3>Pregunta y nosotros te ayudamos</h3>
+    <p>Si tienes alguna duda o necesitas asistencia, estamos aquí para ayudarte. Nuestro equipo está disponible para responder a todas tus preguntas y proporcionarte el soporte que necesites. No dudes en ponerte en contacto con nosotros a través del formulario de contacto, y te responderemos lo antes posible. Tu satisfacción es nuestra prioridad.</p>
+    <br>
+    <h3>FAQs</h3>
+    <p>Para resolver los problemas más comunes de manera rápida y eficiente, hemos preparado una sección de Preguntas Frecuentes (FAQs). Aquí encontrarás respuestas a las preguntas más frecuentes sobre nuestros productos, servicios, envíos, devoluciones y mucho más. Te invitamos a consultar nuestras FAQs antes de contactarnos, ya que es posible que encuentres la solución que buscas de inmediato.</p>
+    <br>
+    <h3>Contacta con nosotros: SportMart@gmail.com</h3><br>
+</div>
             
             <div class="formulario">
                 <form class="contacto-formulario" action="#" method="post">
                     <div class="contenedor-email">
                         <label for="emailInput">Email:</label>
-                        <input type="email" id="emailInput"class="esp" name="email">
+                        <input type="email" id="emailInput"class="esp" name="email"required>
                     </div>
                     <div class="contenedor-name">
                         <label for="nameInput">Nombre:</label>
-                        <input type="text" id="nameInput"class="esp" name="nombre">
+                        <input type="text" id="nameInput"class="esp" name="nombre"required>
                     </div>
                     <div class="contenedor-textarea">
                         <label for="motivoInput">Motivo:</label>
-                        <textarea id="motivoInput"class="esp" name="motivo"></textarea>
+                        <textarea id="motivoInput"class="esp" name="motivo" required></textarea>
                     </div>
                     <button type="submit">Enviar</button>
                 </form>
@@ -345,131 +347,131 @@ ul{
     </div>
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const formulario = document.querySelector('.contacto-formulario');
-            const emailInput = document.querySelector('#emailInput');
-            const nombreInput = document.querySelector('#nameInput');
-            const motivoInput = document.querySelector('#motivoInput');
-            const errorEmail = document.querySelector('.contenedor-email');
-            const errorName = document.querySelector('.contenedor-name');
-            const errorTextarea = document.querySelector('.contenedor-textarea');
+    document.addEventListener("DOMContentLoaded", function() {
+        const formulario = document.querySelector('.contacto-formulario');
+        const emailInput = document.querySelector('#emailInput');
+        const nombreInput = document.querySelector('#nameInput');
+        const motivoInput = document.querySelector('#motivoInput');
+        const errorEmail = document.querySelector('.contenedor-email');
+        const errorName = document.querySelector('.contenedor-name');
+        const errorTextarea = document.querySelector('.contenedor-textarea');
 
-            emailInput.addEventListener('blur', function() {
-                validarMail();
-            });
+        emailInput.addEventListener('blur', function() {
+            validarMail();
+        });
 
-            nombreInput.addEventListener('blur', function() {
-                validarName();
-            });
+        nombreInput.addEventListener('blur', function() {
+            validarName();
+        });
 
-            motivoInput.addEventListener('blur', function() {
-                validarMotivo();
-            });
+        motivoInput.addEventListener('blur', function() {
+            validarMotivo();
+        });
 
-            formulario.addEventListener('submit', function(event) {
-                const errorEmail = validarMail();
-                const errorNombre = validarName();
-                const errorMotivo = validarMotivo();
+        formulario.addEventListener('submit', function(event) {
+            const errorEmail = validarMail();
+            const errorNombre = validarName();
+            const errorMotivo = validarMotivo();
 
-                if (errorEmail || errorNombre || errorMotivo) {
-                    event.preventDefault();
-                }
-            });
-
-            function validarMail() {
-                const errores = document.querySelectorAll('.error.mail');
-                errores.forEach(error => {
-                    error.remove();
-                });
-
-                const email = emailInput.value.trim();
-
-                if (email == '') {
-                    const error = document.createElement('p');
-                    error.classList.add('error');
-                    error.classList.add('mail');
-                    error.textContent = "EL EMAIL ES OBLIGATORIO, NO PUEDE ESTAR VACIO";
-                    error.style.color = 'red';
-                    errorEmail.appendChild(error);
-                    return true;
-                }
-
-                if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-                    const error = document.createElement('p');
-                    error.classList.add('error');
-                    error.classList.add('mail');
-                    error.textContent = "EMAIL INVÁLIDO O CONTIENE CARÁCTERES NO PERMITIDOS";
-                    error.style.color = 'red';
-                    errorEmail.appendChild(error);
-                    return true;
-                }
-
-                return false;
-            }
-
-            function validarName() {
-                const errores = document.querySelectorAll('.error.name');
-                errores.forEach(error => {
-                    error.remove();
-                });
-
-                const name = nombreInput.value.trim();
-
-                if (name == '') {
-                    const error = document.createElement('p');
-                    error.classList.add('error');
-                    error.classList.add('name');
-                    error.textContent = "EL NOMBRE ES OBLIGATORIO";
-                    error.style.color = 'red';
-                    errorName.appendChild(error);
-                    return true;
-                }
-
-                if (/\d/.test(name)) {
-                    const error = document.createElement('p');
-                    error.classList.add('error');
-                    error.classList.add('name');
-                    error.textContent = "EL NOMBRE NO PUEDE TENER NÚMEROS";
-                    error.style.color = 'red';
-                    errorName.appendChild(error);
-                    return true;
-                }
-
-                return false;
-            }
-
-            function validarMotivo() {
-                const errores = document.querySelectorAll('.error.motivo');
-                errores.forEach(error => {
-                    error.remove();
-                });
-
-                const motivo = motivoInput.value.trim();
-
-                if (motivo == '') {
-                    const error = document.createElement('p');
-                    error.classList.add('error');
-                    error.classList.add('motivo');
-                    error.textContent = "POR FAVOR, INDICA EL MOTIVO DE CONTACTO";
-                    error.style.color = 'red';
-                    errorTextarea.appendChild(error);
-                    return true;
-                }
-
-                if (motivo.length > 256) {
-                    const error = document.createElement('p');
-                    error.classList.add('error');
-                    error.classList.add('motivo');
-                    error.textContent = "HAS SUPERADO EL LIMITE DE CARÁCTERES PERMITIDOS";
-                    error.style.color = 'red';
-                    errorTextarea.appendChild(error);
-                    return true;
-                }
-
-                return false;
+            if (errorEmail || errorNombre || errorMotivo) {
+                event.preventDefault();
             }
         });
-    </script>
+
+        function validarMail() {
+            const errores = document.querySelectorAll('.error.mail');
+            errores.forEach(error => {
+                error.remove();
+            });
+
+            const email = emailInput.value.trim();
+
+            if (email == '') {
+                const error = document.createElement('p');
+                error.classList.add('error');
+                error.classList.add('mail');
+                error.textContent = "El email es obligatorio, no puede estar vacío.";
+                error.style.color = 'red';
+                errorEmail.appendChild(error);
+                return true;
+            }
+
+            if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+                const error = document.createElement('p');
+                error.classList.add('error');
+                error.classList.add('mail');
+                error.textContent = "El email es inválido o contiene caracteres no permitidos.";
+                error.style.color = 'red';
+                errorEmail.appendChild(error);
+                return true;
+            }
+
+            return false;
+        }
+
+        function validarName() {
+            const errores = document.querySelectorAll('.error.name');
+            errores.forEach(error => {
+                error.remove();
+            });
+
+            const name = nombreInput.value.trim();
+
+            if (name == '') {
+                const error = document.createElement('p');
+                error.classList.add('error');
+                error.classList.add('name');
+                error.textContent = "El nombre es obligatorio.";
+                error.style.color = 'red';
+                errorName.appendChild(error);
+                return true;
+            }
+
+            if (/\d/.test(name)) {
+                const error = document.createElement('p');
+                error.classList.add('error');
+                error.classList.add('name');
+                error.textContent = "El nombre no puede tener números.";
+                error.style.color = 'red';
+                errorName.appendChild(error);
+                return true;
+            }
+
+            return false;
+        }
+
+        function validarMotivo() {
+            const errores = document.querySelectorAll('.error.motivo');
+            errores.forEach(error => {
+                error.remove();
+            });
+
+            const motivo = motivoInput.value.trim();
+
+            if (motivo == '') {
+                const error = document.createElement('p');
+                error.classList.add('error');
+                error.classList.add('motivo');
+                error.textContent = "Por favor, indica el motivo de contacto.";
+                error.style.color = 'red';
+                errorTextarea.appendChild(error);
+                return true;
+            }
+
+            if (motivo.length > 256) {
+                const error = document.createElement('p');
+                error.classList.add('error');
+                error.classList.add('motivo');
+                error.textContent = "Has superado el límite de caracteres permitidos.";
+                error.style.color = 'red';
+                errorTextarea.appendChild(error);
+                return true;
+            }
+
+            return false;
+        }
+    });
+</script>
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
