@@ -15,27 +15,67 @@ function addToCartClickedd(event) {
     var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
     var customerInfoElement = document.getElementById('customer-info');
     var id_cliente = customerInfoElement.getAttribute('data-id-cliente');
-    var id_producto = shopProducts.getAttribute('data-id-producto'); // Supongamos que cada producto tiene este atributo
+    var id_producto = shopProducts.getAttribute('data-id-producto');
     var cantidad = 1;
-    var talla = 'M'; // Reemplaza con la talla seleccionada, si corresponde
+    // Obtener la talla seleccionada
+    var selectedTalla = shopProducts.querySelector('.tallas span.selected');
+    var talla = selectedTalla ? selectedTalla.textContent : null;
 
-    addProductToCart(title, price, productImg, cantidad);
-    updateTotal();
+    if (!talla) {
+        alert("Por favor, selecciona una talla.");
+        return;
+    }
 
-    // Enviar solicitud AJAX para agregar el producto al carrito en la base de datos
-    fetch('php/insert_cart.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `id_cliente=${id_cliente}&id_producto=${id_producto}&cantidad=${cantidad}&talla=${talla}`
-    })
-    .then(response => response.text())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+    // Verificar si el producto ya está en el carrito
+    var cartItems = document.getElementsByClassName('cart-content')[0];
+    var cartItemsIds = cartItems.getElementsByClassName('cart-product-title');
+    var productExistsInCart = false;
+
+    for (var i = 0; i < cartItemsIds.length; i++) {
+        if (cartItemsIds[i].getAttribute('data-id-producto') === id_producto) {
+            productExistsInCart = true;
+
+            // Enviar solicitud AJAX para actualizar la cantidad del producto en la base de datos
+            var quantityInput = cartItemsIds[i].parentElement.getElementsByClassName('cart-quantity')[0];
+            var nuevaCantidad = parseInt(quantityInput.value) + 1; // Aumentar la cantidad
+            quantityInput.value = nuevaCantidad; // Actualizar la cantidad en el carrito
+
+            fetch('php/update_cart_quantity.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id_cliente=${id_cliente}&id_producto=${id_producto}&cantidad=${nuevaCantidad}`
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+
+            break;
+        }
+    }
+
+    // Si el producto no está en el carrito, añadirlo
+    if (!productExistsInCart) {
+        addProductToCart(title, price, productImg, cantidad, id_producto, talla);
+        updateTotal();
+
+        // Enviar solicitud AJAX para agregar el producto al carrito en la base de datos
+        fetch('php/insert_cart.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `id_cliente=${id_cliente}&id_producto=${id_producto}&cantidad=${cantidad}&talla=${talla}`
+        })
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
 }
 
-function addProductToCart(title, price, productImg, cantidad) {
+
+function addProductToCart(title, price, productImg, cantidad, talla) {
     var cartShopBox = document.createElement("div");
     cartShopBox.classList.add('cart-box');
 
@@ -53,6 +93,7 @@ function addProductToCart(title, price, productImg, cantidad) {
             <div class="cart-product-title">${title}</div>
             <div class="cart-price">${price} €</div>
             <input type="number" value="${cantidad || 1}" class="cart-quantity" />
+            <div class="cart-talla">${talla}</div>
         </div>
         <!-- Remove Cart -->
         <i class="bx bxs-trash-alt cart-remove"></i>
@@ -84,12 +125,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const container = containers[0];
 
-            data.forEach(producto => {
+            data.forEach(async producto => {
                 const productoDiv = document.createElement('div');
                 productoDiv.className = 'product-box';
                 productoDiv.setAttribute('data-id-producto', producto.id_producto); // Agregar el atributo data-id-producto
                 productoDiv.innerHTML = `
                     <img class="product-img" src="${producto.imagen}" alt="${producto.nombre}">
+                    <div class="tallas"></div>
                     <h2 class="product-title">${producto.nombre}</h2>
                     <p class="product-description">${producto.descripcion}</p>
                     <span class="price">${producto.precio} €</span>
@@ -97,8 +139,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     <i class="bx bx-heart add-wishlist"></i> <!-- Wishlist icon -->
                 `;
 
+                const tallasDiv = productoDiv.querySelector('.tallas');
+                producto.variantes.forEach(variant => {
+                        const span = document.createElement('span');
+                        span.textContent = variant.talla;
+                        span.addEventListener('click', () => {
+                        // Selección de talla
+                        const selected = productoDiv.querySelector('.tallas span.selected');
+                        if (selected) {
+                            selected.classList.remove('selected');
+                        }
+                        span.classList.add('selected');
+                    });
+                    tallasDiv.appendChild(span);
+                });
+
                 container.appendChild(productoDiv);
             });
+
 
             preparado();            
         })
