@@ -120,14 +120,25 @@ ul{
 <script src="js/libreria/lightslider.js"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script>
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
+    }
+
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
-                pageLanguage: 'es',
-                includedLanguages: 'en,es,pt',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            },
-            'google_translate_element');
+            pageLanguage: 'es',
+            includedLanguages: 'en,es,pt,it,fr,de',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadGoogleTranslate();
+    });
   </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
 
