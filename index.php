@@ -19,6 +19,7 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
+  <link rel="stylesheet" href="style/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <script>
@@ -115,8 +116,93 @@ if (isset($_SESSION['nombre'])) {
     </div>
   </nav>
 
+
+
+
+
+<!--Esto es el apartado de las 5 cartas -->
+<h2 class="h2">Comprar</h2>
+    <div class="contenedor">
+        <div class="carta carta1">
+           
+          <a href="home_gym.php" class="ver-mas">GYM</a>
+        </div>
+
+        <div class="carta carta2">
+            
+            <a href="home_running.php"class="ver-mas">Running</a>
+        </div>
+
+        <div class="carta carta3">
+            
+            <a class="ver-mas"href="home_boxeo.php">Boxeo</a>
+        </div>
+    </div>
+
+    <!-- Separación entre las cartas -->
+    <div style="margin-top: 20px;"></div>
+
+    <!-- Cartas más grandes -->
+    <div class="contenedor">
+        <div class="carta carta-grande carta4">
+            <a class="ver-mas" href="productos.php">Productos</a>
+        </div>
+    </div>
+    <br><br>
+    
+    <h2 class="h2">¿Qué te interesa?</h2>
+    <div class="clothes-shoes-accessories">
+      <a href="">
+        <div class="clothes">
+          <img src="img/c1.jpg" alt="Running clothes" />
+          <div class="sub-contenedor">
+            <h4 class="sub-titulo">Ropa Gym</h4>
+          </div>
+      </a>
+    </div>
+    <div class="shoes">
+      <a href="">
+        <img src="img/c2.jpg" alt="Running shoes" />
+        <div class="sub-contenedor">
+          <h4 class="sub-titulo">Zapatillas Running</h4>
+        </div>
+      </a>
+    </div>
+    <div class="accessories">
+      <a href="">
+        <img src="img/c3.jpg" alt="Running accessories" />
+        <div class="sub-contenedor">
+          <h4 class="sub-titulo">Accesorios Boxeo</h4>
+        </div>
+      </a>
+    </div>
+    </div>
+
+
+
+<br><br>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- CONTENIDO -->
-  <section class="banner-ppal"><img src="img/banner_newbalance.jpg" alt="" /></section>
+  <section class="banner-ppal"><img src="img/port.jpg" alt="" /></section>
   <footer class="footer">
   <div class="container">
     <div class="row">
