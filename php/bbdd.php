@@ -137,7 +137,25 @@ function crearBD()
                ('Pantalones Gymshark', 'Joggers cómodos para entrenar o streetwear', 50.95, './img/ropa/pantalones_gymshark.webp', 'Unisex'),
                ('Adidas The Total', 'Powerlifting, Crossfit', 88.99, './img/calzado/zapatillas_power_adidas.webp', 'Hombre'),
                ('Straps', 'Correas para levantamiento de peso', 11.99, './img/accesorios/straps_gym.webp', 'Unisex'),
-               ('Botella para proteinas', 'Botella mezclador', 15.95, './img/accesorios/shaker_gym.webp', 'Unisex');",
+               ('Botella para proteinas', 'Botella mezclador', 15.95, './img/accesorios/shaker_gym.webp', 'Unisex'),
+               ('Vibram FiveFingers', 'Zapatillas para gimnasio', 139.00, './img/calzado/zapatillas_dedos.webp', 'Unisex'),
+               ('Vibram FiveFingers Alpha', 'Zapatillas para gimnasio', 109.00, './img/calzado/zapatillas_dedos_1.webp', 'Unisex'),
+               ('Brazalete Running iPhone', 'Brazalete para iPhone 14/15', 12.90, './img/accesorios/brazalete_running.webp', 'Unisex'),
+               ('Cinturon deportivo Running', 'Cinturon ajustable para hidratacion, ', 15.99, './img/accesorios/rinonera_running.webp', 'Unisex'),
+               ('Espinilleras Venum Challenger', 'Espinilleras para principiantes MMA', 59.99, './img/accesorios/espinilleras_venum.webp', 'Hombre'),
+               ('Espinilleras Buddha Tubular', 'Espinilleras para principiantes Muay Thai', 39.99, './img/accesorios/espinilleras_budha.webp', 'Unisex'),
+               ('Nike ZoomX Streakfly', 'Zapatillas para running', 149.90, './img/calzado/zapatillas_nike_zoomx.webp', 'Mujer'),
+               ('Nike ZoomX Streakfly', 'Zapatillas para running', 149.90, './img/calzado/zapatillas_nike_zoomx_1.webp', 'Hombre'),
+               ('Chandal completo Leone', 'Comodo, practico e impactante', 88.90, './img/ropa/chandal_leone.webp', 'Hombre'),
+               ('Pantalones Venum Classic', 'Pantalones thai-kick', 41.99, './img/ropa/pantalones_venum.webp', 'Unisex'),
+               ('Pantalones cortos Reebok', 'Pantalones para running', 30.99, './img/ropa/pantalones_reebok.webp', 'Mujer'),
+               ('Pantalones Adidas Terrez Trail', 'Pantalones cortos de trail running', 30.99, './img/ropa/pantalones_adidas.webp', 'Hombre'),
+               ('Camiseta Faster Wear', 'Camiseta running para trail', 27.99, './img/ropa/camiseta_running_trial.webp', 'Hombre'),
+               ('Camiseta Runnek', 'Camiseta running transpirable', 14.89, './img/ropa/camiseta_runnek.webp', 'Mujer'),
+               ('Camiseta Tirantes', 'Camiseta transpirable para gimnasio', 10.50, './img/ropa/camiseta_tirantes.webp', 'Hombre'),
+               ('Sudadera Anti Social', 'Anti Social Lifting Club', 50.90, './img/ropa/sudadera_antisocial.webp', 'Unisex'),
+               ('Botas Boxeo Everlast', 'Botas ajustables cómodas', 80.99, './img/calzado/zapatillas_everlast.webp', 'Hombre'),
+               ('Botas Boxeo Everlast', 'Botas de mujer ajustables cómodas', 80.99, './img/calzado/zapatillas_everlast_mujer.webp', 'Mujer');",
 
             "INSERT INTO VARIANTE (id_producto, talla) VALUES
                (1, 'S'),
@@ -191,7 +209,57 @@ function crearBD()
                (22, '42'),
                (22, '43'),
                (23, 'M'),
-               (24, 'M');",
+               (24, 'M'),
+               (25, '36'),
+               (25, '37'),
+               (25, '38'),
+               (25, '40'),
+               (25, '42'),
+               (25, '44'),
+               (26, '36'),
+               (26, '37'),
+               (26, '38'),
+               (26, '40'),
+               (26, '42'),
+               (26, '44'),
+               (27, 'M'),
+               (28, 'M'),
+               (29, 'M'),
+               (29, 'L'),
+               (30, 'M'),
+               (30, 'L'),
+               (31, '36'),
+               (31, '37'),
+               (31, '38'),
+               (31, '39'),
+               (32, '40'),
+               (32, '42'),
+               (32, '44'),
+               (33, 'M'),
+               (33, 'L'),
+               (34, 'S'),
+               (34, 'M'),
+               (34, 'L'),
+               (35, 'S'),
+               (35, 'M'),
+               (36, 'M'),
+               (36, 'L'),
+               (37, 'S'),
+               (37, 'M'),
+               (37, 'L'),
+               (38, 'S'),
+               (38, 'M'),
+               (39, 'M'),
+               (39, 'L'),
+               (40, 'S'),
+               (40, 'M'),
+               (40, 'L'),
+               (41, '40'),
+               (41, '42'),
+               (41, '43'),
+               (42, '36'),
+               (42, '37'),
+               (42, '38');",
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
                (1, 1),
@@ -214,30 +282,48 @@ function crearBD()
 
             // Insertar datos en la tabla PRODUCTO_CATEGORIA
             "INSERT INTO PRODUCTO_CATEGORIA (id_producto, id_categoria) VALUES
-               (1, 2), -- Camiseta tecnica nike
-               (2, 1), -- Zapatillas Ultraboost
-               (3, 2), -- Leggins deportivos
-               (4, 3), -- Guantes MMA Venum
-               (5, 3), -- Guantes charlie
-               (6, 3), -- Guantes everlast
-               (7, 3), -- Protector Bucal
-               (8, 1), -- Nike Hyperco
-               (9, 1), -- Adidas Box Hog
-               (10, 2), -- Camiseta Adidas
-               (11, 3), -- Vendas Charlie
-               (12, 2), -- Camiseta UFC
-               (13, 3), -- Garmin
-               (14, 1), -- Asic Gel
-               (15, 3), -- Gafas Oakley
-               (16, 2), -- Leggins Nike
-               (17, 2), -- Camiseta Hoka
-               (18, 1), -- New Balance Fresh Foam
-               (19, 2), -- Camiseta Agongym
-               (20, 2), -- Top Agongym
-               (21, 2), -- Pantalones gymshark
-               (22, 1), -- Adidas The total
-               (23, 3), -- Straps
-               (24, 3); --Botella proteínas",
+            (1, 2), -- Camiseta tecnica nike
+            (2, 1), -- Zapatillas Ultraboost
+            (3, 2), -- Leggins deportivos
+            (4, 3), -- Guantes MMA Venum
+            (5, 3), -- Guantes charlie
+            (6, 3), -- Guantes everlast
+            (7, 3), -- Protector Bucal
+            (8, 1), -- Nike Hyperco
+            (9, 1), -- Adidas Box Hog
+            (10, 2), -- Camiseta Adidas
+            (11, 3), -- Vendas Charlie
+            (12, 2), -- Camiseta UFC
+            (13, 3), -- Garmin
+            (14, 1), -- Asic Gel
+            (15, 3), -- Gafas Oakley
+            (16, 2), -- Leggins Nike
+            (17, 2), -- Camiseta Hoka
+            (18, 1), -- New Balance Fresh Foam
+            (19, 2), -- Camiseta Agongym
+            (20, 2), -- Top Agongym
+            (21, 2), -- Pantalones gymshark
+            (22, 1), -- Adidas The total
+            (23, 3), -- Straps
+            (24, 3), -- Botella proteínas
+            (25, 1), -- Zapatillas 5 dedos
+            (26, 1), -- Zapatillas 5 dedos
+            (27, 3), -- Brazalete running
+            (28, 3), -- Cinturon para correr
+            (29, 3), -- Espinilleras MMA Venum
+            (30, 3), -- Espinilleras Muay Thai
+            (31, 1), -- Zapatillas running nike
+            (32, 1), -- Zapatillas running nike
+            (33, 2), -- Chandal Leone
+            (34, 2), -- Pantalones venum
+            (35, 2), -- Pantalones Reebok
+            (36, 2), -- Pantalones Adidas
+            (37, 2), -- Camiseta Trail
+            (38, 2), -- Camiseta Runnek
+            (39, 2), -- Camiseta tirantes
+            (40, 2), -- Sudadera antisocial
+            (41, 1), -- Botas boxeo Everlast
+            (42, 1); -- Botas boxeo Everlast muujer",
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
