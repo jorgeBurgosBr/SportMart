@@ -121,6 +121,7 @@
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .btn-buy:hover {
@@ -223,6 +224,7 @@
   color: var(--bg-color);
   padding: 10px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .add-cart:hover {

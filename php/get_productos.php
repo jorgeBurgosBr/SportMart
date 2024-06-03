@@ -8,17 +8,48 @@ if ($bd->conectar()) {
    $bd->seleccionarContexto('sportmart');
 
    $categoria = $_GET['categoria'];
-   $sql = "SELECT p.id_producto, p.nombre, p.descripcion, p.precio, p.imagen, p.sexo, v.talla
-      FROM PRODUCTO p
-      JOIN PRODUCTO_CATEGORIA pc ON p.id_producto = pc.id_producto
-      JOIN CATEGORIA c ON pc.id_categoria = c.id_categoria
-      JOIN VARIANTE v ON p.id_producto = v.id_producto
-      WHERE c.categoria = ?
-";
+   $precio_min = isset($_GET['precio_min']) ? $_GET['precio_min'] : null;
+   $precio_max = isset($_GET['precio_max']) ? $_GET['precio_max'] : null;
+   $sexo = isset($_GET['sexo']) ? $_GET['sexo'] : null;
 
-   // Cambiar $conexion a $conn
+   $sql = "SELECT p.id_producto, p.nombre, p.descripcion, p.precio, p.imagen, p.sexo, v.talla
+            FROM PRODUCTO p
+            JOIN PRODUCTO_CATEGORIA pc ON p.id_producto = pc.id_producto
+            JOIN CATEGORIA c ON pc.id_categoria = c.id_categoria
+            JOIN VARIANTE v ON p.id_producto = v.id_producto
+            WHERE c.categoria = ?";
+
+   // Añadir condiciones de filtro
+   if ($precio_min !== null) {
+      $sql .= " AND p.precio >= ?";
+   }
+   if ($precio_max !== null) {
+      $sql .= " AND p.precio <= ?";
+   }
+   if ($sexo !== null) {
+      $sql .= " AND p.sexo = ?";
+   }
+
    $stmt = $conn->prepare($sql);
-   $stmt->bind_param("s", $categoria);
+
+   // Vincular parámetros
+   $types = 's';
+   $params = [$categoria];
+
+   if ($precio_min !== null) {
+      $types .= 'd';
+      $params[] = $precio_min;
+   }
+   if ($precio_max !== null) {
+      $types .= 'd';
+      $params[] = $precio_max;
+   }
+   if ($sexo !== null) {
+      $types .= 's';
+      $params[] = $sexo;
+   }
+
+   $stmt->bind_param($types, ...$params);
    $stmt->execute();
    $result = $stmt->get_result();
 
