@@ -85,6 +85,18 @@ function crearBD()
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
                FOREIGN KEY (id_categoria) REFERENCES CATEGORIA(id_categoria)
             );",
+            "CREATE TABLE DEPORTE (
+               id_deporte INT AUTO_INCREMENT,
+               deporte VARCHAR(150) UNIQUE,
+               PRIMARY KEY (id_deporte)
+            );",
+            "CREATE TABLE PRODUCTO_DEPORTE (
+               id_producto INT,
+               id_deporte INT,
+               PRIMARY KEY (id_producto, id_deporte),
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
+               FOREIGN KEY (id_deporte) REFERENCES DEPORTE(id_deporte)
+            );",
             "CREATE TABLE DETALLES_PEDIDO (
                id_pedido INT AUTO_INCREMENT,
                id_producto INT NOT NULL,
@@ -239,6 +251,49 @@ function crearBD()
                (23, 3), -- Straps
                (24, 3); --Botella proteínas",
 
+            "INSERT INTO DEPORTE (deporte) VALUES
+               ('Running'),
+               ('Deportes de contacto'),
+               ('Gym');",
+
+            "INSERT INTO PRODUCTO_DEPORTE (id_producto, id_deporte) VALUES
+               (2, 1), -- Zapatillas Ultraboost
+               (10, 1), -- Camiseta Adidas
+               (13, 1), -- Garmin
+               (14, 1), -- Asic Gel
+               (15, 1), -- Gafas Oakley
+               (18, 1), -- New Balance Fresh Foam
+               (27, 1), -- Brazalete running
+               (28, 1), -- Cinturon para correr
+               (31, 1), -- Zapatillas running nike
+               (32, 1), -- Zapatillas running nike
+               (35, 1), -- Pantalones Reebok
+               (36, 1), -- Pantalones Adidas
+               (37, 1), -- Camiseta Trail
+               (38, 1), -- Camiseta Runnek
+               (4, 2), -- Guantes MMA Venum
+               (5, 2), -- Guantes Charlie
+               (6, 2), -- Guantes Everlast
+               (7, 2), -- Protector Bucal
+               (8, 2), -- Nike Hyperko 2
+               (9, 2), -- Adidas Box Hog 3
+               (11, 2), -- Vendas Charlie
+               (29, 2), -- Espinilleras MMA Venum
+               (30, 2), -- Espinilleras Muay Thai
+               (1, 3), -- Camiseta técnica Nike
+               (3, 3), -- Leggings MyProtein
+               (16, 3), -- Leggings Nike
+               (17, 3), -- Camiseta Hoka
+               (19, 3), -- Camiseta Agongym
+               (20, 3), -- Top Agongym
+               (21, 3), -- Pantalones gymshark
+               (22, 3), -- Adidas The Total
+               (23, 3), -- Straps
+               (24, 3), -- Botella proteínas
+               (25, 3), -- Zapatillas 5 dedos
+               (26, 3), -- Zapatillas 5 dedos
+               (39, 3), -- Camiseta tirantes
+               (40, 3); -- Sudadera antisocial",
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
                (1, 2),
