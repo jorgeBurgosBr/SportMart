@@ -35,9 +35,15 @@ if ($bd->conectar()) {
                                     VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$contrasena_hash')");
 
          if ($sql2) {
-            $respuesta['success'] = true;
-            $_SESSION['id_cliente'] = $id_cliente;
-            $_SESSION['nombre'] = $nombre;
+            // Crear perfil cliente con valores iniciales nulos
+            $sql3 = mysqli_query($conn, "INSERT INTO perfil_cliente (id_cliente, fecha_nac_cliente, telefono, provincia, localidad, direccion_envio, codigo_postal) 
+                                       VALUES ('$id_cliente', NULL, NULL, NULL, NULL, NULL, NULL)");
+
+            if ($sql3) {
+               $respuesta['success'] = true;
+               $_SESSION['id_cliente'] = $id_cliente;
+               $_SESSION['nombre'] = $nombre;
+            }
          }
       }
       header('Content-Type: application/json');

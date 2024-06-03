@@ -34,7 +34,7 @@ document.getElementById("show-regis").addEventListener("click", function() {
          .then(data => {
             if (data.success) {
                // Recargar la página después de cerrar sesión
-               window.location.reload();
+               window.location.href = 'index.php';
             }
          })
          .catch(error => console.error('Fetch error: ', error));

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-   obtenerPerfilUsuario();
+    obtenerPerfilUsuario();
+    mostrarInformacion();
 });
 
 // Función para obtener el perfil del usuario
@@ -39,3 +40,39 @@ function obtenerPerfilUsuario() {
    })
    .catch(error => console.error('Fetch error: ', error));
 }
+
+function mostrarInformacion() {
+    // Obtener el formulario y crear un objeto FormData
+    const formData = new FormData(document.getElementById('user-form-info'));
+    // Realizar la solicitud fetch
+    fetch('./php/procesar_info_perfil.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Procesar la respuesta JSON
+        console.log(data);
+
+        // Actualizar los campos del formulario con la información del servidor
+        document.getElementById('birthdate').value = data.fecha_nac_cliente;
+        document.getElementById('user-telefono').value = data.telefono;
+        document.getElementById('hobbies').value = data.provincia;
+        document.getElementById('job').value = data.localidad;
+        document.getElementById('studies').value = data.direccion_envio;
+        document.getElementById('expectations').value = data.codigo_postal;
+    })
+    .catch(error => {
+        // Capturar errores y pausar la ejecución
+        console.error('Fetch error: ', error);
+        alert('Error en la solicitud');
+    });
+
+    return false;
+}
+
