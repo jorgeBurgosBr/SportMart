@@ -22,15 +22,26 @@ if (isset($_SESSION['nombre'])) {
     <title>SportMart</title>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                    pageLanguage: 'es',
-                    includedLanguages: 'en,es,pt',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                },
-                'google_translate_element');
-        }
-    </script>
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'en,es,pt,it,fr,de',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadGoogleTranslate();
+    });
+  </script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
     @media screen and (max-width: 480px) { 
@@ -48,6 +59,7 @@ if (isset($_SESSION['nombre'])) {
 
 body {
   overflow-y: auto; /* Permitir desplazamiento vertical cuando el contenido excede el tamaño de la pantalla */
+
 }
 
 .cont {
@@ -346,7 +358,7 @@ ul{
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
-        <a href="#">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
         </a>
       </div>
@@ -415,9 +427,24 @@ ul{
 
 
 
-
   <!-- HTML -->
   <div class="cont">
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo" style="background-image: url(img/logoAbout.png)"></div>
+   
+        </li>
+      </ul>
+    </div>
+    <div class="description">
+      <h1>SportMart</h1>
+      <h2>Empresan Deportiva </h2>
+      <p>  En SportMart, creemos que cada atleta merece lo mejor. Por eso, nos dedicamos a ofrecer ropa deportiva de alta calidad a precios inigualables. Nuestra misión es apoyar tu pasión por el deporte con productos que no solo mejoran tu rendimiento, sino que también te hacen sentir y lucir bien.</p>
+      <p class="read-more">
+        
+      </p>
+    </div>
+  </div>
     <div class="blog-card alt">
       <div class="meta">
         <div class="photo" style="background-image: url(img/pablo.jpg)"></div>

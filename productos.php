@@ -75,7 +75,9 @@ if (isset($_SESSION['nombre'])) {
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
+        </a>
       </div>
       <div class="menu-toggle">
         <i class="ri-menu-line"></i>

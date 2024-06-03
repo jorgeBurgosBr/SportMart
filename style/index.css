@@ -1,0 +1,213 @@
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 40px; /* Margen izquierdo */
+    margin-right: 40px; /* Margen derecho */
+}
+
+.carta {
+    width: calc(50% - 20px); /* Ancho del 50% con margen */
+    height: 300px; /* Nuevo tamaño de altura */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px; /* Espacio entre las cartas */
+    position: relative;
+    overflow: hidden; /* Para ocultar el desenfoque en hover */
+}
+
+.carta-grande {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 400px; /* Mayor altura para la carta más grande */
+    margin: 10px 0; /* Margen superior e inferior para la carta grande */
+}
+
+.carta:hover h2 {
+    opacity: 0; /* Ocultar el título en hover */
+}
+
+.carta:hover .ver-mas {
+    opacity: 1; /* Mostrar el botón al hacer hover en la carta */
+}
+
+.carta h2 {
+    margin: 0;
+    color: #888; /* Color gris para el título */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1; /* Mostrar el título por defecto */
+    transition: opacity 0.3s ease; /* Transición para el hover */
+}
+
+.ver-mas {
+    position: absolute;
+    font-size: 30px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.ver-mas:hover {
+    transform: translateX(-50%) scale(0.95);
+    padding: 8px 18px;
+}
+
+/* Definición de las imágenes de fondo para cada carta */
+.carta.carta1 {
+  background-image: url('../img/cami.jpg');
+}
+
+.carta.carta2 {
+  background-image: url('../img/run.jpg');
+}
+
+.carta.carta3 {
+  background-image: url('../img/box.jpg');
+}
+
+.carta.carta4 {
+  background-image: url('../img/tot.jpg');
+}
+
+/* Efecto de desenfoque solo para la imagen de fondo */
+.carta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px); /* Aplicar desenfoque a la imagen de fondo */
+    z-index: -2; /* Colocar detrás del contenido de la carta */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    .contenedor {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .carta {
+        width: calc(100% - 10px); /* Ancho del 100% con margen */
+    }
+}
+
+
+/* RUNNING */
+.clothes-shoes-accessories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .clothes {
+    width: 33%;
+    height: auto;
+    margin-right: 10px;
+  }
+  .shoes {
+    width: 33%;
+    height: auto;
+    margin-right: 10px;
+  }
+  .accessories {
+    width: 33%;
+    height: auto;
+  }
+  .clothes-shoes-accessories img {
+    width: 100%;
+  }
+  
+  .clothes-shoes-accessories a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .clothes-shoes-accessories a:hover {
+    color: #0171e3;
+  }
+  
+  .sub-contenedor {
+    width: 90%;
+    padding: 16px 0 0;
+  }
+  .sub-titulo {
+    margin-bottom: 8px;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+  }
+  
+  .road-trail-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .road {
+    width: 33%;
+    height: auto;
+    margin-right: 10px;
+  }
+  .trail {
+    width: 33%;
+    height: auto;
+    margin-right: 10px;
+  }
+  .track {
+    width: 33%;
+    height: auto;
+  }
+  .road-trail-track img {
+    width: 100%;
+  }
+  .h2 {
+    height: auto;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .tutulo-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  /* CARRUSEL */
+  a {
+    text-decoration: none;
+  }
+  .box {
+    width: 450px;
+    height: auto;
+    /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2); */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    margin: 10px;
+  }

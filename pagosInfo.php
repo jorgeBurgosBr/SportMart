@@ -22,15 +22,26 @@ if (isset($_SESSION['nombre'])) {
     <title>SportMart</title>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                    pageLanguage: 'es',
-                    includedLanguages: 'en,es,pt',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                },
-                'google_translate_element');
-        }
-    </script>
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.head.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'es',
+            includedLanguages: 'en,es,pt,it,fr,de',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadGoogleTranslate();
+    });
+  </script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
     @media screen and (max-width: 480px) { 
@@ -52,7 +63,7 @@ if (isset($_SESSION['nombre'])) {
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
-        <a href="#">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
         </a>
       </div>

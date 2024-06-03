@@ -202,6 +202,7 @@ function crearBD()
                (30, '40'), (30, '41'), (30, '42'), (30, '43'), (30, '44'), (30, '45'),
                (31, 'S'), (31, 'M'), (31, 'L'), (31, 'XL'),
                (32, 'S'), (32, 'M'), (32, 'L'), (32, 'XL');",
+
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
                (1, 1),
@@ -316,6 +317,7 @@ function crearBD()
                (40, 2), -- Sudadera Anti Social - Gym
                (41, 3), -- Botas Boxeo Everlast (Hombre) - Deportes de contacto
                (42, 3); -- Botas Boxeo Everlast (Mujer) - Deportes de contacto",
+
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
