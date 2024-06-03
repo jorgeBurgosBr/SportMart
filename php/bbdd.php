@@ -36,7 +36,6 @@ function crearBD()
                nombre VARCHAR(255) NOT NULL,
                apellidos VARCHAR(255) NOT NULL,
                correo VARCHAR(255) NOT NULL,
-               telefono VARCHAR(255) NOT NULL,
                password VARCHAR(255) NOT NULL,
                PRIMARY KEY (id_cliente)
                );",
@@ -118,11 +117,11 @@ function crearBD()
          ];
          $insertSql = [
             // Insertar datos en la tabla CLIENTE
-            "INSERT INTO CLIENTE (nombre, apellidos, correo, telefono) VALUES
-               ('Juan', 'González', 'juan@example.com', '123456789'),
-               ('María', 'Martínez', 'maria@example.com', '987654321'),
-               ('Pedro', 'Sánchez', 'pedro@example.com', '456789123'),
-               ('Laura', 'López', 'laura@example.com', '789123456');",
+            "INSERT INTO CLIENTE (nombre, apellidos, correo, password) VALUES
+               ('Juan', 'González', 'juan@example.com','1As2345678'),
+               ('María', 'Martínez', 'maria@example.com', '1As2345678'),
+               ('Pedro', 'Sánchez', 'pedro@example.com', '1As2345678'),
+               ('Laura', 'López', 'laura@example.com', '1As2345678');",
 
             // Insertar datos en la tabla PRODUCTO
             "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, sexo) VALUES

@@ -15,7 +15,6 @@ if ($bd->conectar()) {
       ];
       $nombre = mysqli_real_escape_string($conn, $_POST['nombre']);
       $apellidos = mysqli_real_escape_string($conn, $_POST['apellidos']);
-      $telefono = mysqli_real_escape_string($conn, $_POST['telefono']);
       $correo = mysqli_real_escape_string($conn, $_POST['email']);
       $password = mysqli_real_escape_string($conn, $_POST['password']);
       $contrasena_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -32,8 +31,8 @@ if ($bd->conectar()) {
          $respuesta['error'] = 'El correo ya está registrado';
       } else {
          // Insertar los datos en la BBDD con el nuevo ID generado
-         $sql2 = mysqli_query($conn, "INSERT INTO cliente (id_cliente, nombre, apellidos, correo, telefono, password) 
-                                    VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
+         $sql2 = mysqli_query($conn, "INSERT INTO cliente (id_cliente, nombre, apellidos, correo, password) 
+                                    VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$contrasena_hash')");
 
          if ($sql2) {
             $respuesta['success'] = true;
