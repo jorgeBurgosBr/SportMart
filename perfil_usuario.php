@@ -115,12 +115,13 @@ if (isset($_SESSION['nombre'])) {
       </div>
    </nav>
    <section class="content-ppal">
-   <div class="profile-container">
+      <div class="profile-container">
          <div class="profile-photo-container">
             <div class="profile-info">
                <div class="info-user">
                   <span id="user-name"></span>
                   <span id="user-mail"></span>
+                  <span id="miembro">Miembro desde: </span>
                </div>
             </div>
          </div>
@@ -132,39 +133,45 @@ if (isset($_SESSION['nombre'])) {
                <div class="first-column-form">
                   <div class="column-container">
                      <label id="lbl-birthdate" for="birthdate">Fecha de nacimiento:</label>
-                     <input type="date" name="birthdate" id="birthdate" pattern="\d{2}/\d{2}/\d{4}">
+                     <input type="date" name="fecha_nac_cliente" id="birthdate" pattern="\d{2}/\d{2}/\d{4}" required>
                   </div>
 
-               <div class="second-column-form">
-               <div class="column-container-2">
-                     <label for="telefono">Teléfono:</label>
-                     <input id="user-telefono" name="telefono" placeholder="Introduce tu teléfono" pattern="\d{9}" maxlength="9" required></input>
+                  <div class="second-column-form">
+                     <div class="column-container-2">
+                        <label for="telefono">Teléfono:</label>
+                        <input id="user-telefono" name="telefono" placeholder="Introduce tu teléfono" pattern="\d{9}" maxlength="9" required></input>
+                     </div>
+
+                     <div class="column-container-2">
+                        <label for="provincia">Provincia:</label>
+                        <select id="provincia" name="provincia" placeholder="Introduce tu provincia" required>
+                           <option value="">Selecciona tu provincia</option>
+                           <?php foreach ($provincias_espana as $provincia) { ?>
+                              <option value="<?php echo $provincia; ?>"><?php echo $provincia; ?></option>
+                           <?php } ?>
+                        </select>
+                     </div>
+
+
+                     <div class="column-container-2">
+                        <label for="localidad">Localidad:</label>
+                        <input id="localidad" name="localidad" placeholder="Introduce tu localidad" required></input>
+                     </div>
+
+                     <div class="column-container-2">
+                        <label for="envio">Dirección de envío:</label>
+                        <input id="envio" name="direccion_envio" placeholder="Introduce tu dirección de envío" required></input>
+                     </div>
+
+                     <div class="column-container-2">
+                        <label for="codigo_postal">Código postal:</label>
+                        <input id="codigo_postal" name="codigo_postal" pattern="\d{5}" maxlength="5" placeholder="Introduce tu código postal" required></input>
+                     </div>
                   </div>
 
-                  <div class="column-container-2">
-                     <label for="hobbies">Provincia:</label>
-                     <input id="hobbies" name="hobbies" placeholder="Introduce tu provincia"></input>
+                  <div class="button-container">
+                     <button type="button" class="bttn-titulo" onclick="actualizarInformacion()">Actualizar</button>
                   </div>
-
-                  <div class="column-container-2">
-                     <label for="job">Localidad:</label>
-                     <input id="job" name="job" placeholder="Introduce tu localidad"></input>
-                  </div>
-
-                  <div class="column-container-2">
-                     <label for="studies">Dirección de envío:</label>
-                     <input id="studies" name="studies" placeholder="Introduce tu dirección de envío"></input>
-                  </div>
-
-                  <div class="column-container-2">
-                     <label for="expectations">Código postal:</label>
-                     <input id="expectations" name="expectations" placeholder="Introduce tu código postal"></input>
-                  </div>
-               </div>
-
-               <div class="button-container">
-                  <button type="button" class="bttn-titulo" onclick="actualizarInformacion()">Actualizar</button>
-               </div>
             </form>
          </div>
       </div>

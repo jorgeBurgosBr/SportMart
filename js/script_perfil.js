@@ -21,7 +21,7 @@ function obtenerPerfilUsuario() {
        // Procesa la respuesta JSON
        console.log(data);
 
-       // Obtiene referencias a los elementos HTML con los IDs 'user-name', 'user-mail', y 'user-role'
+       // Obtiene referencias a los elementos HTML con los IDs 'user-name', 'user-mail'
        const nombreSpan = document.getElementById('user-name');
        const correoSpan = document.getElementById('user-mail');
 
@@ -29,7 +29,7 @@ function obtenerPerfilUsuario() {
        if (data.success && nombreSpan && correoSpan ) {
 
            const nombreCompleto = data.nombre + ' ' + data.apellidos;
-           // Actualiza el contenido de los elementos con los datos del paciente
+           // Actualiza el contenido de los elementos con los datos del usuario
            nombreSpan.textContent = nombreCompleto;
            correoSpan.textContent = data.correo;
 
@@ -62,10 +62,22 @@ function mostrarInformacion() {
         // Actualizar los campos del formulario con la información del servidor
         document.getElementById('birthdate').value = data.fecha_nac_cliente;
         document.getElementById('user-telefono').value = data.telefono;
-        document.getElementById('hobbies').value = data.provincia;
-        document.getElementById('job').value = data.localidad;
-        document.getElementById('studies').value = data.direccion_envio;
-        document.getElementById('expectations').value = data.codigo_postal;
+        document.getElementById('provincia').value = data.provincia;
+        document.getElementById('localidad').value = data.localidad;
+        document.getElementById('envio').value = data.direccion_envio;
+        document.getElementById('codigo_postal').value = data.codigo_postal;
+        const fecha = new Date(data.miembro_desde);
+
+        // Obtener el día, mes y año
+        const dia = fecha.getDate().toString().padStart(2, '0');
+        const mes = (fecha.getMonth() + 1).toString().padStart(2, '0');
+        const anio = fecha.getFullYear();
+
+        // Crear la fecha formateada en formato dd/mm/yyyy
+        const fechaFormateada = `${dia}-${mes}-${anio}`;
+
+        // Asignar el valor formateado al elemento HTML
+        document.getElementById('miembro').textContent += fechaFormateada;
     })
     .catch(error => {
         // Capturar errores y pausar la ejecución
@@ -76,3 +88,49 @@ function mostrarInformacion() {
     return false;
 }
 
+function actualizarInformacion() {
+    // Obtener el formulario y crear un objeto FormData
+    const formulario = document.getElementById('user-form-info');
+    const formData = new FormData(formulario);
+    formData.append('funcion', 'updateForm');
+    // Realizar la solicitud fetch
+    fetch('./php/procesar_info_perfil.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Procesar la respuesta JSON
+
+        // Actualizar los campos del formulario con la información del servidor
+        document.getElementById('birthdate').value = data.fecha_nac_cliente;
+        document.getElementById('user-telefono').value = data.telefono;
+        document.getElementById('provincia').value = data.provincia;
+        document.getElementById('localidad').value = data.localidad;
+        document.getElementById('envio').value = data.direccion_envio;
+        document.getElementById('codigo_postal').value = data.codigo_postal;
+
+        // Si la actualización fue exitosa, muestra un alert
+        if (data.success) {
+            // alert('Actualización exitosa');
+            setTimeout(() => {
+                window.location.reload();
+            }, 0);
+            alert('Perfil actualizado correctamente')
+        } else {
+            alert('Error en la actualización');
+        }
+    })
+    .catch(error => {
+        // Capturar errores y pausar la ejecución
+        console.error('Fetch error: ', error);
+        alert('Error en la solicitud');
+    });
+
+    return false;
+}

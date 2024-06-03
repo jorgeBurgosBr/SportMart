@@ -21,7 +21,15 @@ function existeBBDD()
    $bd->cerrar();
    return $flag;
 }
-
+$provincias_espana = array(
+   'A Coruña', 'Álava', 'Albacete', 'Alicante', 'Almería', 'Asturias', 'Ávila',
+   'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Cádiz', 'Cantabria', 'Castellón',
+   'Ciudad Real', 'Córdoba', 'Cuenca', 'Girona', 'Granada', 'Guadalajara', 'Gipuzkoa',
+   'Huelva', 'Huesca', 'Illes Balears', 'Jaén', 'La Rioja', 'Las Palmas', 'León',
+   'Lleida', 'Lugo', 'Madrid', 'Málaga', 'Murcia', 'Navarra', 'Ourense', 'Palencia',
+   'Pontevedra', 'Salamanca', 'Santa Cruz de Tenerife', 'Segovia', 'Sevilla', 'Soria',
+   'Tarragona', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 'Bizkaia', 'Zamora', 'Zaragoza'
+);
 function crearBD()
 {
    $bd = new BaseDeDatos();
@@ -42,6 +50,7 @@ function crearBD()
             "CREATE TABLE PERFIL_CLIENTE (
                id_cliente INT,
                fecha_nac_cliente DATE,
+               miembro_desde DATE,
                telefono VARCHAR(9),
                provincia VARCHAR(255),
                localidad VARCHAR(255),
@@ -134,11 +143,11 @@ function crearBD()
                ('Pedro', 'Sánchez', 'pedro@example.com', '1As2345678'),
                ('Laura', 'López', 'laura@example.com', '1As2345678');",
 
-               "INSERT INTO PERFIL_CLIENTE (id_cliente, fecha_nac_cliente, telefono, provincia, localidad, direccion_envio, codigo_postal) VALUES
-               (1, '1990-05-15', '123456789', 'Madrid', 'Madrid', 'Calle Principal 123', '28001'),
-               (2, '1985-08-25', '987654321', 'Barcelona', 'Barcelona', 'Avenida Central 456', '08001'),
-               (3, '1978-12-10', '456789123', 'Sevilla', 'Sevilla', 'Plaza Mayor 789', '41001'),
-               (4, '1992-03-20', '789123456', 'Valencia', 'Valencia', 'Calle Secundaria 321', '46001');
+               "INSERT INTO PERFIL_CLIENTE (id_cliente, fecha_nac_cliente, miembro_desde, telefono, provincia, localidad, direccion_envio, codigo_postal) VALUES
+               (1, '1990-05-15', '2024-03-10', '123456789', 'Madrid', 'Madrid', 'Calle Principal 123', '28001'),
+               (2, '1985-08-25', '2024-02-15', '987654321', 'Barcelona', 'Barcelona', 'Avenida Central 456', '08001'),
+               (3, '1978-12-10', '2023-08-22', '456789123', 'Sevilla', 'Sevilla', 'Plaza Mayor 789', '41001'),
+               (4, '1992-03-20', '2024-01-13', '789123456', 'Valencia', 'Valencia', 'Calle Secundaria 321', '46001');
             ",
 
             // Insertar datos en la tabla PRODUCTO

@@ -36,8 +36,8 @@ if ($bd->conectar()) {
 
          if ($sql2) {
             // Crear perfil cliente con valores iniciales nulos
-            $sql3 = mysqli_query($conn, "INSERT INTO perfil_cliente (id_cliente, fecha_nac_cliente, telefono, provincia, localidad, direccion_envio, codigo_postal) 
-                                       VALUES ('$id_cliente', NULL, NULL, NULL, NULL, NULL, NULL)");
+            $sql3 = mysqli_query($conn, "INSERT INTO perfil_cliente (id_cliente, miembro_desde, fecha_nac_cliente, telefono, provincia, localidad, direccion_envio, codigo_postal) 
+                                       VALUES ('$id_cliente', NOW(), NULL, NULL, NULL, NULL, NULL, NULL)");
 
             if ($sql3) {
                $respuesta['success'] = true;
