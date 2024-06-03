@@ -20,7 +20,8 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
-  <!-- <script>
+  <link rel="stylesheet" href="style/style_filtros.css" />
+  <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
       script.type = 'text/javascript';
@@ -40,13 +41,13 @@ if (isset($_SESSION['nombre'])) {
     document.addEventListener("DOMContentLoaded", function() {
       loadGoogleTranslate();
     });
-  </script> -->
+  </script>
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>SportMart</title>
-  <!-- <style>
+  <style>
     .popup-regis.active2,
     .popup.activa {
       top: 10%;
@@ -59,7 +60,7 @@ if (isset($_SESSION['nombre'])) {
         top: 12%;
       }
     }
-  </style> -->
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -137,10 +138,43 @@ if (isset($_SESSION['nombre'])) {
   </nav>
   <!-- Shop -->
   <section class="shop containerr">
+    <div class="filter-container">
+      <button id="filter-button" class="filter-btn">Filtros</button>
+    </div>
     <h2 class="section-title">Shop Products</h2>
     <!-- Content -->
     <div class="shop-content"></div>
   </section>
+  <div id="filter-popup" class="filter-popup">
+    <div class="filter-popup-content">
+      <i class="bx bx-x close-filter-popup" id="close-filter-popup"></i>
+      <!-- <span id="close-filter-popup" class="close-filter-popup">&times;</span> -->
+      <h2>Filtrar y ordenar</h2>
+      <form id="filter-form">
+        <!-- Otros filtros -->
+        <label for="precio-min">Precio mínimo:</label>
+        <input type="number" id="precio-min" name="precio-min">
+
+        <label for="precio-max">Precio máximo:</label>
+        <input type="number" id="precio-max" name="precio-max">
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo">
+          <option value="">Todos</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+        </select>
+
+        <label for="talla">Talla:</label>
+        <select id="talla" name="talla">
+          <option value="">Todas</option>
+        </select>
+
+        <button class="btn-buy" type="submit">Aplicar filtros</button>
+      </form>
+
+    </div>
+  </div>
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -247,5 +281,6 @@ if (isset($_SESSION['nombre'])) {
 <script src="js/script_running.js"></script>
 <script src="js/script_productos.js"></script>
 <script src="js/script_carrito.js"></script>
+<script src="js/script_filtro.js"></script>
 
 </html>

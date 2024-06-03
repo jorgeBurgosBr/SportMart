@@ -85,6 +85,18 @@ function crearBD()
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
                FOREIGN KEY (id_categoria) REFERENCES CATEGORIA(id_categoria)
             );",
+            "CREATE TABLE DEPORTE (
+               id_deporte INT AUTO_INCREMENT,
+               deporte VARCHAR(150) UNIQUE,
+               PRIMARY KEY (id_deporte)
+            );",
+            "CREATE TABLE PRODUCTO_DEPORTE (
+               id_producto INT,
+               id_deporte INT,
+               PRIMARY KEY (id_producto, id_deporte),
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
+               FOREIGN KEY (id_deporte) REFERENCES DEPORTE(id_deporte)
+            );",
             "CREATE TABLE DETALLES_PEDIDO (
                id_pedido INT AUTO_INCREMENT,
                id_producto INT NOT NULL,
@@ -158,108 +170,39 @@ function crearBD()
                ('Botas Boxeo Everlast', 'Botas de mujer ajustables cómodas', 80.99, './img/calzado/zapatillas_everlast_mujer.webp', 'Mujer');",
 
             "INSERT INTO VARIANTE (id_producto, talla) VALUES
-               (1, 'S'),
-               (1, 'M'),
-               (1, 'L'),
-               (2, '37'),
-               (2, '38'),
-               (2, '40'),
-               (2, '42'),
-               (2, '44'),
-               (3, 'S'),
-               (3, 'M'),
-               (3, 'L'),
-               (4, 'M'),
-               (5, 'L'),
-               (6, 'M'),
-               (7, 'S'),
-               (8, '42'),
-               (8, '44'),
-               (8, '48'),
-               (9, '36'),
-               (9, '38'),
-               (9, '40'),
-               (10, 'S'),
-               (10, 'M'),
-               (10, 'L'),
-               (11, 'M'),
-               (12, 'S'),
-               (12, 'M'),
-               (12, 'L'),
-               (13, 'L'),
-               (14, '36'),
-               (14, '37'),
-               (14, '38'),
-               (15, 'M'),
-               (16, 'S'),
-               (16, 'M'),
-               (17, 'M'),
-               (17, 'L'),
-               (18, '42'),
-               (18, '43'),
-               (19, 'M'),
-               (19, 'L'),
-               (20, 'S'),
-               (20, 'M'),
-               (21, 'S'),
-               (21, 'M'),
-               (21, 'L'),
-               (22, '40'),
-               (22, '41'),
-               (22, '42'),
-               (22, '43'),
-               (23, 'M'),
-               (24, 'M'),
-               (25, '36'),
-               (25, '37'),
-               (25, '38'),
-               (25, '40'),
-               (25, '42'),
-               (25, '44'),
-               (26, '36'),
-               (26, '37'),
-               (26, '38'),
-               (26, '40'),
-               (26, '42'),
-               (26, '44'),
-               (27, 'M'),
-               (28, 'M'),
-               (29, 'M'),
-               (29, 'L'),
-               (30, 'M'),
-               (30, 'L'),
-               (31, '36'),
-               (31, '37'),
-               (31, '38'),
-               (31, '39'),
-               (32, '40'),
-               (32, '42'),
-               (32, '44'),
-               (33, 'M'),
-               (33, 'L'),
-               (34, 'S'),
-               (34, 'M'),
-               (34, 'L'),
-               (35, 'S'),
-               (35, 'M'),
-               (36, 'M'),
-               (36, 'L'),
-               (37, 'S'),
-               (37, 'M'),
-               (37, 'L'),
-               (38, 'S'),
-               (38, 'M'),
-               (39, 'M'),
-               (39, 'L'),
-               (40, 'S'),
-               (40, 'M'),
-               (40, 'L'),
-               (41, '40'),
-               (41, '42'),
-               (41, '43'),
-               (42, '36'),
-               (42, '37'),
-               (42, '38');",
+               (1, 'S'), (1, 'M'), (1, 'L'), (1, 'XL'),
+               (2, '36'), (2, '37'), (2, '38'), (2, '39'), (2, '40'), (2, '41'),
+               (3, 'S'), (3, 'M'), (3, 'L'), (3, 'XL'),
+               (4, 'S'), (4, 'M'), (4, 'L'), (4, 'XL'),
+               (5, 'S'), (5, 'M'), (5, 'L'), (5, 'XL'),
+               (6, 'S'), (6, 'M'), (6, 'L'), (6, 'XL'),
+               (7, 'S'), (7, 'M'), (7, 'L'), (7, 'XL'),
+               (8, '40'), (8, '41'), (8, '42'), (8, '43'), (8, '44'), (8, '45'),
+               (9, '40'), (9, '41'), (9, '42'), (9, '43'), (9, '44'), (9, '45'),
+               (10, 'S'), (10, 'M'), (10, 'L'), (10, 'XL'),
+               (11, 'S'), (11, 'M'), (11, 'L'), (11, 'XL'),
+               (12, 'S'), (12, 'M'), (12, 'L'), (12, 'XL'),
+               (13, 'S'), (13, 'M'), (13, 'L'), (13, 'XL'),
+               (14, '36'), (14, '37'), (14, '38'), (14, '39'), (14, '40'), (14, '41'),
+               (15, 'S'), (15, 'M'), (15, 'L'), (15, 'XL'),
+               (16, 'S'), (16, 'M'), (16, 'L'), (16, 'XL'),
+               (17, 'S'), (17, 'M'), (17, 'L'), (17, 'XL'),
+               (18, '36'), (18, '37'), (18, '38'), (18, '39'), (18, '40'), (18, '41'),
+               (19, 'S'), (19, 'M'), (19, 'L'), (19, 'XL'),
+               (20, 'S'), (20, 'M'), (20, 'L'), (20, 'XL'),
+               (21, 'S'), (21, 'M'), (21, 'L'), (21, 'XL'),
+               (22, '40'), (22, '41'), (22, '42'), (22, '43'), (22, '44'), (22, '45'),
+               (23, 'S'), (23, 'M'), (23, 'L'), (23, 'XL'),
+               (24, 'S'), (24, 'M'), (24, 'L'), (24, 'XL'),
+               (25, '36'), (25, '37'), (25, '38'), (25, '39'), (25, '40'), (25, '41'),
+               (26, 'S'), (26, 'M'), (26, 'L'), (26, 'XL'),
+               (27, 'S'), (27, 'M'), (27, 'L'), (27, 'XL'),
+               (28, 'S'), (28, 'M'), (28, 'L'), (28, 'XL'),
+               (29, '36'), (29, '37'), (29, '38'), (29, '39'), (29, '40'), (29, '41'),
+               (30, '40'), (30, '41'), (30, '42'), (30, '43'), (30, '44'), (30, '45'),
+               (31, 'S'), (31, 'M'), (31, 'L'), (31, 'XL'),
+               (32, 'S'), (32, 'M'), (32, 'L'), (32, 'XL');",
+
             // Insertar datos en la tabla FAVORITOS
             "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
                (1, 1),
@@ -323,7 +266,58 @@ function crearBD()
             (39, 2), -- Camiseta tirantes
             (40, 2), -- Sudadera antisocial
             (41, 1), -- Botas boxeo Everlast
-            (42, 1); -- Botas boxeo Everlast muujer",
+            (42, 1); -- Botas boxeo Everlast mujer",
+
+            "INSERT INTO DEPORTE (deporte) VALUES 
+               ('Running'), 
+               ('Gym'), 
+               ('Deportes de contacto');",
+
+            // Insertar datos en la tabla PRODUCTO_DEPORTE
+            "INSERT INTO PRODUCTO_DEPORTE (id_producto, id_deporte) VALUES
+               (1, 2),  -- Camiseta técnica Nike - Gym
+               (2, 1),  -- Ultraboost light - Running
+               (3, 2),  -- Leggings MyProtein - Gym
+               (4, 3),  -- Venum Impact 2.0 - Deportes de contacto
+               (5, 3),  -- Guantes Charlie - Deportes de contacto
+               (6, 3),  -- Guantes Everlast - Deportes de contacto
+               (7, 3),  -- Protector bucal - Deportes de contacto
+               (8, 3),  -- Nike Hyperko 2 - Deportes de contacto
+               (9, 3),  -- Adidas Box Hog 3 - Deportes de contacto
+               (10, 1), -- Camiseta Adidas - Running
+               (11, 3), -- Vendas Charlie - Deportes de contacto
+               (12, 2), -- Camiseta UFC - Gym
+               (13, 1), -- Garmin Forerunner 955 - Running
+               (14, 1), -- Asics Gel-Cumulus 26 - Running
+               (15, 1), -- Gafas Oakley Radar - Running
+               (16, 2), -- Leggings Nike - Gym
+               (17, 2), -- Camiseta Hoka - Gym
+               (18, 1), -- New Balance Fresh Foam X - Running
+               (19, 2), -- Camiseta Agongym - Gym
+               (20, 2), -- Top Agongym - Gym
+               (21, 2), -- Pantalones Gymshark - Gym
+               (22, 2), -- Adidas The Total - Gym
+               (23, 2), -- Straps - Gym
+               (24, 2), -- Botella para proteínas - Gym
+               (25, 2), -- Vibram FiveFingers - Gym
+               (26, 2), -- Vibram FiveFingers Alpha - Gym
+               (27, 1), -- Brazalete Running iPhone - Running
+               (28, 1), -- Cinturón deportivo Running - Running
+               (29, 3), -- Espinilleras Venum Challenger - Deportes de contacto
+               (30, 3), -- Espinilleras Buddha Tubular - Deportes de contacto
+               (31, 1), -- Nike ZoomX Streakfly (Mujer) - Running
+               (32, 1), -- Nike ZoomX Streakfly (Hombre) - Running
+               (33, 3), -- Chándal completo Leone - Deportes de contacto
+               (34, 3), -- Pantalones Venum Classic - Deportes de contacto
+               (35, 1), -- Pantalones cortos Reebok - Running
+               (36, 1), -- Pantalones Adidas Terrex Trail - Running
+               (37, 1), -- Camiseta Faster Wear - Running
+               (38, 1), -- Camiseta Runnek - Running
+               (39, 2), -- Camiseta Tirantes - Gym
+               (40, 2), -- Sudadera Anti Social - Gym
+               (41, 3), -- Botas Boxeo Everlast (Hombre) - Deportes de contacto
+               (42, 3); -- Botas Boxeo Everlast (Mujer) - Deportes de contacto",
+
 
             // Insertar datos en la tabla DETALLES_PEDIDO
             "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES

@@ -1,0 +1,72 @@
+.filter-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 96px;
+}
+.filter-btn {
+  position: relative;
+  top: 35px;
+  padding: 10px 20px;
+  background-color: var(--black);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.filter-btn:hover {
+  background-color: var(--contraste);
+}
+.filter-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 100001;
+  transition: 0.3s;
+}
+
+.filter-popup.active {
+  display: block;
+}
+
+.filter-popup-content {
+  padding: 20px;
+}
+.filter-popup-content h2 {
+  padding-top: 2rem;
+}
+
+.close-filter-popup {
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+#filter-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+#filter-form label {
+  margin-top: 10px;
+}
+
+#filter-form input,
+#filter-form select {
+  margin-bottom: 10px;
+}
+/* Breakpoints */
+@media (max-width: 1080px) {
+  .filter-container {
+    padding: 0 54px;
+  }
+}
