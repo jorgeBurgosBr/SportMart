@@ -15,7 +15,6 @@ if ($bd->conectar()) {
       ];
       $nombre = mysqli_real_escape_string($conn, $_POST['nombre']);
       $apellidos = mysqli_real_escape_string($conn, $_POST['apellidos']);
-      $telefono = mysqli_real_escape_string($conn, $_POST['telefono']);
       $correo = mysqli_real_escape_string($conn, $_POST['email']);
       $password = mysqli_real_escape_string($conn, $_POST['password']);
       $contrasena_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -32,13 +31,19 @@ if ($bd->conectar()) {
          $respuesta['error'] = 'El correo ya está registrado';
       } else {
          // Insertar los datos en la BBDD con el nuevo ID generado
-         $sql2 = mysqli_query($conn, "INSERT INTO cliente (id_cliente, nombre, apellidos, correo, telefono, password) 
-                                    VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$telefono', '$contrasena_hash')");
+         $sql2 = mysqli_query($conn, "INSERT INTO cliente (id_cliente, nombre, apellidos, correo, password) 
+                                    VALUES ('$id_cliente', '$nombre', '$apellidos', '$correo', '$contrasena_hash')");
 
          if ($sql2) {
-            $respuesta['success'] = true;
-            $_SESSION['id_cliente'] = $id_cliente;
-            $_SESSION['nombre'] = $nombre;
+            // Crear perfil cliente con valores iniciales nulos
+            $sql3 = mysqli_query($conn, "INSERT INTO perfil_cliente (id_cliente, fecha_nac_cliente, telefono, provincia, localidad, direccion_envio, codigo_postal) 
+                                       VALUES ('$id_cliente', NULL, NULL, NULL, NULL, NULL, NULL)");
+
+            if ($sql3) {
+               $respuesta['success'] = true;
+               $_SESSION['id_cliente'] = $id_cliente;
+               $_SESSION['nombre'] = $nombre;
+            }
          }
       }
       header('Content-Type: application/json');

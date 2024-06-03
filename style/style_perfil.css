@@ -29,8 +29,8 @@ body {
   grid-template-areas:
     "head"
     "nav"
-    "banner";
-  grid-template-rows: 1fr 1.5fr auto;
+    "content";
+  grid-template-rows: 0.3fr 0.5fr 3fr;
   font-family: var(--texto);
 }
 
@@ -235,16 +235,30 @@ body > nav {
   margin-right: 10px;
 }
 
-.banner-ppal {
-  grid-area: banner;
+/* CONTENIDO */
+
+.content-ppal {
+  grid-area: content;
   height: auto;
   overflow: hidden;
 }
 
-.banner-ppal img {
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: auto;
 }
+
+.info-user {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* ---------- LOGIN Y REGISTER ---------- */
 .popup,
@@ -283,7 +297,7 @@ body > nav {
 
 .popup-regis.active2,
 .popup.activa {
-  top: 15%;
+  top: 33%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }

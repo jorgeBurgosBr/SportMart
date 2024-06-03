@@ -36,9 +36,19 @@ function crearBD()
                nombre VARCHAR(255) NOT NULL,
                apellidos VARCHAR(255) NOT NULL,
                correo VARCHAR(255) NOT NULL,
-               telefono VARCHAR(255) NOT NULL,
                password VARCHAR(255) NOT NULL,
                PRIMARY KEY (id_cliente)
+               );",
+            "CREATE TABLE PERFIL_CLIENTE (
+               id_cliente INT,
+               fecha_nac_cliente DATE,
+               telefono VARCHAR(9),
+               provincia VARCHAR(255),
+               localidad VARCHAR(255),
+               direccion_envio VARCHAR(255),
+               codigo_postal VARCHAR(255),
+               PRIMARY KEY (id_cliente),
+               FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente) ON DELETE CASCADE
                );",
             "CREATE TABLE PRODUCTO (
                id_producto INT AUTO_INCREMENT,
@@ -118,11 +128,18 @@ function crearBD()
          ];
          $insertSql = [
             // Insertar datos en la tabla CLIENTE
-            "INSERT INTO CLIENTE (nombre, apellidos, correo, telefono) VALUES
-               ('Juan', 'González', 'juan@example.com', '123456789'),
-               ('María', 'Martínez', 'maria@example.com', '987654321'),
-               ('Pedro', 'Sánchez', 'pedro@example.com', '456789123'),
-               ('Laura', 'López', 'laura@example.com', '789123456');",
+            "INSERT INTO CLIENTE (nombre, apellidos, correo, password) VALUES
+               ('Juan', 'González', 'juan@example.com','1As2345678'),
+               ('María', 'Martínez', 'maria@example.com', '1As2345678'),
+               ('Pedro', 'Sánchez', 'pedro@example.com', '1As2345678'),
+               ('Laura', 'López', 'laura@example.com', '1As2345678');",
+
+               "INSERT INTO PERFIL_CLIENTE (id_cliente, fecha_nac_cliente, telefono, provincia, localidad, direccion_envio, codigo_postal) VALUES
+               (1, '1990-05-15', '123456789', 'Madrid', 'Madrid', 'Calle Principal 123', '28001'),
+               (2, '1985-08-25', '987654321', 'Barcelona', 'Barcelona', 'Avenida Central 456', '08001'),
+               (3, '1978-12-10', '456789123', 'Sevilla', 'Sevilla', 'Plaza Mayor 789', '41001'),
+               (4, '1992-03-20', '789123456', 'Valencia', 'Valencia', 'Calle Secundaria 321', '46001');
+            ",
 
             // Insertar datos en la tabla PRODUCTO
             "INSERT INTO PRODUCTO (nombre, descripcion, precio, imagen, sexo) VALUES
