@@ -19,6 +19,7 @@
     overflow: hidden; /* Para ocultar el desenfoque en hover */
 }
 
+
 .carta-grande {
     width: 100%; /* Ocupa todo el ancho del contenedor */
     height: 400px; /* Mayor altura para la carta más grande */
@@ -45,23 +46,28 @@
 }
 
 .ver-mas {
-    position: absolute;
-    font-size: 30px;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, padding 0.3s ease;
+  position: absolute;
+  font-size: 25px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, padding 0.3s ease;
 }
 
-.ver-mas:hover {
-    transform: translateX(-50%) scale(0.95);
-    padding: 8px 18px;
+.ver-mas:hover  {
+  transform: translateX(-50%) scale(1.1);
+  padding: 8px 18px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Agregamos una sombra al hacer hover */
+}
+.carta:hover{
+ 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6); /* Agregamos una sombra al hacer hover */
 }
 
 /* Definición de las imágenes de fondo para cada carta */
@@ -94,6 +100,7 @@
     background-position: center;
     filter: blur(4px); /* Aplicar desenfoque a la imagen de fondo */
     z-index: -2; /* Colocar detrás del contenido de la carta */
+  
 }
 
 /* Estilos para dispositivos móviles */
