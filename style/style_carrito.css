@@ -1,16 +1,18 @@
 :root {
   --main-color: #fd4646;
-  --text-color: #171427;
+  --text-color: #000;
   --bg-color: #fff;
   --ppal: #f5f5f5;
   --black: #000000;
   --contraste: #0171e3;
   --texto: "Lexend", sans-serif;
 }
+
 #cart-icon {
   font-size: 1.8rem;
   cursor: pointer;
 }
+
 /* Cart */
 .cart {
   position: fixed;
@@ -24,15 +26,26 @@
   transition: 0.3s;
   z-index: 100000;
 }
+
 .cart.active {
   right: 0;
 }
+
 .cart-title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
 }
+
+.cart-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1rem;
+}
+
 .cart-box {
   display: grid;
   grid-template-columns: 32% 50% 18%;
@@ -40,48 +53,64 @@
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .cart-img {
   width: 100px;
-  height: 100px;
+  /* height: 100px; */
   object-fit: contain;
-  padding: 10px;
+  /* padding: 10px; */
 }
+
 .detail-box {
   display: grid;
   row-gap: 0.5rem;
+  width: 100%;
+  padding: 10px;
 }
+
 .cart-product-title {
   font-size: 1rem;
   text-transform: uppercase;
 }
+
 .cart-price {
   font-weight: 500;
 }
+.cart-data {
+  display: flex;
+}
+
 .cart-quantity {
   border: 1px solid var(--text-color);
   outline-color: var(--contraste);
   width: 2.4rem;
   text-align: center;
   font-size: 1rem;
+  margin-right: 20px;
 }
+
 .cart-remove {
   font-size: 24px;
   color: var(--contraste);
   cursor: pointer;
 }
+
 .total {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
   border-top: 1px solid var(--text-color);
 }
+
 .total-title {
   font-size: 1rem;
   font-weight: 600;
 }
+
 .total-price {
   margin-left: 0.5rem;
 }
+
 .btn-buy {
   display: flex;
   margin: 1.5rem auto 0 auto;
@@ -92,10 +121,13 @@
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 2px;
 }
+
 .btn-buy:hover {
   background: var(--contraste);
 }
+
 #close-cart {
   position: absolute;
   top: 1rem;
@@ -104,55 +136,101 @@
   color: var(--text-color);
   cursor: pointer;
 }
+
 .section-title {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
 }
+
 .shop {
   margin-top: 2rem;
 }
+
 /* Shop Content */
 .shop-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
   gap: 1.5rem;
+  padding: 0 96px 96px 96px;
 }
+
 .product-box {
   position: relative;
+  max-width: 592px;
 }
-.product-box:hover {
-  padding: 10px;
+.product-box:hover .product-description {
+  display: none;
+}
+
+.product-box:hover .tallas {
+  display: block;
+  display: flex;
+}
+
+.tallas {
+  display: none;
+  position: relative;
+  width: 55px;
+  background: var(--bg-color);
+  padding-bottom: 10px;
+  gap: 6px;
+  text-align: center;
+}
+
+.tallas span {
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
   border: 1px solid var(--text-color);
-  transition: 0.4s;
+  cursor: pointer;
+}
+
+.tallas span:hover {
+  background: var(--ppal);
+}
+
+.tallas span.selected {
+  background: var(--contraste);
+  color: var(--bg-color);
 }
 .product-img {
   width: 100%;
-  height: auto;
+  height: 75%;
   margin-bottom: 0.5rem;
 }
+
 .product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
+
+.product-description {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #707072;
+}
+
 .price {
   font-weight: 500;
 }
+
 .add-cart {
   position: absolute;
-  bottom: 0;
   right: 0;
   background: var(--text-color);
   color: var(--bg-color);
   padding: 10px;
   cursor: pointer;
+  border-radius: 2px;
 }
+
 .add-cart:hover {
-  background: hsl(249, 32%, 17%);
+  background: var(--contraste);
 }
+
 /* Breakpoints */
 @media (max-width: 1080px) {
   .nav {
@@ -161,7 +239,10 @@
   section {
     padding: 3rem 0 2rem;
   }
-  .container {
+  .shop-content {
+    padding: 0 54px;
+  }
+  .containerr {
     margin: 0 auto;
     width: 90%;
   }
@@ -169,6 +250,7 @@
     margin-top: 2rem !important;
   }
 }
+
 @media (max-width: 400px) {
   .nav {
     padding: 11px;
@@ -180,11 +262,18 @@
     width: 320px;
   }
 }
+
 @media (max-width: 360px) {
   .shop {
     margin-top: 1rem !important;
   }
   .cart {
     width: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shop-content {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -34,7 +34,7 @@ document.getElementById("show-regis").addEventListener("click", function() {
          .then(data => {
             if (data.success) {
                // Recargar la página después de cerrar sesión
-               window.location.reload();
+               window.location.href = 'index.php';
             }
          })
          .catch(error => console.error('Fetch error: ', error));
@@ -53,7 +53,6 @@ function validacionSignup() {
    let apellidosValid = validarNombre(document.getElementById("apellidos-signup"));
    let correoValid = validarCorreo(document.getElementById("email-signup"));
    let contrasenaValid = validarContrasena(document.getElementById("password-signup"));
-   let telefonoValid = validarTelefono(document.getElementById("telefono-signup"))
 
    // Recojo los span de error
    const errorNombreSignup = document.getElementById("error-nombre-signup");
@@ -80,16 +79,6 @@ function validacionSignup() {
       errorApellidosSignup.style.marginBottom = "20px";
       errorApellidosSignup.style.color = "red";
       document.getElementById("apellidos-signup").style.borderBottom = "2px solid red";
-      flag = false;
-   }
-   if (!telefonoValid) {
-      errorTelefonoSignup.textContent = "❌ No se pueden introducir letras";
-      errorTelefonoSignup.style.fontSize = "14px"
-      errorTelefonoSignup.style.display = "block";
-      errorTelefonoSignup.style.marginTop = "-40px";
-      errorTelefonoSignup.style.marginBottom = "20px";
-      errorTelefonoSignup.style.color = "red";
-      document.getElementById("telefono-signup").style.borderBottom = "2px solid red";
       flag = false;
    }
 
@@ -214,9 +203,6 @@ function mostrarErrorLogin(flag, error) {
 function validarNombre(nombre) {
    return /\d/.test(nombre.value) ? false : true;
 }
-function validarTelefono(telefono) {
-   return /^\d{9}$/.test(telefono.value);
-}
 function validarCorreo(correo) {
    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value);
 }
@@ -231,7 +217,6 @@ function clearErroresSignup() {
    const errorCorreoSignup = document.getElementById("error-email-signup");
    // Recojo el <ul></ul> de error de la contraseña
    const errorContrasenaSignup = document.getElementById("error-password-signup");
-   const errorTelefonoSignup = document.getElementById("error-telefono-signup")
 
    // Limpiamos erroes nombre y apellidos
    errorNombreSignup.textContent = "";
@@ -242,10 +227,6 @@ function clearErroresSignup() {
    // Limpiamos errores correo
    errorCorreoSignup.textContent = "";
    document.getElementById("email-signup").style.borderBottom = "1px solid #fff";
-
-   // Limpiamos errores telefono
-   errorTelefonoSignup.textContent = "";
-   document.getElementById("telefono-signup").style.borderBottom = "1px solid #fff"
 
    // Limpiamos errores contraseña
    errorContrasenaSignup.innerHTML = "";
@@ -307,10 +288,28 @@ document.addEventListener('DOMContentLoaded', function () {
  
 
 // ------------------ LOGIN
-document.querySelector("#show-login").addEventListener("click", function () {
-   document.querySelector(".popup").classList.add("activa");
-   document.querySelector(".popup-regis").classList.remove("active2");
-   document.querySelector(".menu-ppal").classList.remove("active")
+document.addEventListener("DOMContentLoaded", function () {
+   var loginButton = document.querySelector("#show-login");
+
+   // Verificar si el botón existe
+   if (loginButton) {
+       loginButton.addEventListener("click", function () {
+           // Obtenemos el texto del botón y lo limpiamos de espacios adicionales
+           var buttonText = loginButton.textContent.trim();
+
+           // Verificamos si el texto del botón contiene "Hola" (sin importar mayúsculas/minúsculas)
+           if (buttonText.toLowerCase().includes("hola".toLowerCase())) {
+               // Redirigir a la página de perfil del usuario
+               window.location.href = "perfil_usuario.php";
+           } else {
+               document.querySelector(".popup").classList.add("activa");
+               document.querySelector(".popup-regis").classList.remove("active2");
+               document.querySelector(".menu-ppal").classList.remove("active");
+           }
+       });
+   } else {
+       console.error("El botón con id #show-login no se encontró en el DOM.");
+   }
 });
 
 document.querySelector(".popup .close-btn").addEventListener("click", function () {

@@ -283,7 +283,7 @@ body > nav {
 
 .popup-regis.active2,
 .popup.activa {
-  top: 33%;
+  top: 15%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }

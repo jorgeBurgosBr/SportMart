@@ -35,7 +35,7 @@ if (isset($_SESSION['nombre'])) {
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
+            includedLanguages: 'en,es,pt,it,fr,de',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
@@ -50,7 +50,7 @@ if (isset($_SESSION['nombre'])) {
 <body>
 <header>
     <button id="show-help">Ayuda</button>
-    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
+    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
 <div id="google_translate_element"></div>
   </header>
@@ -277,11 +277,6 @@ if (isset($_SESSION['nombre'])) {
         <input required name="apellidos" id="apellidos-signup" type="text">
         <label>Apellidos</label>
         <span id="error-apellidos-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-        <label>Teléfono</label>
-        <span id="error-telefono-signup"></span>
       </div>
       <div class="form-element">
         <input required name="email" id="email-signup" type="text">

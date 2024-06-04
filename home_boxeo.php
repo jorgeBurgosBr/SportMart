@@ -35,7 +35,7 @@ if (isset($_SESSION['nombre'])) {
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
+            includedLanguages: 'en,es,pt,it,fr,de',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
@@ -44,9 +44,7 @@ if (isset($_SESSION['nombre'])) {
       loadGoogleTranslate();
     });
   </script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="js/libreria/jquery.js"></script>
-  <script src="js/libreria/lightslider.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <link rel="icon" href="img/fav.ico" type="image/x-icon">
@@ -64,16 +62,16 @@ if (isset($_SESSION['nombre'])) {
 </head>
 
 <body>
-  <header>
+<header>
     <button id="show-help">Ayuda</button>
-    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
+    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
 <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
-        <a href="#">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
         </a>
       </div>
@@ -246,131 +244,132 @@ if (isset($_SESSION['nombre'])) {
   </div>
   </div>
   <h2 class="h2">Lo más vendido</h2>
-    <div class="slider">
+  <div class="slider">
       <ul id="autoWidth" class="cs-hidden">
         <li class="item-a">
           <div class="box">
             <div class="slide-img">
-              <img src="img/track.png" alt="" />
+              <img src="img/accesorios/guantes_charlie.webp" alt="Guantes CHARLIE" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Guantes Charlie</a>
+                <span>Guantes de cuero para entrenamiento de boxeo</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">69.99€</a>
             </div>
           </div>
         </li>
         <li class="item-b">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/protector_bucal.webp" alt="Protector bucal" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Protector bucal</a>
+                <span>Protector bucal para boxeo con funda</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">9.99€</a>
             </div>
           </div>
         </li>
         <li class="item-c">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/guantes_everlast.webp" alt="Guantes EVERLAST" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Guantes Everlast</a>
+                <span>Guantes para entrenamiento de boxeo iniciación</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">35.99€</a>
             </div>
           </div>
         </li>
         <li class="item-d">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_boxeo_nike.webp" alt="Nike Hyperko 2" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Nike Hyperko 2</a>
+                <span>Zapatillas de boxeo hombre</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">129.99€</a>
             </div>
           </div>
-        </li>
+        </li> 
         <li class="item-e">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_boxeo_adidas.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Adidas Box Hog 3</a>
+                <span>Zapatillas de boxeo mujer</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">109.99€</a>
             </div>
           </div>
         </li>
         <li class="item-f">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/vendas-charlie.webp" alt="Vendas boxeo" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Vendas Charlie</a>
+                <span>Vendas para deporte de contacto, 3M</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">24.99€</a>
             </div>
           </div>
         </li>
         <li class="item-g">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/ropa/camiseta_ufc.webp" alt="Camiseta UFC" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta UFC</a>
+                <span>Camiseta para entrenamiento</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">44.99€</a>
             </div>
           </div>
         </li>
       </ul>
     </div>
+
     <footer class="footer">
-  <div class="container">
+  <div class="container-footer">
     <div class="row">
       <div class="footer-col">
         <h4>Company</h4>
@@ -444,11 +443,6 @@ if (isset($_SESSION['nombre'])) {
         <span id="error-apellidos-signup"></span>
       </div>
       <div class="form-element">
-        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-        <label>Teléfono</label>
-        <span id="error-telefono-signup"></span>
-      </div>
-      <div class="form-element">
         <input required name="email" id="email-signup" type="text">
         <label>Correo</label>
         <span id="error-email-signup"></span>
@@ -469,6 +463,9 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
+  <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
+  <script src="js/libreria/jquery.js"></script>
+  <script src="js/libreria/lightslider.js"></script>
   <script src="js/script_home.js"></script>
   <script src="js/script_carrito.js"></script>
   <script src="js/script_running.js"></script>

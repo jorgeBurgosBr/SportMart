@@ -13,7 +13,7 @@ if (isset($_SESSION['nombre'])) {
 <html lang="en">
 
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <meta charset="UTF-8" />
   <link rel="icon" href="img/fav.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,8 +21,6 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_running.css" />
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
-  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style/whatsapp.css" />
   <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
@@ -35,7 +33,7 @@ if (isset($_SESSION['nombre'])) {
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({
             pageLanguage: 'es',
-            includedLanguages: 'en,es,pt',
+            includedLanguages: 'en,es,pt,it,fr,de',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
     }
@@ -66,16 +64,18 @@ if (isset($_SESSION['nombre'])) {
 </head>
 
 <body>
-  <header>
+<header>
     <button id="show-help">Ayuda</button>
-    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
+    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-    <div id="google_translate_element"></div>
+<div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
+        </a>
       </div>
       <div class="menu-toggle">
         <i class="ri-menu-line"></i>
@@ -134,11 +134,6 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </nav>
-
-  <!-- Whatsapp -->
-<a href="https://api.whatsapp.com/send?phone=620365035" class="btn-wsp" target="_blank">
-			<i class="fa fa-whatsapp icono"></i>
-		</a>
   <!-- CONTENIDO -->
   <section class="banner-ppal"><img src="img/banner_newbalance.jpg" alt="" /></section>
   <h1 class="tutulo-centrado">Tenemos todo lo que necesitas</h2>
@@ -227,7 +222,8 @@ if (isset($_SESSION['nombre'])) {
       </a>
     </div>
     <div class="shoes">
-      <a href="">
+      <a href="productos.php?categoria=calzado">
+
         <img src="img/running_shoes.png" alt="Running shoes" />
         <div class="sub-contenedor">
           <h4 class="sub-titulo">Zapatillas</h4>
@@ -249,119 +245,119 @@ if (isset($_SESSION['nombre'])) {
         <li class="item-a">
           <div class="box">
             <div class="slide-img">
-              <img src="img/track.png" alt="" />
+              <img src="img/ropa/camiseta_adidas.webp" alt="Camiseta Adidas" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta Adidas</a>
+                <span>Camiseta ligera y transpirable para correr</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">29.99€</a>
             </div>
           </div>
         </li>
         <li class="item-b">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/reloj_garmin.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Garmin Forerunner 955</a>
+                <span>Reloj inteligente premium para carrera</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">499.99€</a>
             </div>
           </div>
         </li>
         <li class="item-c">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_asics.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Asics Gel-Cumulus 26</a>
+                <span>Comodidad y rendimiento en cada paso</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">128.99€</a>
             </div>
           </div>
         </li>
         <li class="item-d">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/accesorios/gafas_oakley.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Gafas Oakley Radar</a>
+                <span>Gafas polarizadas especiales para running</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">205.99€</a>
             </div>
           </div>
         </li>
         <li class="item-e">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/ropa/leggins_nike.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Leggins Nike</a>
+                <span>Leggings ajustados para entrenamiento</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">39.99€</a>
             </div>
           </div>
         </li>
         <li class="item-f">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/ropa/camiseta_hoka.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">Camiseta Hoka</a>
+                <span>Camiseta 100% algodón</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">32.99€</a>
             </div>
           </div>
         </li>
         <li class="item-g">
           <div class="box">
             <div class="slide-img">
-              <img src="img/running_shoes.png" alt="" />
+              <img src="img/calzado/zapatillas_newbalance.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Buy Now</a>
+                <a href="#" class="buy-btn">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
               <div class="type">
-                <a href="#">Chaqueta negra</a>
-                <span>New arrival</span>
+                <a href="#">New Balance Fresh Foam X</a>
+                <span>Nueva tecnología incorporada</span>
               </div>
-              <a href="#" class="price">23$</a>
+              <a href="#" class="price">119.95$</a>
             </div>
           </div>
         </li>
@@ -391,109 +387,103 @@ if (isset($_SESSION['nombre'])) {
     </div>
 
     <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.php">Tallas</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Help</h4>
-        <ul>
-          <li><a href="faqs.php">FAQ</a></li>
-          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Online Shop</h4>
-        <ul>
-          <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Fighting</a></li>
-          <li><a href="home_running.php">Menu Runinng</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="aboutus.php">About Us</a></li>
+              <li><a href="privacidad.php">Privacy Policy</a></li>
+              <li><a href="tallas.html">Tallas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Get Help</h4>
+            <ul>
+              <li><a href="faqs.php">FAQ</a></li>
+              <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+              <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+              <li><a href="contacto.php">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Online Shop</h4>
+            <ul>
+              <li><a href="home_gym.php">Menu Gym</a></li>
+              <li><a href="home_boxeo.php">Menu Running</a></li>
+              <li><a href="home_running.php">Menu Fighting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
-    <!-- ------------------------ LOGIN ------------------------ -->
-    <div class="popup">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Inicia sesión</p>
-      <form id="form-login">
-        <div class="form-element">
-          <input required name="email-login" id="email_login" type="text">
-          <label>Email</label>
-        </div>
-        <div class="form-element">
-          <input required name="password-login" id="password_login" type="password">
-          <label>Contraseña</label>
-        </div>
-        <span id="error-login"></span>
-        <button class="btn-submit">Enviar</button>
-      </form>
-      <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
-    </div>
+      <!-- ------------------------ LOGIN ------------------------ -->
+      <div class="popup">
+        <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+        <p>Inicia sesión</p>
+        <form id="form-login">
+          <div class="form-element">
+            <input required name="email-login" id="email_login" type="text">
+            <label>Email</label>
+          </div>
+          <div class="form-element">
+            <input required name="password-login" id="password_login" type="password">
+            <label>Contraseña</label>
+          </div>
+          <span id="error-login"></span>
+          <button class="btn-submit">Enviar</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+      </div>
 
-    <!-- ------------------------ REGISTRO ------------------------ -->
-    <div class="popup-regis">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Regístrate</p>
-      <form id="form-signup">
-        <div class="form-element">
-          <input required name="nombre" id="nombre-signup" type="text">
-          <label>Nombre</label>
-          <span id="error-nombre-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="apellidos" id="apellidos-signup" type="text">
-          <label>Apellidos</label>
-          <span id="error-apellidos-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-          <label>Teléfono</label>
-          <span id="error-telefono-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="email" id="email-signup" type="text">
-          <label>Correo</label>
-          <span id="error-email-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="password" id="password-signup" type="password">
-          <label>Contraseña</label>
-          <ul id="error-password-signup"></ul>
-        </div>
-        <button type="submit" class="btn-submit">Enviar</button>
-      </form>
-      <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
-    </div>
-
-    <div class="popup-message">
-      <div class="popup-content">
-        <span class="close-popup-message">&times;</span>
-        <p id="popup-text"></p>
+      <!-- ------------------------ REGISTRO ------------------------ -->
+      <div class="popup-regis">
+        <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+        <p>Regístrate</p>
+        <form id="form-signup">
+          <div class="form-element">
+            <input required name="nombre" id="nombre-signup" type="text">
+            <label>Nombre</label>
+            <span id="error-nombre-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="apellidos" id="apellidos-signup" type="text">
+            <label>Apellidos</label>
+            <span id="error-apellidos-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="email" id="email-signup" type="text">
+            <label>Correo</label>
+            <span id="error-email-signup"></span>
+          </div>
+          <div class="form-element">
+            <input required name="password" id="password-signup" type="password">
+            <label>Contraseña</label>
+            <ul id="error-password-signup"></ul>
+          </div>
+          <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+        <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
       </div>
-    </div>
 
-    <script src="js/script_home.js"></script>
-    <script src="js/script_running.js"></script>
-    <script src="js/script_carrito.js"></script>
+      <div class="popup-message">
+        <div class="popup-content">
+          <span class="close-popup-message">&times;</span>
+          <p id="popup-text"></p>
+        </div>
+      </div>
+
+      <script src="js/script_home.js"></script>
+      <script src="js/script_running.js"></script>
+      <script src="js/script_carrito.js"></script>
 </body>
 
 </html>

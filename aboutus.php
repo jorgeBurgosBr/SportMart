@@ -352,14 +352,14 @@ ul{
 <body>
 <header>
     <button id="show-help">Ayuda</button>
-    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? 'disabled' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
+    <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
 <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
-        <a href="#">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
         </a>
       </div>
@@ -655,11 +655,6 @@ ul{
         <input required name="apellidos" id="apellidos-signup" type="text">
         <label>Apellidos</label>
         <span id="error-apellidos-signup"></span>
-      </div>
-      <div class="form-element">
-        <input required name="telefono" id="telefono-signup" type="text" maxlength="9">
-        <label>Teléfono</label>
-        <span id="error-telefono-signup"></span>
       </div>
       <div class="form-element">
         <input required name="email" id="email-signup" type="text">
