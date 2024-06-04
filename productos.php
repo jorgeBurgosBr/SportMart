@@ -21,6 +21,7 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/lightslider.css" />
   <link rel="stylesheet" href="style/style_carrito.css" />
   <link rel="stylesheet" href="style/footer.css">
+  <link rel="icon" href="img/fav.ico" type="image/x-icon">
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />

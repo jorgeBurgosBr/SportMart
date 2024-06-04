@@ -17,6 +17,7 @@ if (isset($_SESSION['nombre'])) {
     <link rel="stylesheet" href="style/PagosYDevoluciones.css" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/style_carrito.css"/>
+    <link rel="icon" href="img/fav.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>SportMart</title>

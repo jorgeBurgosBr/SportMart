@@ -25,6 +25,7 @@ if (isset($_SESSION['nombre'])) {
 <script src="js/libreria/lightslider.js"></script>
 <script src="js/libreria/jquery.js"></script>
 <script src="js/libreria/lightslider.js"></script>
+<link rel="icon" href="img/fav.ico" type="image/x-icon">
 <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
