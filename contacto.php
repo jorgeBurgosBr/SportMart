@@ -15,11 +15,13 @@ if (isset($_SESSION['nombre'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="style/contacto.css" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/style_carrito.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <title>SportMart</title>
+    <link rel="icon" href="img/fav.ico" type="image/x-icon">
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
     function loadGoogleTranslate() {
@@ -50,205 +52,7 @@ if (isset($_SESSION['nombre'])) {
   }
 }
   </style>
-    <style>
-      .esp{
-        margin-bottom: 10px;
-      }
-            .fondo {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-        }
-        .titulo {
-            text-align: center;
-            font-size: 35px;
-            font-weight: bold;
-            
-        }
-        .centrado {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-        }
-        
-        .containerr {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 1200px;
-    margin-top: 0; /* Cambia el margin-top a 0 */
-}
-        .texto, .formulario {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 30px;
-        }
-        .texto {
-            background-color: #fff;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        @media(min-width: 900px) {
-            .texto, .formulario {
-                width: 48%;
-            }
-            .formulario {
-                margin-bottom: 0;
-            }
-        }
-        h3 {
-            margin-bottom: 20px;
-        }
-        @media(max-width: 767px){
-  .footer {
-    margin-top: 100px; /* Ajusta el valor según sea necesario */
-  }
- 
-  .centrado  {
-    margin-top: 100px; /* Ajusta el valor según sea necesario */
-  }
-}
 
-        .formulario {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-    
-}
-        .formulario div {
-            margin-bottom: 15px;
-        }
-        .formulario label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .formulario input,
-        .formulario textarea {
-            width: calc(100% - 20px); /* Adjust width to add padding */
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .formulario textarea {
-            height: 150px; /* Increase the height of the textarea */
-        }
-        .formulario button {
-            width: 100%;
-            padding: 15px;
-            background-color: #111;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .formulario button:hover {
-            background-color: #444;
-        }
-        *{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
-.container{
-  max-width: 1170px;
-  margin:auto;
-}
-.row{
-  display: flex;
-  flex-wrap: wrap;
-}
-ul{
-  list-style: none;
-}
-.footer{
-  background-color: #000000;
-    padding: 70px 0;
-    
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-  font-size: 18px;
-  color: #ffffff;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-  font-weight: 500;
-  position: relative;
-}
-.footer-col h4::before{
-  content: '';
-  position: absolute;
-  left:0;
-  bottom: -10px;
-  background-color: #0171e3;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
-}
-.footer-col ul li:not(:last-child){
-  margin-bottom: 10px;
-}
-.footer-col ul li a{
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
-  color: #bbbbbb;
-  display: block;
-  transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-  color: #ffffff;
-  padding-left: 8px;
-}
-.footer-col .social-links a{
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255,255,255,0.2);
-  margin:0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-  color: #24262b;
-  background-color: #ffffff;
-}
-
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
-}
-
-
-
-
-
-    </style>
 </head>
 
  
