@@ -239,11 +239,11 @@ if (isset($_SESSION['nombre'])) {
     <!-- Cartas más grandes -->
     <div class="contenedor">
         <div class="carta carta-grande carta4">
-            <a class="ver-mas">Ver más</a>
+            <a href="https://youtu.be/ayLLmWXtJEw?si=eQUa_UCqDDRvlVl_" class="ver-mas">Rutinas</a>
         </div>
 
         <div class="carta carta-grande carta5">
-            <a class="ver-mas">Dieta</a>
+            <a href="https://youtu.be/CvJU3xb3AU8?si=0bsdGg1MOMh_u-Iq" class="ver-mas">Dieta</a>
         </div>
     </div>
     <br><br>
