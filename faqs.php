@@ -11,20 +11,21 @@ if (isset($_SESSION['nombre'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarjeta de Producto</title>
-<link rel="icon" href="img/fav.ico" type="image/x-icon">
-  
-<link rel="stylesheet" href="style/faqs.css" />
-<link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/style_carrito.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <title>SportMart</title>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Producto</title>
+  <link rel="icon" href="img/fav.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="style/faqs.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="style/style_carrito.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>SportMart</title>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
       script.type = 'text/javascript';
@@ -34,39 +35,39 @@ if (isset($_SESSION['nombre'])) {
     }
 
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'es',
-            includedLanguages: 'en,es,pt,it,fr,de',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,pt,it,fr,de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
       loadGoogleTranslate();
     });
   </script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-    @media screen and (max-width: 480px) { 
-  .popup-regis.active2 {
-    top: 16%;
-  }
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @media screen and (max-width: 480px) {
+      .popup-regis.active2 {
+        top: 16%;
+      }
+    }
   </style>
 </head>
 
 <body>
-<header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-<div id="google_translate_element"></div>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -110,7 +111,7 @@ if (isset($_SESSION['nombre'])) {
         <!-- Cart Icon -->
         <!-- Cart -->
         <div class="cart">
-          <h2 class="cart-title">Your Cart</h2>
+          <h2 class="cart-title">Carrito</h2>
           <!-- Content -->
           <div class="cart-content"></div>
           <!-- Total -->
@@ -119,7 +120,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="total-price">$0</div>
           </div>
           <!-- Buy Bottom -->
-          <button type="button" class="btn-buy">Buy Now</button>
+          <button type="button" class="btn-buy">Comprar ahora</button>
           <!-- Cart close -->
           <i class="bx bx-x" id="close-cart"></i>
         </div>
@@ -127,76 +128,76 @@ if (isset($_SESSION['nombre'])) {
     </div>
   </nav>
   <style>
-    #enlace{
+    #enlace {
       text-decoration: none;
-      color:blue;
+      color: blue;
     }
-    </style>
-<div class="faq-header">FAQS</div>
+  </style>
+  <div class="faq-header">FAQS</div>
 
-<div class="faq-content">
-  <div class="faq-question">
-    <input id="q1" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q1" class="panel-title">¿Cuál es la política de devolución de productos en la tienda?</label>
-    <div class="panel-content">Nuestra política de devolución permite devoluciones dentro de los 30 días posteriores a la compra, siempre y cuando los productos estén en su estado original y con el comprobante de compra.  </div> 
+  <div class="faq-content">
+    <div class="faq-question">
+      <input id="q1" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q1" class="panel-title">¿Cuál es la política de devolución de productos en la tienda?</label>
+      <div class="panel-content">Nuestra política de devolución permite devoluciones dentro de los 30 días posteriores a la compra, siempre y cuando los productos estén en su estado original y con el comprobante de compra. </div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q2" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q2" class="panel-title">¿Ofrecen envíos internacionales?</label>
+      <div class="panel-content">Sí, ofrecemos envíos internacionales a la mayoría de los países. Puedes verificar la disponibilidad al momento de realizar la compra.</div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q3" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q3" class="panel-title">¿Cómo puedo encontrar el tamaño adecuado para mis prendas?</label>
+      <div class="panel-content">Consulta nuestra guía de tallas en línea para ayudarte a encontrar el tamaño adecuado. También puedes visitar una de nuestras tiendas físicas para probarte diferentes modelos</div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q4" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q4" class="panel-title">¿Qué tipo de garantía ofrecen en sus productos?</label>
+      <div class="panel-content">Garantizamos la calidad de nuestros productos. Si experimentas algún problema de fabricación, contáctanos y estaremos encantados de ayudarte.</div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q5" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q5" class="panel-title">¿Cuál es la política de privacidad de la tienda en línea?</label>
+      <div class="panel-content">Nuestra política de privacidad detalla cómo recopilamos, utilizamos y protegemos tu información personal. Puedes encontrar más detalles en nuestro sitio web.</div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q6" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q6" class="panel-title">¿Ofrecen descuentos para estudiantes o miembros del ejército?</label>
+      <div class="panel-content">Sí, ofrecemos descuentos especiales para estudiantes y miembros del ejército. Verifica tu elegibilidad durante el proceso de compra.</div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q7" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q7" class="panel-title">¿Qué medidas toman para garantizar la seguridad de mis datos de pago en línea?</label>
+      <div class="panel-content">Utilizamos tecnologías de encriptación y cumplimos con los estándares de seguridad de la industria para proteger tus datos de pago</div>
+    </div>
+
+    <div class="faq-question">
+      <input id="q8" type="checkbox" class="panel">
+      <div class="plus">+</div>
+      <label for="q8" class="panel-title">¿Puedo realizar cambios en mi pedido después de haberlo realizado?</label>
+      <div class="panel-content">Si tu pedido aún no ha sido procesado, es posible que podamos realizar cambios. Por favor, contáctanos lo antes posible para solicitar modificaciones.</div>
+    </div>
   </div>
-  
-  <div class="faq-question">
-    <input id="q2" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q2" class="panel-title">¿Ofrecen envíos internacionales?</label>
-    <div class="panel-content">Sí, ofrecemos envíos internacionales a la mayoría de los países. Puedes verificar la disponibilidad al momento de realizar la compra.</div>
-  </div>
-  
-  <div class="faq-question">
-    <input id="q3" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q3" class="panel-title">¿Cómo puedo encontrar el tamaño adecuado para mis prendas?</label>
-    <div class="panel-content">Consulta nuestra guía de tallas en línea para ayudarte a encontrar el tamaño adecuado. También puedes visitar una de nuestras tiendas físicas para probarte diferentes modelos</div>
-  </div>
 
-  <div class="faq-question">
-    <input id="q4" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q4" class="panel-title">¿Qué tipo de garantía ofrecen en sus productos?</label>
-    <div class="panel-content">Garantizamos la calidad de nuestros productos. Si experimentas algún problema de fabricación, contáctanos y estaremos encantados de ayudarte.</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q5" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q5" class="panel-title">¿Cuál es la política de privacidad de la tienda en línea?</label>
-    <div class="panel-content">Nuestra política de privacidad detalla cómo recopilamos, utilizamos y protegemos tu información personal. Puedes encontrar más detalles en nuestro sitio web.</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q6" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q6" class="panel-title">¿Ofrecen descuentos para estudiantes o miembros del ejército?</label>
-    <div class="panel-content">Sí, ofrecemos descuentos especiales para estudiantes y miembros del ejército. Verifica tu elegibilidad durante el proceso de compra.</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q7" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q7" class="panel-title">¿Qué medidas toman para garantizar la seguridad de mis datos de pago en línea?</label>
-    <div class="panel-content">Utilizamos tecnologías de encriptación y cumplimos con los estándares de seguridad de la industria para proteger tus datos de pago</div>
-  </div>
-
-  <div class="faq-question">
-    <input id="q8" type="checkbox" class="panel">
-    <div class="plus">+</div>
-    <label for="q8" class="panel-title">¿Puedo realizar cambios en mi pedido después de haberlo realizado?</label>
-    <div class="panel-content">Si tu pedido aún no ha sido procesado, es posible que podamos realizar cambios. Por favor, contáctanos lo antes posible para solicitar modificaciones.</div>
-  </div>
-</div>
-
-<br><br>
+  <br><br>
 
 
-<!-- ------------------------ LOGIN ------------------------ -->
-<div class="popup">
+  <!-- ------------------------ LOGIN ------------------------ -->
+  <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
     <p>Inicia sesión</p>
     <form id="form-login">
@@ -252,46 +253,46 @@ if (isset($_SESSION['nombre'])) {
   </div>
 
   <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.php">Tallas</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Help</h4>
-        <ul>
-          <li><a href="faqs.php">FAQ</a></li>
-          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Online Shop</h4>
-        <ul>
-          <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Fighting</a></li>
-          <li><a href="home_running.php">Menu Runinng</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.php">About Us</a></li>
+            <li><a href="privacidad.php">Privacy Policy</a></li>
+            <li><a href="tallas.php">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="faqs.php">FAQ</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="home_gym.php">Menu Gym</a></li>
+            <li><a href="home_boxeo.php">Menu Fighting</a></li>
+            <li><a href="home_running.php">Menu Runinng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-<script src="js/script_home.js"></script>
+  </footer>
+  <script src="js/script_home.js"></script>
 </body>
 
 </html>

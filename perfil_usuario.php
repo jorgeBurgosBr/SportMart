@@ -99,7 +99,7 @@ if (isset($_SESSION['nombre'])) {
             <!-- Cart Icon -->
             <!-- Cart -->
             <div class="cart">
-               <h2 class="cart-title">Your Cart</h2>
+               <h2 class="cart-title">Carrito</h2>
                <!-- Content -->
                <div class="cart-content"></div>
                <!-- Total -->
@@ -108,7 +108,7 @@ if (isset($_SESSION['nombre'])) {
                   <div class="total-price">$0</div>
                </div>
                <!-- Buy Bottom -->
-               <button type="button" class="btn-buy">Buy Now</button>
+               <button type="button" class="btn-buy">Comprar ahora</button>
                <!-- Cart close -->
                <i class="bx bx-x" id="close-cart"></i>
             </div>

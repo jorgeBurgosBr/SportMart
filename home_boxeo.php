@@ -33,11 +33,11 @@ if (isset($_SESSION['nombre'])) {
     }
 
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'es',
-            includedLanguages: 'en,es,pt,it,fr,de',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,pt,it,fr,de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -49,30 +49,31 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <style>
-  .popup.active {
-    top: 20%;
-  }
-    @media screen and (max-width: 480px) { 
-  .popup-regis.active2 {
-    top: 16%;
-  }
-}
+    .popup.active {
+      top: 20%;
+    }
+
+    @media screen and (max-width: 480px) {
+      .popup-regis.active2 {
+        top: 16%;
+      }
+    }
   </style>
   <title>SportMart</title>
 </head>
 
 <body>
-<header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-<div id="google_translate_element"></div>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -116,7 +117,7 @@ if (isset($_SESSION['nombre'])) {
         <!-- Cart Icon -->
         <!-- Cart -->
         <div class="cart">
-          <h2 class="cart-title">Your Cart</h2>
+          <h2 class="cart-title">Carrito</h2>
           <!-- Content -->
           <div class="cart-content"></div>
           <!-- Total -->
@@ -125,7 +126,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="total-price">$0</div>
           </div>
           <!-- Buy Bottom -->
-          <button type="button" class="btn-buy">Buy Now</button>
+          <button type="button" class="btn-buy">Comprar ahora</button>
           <!-- Cart close -->
           <i class="bx bx-x" id="close-cart"></i>
         </div>
@@ -134,280 +135,280 @@ if (isset($_SESSION['nombre'])) {
   </nav>
   <!-- Whatsapp -->
   <a href="https://api.whatsapp.com/send?phone=620365035" class="btn-wsp" target="_blank">
-			<i class="fa fa-whatsapp icono"></i>
-		</a>
+    <i class="fa fa-whatsapp icono"></i>
+  </a>
   <!-- CONTENIDO -->
   <section class="banner-ppal"><img src="img/banner_boxeo.jpg" alt="" /></section>
   <h1 class="titulo-centrado">Las mejores marcas a tu disposición</h1>
   <div class="scroll imgBox" style="--time: 40s">
-      <div class="content_scrolling">
-        <img src="img/logo_everlas.png" class="event_start" alt="" />
-
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-        <img src="img/logo_venum.png" class="event_start" alt="" />
-
-        <img src="img/logo_cleto.png" class="event_start" alt="" />
-
-        <img src="img/logo_badboy.png" class="event_start" alt="" />
-
-        <img src="img/logo_everlas.png" class="event_start" alt="" />
-
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-        
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
-        
-        <img src="img/logo_venum.png" class="event_start" alt="" />
-
-        <img src="img/logo_cleto.png" class="event_start" alt="" />
-
-        <img src="img/logo_badboy.png" class="event_start" alt="" />
-
-        
-        <img src="img/logo_everlas.png" class="event_start" alt="" />
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
-
-        <img src="img/logo_venum.png" class="event_start" alt="" />
-
-        <img src="img/logo_cleto.png" class="event_start" alt="" />
-
-        <img src="img/logo_badboy.png" class="event_start" alt="" />
-
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-      </div>
-      <div class="content_scrolling">
+    <div class="content_scrolling">
       <img src="img/logo_everlas.png" class="event_start" alt="" />
 
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_venum.png" class="event_start" alt="" />
+      <img src="img/logo_venum.png" class="event_start" alt="" />
 
-        <img src="img/logo_cleto.png" class="event_start" alt="" />
+      <img src="img/logo_cleto.png" class="event_start" alt="" />
 
-        <img src="img/logo_badboy.png" class="event_start" alt="" />
+      <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-        
-        <img src="img/logo_everlas.png" class="event_start" alt="" />
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
+      <img src="img/logo_everlas.png" class="event_start" alt="" />
 
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
+      <img src="img/logo_ufc.png" class="event_start" alt="" />
 
-        <img src="img/logo_venum.png" class="event_start" alt="" />
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_cleto.png" class="event_start" alt="" />
+      <img src="img/logo_venum.png" class="event_start" alt="" />
 
-        <img src="img/logo_badboy.png" class="event_start" alt="" />
+      <img src="img/logo_cleto.png" class="event_start" alt="" />
 
-        
-        <img src="img/logo_everlas.png" class="event_start" alt="" />
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
+      <img src="img/logo_badboy.png" class="event_start" alt="" />
 
-        <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_venum.png" class="event_start" alt="" />
+      <img src="img/logo_everlas.png" class="event_start" alt="" />
+      <img src="img/logo_ufc.png" class="event_start" alt="" />
 
-        <img src="img/logo_cleto.png" class="event_start" alt="" />
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
 
-        <img src="img/logo_badboy.png" class="event_start" alt="" />
+      <img src="img/logo_venum.png" class="event_start" alt="" />
 
-        <img src="img/logo_ufc.png" class="event_start" alt="" />
-      </div>
+      <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+      <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+      <img src="img/logo_ufc.png" class="event_start" alt="" />
     </div>
+    <div class="content_scrolling">
+      <img src="img/logo_everlas.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_venum.png" class="event_start" alt="" />
+
+      <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+      <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+
+      <img src="img/logo_everlas.png" class="event_start" alt="" />
+      <img src="img/logo_ufc.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_venum.png" class="event_start" alt="" />
+
+      <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+      <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+
+      <img src="img/logo_everlas.png" class="event_start" alt="" />
+      <img src="img/logo_ufc.png" class="event_start" alt="" />
+
+      <img src="img/logo_adidas.png" class="event_start" alt="" />
+
+      <img src="img/logo_venum.png" class="event_start" alt="" />
+
+      <img src="img/logo_cleto.png" class="event_start" alt="" />
+
+      <img src="img/logo_badboy.png" class="event_start" alt="" />
+
+      <img src="img/logo_ufc.png" class="event_start" alt="" />
     </div>
+  </div>
+  </div>
   <h2 class="h2">¿Qué te interesa?</h2>
   <div class="clothes-shoes-accessories">
-  <div class="clothes">
-    <a href="#">
-      <img src="img/guantes.jpg" alt="Guantes boxeo" />
-      <div class="sub-contenedor">
-        <h4 class="sub-titulo">Guantes</h4>
-      </div>
-    </a>
-  </div>
-  <div class="shoes">
-    <a href="#">
-      <img src="img/ropa-mma.jpg" alt="Ropa MMA" />
-      <div class="sub-contenedor">
-        <h4 class="sub-titulo">Ropa deportiva</h4>
-      </div>
-    </a>
-  </div>
-  <div class="accessories">
-    <a href="#">
-      <img src="img/accesorios-mma.jpg" alt="Accesorios MMA" />
-      <div class="sub-contenedor">
-        <h4 class="sub-titulo">Accesorios</h4>
-      </div>
-    </a>
-  </div>
+    <div class="clothes">
+      <a href="#">
+        <img src="img/guantes.jpg" alt="Guantes boxeo" />
+        <div class="sub-contenedor">
+          <h4 class="sub-titulo">Guantes</h4>
+        </div>
+      </a>
+    </div>
+    <div class="shoes">
+      <a href="#">
+        <img src="img/ropa-mma.jpg" alt="Ropa MMA" />
+        <div class="sub-contenedor">
+          <h4 class="sub-titulo">Ropa deportiva</h4>
+        </div>
+      </a>
+    </div>
+    <div class="accessories">
+      <a href="#">
+        <img src="img/accesorios-mma.jpg" alt="Accesorios MMA" />
+        <div class="sub-contenedor">
+          <h4 class="sub-titulo">Accesorios</h4>
+        </div>
+      </a>
+    </div>
   </div>
   <h2 class="h2">Lo más vendido</h2>
   <div class="slider">
-      <ul id="autoWidth" class="cs-hidden">
-        <li class="item-a">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/accesorios/guantes_charlie.webp" alt="Guantes CHARLIE" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
-            </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Guantes Charlie</a>
-                <span>Guantes de cuero para entrenamiento de boxeo</span>
-              </div>
-              <a href="#" class="price">69.99€</a>
+    <ul id="autoWidth" class="cs-hidden">
+      <li class="item-a">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/accesorios/guantes_charlie.webp" alt="Guantes CHARLIE" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li>
-        <li class="item-b">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/accesorios/protector_bucal.webp" alt="Protector bucal" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Guantes Charlie</a>
+              <span>Guantes de cuero para entrenamiento de boxeo</span>
             </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Protector bucal</a>
-                <span>Protector bucal para boxeo con funda</span>
-              </div>
-              <a href="#" class="price">9.99€</a>
+            <a href="#" class="price">69.99€</a>
+          </div>
+        </div>
+      </li>
+      <li class="item-b">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/accesorios/protector_bucal.webp" alt="Protector bucal" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li>
-        <li class="item-c">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/accesorios/guantes_everlast.webp" alt="Guantes EVERLAST" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Protector bucal</a>
+              <span>Protector bucal para boxeo con funda</span>
             </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Guantes Everlast</a>
-                <span>Guantes para entrenamiento de boxeo iniciación</span>
-              </div>
-              <a href="#" class="price">35.99€</a>
+            <a href="#" class="price">9.99€</a>
+          </div>
+        </div>
+      </li>
+      <li class="item-c">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/accesorios/guantes_everlast.webp" alt="Guantes EVERLAST" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li>
-        <li class="item-d">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/calzado/zapatillas_boxeo_nike.webp" alt="Nike Hyperko 2" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Guantes Everlast</a>
+              <span>Guantes para entrenamiento de boxeo iniciación</span>
             </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Nike Hyperko 2</a>
-                <span>Zapatillas de boxeo hombre</span>
-              </div>
-              <a href="#" class="price">129.99€</a>
+            <a href="#" class="price">35.99€</a>
+          </div>
+        </div>
+      </li>
+      <li class="item-d">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/calzado/zapatillas_boxeo_nike.webp" alt="Nike Hyperko 2" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li> 
-        <li class="item-e">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/calzado/zapatillas_boxeo_adidas.webp" alt="" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Nike Hyperko 2</a>
+              <span>Zapatillas de boxeo hombre</span>
             </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Adidas Box Hog 3</a>
-                <span>Zapatillas de boxeo mujer</span>
-              </div>
-              <a href="#" class="price">109.99€</a>
+            <a href="#" class="price">129.99€</a>
+          </div>
+        </div>
+      </li>
+      <li class="item-e">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/calzado/zapatillas_boxeo_adidas.webp" alt="" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li>
-        <li class="item-f">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/accesorios/vendas-charlie.webp" alt="Vendas boxeo" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Adidas Box Hog 3</a>
+              <span>Zapatillas de boxeo mujer</span>
             </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Vendas Charlie</a>
-                <span>Vendas para deporte de contacto, 3M</span>
-              </div>
-              <a href="#" class="price">24.99€</a>
+            <a href="#" class="price">109.99€</a>
+          </div>
+        </div>
+      </li>
+      <li class="item-f">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/accesorios/vendas-charlie.webp" alt="Vendas boxeo" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li>
-        <li class="item-g">
-          <div class="box">
-            <div class="slide-img">
-              <img src="img/ropa/camiseta_ufc.webp" alt="Camiseta UFC" />
-              <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
-              </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Vendas Charlie</a>
+              <span>Vendas para deporte de contacto, 3M</span>
             </div>
-            <div class="detail-box">
-              <div class="type">
-                <a href="#">Camiseta UFC</a>
-                <span>Camiseta para entrenamiento</span>
-              </div>
-              <a href="#" class="price">44.99€</a>
+            <a href="#" class="price">24.99€</a>
+          </div>
+        </div>
+      </li>
+      <li class="item-g">
+        <div class="box">
+          <div class="slide-img">
+            <img src="img/ropa/camiseta_ufc.webp" alt="Camiseta UFC" />
+            <div class="overlay">
+              <a href="#" class="buy-btn">Comprar</a>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
+          <div class="detail-box">
+            <div class="type">
+              <a href="#">Camiseta UFC</a>
+              <span>Camiseta para entrenamiento</span>
+            </div>
+            <a href="#" class="price">44.99€</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <footer class="footer">
-  <div class="container-footer">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.php">Tallas</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Help</h4>
-        <ul>
-          <li><a href="faqs.php">FAQ</a></li>
-          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Online Shop</h4>
-        <ul>
-          <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Fighting</a></li>
-          <li><a href="home_running.php">Menu Runinng</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+  <footer class="footer">
+    <div class="container-footer">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.php">About Us</a></li>
+            <li><a href="privacidad.php">Privacy Policy</a></li>
+            <li><a href="tallas.php">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="faqs.php">FAQ</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="home_gym.php">Menu Gym</a></li>
+            <li><a href="home_boxeo.php">Menu Fighting</a></li>
+            <li><a href="home_running.php">Menu Runinng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>

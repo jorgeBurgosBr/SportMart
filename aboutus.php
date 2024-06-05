@@ -11,19 +11,20 @@ if (isset($_SESSION['nombre'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog Cards</title>
-<link rel="icon" href="img/fav.ico" type="image/x-icon">
-<link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/style_carrito.css"/>
-    <link rel="stylesheet" href="style/aboutUs.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <title>SportMart</title>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Cards</title>
+  <link rel="icon" href="img/fav.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="stylesheet" href="style/style_carrito.css" />
+  <link rel="stylesheet" href="style/aboutUs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>SportMart</title>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
       script.type = 'text/javascript';
@@ -33,38 +34,39 @@ if (isset($_SESSION['nombre'])) {
     }
 
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'es',
-            includedLanguages: 'en,es,pt,it,fr,de',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,pt,it,fr,de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
       loadGoogleTranslate();
     });
   </script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-    @media screen and (max-width: 480px) { 
-  .popup-regis.active2 {
-    top: 16%;
-  }
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @media screen and (max-width: 480px) {
+      .popup-regis.active2 {
+        top: 16%;
+      }
+    }
   </style>
 </head>
+
 <body>
-<header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-<div id="google_translate_element"></div>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -108,7 +110,7 @@ if (isset($_SESSION['nombre'])) {
         <!-- Cart Icon -->
         <!-- Cart -->
         <div class="cart">
-          <h2 class="cart-title">Your Cart</h2>
+          <h2 class="cart-title">Carrito</h2>
           <!-- Content -->
           <div class="cart-content"></div>
           <!-- Total -->
@@ -117,7 +119,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="total-price">$0</div>
           </div>
           <!-- Buy Bottom -->
-          <button type="button" class="btn-buy">Buy Now</button>
+          <button type="button" class="btn-buy">Comprar ahora</button>
           <!-- Cart close -->
           <i class="bx bx-x" id="close-cart"></i>
         </div>
@@ -134,22 +136,22 @@ if (isset($_SESSION['nombre'])) {
 
   <!-- HTML -->
   <div class="cont">
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(img/logoAbout.png)"></div>
-   
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url(img/logoAbout.png)"></div>
+
         </li>
-      </ul>
+        </ul>
+      </div>
+      <div class="description">
+        <h1>SportMart</h1>
+        <h2>Empresan Deportiva </h2>
+        <p> En SportMart, creemos que cada atleta merece lo mejor. Por eso, nos dedicamos a ofrecer ropa deportiva de alta calidad a precios inigualables. Nuestra misión es apoyar tu pasión por el deporte con productos que no solo mejoran tu rendimiento, sino que también te hacen sentir y lucir bien.</p>
+        <p class="read-more">
+
+        </p>
+      </div>
     </div>
-    <div class="description">
-      <h1>SportMart</h1>
-      <h2>Empresan Deportiva </h2>
-      <p>  En SportMart, creemos que cada atleta merece lo mejor. Por eso, nos dedicamos a ofrecer ropa deportiva de alta calidad a precios inigualables. Nuestra misión es apoyar tu pasión por el deporte con productos que no solo mejoran tu rendimiento, sino que también te hacen sentir y lucir bien.</p>
-      <p class="read-more">
-        
-      </p>
-    </div>
-  </div>
     <div class="blog-card alt">
       <div class="meta">
         <div class="photo" style="background-image: url(img/pablo.jpg)"></div>
@@ -168,62 +170,62 @@ if (isset($_SESSION['nombre'])) {
         <h1>Diseñador de la BD</h1>
         <h2>Pablo // Creador y cordinador de la BD</h2>
         <p>Pablo, un experto programador especializado en PHP y JavaScript, ha demostrado ser el mejor en la gestión de bases de datos. Su dominio en estas tecnologías le permite desarrollar soluciones robustas y eficientes para aplicaciones web, garantizando un rendimiento óptimo y una experiencia de usuario fluida.</p>
-        
+
       </div>
     </div>
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(img/Jorge.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">Jorge</a></li>
-        <li class="date">Madrid</li>
-        <li class="tags">
-          <ul>
-            <li><a href="#">JavaScript</a></li>
-            <li><a href="#">Apis</a></li>
-          </ul>
-        </li>
-      </ul>
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url(img/Jorge.jpg)"></div>
+        <ul class="details">
+          <li class="author"><a href="#">Jorge</a></li>
+          <li class="date">Madrid</li>
+          <li class="tags">
+            <ul>
+              <li><a href="#">JavaScript</a></li>
+              <li><a href="#">Apis</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="description">
+        <h1>Programador</h1>
+        <h2>Jorge // Creador y Programador </h2>
+        <p> Jorge, un talentoso programador especializado en JavaScript y APIs, ha desarrollado una web dedicada al deporte. Con su dominio en estas tecnologías, ha creado una plataforma eficiente y dinámica que ofrece una experiencia interactiva y personalizada para los aficionados deportivos.</p>
+        <p class="read-more">
+
+        </p>
+      </div>
     </div>
-    <div class="description">
-      <h1>Programador</h1>
-      <h2>Jorge // Creador y Programador </h2>
-      <p> Jorge, un talentoso programador especializado en JavaScript y APIs, ha desarrollado una web dedicada al deporte. Con su dominio en estas tecnologías, ha creado una plataforma eficiente y dinámica que ofrece una experiencia interactiva y personalizada para los aficionados deportivos.</p>
-      <p class="read-more">
-        
-      </p>
+    <div class="blog-card alt">
+      <div class="meta">
+        <div class="photo" style="background-image: url(img/josep.jpg)"></div>
+        <ul class="details">
+          <li class="author"><a href="#">Josep</a></li>
+          <li class="date">Mallorca</li>
+          <li class="tags">
+            <ul>
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="description">
+        <h1>Diseñador grafico</h1>
+        <h2>Josep // Creador y Diseñador</h2>
+        <p>Josep, un apasionado diseñador gráfico, ha asumido la emocionante tarea de dar vida a una web dedicada al mundo del deporte. Con su dominio de HTML, CSS y JavaScript, ha creado una experiencia visualmente atractiva y funcional para los amantes del deporte.</p>
+        <p class="read-more">
+
+        </p>
+      </div>
     </div>
+
   </div>
-  <div class="blog-card alt">
-    <div class="meta">
-      <div class="photo" style="background-image: url(img/josep.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">Josep</a></li>
-        <li class="date">Mallorca</li>
-        <li class="tags">
-          <ul>
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Diseñador grafico</h1>
-      <h2>Josep // Creador y Diseñador</h2>
-      <p>Josep, un apasionado diseñador gráfico, ha asumido la emocionante tarea de dar vida a una web dedicada al mundo del deporte. Con su dominio de HTML, CSS y JavaScript, ha creado una experiencia visualmente atractiva y funcional para los amantes del deporte.</p>
-      <p class="read-more">
-       
-      </p>
-    </div>
-  </div>
-  
-</div>
 
 
 
-<!-- ------------------------ LOGIN ------------------------ -->
-<div class="popup">
+  <!-- ------------------------ LOGIN ------------------------ -->
+  <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
     <p>Inicia sesión</p>
     <form id="form-login">
@@ -286,48 +288,48 @@ if (isset($_SESSION['nombre'])) {
 
 
   <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.php">Tallas</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Help</h4>
-        <ul>
-          <li><a href="faqs.php">FAQ</a></li>
-          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Online Shop</h4>
-        <ul>
-          <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Fighting</a></li>
-          <li><a href="home_running.php">Menu Runinng</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.php">About Us</a></li>
+            <li><a href="privacidad.php">Privacy Policy</a></li>
+            <li><a href="tallas.php">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="faqs.php">FAQ</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="home_gym.php">Menu Gym</a></li>
+            <li><a href="home_boxeo.php">Menu Fighting</a></li>
+            <li><a href="home_running.php">Menu Runinng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
- <!-- ------------------------ LOGIN ------------------------ -->
- <div class="popup">
+  <!-- ------------------------ LOGIN ------------------------ -->
+  <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
     <p>Inicia sesión</p>
     <form id="form-login">
@@ -385,4 +387,5 @@ if (isset($_SESSION['nombre'])) {
   <script src="js/script_carrito.js"></script>
   <script src="js/script_running.js"></script>
 </body>
+
 </html>
