@@ -235,28 +235,128 @@ body > nav {
   margin-right: 10px;
 }
 
-/* CONTENIDO */
-
+/* CONTENIDO PRINCIAPAL */
 .content-ppal {
   grid-area: content;
   height: auto;
   overflow: hidden;
 }
 
+.profile-and-form-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.info-user span {
+  display: block;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+#user-name {
+  font-size: 34px;
+}
+
+#user-mail {
+  margin-bottom: 30px;
+}
+
+#miembro {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#user-form-info h1 {
+  text-align: center;
+  color: #333;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Form Columns */
+.first-column-form,
+.second-column-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.column-container,
+.column-container-2 {
+  flex: 1;
+  min-width: 220px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Specific Column Styling */
+.full-width {
   width: 100%;
 }
 
-.info-user {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  justify-content: center;
-  align-items: center;
+.half-width {
+  width: 48%;
+}
+
+/* Button */
+.button-container {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.bttn-titulo {
+  background-color: var(--contraste);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.bttn-titulo:hover {
+  background-color: #0172e386;
 }
 
 
@@ -683,5 +783,19 @@ ul{
   .footer-col{
     width: 50%;
     margin-bottom: 30px;
+}
+
+.profile-and-form-container {
+  flex-direction: column;
+  gap: 50px;
+  padding: 40px;
+}
+
+.half-width {
+  width: 100%;
+}
+
+.button-container {
+  text-align: center;
 }
 }
