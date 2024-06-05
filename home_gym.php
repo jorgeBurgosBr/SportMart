@@ -434,22 +434,21 @@ if (isset($_SESSION['nombre'])) {
   <a href="https://api.whatsapp.com/send?phone=620365035" class="btn-wsp" target="_blank">
     <i class="fa fa-whatsapp icono"></i>
   </a>
-
   <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="aboutus.php">About Us</a></li>
-            <li><a href="privacidad.php">Privacy Policy</a></li>
+            <li><a href="aboutus.php">Sobre Nosotros</a></li>
+            <li><a href="privacidad.php">Politicas</a></li>
             <li><a href="tallas.php">Tallas</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Help</h4>
           <ul>
-            <li><a href="faqs.php">FAQ</a></li>
+            <li><a href="faqs.php">Preguntas Frequentes</a></li>
             <li><a href="PagosInfo.php">Métodos de Pago</a></li>
             <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
             <li><a href="contacto.php">Contacto</a></li>
@@ -458,9 +457,9 @@ if (isset($_SESSION['nombre'])) {
         <div class="footer-col">
           <h4>Online Shop</h4>
           <ul>
-            <li><a href="home_gym.php">Menu Gym</a></li>
-            <li><a href="home_boxeo.php">Menu Fighting</a></li>
-            <li><a href="home_running.php">Menu Runinng</a></li>
+            <li><a href="home_gym.php">Menu Gimnasio</a></li>
+            <li><a href="home_boxeo.php">Menu Boxeo</a></li>
+            <li><a href="home_running.php">Menu Correr</a></li>
           </ul>
         </div>
         <div class="footer-col">
