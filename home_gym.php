@@ -240,7 +240,7 @@ if (isset($_SESSION['nombre'])) {
   <!-- Cartas más grandes -->
   <div class="contenedor">
     <div class="carta carta-grande carta4">
-      <a class="ver-mas">Ver más</a>
+      <a class="ver-mas">Rutina</a>
     </div>
 
     <div class="carta carta-grande carta5">

@@ -126,17 +126,17 @@ if (isset($_SESSION['nombre'])) {
   <div class="contenedor">
     <div class="carta carta1">
 
-      <a href="home_gym.php" class="ver-mas">GYM</a>
+      <a href="home_gym.php" class="ver-mas">Gimnasio</a>
     </div>
 
     <div class="carta carta2">
 
-      <a href="home_running.php" class="ver-mas">Running</a>
+      <a href="home_boxeo.php" class="ver-mas">Boxeo</a>
     </div>
 
     <div class="carta carta3">
 
-      <a class="ver-mas" href="home_boxeo.php">Boxeo</a>
+      <a class="ver-mas" href="home_running.php">Correr</a>
     </div>
   </div>
 
@@ -153,7 +153,7 @@ if (isset($_SESSION['nombre'])) {
 
   <h2 class="h2">¿Qué te interesa?</h2>
   <div class="clothes-shoes-accessories">
-    <a href="">
+    <a href="productos.php">
       <div class="clothes">
         <img src="img/c1.jpg" alt="Running clothes" />
         <div class="sub-contenedor">
@@ -162,7 +162,7 @@ if (isset($_SESSION['nombre'])) {
     </a>
   </div>
   <div class="shoes">
-    <a href="">
+    <a href="productos.php">
       <img src="img/c2.jpg" alt="Running shoes" />
       <div class="sub-contenedor">
         <h4 class="sub-titulo">Zapatillas Running</h4>
@@ -170,7 +170,7 @@ if (isset($_SESSION['nombre'])) {
     </a>
   </div>
   <div class="accessories">
-    <a href="">
+    <a href="productos.php">
       <img src="img/c3.jpg" alt="Running accessories" />
       <div class="sub-contenedor">
         <h4 class="sub-titulo">Accesorios Boxeo</h4>
