@@ -70,13 +70,13 @@ if (isset($_SESSION['nombre'])) {
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-<div id="google_translate_element"></div>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -163,15 +163,26 @@ if (isset($_SESSION['nombre'])) {
           <option value="">Todos</option>
           <option value="Hombre">Hombre</option>
           <option value="Mujer">Mujer</option>
+          <option value="Unisex">Unisex</option>
         </select>
 
-        <label for="talla">Talla:</label>
-        <select id="talla" name="talla">
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria">
           <option value="">Todas</option>
         </select>
 
+        <label for="deporte">Deporte:</label>
+        <select id="deporte" name="deporte">
+          <option value="">Todos</option>
+        </select>
+
+        <label for="talla">Tallas:</label>
+        <select id="talla" name="talla">
+          <option value="">Todas</option>
+        </select>
         <button class="btn-buy" type="submit">Aplicar filtros</button>
       </form>
+
 
     </div>
   </div>

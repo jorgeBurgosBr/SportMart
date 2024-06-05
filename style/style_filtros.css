@@ -64,6 +64,12 @@
 #filter-form select {
   margin-bottom: 10px;
 }
+.center-title {
+  grid-template-columns: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* Breakpoints */
 @media (max-width: 1080px) {
   .filter-container {

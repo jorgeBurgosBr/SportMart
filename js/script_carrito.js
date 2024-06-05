@@ -146,7 +146,7 @@ function addProductToCart(title, price, productImg, cantidad, id_producto, talla
         <img src="${productImg}" alt="" class="cart-img" />
         <div class="detail-box">
             <div class="cart-product-title" data-id-producto="${id_producto}">${title}</div>
-            <div class="cart-price">${price} z€</div>
+            <div class="cart-price">${price} €</div>
             <div class="cart-data">
                 <input type="number" value="${cantidad || 1}" class="cart-quantity" />
                 <div class="cart-talla">${talla}</div>

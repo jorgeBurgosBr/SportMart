@@ -8,25 +8,39 @@ $id_cliente = $_SESSION['id_cliente'];
 if ($bd->conectar()) {
    $conn = $bd->getConexion();
    $bd->seleccionarContexto('sportmart');
-   // Obtener tallas únicas
-   $sqlTallas = "SELECT DISTINCT talla FROM VARIANTE ORDER BY talla ASC";
-   $resultTallas = mysqli_query($conexion, $sqlTallas);
-   $tallas = [];
-   while ($row = mysqli_fetch_assoc($resultTallas)) {
-      $tallas[] = $row['talla'];
-   }
-   $response['tallas'] = $tallas;
 
    // Obtener categorías
-   $sqlCategorias = "SELECT * FROM CATEGORIA ORDER BY categoria ASC";
-   $resultCategorias = mysqli_query($conexion, $sqlCategorias);
-   $categorias = [];
-   while ($row = mysqli_fetch_assoc($resultCategorias)) {
-      $categorias[] = ['id' => $row['id_categoria'], 'nombre' => $row['categoria']];
+   $categoriasQuery = "SELECT DISTINCT categoria FROM CATEGORIA";
+   $categoriasResult = $conn->query($categoriasQuery);
+
+   $categorias = array();
+   while ($row = $categoriasResult->fetch_assoc()) {
+      $categorias[] = $row['categoria'];
    }
-   $response['categorias'] = $categorias;
+
+   // Obtener deportes 
+   $deportesQuery = "SELECT DISTINCT deporte FROM DEPORTE";
+   $deportesResult = $conn->query($deportesQuery);
+
+   $deportes = array();
+   while ($row = $deportesResult->fetch_assoc()) {
+      $deportes[] = $row['deporte'];
+   }
+
+   // Obtener tallas
+   $tallasQuery = "SELECT DISTINCT talla FROM VARIANTE";
+   $tallasResult = $conn->query($tallasQuery);
+
+   $tallas = array();
+   while ($row = $tallasResult->fetch_assoc()) {
+      $tallas[] = $row['talla'];
+   }
+
+   echo json_encode([
+      'categorias' => $categorias,
+      'deportes' => $deportes,
+      'tallas' => $tallas
+   ]);
 
    $bd->cerrar();
 }
-
-echo json_encode($response);
