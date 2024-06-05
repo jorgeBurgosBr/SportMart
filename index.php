@@ -32,11 +32,11 @@ if (isset($_SESSION['nombre'])) {
     }
 
     function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'es',
-            includedLanguages: 'en,es,pt,it,fr,de',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'en,es,pt,it,fr,de',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -46,12 +46,13 @@ if (isset($_SESSION['nombre'])) {
   <title>SportMart</title>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <body>
-<header>
+  <header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
-<div id="google_translate_element"></div>
+    <div id="google_translate_element"></div>
   </header>
   <nav class="navbar">
     <div class="container-nav">
@@ -99,7 +100,7 @@ if (isset($_SESSION['nombre'])) {
         <!-- Cart Icon -->
         <!-- Cart -->
         <div class="cart">
-          <h2 class="cart-title">Your Cart</h2>
+          <h2 class="cart-title">Carrito</h2>
           <!-- Content -->
           <div class="cart-content"></div>
           <!-- Total -->
@@ -108,7 +109,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="total-price">$0</div>
           </div>
           <!-- Buy Bottom -->
-          <button type="button" class="btn-buy">Buy Now</button>
+          <button type="button" class="btn-buy">Comprar ahora</button>
           <!-- Cart close -->
           <i class="bx bx-x" id="close-cart"></i>
         </div>
@@ -120,70 +121,70 @@ if (isset($_SESSION['nombre'])) {
 
 
 
-<!--Esto es el apartado de las 5 cartas -->
-<h2 class="h2">Comprar</h2>
-    <div class="contenedor">
-        <div class="carta carta1">
-           
-          <a href="home_gym.php" class="ver-mas">GYM</a>
-        </div>
+  <!--Esto es el apartado de las 5 cartas -->
+  <h2 class="h2">Comprar</h2>
+  <div class="contenedor">
+    <div class="carta carta1">
 
-        <div class="carta carta2">
-            
-            <a href="home_running.php"class="ver-mas">Running</a>
-        </div>
-
-        <div class="carta carta3">
-            
-            <a class="ver-mas"href="home_boxeo.php">Boxeo</a>
-        </div>
+      <a href="home_gym.php" class="ver-mas">GYM</a>
     </div>
 
-    <!-- Separación entre las cartas -->
-    <div style="margin-top: 20px;"></div>
+    <div class="carta carta2">
 
-    <!-- Cartas más grandes -->
-    <div class="contenedor">
-        <div class="carta carta-grande carta4">
-            <a class="ver-mas" href="productos.php">Productos</a>
-        </div>
+      <a href="home_running.php" class="ver-mas">Running</a>
     </div>
-    <br><br>
-    
-    <h2 class="h2">¿Qué te interesa?</h2>
-    <div class="clothes-shoes-accessories">
-      <a href="">
-        <div class="clothes">
-          <img src="img/c1.jpg" alt="Running clothes" />
-          <div class="sub-contenedor">
-            <h4 class="sub-titulo">Ropa Gym</h4>
-          </div>
-      </a>
+
+    <div class="carta carta3">
+
+      <a class="ver-mas" href="home_boxeo.php">Boxeo</a>
     </div>
-    <div class="shoes">
-      <a href="">
-        <img src="img/c2.jpg" alt="Running shoes" />
+  </div>
+
+  <!-- Separación entre las cartas -->
+  <div style="margin-top: 20px;"></div>
+
+  <!-- Cartas más grandes -->
+  <div class="contenedor">
+    <div class="carta carta-grande carta4">
+      <a class="ver-mas" href="productos.php">Productos</a>
+    </div>
+  </div>
+  <br><br>
+
+  <h2 class="h2">¿Qué te interesa?</h2>
+  <div class="clothes-shoes-accessories">
+    <a href="">
+      <div class="clothes">
+        <img src="img/c1.jpg" alt="Running clothes" />
         <div class="sub-contenedor">
-          <h4 class="sub-titulo">Zapatillas Running</h4>
+          <h4 class="sub-titulo">Ropa Gym</h4>
         </div>
-      </a>
-    </div>
-    <div class="accessories">
-      <a href="">
-        <img src="img/c3.jpg" alt="Running accessories" />
-        <div class="sub-contenedor">
-          <h4 class="sub-titulo">Accesorios Boxeo</h4>
-        </div>
-      </a>
-    </div>
-    </div>
+    </a>
+  </div>
+  <div class="shoes">
+    <a href="">
+      <img src="img/c2.jpg" alt="Running shoes" />
+      <div class="sub-contenedor">
+        <h4 class="sub-titulo">Zapatillas Running</h4>
+      </div>
+    </a>
+  </div>
+  <div class="accessories">
+    <a href="">
+      <img src="img/c3.jpg" alt="Running accessories" />
+      <div class="sub-contenedor">
+        <h4 class="sub-titulo">Accesorios Boxeo</h4>
+      </div>
+    </a>
+  </div>
+  </div>
 
 
 
-<br><br>
+  <br><br>
 
 
-    
+
 
 
 
@@ -204,45 +205,45 @@ if (isset($_SESSION['nombre'])) {
   <!-- CONTENIDO -->
   <section class="banner-ppal"><img src="img/port.jpg" alt="" /></section>
   <footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="aboutus.php">About Us</a></li>
-          <li><a href="privacidad.php">Privacy Policy</a></li>
-          <li><a href="tallas.php">Tallas</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Help</h4>
-        <ul>
-          <li><a href="faqs.php">FAQ</a></li>
-          <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-          <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-          <li><a href="contacto.php">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Online Shop</h4>
-        <ul>
-          <li><a href="home_gym.php">Menu Gym</a></li>
-          <li><a href="home_boxeo.php">Menu Fighting</a></li>
-          <li><a href="home_running.php">Menu Runinng</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.php">About Us</a></li>
+            <li><a href="privacidad.php">Privacy Policy</a></li>
+            <li><a href="tallas.php">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="faqs.php">FAQ</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="home_gym.php">Menu Gym</a></li>
+            <li><a href="home_boxeo.php">Menu Fighting</a></li>
+            <li><a href="home_running.php">Menu Runinng</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
   <!-- ------------------------ LOGIN ------------------------ -->
   <div class="popup">
     <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
