@@ -1,17 +1,18 @@
+@import url("style.css");
 .filter-container {
   display: flex;
   justify-content: flex-end;
   padding-right: 96px;
 }
 .filter-btn {
-  position: relative;
-  top: 35px;
   padding: 10px 20px;
   background-color: var(--black);
   color: var(--bg-color);
   border: none;
   cursor: pointer;
   border-radius: 2px;
+  font-family: var(--texto);
+  font-size: 16px;
 }
 
 .filter-btn:hover {
@@ -64,15 +65,39 @@
 #filter-form select {
   margin-bottom: 10px;
 }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .center-title {
   grid-template-columns: unset;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.breadcrumb {
+  padding-left: 96px;
+}
+.breadcrumb a,
+span {
+  font-family: var(--texto);
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--black);
+}
+.breadcrumb a:hover,
+#breadcrumb-deporte:hover {
+  color: var(--contraste);
+}
+
 /* Breakpoints */
 @media (max-width: 1080px) {
   .filter-container {
+    padding: 0 54px;
+  }
+  .breadcrumb {
     padding: 0 54px;
   }
 }
