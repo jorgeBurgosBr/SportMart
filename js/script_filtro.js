@@ -43,19 +43,69 @@ document.addEventListener('DOMContentLoaded', function() {
                 option.textContent = talla;
                 tallaSelect.appendChild(option);
             });
+
+            // Cargar los filtros iniciales después de que las opciones hayan sido agregadas
+            cargarFiltrosIniciales();
         })
         .catch(error => console.error('Error:', error));
 
-    //Cargar los productos iniciales
+    // Cargar los filtros productos iniciales
     const getFiltersSpan = document.getElementById('get_filters');
     const initialFilterParams = getFiltersSpan.textContent.trim();
-    loadProducts(initialFilterParams);
-    applyInitialFilters(initialFilterParams);
-    aplayFilters()
-});
 
-function aplayFilters() {
-      // Aplicar filtros
+    function cargarFiltrosIniciales() {
+        const params = new URLSearchParams(initialFilterParams);
+        let categoria = '';
+        let deporte = '';
+
+        if (params.has('categoria')) {
+            categoria = params.get('categoria');
+            const selectCategoria = document.querySelector('select[name="categoria"]');
+            if (selectCategoria) {
+                const optionCategoria = selectCategoria.querySelector(`option[value="${categoria}"]`);
+                if (optionCategoria) {
+                    optionCategoria.selected = true;
+                }
+            }
+        }
+        if (params.has('deporte')) {
+            deporte = params.get('deporte');
+            const selectDeporte = document.querySelector('select[name="deporte"]');
+            if (selectDeporte) {
+                const optionDeporte = selectDeporte.querySelector(`option[value="${deporte}"]`);
+                if (optionDeporte) {
+                    optionDeporte.selected = true;
+                }
+            }
+        }
+
+        // Llamar a la función para actualizar el breadcrumb
+        updateBreadcrumb(categoria, deporte);
+    }
+
+    // Función para actualizar el breadcrumb
+    function updateBreadcrumb(categoria, deporte) {
+        const breadcrumbDeporte = document.getElementById('breadcrumb-deporte');
+        const breadcrumbCategoria = document.getElementById('breadcrumb-categoria');
+
+        if (deporte == "Running") {
+            breadcrumbDeporte.innerHTML = ` / <a href="home_running.php">${deporte}</a>`;
+        } else if(deporte == "Gym"){
+            breadcrumbDeporte.innerHTML = ` / <a href="home_gym.php">${deporte}</a>`;
+        } else if(deporte == "Deportes de contacto"){
+            breadcrumbDeporte.innerHTML = ` / <a href="home_boxeo.php">${deporte}</a>`;
+        } else {
+            breadcrumbCategoria.innerHTML = '';
+        }
+
+        if (categoria) {
+            breadcrumbCategoria.innerHTML = "/ "+categoria;
+        }else {
+            breadcrumbCategoria.innerHTML = '';
+        }
+    }
+
+    // Aplicar filtros
     filterForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -76,81 +126,57 @@ function aplayFilters() {
         if (deporte) filterParams += `${filterParams ? '&' : ''}deporte=${deporte}`;
         if (talla) filterParams += `${filterParams ? '&' : ''}talla=${talla}`;
 
-        console.log(filterParams);
         loadProducts(filterParams);
+        updateBreadcrumb(categoria, deporte); // Actualizar breadcrumb después de aplicar los filtros
+
         // Cerrar popup de filtros
         filterPopup.classList.remove('active');
     });
-}
+
+    loadProducts(initialFilterParams);
+});
+
 function loadProducts(filterParams) {
     fetch(`php/get_productos.php?${filterParams}`)
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementsByClassName('shop-content')[0];
-                container.innerHTML = ''; // Limpiar productos existentes
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementsByClassName('shop-content')[0];
+            container.innerHTML = ''; // Limpiar productos existentes
 
-                if (data.length === 0) {
-                    container.innerHTML = '<h2 class="center-title">No hay productos que mostrar</h2>';
-                } else {
-                    data.forEach(producto => {
-                        const productoDiv = document.createElement('div');
-                        productoDiv.className = 'product-box';
-                        productoDiv.setAttribute('data-id-producto', producto.id_producto);
-                        productoDiv.innerHTML = `
-                            <img class="product-img" src="${producto.imagen}" alt="${producto.nombre}">
-                            <div class="tallas"></div>
-                            <h2 class="product-title">${producto.nombre}</h2>
-                            <p class="product-description">${producto.descripcion}</p>
-                            <span class="price">${producto.precio} €</span>
-                            <i class="bx bx-shopping-bag add-cart"></i>
-                            <i class="bx bx-heart add-wishlist"></i>
-                        `;
+            if (data.length === 0) {
+                container.innerHTML = '<h2 class="center-title">No hay productos que mostrar</h2>';
+            } else {
+                data.forEach(producto => {
+                    const productoDiv = document.createElement('div');
+                    productoDiv.className = 'product-box';
+                    productoDiv.setAttribute('data-id-producto', producto.id_producto);
+                    productoDiv.innerHTML = `
+                        <img class="product-img" src="${producto.imagen}" alt="${producto.nombre}">
+                        <div class="tallas"></div>
+                        <h2 class="product-title">${producto.nombre}</h2>
+                        <p class="product-description">${producto.descripcion}</p>
+                        <span class="price">${producto.precio} €</span>
+                        <i class="bx bx-shopping-bag add-cart"></i>
+                        <i class="bx bx-heart add-wishlist"></i>
+                    `;
 
-                        const tallasDiv = productoDiv.querySelector('.tallas');
-                        producto.variantes.forEach(variant => {
-                            const span = document.createElement('span');
-                            span.textContent = variant.talla;
-                            span.addEventListener('click', () => {
-                                const selected = productoDiv.querySelector('.tallas span.selected');
-                                if (selected) selected.classList.remove('selected');
-                                span.classList.add('selected');
-                            });
-                            tallasDiv.appendChild(span);
+                    const tallasDiv = productoDiv.querySelector('.tallas');
+                    producto.variantes.forEach(variant => {
+                        const span = document.createElement('span');
+                        span.textContent = variant.talla;
+                        span.addEventListener('click', () => {
+                            const selected = productoDiv.querySelector('.tallas span.selected');
+                            if (selected) selected.classList.remove('selected');
+                            span.classList.add('selected');
                         });
-
-                        container.appendChild(productoDiv);
+                        tallasDiv.appendChild(span);
                     });
 
-                    preparado();
-                }
-            })
-            .catch(error => console.error('Error:', error));
-}
-function applyInitialFilters(filterParams) {
-    const params = new URLSearchParams(filterParams);
-    
-    if (params.has('categoria')) {
-        const categorias = params.getAll('categoria');
-        categorias.forEach(categoria => {
-            const select = document.querySelector(`select[name="categoria"]`);
-            if (select) {
-                const option = select.querySelector(`option[value="${categoria}"]`);
-                if (option) {
-                    option.selected = true;
-                }
+                    container.appendChild(productoDiv);
+                });
+
+                preparado();
             }
-        });
-    }
-    if (params.has('deporte')) {
-        const deportes = params.getAll('deporte');
-        deportes.forEach(deporte => {
-            const select = document.querySelector(`select[name="deporte"]`);
-            if (select) {
-                const option = select.querySelector(`option[value="${deporte}"]`);
-                if (option) {
-                    option.selected = true;
-                }
-            }
-        });
-    }
+        })
+        .catch(error => console.error('Error:', error));
 }

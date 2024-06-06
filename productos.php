@@ -10,20 +10,14 @@ if (isset($_SESSION['nombre'])) {
 }
 // Obtener parámetros de la URL
 $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
-$precio_min = isset($_GET['precio_min']) ? $_GET['precio_min'] : '';
-$precio_max = isset($_GET['precio_max']) ? $_GET['precio_max'] : '';
-$sexo = isset($_GET['sexo']) ? $_GET['sexo'] : '';
 $deporte = isset($_GET['deporte']) ? $_GET['deporte'] : '';
-$talla = isset($_GET['talla']) ? $_GET['talla'] : '';
+
 
 // Crear una cadena de parámetros de filtro para usar en la solicitud AJAX
 $filterParams = '';
 if ($categoria) $filterParams .= "categoria=$categoria";
-if ($precio_min) $filterParams .= ($filterParams ? '&' : '') . "precio_min=$precio_min";
-if ($precio_max) $filterParams .= ($filterParams ? '&' : '') . "precio_max=$precio_max";
-if ($sexo) $filterParams .= ($filterParams ? '&' : '') . "sexo=$sexo";
 if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
-if ($talla) $filterParams .= ($filterParams ? '&' : '') . "talla=$talla";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,10 +150,18 @@ if ($talla) $filterParams .= ($filterParams ? '&' : '') . "talla=$talla";
   </nav>
   <!-- Shop -->
   <section class="shop containerr">
-    <div class="filter-container">
-      <button id="filter-button" class="filter-btn">Filtros</button>
+    <div class="header-container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="index.php">Inicio</a>
+        <span id="breadcrumb-deporte"></span>
+        <span id="breadcrumb-categoria"></span>
+      </nav>
+      <h2 class="section-title">Productos</h2>
+      <div class="filter-container">
+        <button id="filter-button" class="filter-btn">Filtros</button>
+      </div>
     </div>
-    <h2 class="section-title">Shop Products</h2>
     <!-- Content -->
     <div class="shop-content"></div>
   </section>
