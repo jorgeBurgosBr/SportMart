@@ -131,7 +131,7 @@ if (isset($_SESSION['nombre'])) {
   <div class="contenedor">
     <div class="titulo">Pagos Seguros y Confiables</div>
     <div class="texto">
-      ¡Bienvenido a nuestra tienda online! En [Nombre de la Tienda], nos enorgullecemos de ofrecerte la mejor experiencia de compra posible, y eso incluye garantizar la seguridad de tus pagos en línea.
+      ¡Bienvenido a nuestra tienda online! En SportMart, nos enorgullecemos de ofrecerte la mejor experiencia de compra posible, y eso incluye garantizar la seguridad de tus pagos en línea.
       <br><br>
       Queremos que compres con total tranquilidad, por lo que hemos implementado las últimas tecnologías de seguridad para proteger tus transacciones. Utilizamos un avanzado sistema de encriptación SSL (Secure Sockets Layer) para asegurar que tus datos personales y financieros estén protegidos en todo momento. Puedes estar seguro de que tus información está segura con nosotros.
       <br><br>
@@ -141,7 +141,7 @@ if (isset($_SESSION['nombre'])) {
       <br><br>
       <strong>Pago por tarjeta:</strong> Además de PayPal, también puedes optar por pagar directamente con tarjeta de crédito o débito. Utilizamos el mismo método de tarjeta de crédito utilizado por PayPal, que está protegido por las más estrictas medidas de seguridad, garantizando que tus datos estén siempre seguros y protegidos.
       <br><br>
-      En [Nombre de la Tienda], tu seguridad es nuestra prioridad número uno. Puedes confiar en nosotros para brindarte una experiencia de compra en línea segura y sin preocupaciones. ¡Explora nuestra amplia selección de productos y realiza tu compra hoy mismo con total confianza!
+      En SportMart, tu seguridad es nuestra prioridad número uno. Puedes confiar en nosotros para brindarte una experiencia de compra en línea segura y sin preocupaciones. ¡Explora nuestra amplia selección de productos y realiza tu compra hoy mismo con total confianza!
     </div>
 
 
