@@ -145,7 +145,7 @@ if (isset($_SESSION['nombre'])) {
       </div>
       <div class="description">
         <h1>SportMart</h1>
-        <h2>Empresan Deportiva </h2>
+        <h2>Empresa Deportiva </h2>
         <p> En SportMart, creemos que cada atleta merece lo mejor. Por eso, nos dedicamos a ofrecer ropa deportiva de alta calidad a precios inigualables. Nuestra misión es apoyar tu pasión por el deporte con productos que no solo mejoran tu rendimiento, sino que también te hacen sentir y lucir bien.</p>
         <p class="read-more">
 
