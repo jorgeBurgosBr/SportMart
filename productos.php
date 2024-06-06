@@ -8,6 +8,22 @@ if (isset($_SESSION['nombre'])) {
   $textoBotonLogin = "Inicia sesión";
   $textoBotonRegistrarse = "Regístrate";
 }
+// Obtener parámetros de la URL
+$categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+$precio_min = isset($_GET['precio_min']) ? $_GET['precio_min'] : '';
+$precio_max = isset($_GET['precio_max']) ? $_GET['precio_max'] : '';
+$sexo = isset($_GET['sexo']) ? $_GET['sexo'] : '';
+$deporte = isset($_GET['deporte']) ? $_GET['deporte'] : '';
+$talla = isset($_GET['talla']) ? $_GET['talla'] : '';
+
+// Crear una cadena de parámetros de filtro para usar en la solicitud AJAX
+$filterParams = '';
+if ($categoria) $filterParams .= "categoria=$categoria";
+if ($precio_min) $filterParams .= ($filterParams ? '&' : '') . "precio_min=$precio_min";
+if ($precio_max) $filterParams .= ($filterParams ? '&' : '') . "precio_max=$precio_max";
+if ($sexo) $filterParams .= ($filterParams ? '&' : '') . "sexo=$sexo";
+if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
+if ($talla) $filterParams .= ($filterParams ? '&' : '') . "talla=$talla";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +81,8 @@ if (isset($_SESSION['nombre'])) {
 </head>
 
 <body>
+  <!-- Pasar los filtros a través de un span oculto -->
+  <span id="get_filters" style="display: none;"><?php echo htmlspecialchars($filterParams);  ?></span>
   <!-- HEADER -->
   <header>
     <button id="show-help">Ayuda</button>
@@ -227,62 +245,62 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </footer>
-    <!-- ------------------------ LOGIN ------------------------ -->
-    <div class="popup">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Inicia sesión</p>
-      <form id="form-login">
-        <div class="form-element">
-          <input required name="email-login" id="email_login" type="text">
-          <label>Email</label>
-        </div>
-        <div class="form-element">
-          <input required name="password-login" id="password_login" type="password">
-          <label>Contraseña</label>
-        </div>
-        <span id="error-login"></span>
-        <button class="btn-submit">Enviar</button>
-      </form>
-      <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
-    </div>
-
-    <!-- ------------------------ REGISTRO ------------------------ -->
-    <div class="popup-regis">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Regístrate</p>
-      <form id="form-signup">
-        <div class="form-element">
-          <input required name="nombre" id="nombre-signup" type="text">
-          <label>Nombre</label>
-          <span id="error-nombre-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="apellidos" id="apellidos-signup" type="text">
-          <label>Apellidos</label>
-          <span id="error-apellidos-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="email" id="email-signup" type="text">
-          <label>Correo</label>
-          <span id="error-email-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="password" id="password-signup" type="password">
-          <label>Contraseña</label>
-          <ul id="error-password-signup"></ul>
-        </div>
-        <button type="submit" class="btn-submit">Enviar</button>
-      </form>
-      <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
-    </div>
-
-    <div class="popup-message">
-      <div class="popup-content">
-        <span class="close-popup-message">&times;</span>
-        <p id="popup-text"></p>
+  <!-- ------------------------ LOGIN ------------------------ -->
+  <div class="popup">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Inicia sesión</p>
+    <form id="form-login">
+      <div class="form-element">
+        <input required name="email-login" id="email_login" type="text">
+        <label>Email</label>
       </div>
+      <div class="form-element">
+        <input required name="password-login" id="password_login" type="password">
+        <label>Contraseña</label>
+      </div>
+      <span id="error-login"></span>
+      <button class="btn-submit">Enviar</button>
+    </form>
+    <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+  </div>
+
+  <!-- ------------------------ REGISTRO ------------------------ -->
+  <div class="popup-regis">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Regístrate</p>
+    <form id="form-signup">
+      <div class="form-element">
+        <input required name="nombre" id="nombre-signup" type="text">
+        <label>Nombre</label>
+        <span id="error-nombre-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="apellidos" id="apellidos-signup" type="text">
+        <label>Apellidos</label>
+        <span id="error-apellidos-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="email" id="email-signup" type="text">
+        <label>Correo</label>
+        <span id="error-email-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="password" id="password-signup" type="password">
+        <label>Contraseña</label>
+        <ul id="error-password-signup"></ul>
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+  </div>
+
+  <div class="popup-message">
+    <div class="popup-content">
+      <span class="close-popup-message">&times;</span>
+      <p id="popup-text"></p>
     </div>
-    <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
+  </div>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
 </body>
 <script src="js/script_home.js"></script>
 <script src="js/script_running.js"></script>

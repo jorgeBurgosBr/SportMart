@@ -46,7 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error:', error));
 
-    // Aplicar filtros
+    //Cargar los productos iniciales
+    const getFiltersSpan = document.getElementById('get_filters');
+    const initialFilterParams = getFiltersSpan.textContent.trim();
+    loadProducts(initialFilterParams);
+    applyInitialFilters(initialFilterParams);
+    aplayFilters()
+});
+
+function aplayFilters() {
+      // Aplicar filtros
     filterForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -67,8 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (deporte) filterParams += `${filterParams ? '&' : ''}deporte=${deporte}`;
         if (talla) filterParams += `${filterParams ? '&' : ''}talla=${talla}`;
 
-       console.log(filterParams);
-        fetch(`php/get_productos.php?${filterParams}`)
+        console.log(filterParams);
+        loadProducts(filterParams);
+        // Cerrar popup de filtros
+        filterPopup.classList.remove('active');
+    });
+}
+function loadProducts(filterParams) {
+    fetch(`php/get_productos.php?${filterParams}`)
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementsByClassName('shop-content')[0];
@@ -110,8 +125,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(error => console.error('Error:', error));
-
-        // Cerrar popup de filtros
-        filterPopup.classList.remove('active');
-    });
-});
+}
+function applyInitialFilters(filterParams) {
+    const params = new URLSearchParams(filterParams);
+    
+    if (params.has('categoria')) {
+        const categorias = params.getAll('categoria');
+        categorias.forEach(categoria => {
+            const select = document.querySelector(`select[name="categoria"]`);
+            if (select) {
+                const option = select.querySelector(`option[value="${categoria}"]`);
+                if (option) {
+                    option.selected = true;
+                }
+            }
+        });
+    }
+    if (params.has('deporte')) {
+        const deportes = params.getAll('deporte');
+        deportes.forEach(deporte => {
+            const select = document.querySelector(`select[name="deporte"]`);
+            if (select) {
+                const option = select.querySelector(`option[value="${deporte}"]`);
+                if (option) {
+                    option.selected = true;
+                }
+            }
+        });
+    }
+}
