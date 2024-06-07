@@ -178,5 +178,5 @@ function loadProducts(filterParams) {
                 preparado();
             }
         })
-        .catch(error => console.error('Error:', error));
+        // .catch(error => console.error('Error:', error));
 }

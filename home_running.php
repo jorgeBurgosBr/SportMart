@@ -246,7 +246,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/ropa/camiseta_adidas.webp" alt="Camiseta Adidas" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="10">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -484,6 +484,7 @@ if (isset($_SESSION['nombre'])) {
     <script src="js/script_home.js"></script>
     <script src="js/script_running.js"></script>
     <script src="js/script_carrito.js"></script>
+    <script src="js/script_redirect_slider.js"></script>
 </body>
 
 </html>

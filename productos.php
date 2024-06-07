@@ -11,10 +11,12 @@ if (isset($_SESSION['nombre'])) {
 // Obtener parámetros de la URL
 $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
 $deporte = isset($_GET['deporte']) ? $_GET['deporte'] : '';
+$id_producto = isset($_GET['id_producto']) ? $_GET['id_producto'] : '';
 
 
 // Crear una cadena de parámetros de filtro para usar en la solicitud AJAX
 $filterParams = '';
+if ($id_producto) $filterParams .= "id_producto=$id_producto";
 if ($categoria) $filterParams .= "categoria=$categoria";
 if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
 
