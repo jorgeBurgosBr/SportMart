@@ -94,13 +94,14 @@
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div id="paypal-button-container"></div>
+                            <br>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <br><br><br><br>
-                <a href="" class="exit">Salir</a>
+                <a href="index.php" class="exit">Salir</a>
             </div>
         </div>
     </div>
@@ -119,7 +120,7 @@
                 createOrder: function(data, actions) {
                     return actions.order.create({
                         purchase_units: [{
-                            "description": "Descripción de tu producto",
+                            "description": "SportMart",
                             "amount": { "currency_code": "USD", "value": 15 }
                         }]
                     });
@@ -137,61 +138,75 @@
         }
         initPayPalButton();
     </script>
+    <div id="payment-success-modal" class="modal">
+        <div class="modal-content">
+            <h2>Pago realizado</h2>
+            <p>El pago se ha realizado correctamente.</p>
+            <button id="close-modal" class="button"><a href="index.php" style="text-decoration: none; color: white;">Salir</a></button>
+        </div>
+    </div>
 
-    <script>
-        document.getElementById('card-number').addEventListener('input', function(e) {
-            e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 16);
-        });
+<script>
+    document.getElementById('card-number').addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 16);
+    });
 
-        document.getElementById('card-expiry').addEventListener('input', function(e) {
-            var value = e.target.value.replace(/[^\d]/g, '');
-            if (value.length > 2) {
-                value = value.substring(0, 2) + '/' + value.substring(2);
-            }
-            e.target.value = value.substring(0, 5);
-        });
+    document.getElementById('card-expiry').addEventListener('input', function(e) {
+        var value = e.target.value.replace(/[^\d]/g, '');
+        if (value.length > 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2);
+        }
+        e.target.value = value.substring(0, 5);
+    });
 
-        document.getElementById('card-cvv').addEventListener('input', function(e) {
-            e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 3);
-        });
+    document.getElementById('card-cvv').addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 3);
+    });
 
-        document.getElementById('payment-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-            var cardNumber = document.getElementById('card-number').value;
-            var cardExpiry = document.getElementById('card-expiry').value;
-            var cardCvv = document.getElementById('card-cvv').value;
+        var cardNumber = document.getElementById('card-number').value;
+        var cardExpiry = document.getElementById('card-expiry').value;
+        var cardCvv = document.getElementById('card-cvv').value;
 
-            var isValid = true;
+        var isValid = true;
 
-            if (cardNumber.length !== 16) {
-                document.getElementById('card-number-error').innerText = 'El número de tarjeta debe tener 16 dígitos.';
-                isValid = false;
-            } else {
-                document.getElementById('card-number-error').innerText = '';
-            }
+        if (cardNumber.length !== 16) {
+            document.getElementById('card-number-error').innerText = 'El número de tarjeta debe tener 16 dígitos.';
+            isValid = false;
+        } else {
+            document.getElementById('card-number-error').innerText = '';
+        }
 
-            if (!/^\d{2}\/\d{2}$/.test(cardExpiry)) {
-                document.getElementById('card-expiry-error').innerText = 'La fecha de vencimiento debe estar en el formato MM/AA.';
-                isValid = false;
-            } else {
-                document.getElementById('card-expiry-error').innerText = '';
-            }
+        if (!/^\d{2}\/\d{2}$/.test(cardExpiry)) {
+            document.getElementById('card-expiry-error').innerText = 'La fecha de vencimiento debe estar en el formato MM/AA.';
+            isValid = false;
+        } else {
+            document.getElementById('card-expiry-error').innerText = '';
+        }
 
-            if (cardCvv.length !== 3) {
-                document.getElementById('card-cvv-error').innerText = 'El CVV debe tener 3 dígitos.';
-                isValid = false;
-            } else {
-                document.getElementById('card-cvv-error').innerText = '';
-            }
+        if (cardCvv.length !== 3) {
+            document.getElementById('card-cvv-error').innerText = 'El CVV debe tener 3 dígitos.';
+            isValid = false;
+        } else {
+            document.getElementById('card-cvv-error').innerText = '';
+        }
 
-            if (isValid) {
-                alert('Formulario enviado correctamente.');
-                // Aquí puedes agregar la lógica para enviar el formulario si todos los campos son válidos
-                // e.target.submit();
-            }
-        });
-    </script>
+        if (isValid) {
+            document.getElementById('payment-success-modal').style.display = 'block';
+        }
+    });
+
+ 
+
+    window.addEventListener('click', function(event) {
+        var modal = document.getElementById('payment-success-modal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
 
     <script>
         document.querySelectorAll('.panel-title a').forEach(function(element) {
