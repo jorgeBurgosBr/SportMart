@@ -162,7 +162,7 @@ if (isset($_SESSION['nombre'])) {
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(orderData) {
                         console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                        actions.redirect('URL de tu página de gracias');
+                        actions.redirect('index.php');
                     });
                 },
                 onError: function(err) {
@@ -180,6 +180,7 @@ if (isset($_SESSION['nombre'])) {
         </div>
     </div>
 
+    <script src="js/script_pagos.js"></script>
 </body>
 
 </html>
