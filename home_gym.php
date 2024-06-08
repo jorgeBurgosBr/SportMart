@@ -217,17 +217,17 @@ if (isset($_SESSION['nombre'])) {
   <div class="contenedor">
     <div class="carta carta1">
 
-      <a href="#" class="ver-mas">Camisetas</a>
+      <a href="productos.php?categoria=Ropa&deporte=Gym" class="ver-mas">Ropa</a>
     </div>
 
     <div class="carta carta2">
 
-      <a class="ver-mas">Pantalones</a>
+      <a href="productos.php?categoria=Calzado&deporte=Gym"class="ver-mas">Zapatillas</a>
     </div>
 
     <div class="carta carta3">
 
-      <a class="ver-mas">Suplementación</a>
+      <a href="productos.php?categoria=Accesorios&deporte=Gym" class="ver-mas">Accesorios</a>
     </div>
   </div>
 
