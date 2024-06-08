@@ -271,21 +271,21 @@ if (isset($_SESSION['nombre'])) {
       </style>
 
 
-      <h1 style="font-family: montserrat; color:#000000; text-align:center;">Sizes</h1>
+      <h1 style="font-family: montserrat; color:#000000; text-align:center;">Tallas</h1>
 
-      <p style="font-family: montserrat; font-size: 15px; text-align:center; margin:10px;">The measures shown in this table are an approximation and <u>May vary depending on each brand</u></p>
+      <p style="font-family: montserrat; font-size: 15px; text-align:center; margin:10px;">Las medidas mostradas en esta tabla son aproximadas y <u>Pueden variar dependiendo de cada marca.</u></p>
       <br>
       <!--Talllas americanas-->
 
       <table width="100%" border="1" cellpadding="5" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="5" bgcolor="#000000" height="25"><span class="xl24 style1">COAT, THREE-QUARTER LENGTH COAT, JACKET</span></td>
+            <td colspan="5" bgcolor="#000000" height="25"><span class="xl24 style1">ABRIGO, ABRIGO TRES CUARTOS, CHAQUETA</span></td>
           </tr>
           <tr class="xl49" height="21">
-            <td height="21" bgcolor="#eaeaea" colspan="2"><strong>Sizes</strong></td>
-            <td bgcolor="#eaeaea" class="xl24"><strong>Chest (Cm | Inches)</strong></td>
-            <td bgcolor="#eaeaea" class="xl25"><strong>Shoulders (Cm | Inches)</strong></td>
+          <td height="21" bgcolor="#eaeaea" colspan="2"><strong>Tallas</strong></td>
+            <td bgcolor="#eaeaea" class="xl24"><strong>Pecho (Cm | Pulgadas)</strong></td>
+            <td bgcolor="#eaeaea" class="xl25"><strong>Hombros (cm | pulgadas)</strong></td>
           </tr>
           <tr class="xl49" height="21">
             <td height="21" bgcolor="#eaeaea"><strong>S</strong></td>
@@ -332,12 +332,12 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="16" bgcolor="#000000" height="25"><span class="xl66 style1">SUIT & BLAZER</span></td>
+            <td colspan="16" bgcolor="#000000" height="25"><span class="xl66 style1">TRAJE & AMERICANA</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Sizes</strong></td>
-            <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>Chest</strong></td>
-            <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>Shoulders</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Tallas</strong></td>
+            <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>Pecho</strong></td>
+            <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>Hombros</strong></td>
 
           </tr>
           <tr height="21">
@@ -482,10 +482,10 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="22" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">REGULAR FIT</span></td>
+            <td colspan="22" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">AJUSTE REGULAR</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Sizes</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl48" colspan="2"><strong>M</strong></td>
@@ -514,7 +514,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Hip</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cadera</strong></td>
             <td class="xl43">48</td>
             <td class="xl33">18.9</td>
             <td class="xl35">50</td>
@@ -531,7 +531,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">23.6</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Waist</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cintura</strong></td>
             <td class="xl43">38</td>
             <td class="xl33">15</td>
             <td class="xl35">40</td>
@@ -548,7 +548,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">19.7</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Outer Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud exterior</strong></td>
             <td class="xl43">108</td>
             <td class="xl33">42</td>
             <td class="xl35">109</td>
@@ -565,7 +565,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">44</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Inner Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud interior</strong></td>
             <td class="xl43">85</td>
             <td class="xl33">33.5</td>
             <td class="xl35">85</td>
@@ -589,10 +589,10 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="22" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">SLIM FIT</span></td>
+            <td colspan="22" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">AJUSTADO</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Sizes</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl48" colspan="2"><strong>M</strong></td>
@@ -621,7 +621,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Hip</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cadera</strong></td>
             <td class="xl43">48</td>
             <td class="xl33">18.9</td>
             <td class="xl35">50</td>
@@ -638,7 +638,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">23.6</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Waist</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cintura</strong></td>
             <td class="xl43">38</td>
             <td class="xl33">15</td>
             <td class="xl35">40</td>
@@ -655,7 +655,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">19.7</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Outer Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud exterior</strong></td>
             <td class="xl43">108</td>
             <td class="xl33">42</td>
             <td class="xl35">109</td>
@@ -672,7 +672,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">44</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Inner Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud interior</strong></td>
             <td class="xl43">85</td>
             <td class="xl33">33.5</td>
             <td class="xl35">85</td>
@@ -696,10 +696,10 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="22" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">SKINNY FIT</span></td>
+            <td colspan="22" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">Ceñido</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Sizes</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl48" colspan="2"><strong>M</strong></td>
@@ -728,7 +728,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Hip</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cadera</strong></td>
             <td class="xl43">44.5</td>
             <td class="xl33">17.4</td>
             <td class="xl35">46.5</td>
@@ -745,7 +745,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">22</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Waist</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cintura</strong></td>
             <td class="xl43">35.5</td>
             <td class="xl33">13.8</td>
             <td class="xl35">37.5</td>
@@ -762,7 +762,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">18.5</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Outer Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud exterior</strong></td>
             <td class="xl43">108</td>
             <td class="xl33">42</td>
             <td class="xl35">109</td>
@@ -779,7 +779,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">44</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Inner Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud Interna</strong></td>
             <td class="xl43">85</td>
             <td class="xl33">33.5</td>
             <td class="xl35">85</td>
@@ -805,10 +805,10 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="22" bgcolor="#000000" height="25"><span class="xl66 style1">TROUSERS, SUIT, TRACK SUIT, SHORTS, UNDERWEAR</span></td>
+            <td colspan="22" bgcolor="#000000" height="25"><span class="xl66 style1">PANTALONES, TRAJE, CHÁNDAL, PANTALONES CORTOS, ROPA INTERIOR</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="3"><strong>Sizes</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="3"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="3"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="3"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl48" colspan="3"><strong>M</strong></td>
@@ -873,7 +873,7 @@ if (isset($_SESSION['nombre'])) {
       <td colspan="22" bgcolor="#000000" height="25"><span class="xl66 style1">Fit Regular</span></td>
     </tr-->
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Talla</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="2"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl48" colspan="2"><strong>M</strong></td>
@@ -902,7 +902,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Hip</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong><Colgroup></Colgroup>intura</strong></td>
             <td class="xl43">39.5</td>
             <td class="xl33">15.4</td>
             <td class="xl35">41.5</td>
@@ -919,7 +919,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">20.1</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Waist</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cadera</strong></td>
             <td class="xl43">49.5</td>
             <td class="xl33">19.3</td>
             <td class="xl35">51.5</td>
@@ -953,7 +953,7 @@ if (isset($_SESSION['nombre'])) {
             <td class="xl35">42</td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Inner length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Longitud exterior</strong></td>
             <td class="xl43">25</td>
             <td class="xl33">9.5</td>
             <td class="xl35">26.5</td>
@@ -979,10 +979,10 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="16" bgcolor="#000000" height="25"><span class="xl66 style1">SHIRTS</span></td>
+            <td colspan="16" bgcolor="#000000" height="25"><span class="xl66 style1">Camisetas</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="3"><strong>Sizes</strong></td>
+            <td height="21" bgcolor="#eaeaea" class="xl47" rowspan="3"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl47" colspan="2"><strong>S</strong></td>
             <td bgcolor="#eaeaea" class="xl48" colspan="2"><strong>M</strong></td>
             <td bgcolor="#eaeaea" class="xl42" colspan="2"><strong>L</strong></td>
@@ -1016,10 +1016,10 @@ if (isset($_SESSION['nombre'])) {
 
           </tr>
           <tr>
-            <td colspan="16" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">CASUAL SHIRT</span></td>
+            <td colspan="16" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">CAMISA CASUAL</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Chest</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Pecho</strong></td>
             <td class="xl43">18.5in</td>
             <td class="xl33">48cm</td>
             <td class="xl35">20in</td>
@@ -1033,7 +1033,7 @@ if (isset($_SESSION['nombre'])) {
 
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Shoulders</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Hombros</strong></td>
             <td class="xl43">16in</td>
             <td class="xl33">41cm</td>
             <td class="xl35">17in</td>
@@ -1048,7 +1048,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Largo</strong></td>
             <td class="xl43">28in</td>
             <td class="xl33">72cm</td>
             <td class="xl35">29in</td>
@@ -1063,7 +1063,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Sleeve</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Manga</strong></td>
             <td class="xl43">26.5in</td>
             <td class="xl33">67cm</td>
             <td class="xl35">26.8in</td>
@@ -1078,10 +1078,10 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr>
-            <td colspan="16" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">Tailored</span></td>
+            <td colspan="16" bgcolor="#a9a9a9" height="25"><span class="xl66 style1">A Medida</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Chest</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Pecho</strong></td>
             <td class="xl43">20in</td>
             <td class="xl33">52cm</td>
             <td class="xl35">21.5in</td>
@@ -1095,7 +1095,7 @@ if (isset($_SESSION['nombre'])) {
 
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Shoulders</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Hombros</strong></td>
             <td class="xl43">17.6in</td>
             <td class="xl33">44.6cm</td>
             <td class="xl35">18.3in</td>
@@ -1110,7 +1110,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Length</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Largo</strong></td>
             <td class="xl43">30in</td>
             <td class="xl33">77cm</td>
             <td class="xl35">31in</td>
@@ -1125,7 +1125,7 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Sleeve</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Manga</strong></td>
             <td class="xl43">25in</td>
             <td class="xl33">64cm</td>
             <td class="xl35">25.5in</td>
@@ -1147,12 +1147,12 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="5" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="5" bgcolor="#000000" height="25"><span class="xl24 style1">T-SHIRTS, SWEATSHIRTS, POLO SHIRTS & SWEATERS</span></td>
+            <td colspan="5" bgcolor="#000000" height="25"><span class="xl24 style1">CAMISETAS, SUDADERAS, POLO Y SUÉTERES</span></td>
           </tr>
           <tr class="xl49" height="21">
-            <td height="21" bgcolor="#eaeaea" colspan="2"><strong>Chest</strong></td>
+            <td height="21" bgcolor="#eaeaea" colspan="2"><strong>Pecho</strong></td>
             <td bgcolor="#eaeaea" class="xl24"><strong>Cm</strong></td>
-            <td bgcolor="#eaeaea" class="xl25"><strong>Inches</strong></td>
+            <td bgcolor="#eaeaea" class="xl25"><strong>Pulgadas</strong></td>
           </tr>
           <tr class="xl49" height="21">
             <td height="21" bgcolor="#eaeaea" colspan="2"><strong>S</strong></td>
@@ -1196,10 +1196,10 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="14" bgcolor="#000000" height="25"><span class="xl66 style1">Belts</span></td>
+            <td colspan="14" bgcolor="#000000" height="25"><span class="xl66 style1">Cinturones</span></td>
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea" rowspan="2"><strong>Sizes</strong></td>
+            <td height="21" bgcolor="#eaeaea" rowspan="2"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea">USA</td>
             <td bgcolor="#eaeaea">EU</td>
             <td class="xl33" bgcolor="#eaeaea">USA </td>
@@ -1226,7 +1226,7 @@ if (isset($_SESSION['nombre'])) {
 
           </tr>
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong>Waist</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>Cintura</strong></td>
             <td>29.6pul</td>
             <td>73-78cm</td>
             <td class="xl33">32.4in</td>
@@ -1250,13 +1250,13 @@ if (isset($_SESSION['nombre'])) {
       <table width="100%" border="1" cellpadding="5" bordercolor="#ffffff">
         <tbody>
           <tr>
-            <td colspan="4" bgcolor="#000000" height="25"><span class="xl66 style1">Shoe Sizing Guides </span></td>
+            <td colspan="4" bgcolor="#000000" height="25"><span class="xl66 style1">Guías de tallas de zapatos </span></td>
           </tr>
           <tr height="13">
-            <td height="13" align="left" valign="top" bgcolor="#eaeaea"><strong>American</strong></td>
-            <td align="left" valign="top" bgcolor="#eaeaea"><strong>European</strong></td>
+            <td height="13" align="left" valign="top" bgcolor="#eaeaea"><strong>Americano</strong></td>
+            <td align="left" valign="top" bgcolor="#eaeaea"><strong>Europeo</strong></td>
             <td align="left" valign="top" bgcolor="#eaeaea"><strong>UK</strong></td>
-            <td align="left" valign="top" bgcolor="#eaeaea"><strong>Colombian</strong></td>
+            <td align="left" valign="top" bgcolor="#eaeaea"><strong>Colombiano</strong></td>
           </tr>
           <tr height="13">
             <td height="13" align="left" valign="top">6 (9.8in)</td>
