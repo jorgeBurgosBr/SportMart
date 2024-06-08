@@ -4,6 +4,8 @@ session_start();
 if (isset($_SESSION['nombre'])) {
     $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
     $textoBotonRegistrarse = "Cerrar sesión";
+?><div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
+<?php
 } else {
     $textoBotonLogin = "Inicia sesión";
     $textoBotonRegistrarse = "Regístrate";
@@ -177,8 +179,7 @@ if (isset($_SESSION['nombre'])) {
             <button id="close-modal" class="button"><a href="index.php" style="text-decoration: none; color: white;">Salir</a></button>
         </div>
     </div>
-    <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
-        <script src="js/script_pagos.js"></script>
+
 </body>
 
 </html>
