@@ -221,7 +221,17 @@ function crearBD()
                (29, '36'), (29, '37'), (29, '38'), (29, '39'), (29, '40'), (29, '41'),
                (30, '40'), (30, '41'), (30, '42'), (30, '43'), (30, '44'), (30, '45'),
                (31, 'S'), (31, 'M'), (31, 'L'), (31, 'XL'),
-               (32, 'S'), (32, 'M'), (32, 'L'), (32, 'XL');",
+               (32, 'S'), (32, 'M'), (32, 'L'), (32, 'XL'),
+               (33, 'S'),(33, 'M'),(33, 'L'),(33, 'XL'),
+               (34, 'S'),(34, 'M'),(34, 'L'),(34, 'XL'),
+               (35, 'S'),(35, 'M'),(35, 'L'),(35, 'XL'),
+               (36, 'S'),(36, 'M'),(36, 'L'),(36, 'XL'),
+               (37, 'S'),(37, 'M'),(37, 'L'),(37, 'XL'),
+               (38, 'S'),(38, 'M'),(38, 'L'),(38, 'XL'),
+               (39, 'S'),(39, 'M'),(39, 'L'),(39, 'XL'),
+               (40, 'S'),(40, 'M'),(40, 'L'),(40, 'XL'),
+               (41, '40'), (41, '41'), (41, '42'), (41, '43'), (41, '44'), (41, '45'),
+               (42, '36'), (42, '37'), (42, '38'), (42, '39'), (42, '40'), (42, '41');",
 
             // Insertar datos en la tabla CARRITO
             "INSERT INTO CARRITO (id_cliente, id_producto, cantidad, talla) VALUES
@@ -288,7 +298,7 @@ function crearBD()
 
             // Insertar datos en la tabla PRODUCTO_DEPORTE
             "INSERT INTO PRODUCTO_DEPORTE (id_producto, id_deporte) VALUES
-               (1, 2),  -- Camiseta técnica Nike - Gym
+               (1, 1),  -- Camiseta técnica Nike - Running
                (2, 1),  -- Ultraboost light - Running
                (3, 2),  -- Leggings MyProtein - Gym
                (4, 3),  -- Venum Impact 2.0 - Deportes de contacto
@@ -299,12 +309,12 @@ function crearBD()
                (9, 3),  -- Adidas Box Hog 3 - Deportes de contacto
                (10, 1), -- Camiseta Adidas - Running
                (11, 3), -- Vendas Charlie - Deportes de contacto
-               (12, 2), -- Camiseta UFC - Gym
+               (12, 3), -- Camiseta UFC - Deportes de contacto
                (13, 1), -- Garmin Forerunner 955 - Running
                (14, 1), -- Asics Gel-Cumulus 26 - Running
                (15, 1), -- Gafas Oakley Radar - Running
-               (16, 2), -- Leggings Nike - Gym
-               (17, 2), -- Camiseta Hoka - Gym
+               (16, 1), -- Leggings Nike - Running
+               (17, 1), -- Camiseta Hoka - Running
                (18, 1), -- New Balance Fresh Foam X - Running
                (19, 2), -- Camiseta Agongym - Gym
                (20, 2), -- Top Agongym - Gym
