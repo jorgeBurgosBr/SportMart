@@ -4,8 +4,6 @@ session_start();
 if (isset($_SESSION['nombre'])) {
   $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
   $textoBotonRegistrarse = "Cerrar sesión";
-?><div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
-<?php
 } else {
   $textoBotonLogin = "Inicia sesión";
   $textoBotonRegistrarse = "Regístrate";
@@ -463,14 +461,14 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
-
-  <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
-  <script src="js/libreria/jquery.js"></script>
-  <script src="js/libreria/lightslider.js"></script>
-  <script src="js/script_home.js"></script>
-  <script src="js/script_carrito.js"></script>
-  <script src="js/script_running.js"></script>
-  <script src="js/script_redirect_slider.js"></script>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
+    <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
+    <script src="js/libreria/jquery.js"></script>
+    <script src="js/libreria/lightslider.js"></script>
+    <script src="js/script_home.js"></script>
+    <script src="js/script_carrito.js"></script>
+    <script src="js/script_running.js"></script>
+    <script src="js/script_redirect_slider.js"></script>
 
 </body>
 

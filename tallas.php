@@ -4,15 +4,11 @@ session_start();
 if (isset($_SESSION['nombre'])) {
   $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
   $textoBotonRegistrarse = "Cerrar sesión";
-?><div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
-<?php
 } else {
   $textoBotonLogin = "Inicia sesión";
   $textoBotonRegistrarse = "Regístrate";
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -285,7 +281,7 @@ if (isset($_SESSION['nombre'])) {
             <td colspan="5" bgcolor="#000000" height="25"><span class="xl24 style1">ABRIGO, ABRIGO TRES CUARTOS, CHAQUETA</span></td>
           </tr>
           <tr class="xl49" height="21">
-          <td height="21" bgcolor="#eaeaea" colspan="2"><strong>Tallas</strong></td>
+            <td height="21" bgcolor="#eaeaea" colspan="2"><strong>Tallas</strong></td>
             <td bgcolor="#eaeaea" class="xl24"><strong>Pecho (Cm | Pulgadas)</strong></td>
             <td bgcolor="#eaeaea" class="xl25"><strong>Hombros (cm | pulgadas)</strong></td>
           </tr>
@@ -904,7 +900,9 @@ if (isset($_SESSION['nombre'])) {
           </tr>
 
           <tr height="21">
-            <td height="21" bgcolor="#eaeaea"><strong><Colgroup></Colgroup>intura</strong></td>
+            <td height="21" bgcolor="#eaeaea"><strong>
+                <Colgroup></Colgroup>intura
+              </strong></td>
             <td class="xl43">39.5</td>
             <td class="xl33">15.4</td>
             <td class="xl35">41.5</td>
@@ -1448,5 +1446,5 @@ if (isset($_SESSION['nombre'])) {
         </div>
       </div>
     </footer>
-
+    <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
   </body>

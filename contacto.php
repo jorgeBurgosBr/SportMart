@@ -4,8 +4,6 @@ session_start();
 if (isset($_SESSION['nombre'])) {
   $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
   $textoBotonRegistrarse = "Cerrar sesión";
-?><div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
-<?php
 } else {
   $textoBotonLogin = "Inicia sesión";
   $textoBotonRegistrarse = "Regístrate";
@@ -385,9 +383,9 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </footer>
   </div>
-
-  <script src="js/script_running.js"></script>
-  <script src="js/script_home.js"></script>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
+    <script src="js/script_running.js"></script>
+    <script src="js/script_home.js"></script>
 
 </body>
 
