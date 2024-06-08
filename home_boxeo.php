@@ -8,7 +8,6 @@ if (isset($_SESSION['nombre'])) {
   $textoBotonLogin = "Inicia sesión";
   $textoBotonRegistrarse = "Regístrate";
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +72,7 @@ if (isset($_SESSION['nombre'])) {
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -462,15 +461,14 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
-
-  <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
-  <script src="js/libreria/jquery.js"></script>
-  <script src="js/libreria/lightslider.js"></script>
-  <script src="js/script_home.js"></script>
-  <script src="js/script_carrito.js"></script>
-  <script src="js/script_running.js"></script>
-  <script src="js/script_redirect_slider.js"></script>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
+    <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
+    <script src="js/libreria/jquery.js"></script>
+    <script src="js/libreria/lightslider.js"></script>
+    <script src="js/script_home.js"></script>
+    <script src="js/script_carrito.js"></script>
+    <script src="js/script_running.js"></script>
+    <script src="js/script_redirect_slider.js"></script>
 
 </body>
 

@@ -67,7 +67,7 @@ if (isset($_SESSION['nombre'])) {
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -343,50 +343,49 @@ if (isset($_SESSION['nombre'])) {
     <script src="js/script_running.js"></script>
     <br><br><br>
     <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="footer-col">
-          <h4>Empresa</h4>
-          <ul>
-            <li><a href="aboutus.php">Sobre Nosotros</a></li>
-            <li><a href="privacidad.php">Políticas</a></li>
-            <li><a href="tallas.php">Tallas</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Ayuda</h4>
-          <ul>
-            <li><a href="faqs.php">Preguntas Frequentes</a></li>
-            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-            <li><a href="contacto.php">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Tienda online</h4>
-          <ul>
-            <li><a href="home_gym.php">Menú Gimnasio</a></li>
-            <li><a href="home_boxeo.php">Menú Boxeo</a></li>
-            <li><a href="home_running.php">Menú Running</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Redes sociales</h4>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="aboutus.php">Sobre Nosotros</a></li>
+              <li><a href="privacidad.php">Políticas</a></li>
+              <li><a href="tallas.php">Tallas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ayuda</h4>
+            <ul>
+              <li><a href="faqs.php">Preguntas Frequentes</a></li>
+              <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+              <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+              <li><a href="contacto.php">Contacto</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tienda online</h4>
+            <ul>
+              <li><a href="home_gym.php">Menú Gimnasio</a></li>
+              <li><a href="home_boxeo.php">Menú Boxeo</a></li>
+              <li><a href="home_running.php">Menú Running</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Redes sociales</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </div>
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
-
-  <script src="js/script_running.js"></script>
-  <script src="js/script_home.js"></script>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
+    <script src="js/script_running.js"></script>
+    <script src="js/script_home.js"></script>
 
 </body>
 

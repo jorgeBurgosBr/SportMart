@@ -90,7 +90,7 @@ if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
     <div class="container-nav">
       <div class="logo-nav">
         <a href="index.php">
-        <img src="img/sportmart.png" alt="" />
+          <img src="img/sportmart.png" alt="" />
         </a>
       </div>
       <div class="menu-toggle">
@@ -310,8 +310,7 @@ if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
       </div>
     </div>
   </div>
-
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
 </body>
 <script src="js/script_home.js"></script>
 <script src="js/script_running.js"></script>

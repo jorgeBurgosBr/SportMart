@@ -119,6 +119,16 @@
   .ver-mas {
     font-size: 16px;
   }
+
+  .clothes-shoes-accessories {
+    flex-direction: column;
+    margin-top: -30px;
+  }
+  
+  .clothes, .shoes, .accessories {
+    width: 100% !important;
+    margin-right: 0;
+  }
 }
 
 

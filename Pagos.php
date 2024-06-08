@@ -180,7 +180,6 @@ if (isset($_SESSION['nombre'])) {
         </div>
     </div>
 
-    <script src="js/script_pagos.js"></script>
 </body>
 
 </html>
