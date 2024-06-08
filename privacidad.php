@@ -192,9 +192,9 @@ if (isset($_SESSION['nombre'])) {
       <h4>7. Contacto</h4>
       <p>Si tienes alguna pregunta o inquietud sobre esta Política de Privacidad o nuestras prácticas de privacidad, por favor contáctanos a través de:</p>
       <ul>
-        <li>Email: privacidad@sportmart.com</li>
+        <li>Email: contacto@sportmart.com</li>
         <li>Teléfono: +34 123 456 789</li>
-        <li>Dirección: Calle Falsa 123, Ciudad, País</li>
+        <li>Dirección: Calle UEM, Madrid, España</li>
       </ul>
     </div>
   </div>
