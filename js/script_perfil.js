@@ -128,7 +128,7 @@ function actualizarInformacion() {
     })
     .catch(error => {
         // Capturar errores y pausar la ejecución
-        console.error('Fetch error: ', error);
+        // console.error('Fetch error: ', error);
         alert('Error en la solicitud');
     });
 

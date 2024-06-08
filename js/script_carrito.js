@@ -66,12 +66,31 @@ function attachQuantityChangeListeners() {
 
 // Buy Button
 function buyButtonClicked() {
-    alert("Your Order is placed");
-    var cartContent = document.getElementsByClassName('cart-content')[0];
-    while (cartContent.hasChildNodes()) {
-        cartContent.removeChild(cartContent.firstChild);
-    }
-    updateTotal();
+    fetch('php/check_address.php')
+    .then(response => response.json())
+        .then(data => {
+        if (data.address_filled == true) {
+            window.location.href = 'pagos.html';
+        } else {
+            // Show popup
+            var popup = document.getElementById('address-popup');
+            popup.style.display = 'block';
+
+            document.getElementById('popup-cancel').onclick = function() {
+                popup.style.display = 'none';
+            };
+
+            document.getElementById('popup-accept').onclick = function() {
+                window.location.href = 'perfil_usuario.php';
+            };
+        }
+    })
+    .catch(error => console.error('Error:', error));
+    // var cartContent = document.getElementsByClassName('cart-content')[0];
+    // while (cartContent.hasChildNodes()) {
+    //     cartContent.removeChild(cartContent.firstChild);
+    // }
+    // updateTotal();
 }
 
 // Remove Items From Cart

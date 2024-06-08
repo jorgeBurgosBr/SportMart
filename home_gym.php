@@ -476,6 +476,9 @@ if (isset($_SESSION['nombre'])) {
   </footer>
   <script src="js/script_running.js"></script>
   <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+  <script src="js/script_redirect_slider.js"></script>
+
 </body>
 
 </html>

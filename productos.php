@@ -304,6 +304,15 @@ if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
       <p id="popup-text"></p>
     </div>
   </div>
+
+  <div id="address-popup" class="popup">
+    <div class="popup-content">
+      <p>Tienes que rellenar la dirección de tu perfil.</p>
+      <button id="popup-cancel">Cancelar</button>
+      <button id="popup-accept">Aceptar</button>
+    </div>
+  </div>
+
   <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
 </body>
 <script src="js/script_home.js"></script>
