@@ -30,7 +30,7 @@ body {
     "head"
     "nav"
     "content";
-  grid-template-rows: 0.3fr 0.5fr 3fr;
+  grid-template-rows: 0.3fr 0.5fr auto;
   font-family: var(--texto);
 }
 
@@ -164,7 +164,7 @@ body > nav {
   font-weight: 500;
 }
 
-.nav-button:not(:first-child):hover {
+.nav-button:hover {
   color: var(--contraste);
 }
 
@@ -701,7 +701,6 @@ ul{
   .scroll {
     height: 5vh;
   }
-
   .search-nav input[type="search"] {
     height: 12px;
   }
@@ -714,6 +713,10 @@ ul{
     font-size: 10px;
   }
 
+  .logo-nav {
+    margin-top: 10px;
+  }
+
   .menu-ppal.active {
     display: block;
   }
@@ -724,18 +727,20 @@ ul{
 
   .search-nav {
     display: flex;
-    width: 55%;
+    align-items: center;
+    justify-content: center;
     margin-right: 50px;
   }
 
   .navbar {
     position: relative;
+    height: 60px;
+    /* top: 100%; */
   }
 
   .menu-toggle {
     display: block;
     position: absolute;
-    top: 0;
     right: 0;
     padding: 1rem;
     cursor: pointer;
@@ -764,10 +769,14 @@ ul{
     border-bottom-color: transparent;
   }
 
+  .logo-nav img {
+    max-width: 150px;
+    height: 100%;
+}
+
   .menu-ppal a:hover {
     text-decoration: underline;
   }
-
   .popup.activa {
     top: 18%;
   }
@@ -797,5 +806,9 @@ ul{
 
 .button-container {
   text-align: center;
+}
+
+.first-column-form, .second-column-form {
+  gap: 2px;
 }
 }

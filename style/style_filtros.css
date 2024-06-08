@@ -102,3 +102,9 @@ span {
     padding: 0 54px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  div#google_translate_element div.goog-te-gadget-simple {
+    font-size: 10px;
+  }
+}
