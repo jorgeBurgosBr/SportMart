@@ -7,17 +7,18 @@ $id_cliente = $_SESSION['id_cliente'];
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+   $id_carrito = $_POST['id_carrito'];
    $id_cliente = $_POST['id_cliente'];
    $id_producto = $_POST['id_producto'];
    $cantidad = $_POST['cantidad'];
    $talla = $_POST['talla'];
 
-   agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla);
+   agregarProductoAlCarrito($id_carrito, $id_cliente, $id_producto, $cantidad, $talla);
 }
 
 
 
-function agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla)
+function agregarProductoAlCarrito($id_carrito, $id_cliente, $id_producto, $cantidad, $talla)
 {
    $bd = new BaseDeDatos();
 
@@ -26,8 +27,8 @@ function agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla)
          $conn = $bd->getConexion();
          $bd->seleccionarContexto('sportmart');
          // Preparar la consulta SQL
-         $sql = "INSERT INTO CARRITO (id_cliente, id_producto, cantidad, talla) 
-                    VALUES (?, ?, ?, ?)
+         $sql = "INSERT INTO CARRITO (id_carrito, id_cliente, id_producto, cantidad, talla) 
+                    VALUES (?, ?, ?, ?, ?)
                     ON DUPLICATE KEY UPDATE cantidad = cantidad + VALUES(cantidad)";
 
          // Preparar la sentencia
@@ -36,8 +37,13 @@ function agregarProductoAlCarrito($id_cliente, $id_producto, $cantidad, $talla)
             throw new Exception("Error preparando la consulta: " . $conn->error);
          }
 
+      // Generar el ID del carrito
+      $ultimo_id_query = mysqli_query($conn, "SELECT MAX(id_carrito) AS max_id FROM carrito");
+      $ultimo_id_result = mysqli_fetch_assoc($ultimo_id_query);
+      $id_carrito = $ultimo_id_result['max_id'] + 1;
+
          // Bind de los parámetros
-         $stmt->bind_param("iiis", $id_cliente, $id_producto, $cantidad, $talla);
+         $stmt->bind_param("iiiis", $id_carrito, $id_cliente, $id_producto, $cantidad, $talla);
 
          // Ejecutar la sentencia
          if ($stmt->execute()) {
