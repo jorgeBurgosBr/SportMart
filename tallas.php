@@ -128,7 +128,6 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="style/style_carrito.css" />
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');
