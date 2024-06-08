@@ -230,6 +230,93 @@
 .add-cart:hover {
   background: var(--contraste);
 }
+/* #address-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid black;
+  visibility: visible;
+  opacity: 1;
+
+  /* .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    } */
+
+#address-popup {
+  display: none;
+  visibility: visible;
+  position: fixed;
+  opacity: 1;
+  width: auto;
+  height: 200px;
+  padding: 25px 16px 0 16px;
+  margin: 20px auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+#address-popup .popup-content .contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#address-popup p {
+  margin: 0 0 30px;
+  padding: 0;
+  color: var(--black);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+#address-popup button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--ppal);
+  border-radius: 2px;
+  background-color: var(--contraste);
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 10px;
+  letter-spacing: 3px;
+  border: 1px solid transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#address-popup #popup-cancel {
+  background-color: black; /* Red background */
+}
+
+#address-popup #popup-accept {
+  background-color: black; /* Green background */
+  margin-left: 20px;
+}
+
+#address-popup #popup-cancel:hover {
+  background: #d32f2f; /* Darker red background */
+}
+
+#address-popup #popup-accept:hover {
+  background: #0171e3; /* Darker green background */
+}
 
 /* Breakpoints */
 @media (max-width: 1080px) {

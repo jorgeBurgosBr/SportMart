@@ -471,8 +471,13 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </footer>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
+
   <script src="js/script_running.js"></script>
   <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+  <script src="js/script_redirect_slider.js"></script>
+
 </body>
 
 </html>

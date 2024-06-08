@@ -1,41 +1,71 @@
+<?php
+session_start();
+// Verificar si el usuario ha iniciado sesión
+if (isset($_SESSION['nombre'])) {
+    $textoBotonLogin = "Hola, " . $_SESSION['nombre'];
+    $textoBotonRegistrarse = "Cerrar sesión";
+} else {
+    $textoBotonLogin = "Inicia sesión";
+    $textoBotonRegistrarse = "Regístrate";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Métodos de Pago</title>
+    <title>SportMart</title>
     <link rel="stylesheet" href="style/Pagos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="img/fav.ico" type="image/x-icon">
+    <script>
+        function loadGoogleTranslate() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.head.appendChild(script);
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,es,pt,it,fr,de',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loadGoogleTranslate();
+        });
+    </script>
     <style>
-       
+        .popup.active {
+            top: 20%;
+        }
+
+        @media screen and (max-width: 480px) {
+            .popup-regis.active2 {
+                top: 16%;
+            }
+        }
     </style>
 </head>
+
 <body class="main-login">
     <div class="grid-login">
-        <div class="grid-p1" style="position: relative;">
-            <div class="flex flex-gap-20 flex-align-v nav-top-left"></div>
-            <div id="contenedor">
-                <div class="cart-item">
-                    <img src="https://appleheadteam.com/wp-content/uploads/2023/07/portrait-of-a-man-standing-in-the-dark-while-wearing-custom-sportswear-mockup-a16797.jpg" alt="Producto 1">
-                    <div class="item-details">
-                        <p><strong>Nombre del Producto 1</strong></p>
-                        <p>Descripción del producto 1.</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="cart-item">
-                    <img src="https://appleheadteam.com/wp-content/uploads/2023/07/portrait-of-a-man-standing-in-the-dark-while-wearing-custom-sportswear-mockup-a16797.jpg" alt="Producto 2">
-                    <div class="item-details">
-                        <p><strong>Nombre del Producto 2</strong></p>
-                        <p>Descripción del producto 2.</p>
-                    </div>
-                </div>
-                <hr>
-            </div>
-            <div class="flex flex-column">
-                <div class="prueba">
-                    <img src="build/img/loginImg.png" alt="">
+        <div class="grid-p1">
+            <!-- Cart -->
+            <div class="cart">
+                <h2 class="cart-title">Resumen pedido</h2>
+                <!-- Content -->
+                <div class="cart-content"></div>
+                <!-- Total -->
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
                 </div>
             </div>
         </div>
@@ -44,7 +74,7 @@
             <div class="contenedor-p2">
                 <h3>Métodos de pago</h3>
                 <p>Elige un método de pago para continuar</p>
-                
+
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -60,7 +90,7 @@
                                 <form id="payment-form">
                                     <div class="payment-form">
                                         <label for="card-number">Número de Tarjeta</label>
-                                        <input type="text" id="card-number" placeholder="1234 5678 9123 4567"required>
+                                        <input type="text" id="card-number" placeholder="1234 5678 9123 4567" required>
                                         <div class="error-message" id="card-number-error"></div>
                                         <div class="card-details">
                                             <div>
@@ -70,13 +100,13 @@
                                             </div>
                                             <div>
                                                 <label for="card-cvv">CVV</label>
-                                                <input type="text" id="card-cvv" placeholder="123"required>
-                                                <div class="error-message" id="card-cvv-error" ></div>
+                                                <input type="text" id="card-cvv" placeholder="123" required>
+                                                <div class="error-message" id="card-cvv-error"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div style="text-align: center;">
-                                        <button type="submit" class="button">Pagar</button>
+                                        <button id="create-order" type="submit" class="button">Pagar</button>
                                     </div>
                                 </form>
                             </div>
@@ -94,7 +124,7 @@
                         <div id="collapseTwo" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div id="paypal-button-container"></div>
-                            <br>
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -121,7 +151,10 @@
                     return actions.order.create({
                         purchase_units: [{
                             "description": "SportMart",
-                            "amount": { "currency_code": "USD", "value": 15 }
+                            "amount": {
+                                "currency_code": "USD",
+                                "value": 15
+                            }
                         }]
                     });
                 },
@@ -145,86 +178,9 @@
             <button id="close-modal" class="button"><a href="index.php" style="text-decoration: none; color: white;">Salir</a></button>
         </div>
     </div>
+    <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
 
-<script>
-    document.getElementById('card-number').addEventListener('input', function(e) {
-        e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 16);
-    });
-
-    document.getElementById('card-expiry').addEventListener('input', function(e) {
-        var value = e.target.value.replace(/[^\d]/g, '');
-        if (value.length > 2) {
-            value = value.substring(0, 2) + '/' + value.substring(2);
-        }
-        e.target.value = value.substring(0, 5);
-    });
-
-    document.getElementById('card-cvv').addEventListener('input', function(e) {
-        e.target.value = e.target.value.replace(/[^\d]/g, '').substring(0, 3);
-    });
-
-    document.getElementById('payment-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        var cardNumber = document.getElementById('card-number').value;
-        var cardExpiry = document.getElementById('card-expiry').value;
-        var cardCvv = document.getElementById('card-cvv').value;
-
-        var isValid = true;
-
-        if (cardNumber.length !== 16) {
-            document.getElementById('card-number-error').innerText = 'El número de tarjeta debe tener 16 dígitos.';
-            isValid = false;
-        } else {
-            document.getElementById('card-number-error').innerText = '';
-        }
-
-        if (!/^\d{2}\/\d{2}$/.test(cardExpiry)) {
-            document.getElementById('card-expiry-error').innerText = 'La fecha de vencimiento debe estar en el formato MM/AA.';
-            isValid = false;
-        } else {
-            document.getElementById('card-expiry-error').innerText = '';
-        }
-
-        if (cardCvv.length !== 3) {
-            document.getElementById('card-cvv-error').innerText = 'El CVV debe tener 3 dígitos.';
-            isValid = false;
-        } else {
-            document.getElementById('card-cvv-error').innerText = '';
-        }
-
-        if (isValid) {
-            document.getElementById('payment-success-modal').style.display = 'block';
-        }
-    });
-
- 
-
-    window.addEventListener('click', function(event) {
-        var modal = document.getElementById('payment-success-modal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
-</script>
-
-    <script>
-        document.querySelectorAll('.panel-title a').forEach(function(element) {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                var panelCollapse = this.getAttribute('href');
-                var panel = document.querySelector(panelCollapse);
-
-                if (panel.classList.contains('show')) {
-                    panel.classList.remove('show');
-                } else {
-                    document.querySelectorAll('.panel-collapse').forEach(function(panel) {
-                        panel.classList.remove('show');
-                    });
-                    panel.classList.add('show');
-                }
-            });
-        });
-    </script>
+    <script src="js/script_pagos.js"></script>
 </body>
+
 </html>

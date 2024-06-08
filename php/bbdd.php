@@ -75,14 +75,6 @@ function crearBD()
                PRIMARY KEY (id_variante),
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
             );",
-            "CREATE TABLE FAVORITOS (
-               id_favorito INT AUTO_INCREMENT,
-               id_cliente INT,
-               id_producto INT,
-               PRIMARY KEY (id_favorito),
-               FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente),
-               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
-                  );",
             "CREATE TABLE CARRITO (
                id_carrito INT AUTO_INCREMENT PRIMARY KEY,
                id_cliente INT,
@@ -116,24 +108,26 @@ function crearBD()
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
                FOREIGN KEY (id_deporte) REFERENCES DEPORTE(id_deporte)
             );",
-            "CREATE TABLE DETALLES_PEDIDO (
+            "CREATE TABLE PEDIDO (
                id_pedido INT AUTO_INCREMENT,
-               id_producto INT NOT NULL,
-               cantidad INT  NOT NULL,
-               PRIMARY KEY (id_pedido)
+               id_cliente INT,
+               direccion VARCHAR(255),
+               fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+               total DECIMAL(10, 2) NOT NULL,
+               PRIMARY KEY (id_pedido),
+               FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente)
             );",
-            "CREATE TABLE DIRECCION_ENVIO (
-               id_pedido INT PRIMARY KEY,
-               direccion TEXT NOT NULL,
-               FOREIGN KEY (id_pedido) REFERENCES DETALLES_PEDIDO(id_pedido)
-               );",
-            "CREATE TABLE METODO_PAGO (
-               id_pedido INT PRIMARY KEY,
-               n_tarjeta VARCHAR(19) NOT NULL,
-               fecha DATE NOT NULL,
-               nombre VARCHAR(225) NOT NULL,
-               FOREIGN KEY (id_pedido) REFERENCES DETALLES_PEDIDO(id_pedido)
-               );"
+            "CREATE TABLE DETALLES_PEDIDO (
+               id_detalle INT AUTO_INCREMENT,
+               id_pedido INT,
+               id_producto INT NOT NULL,
+               cantidad INT NOT NULL,
+               precio DECIMAL(10, 2) NOT NULL,
+               talla VARCHAR(50),
+               PRIMARY KEY (id_detalle),
+               FOREIGN KEY (id_pedido) REFERENCES PEDIDO(id_pedido) ON DELETE CASCADE,
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
+            );"
          ];
          $insertSql = [
             // Insertar datos en la tabla CLIENTE
@@ -143,7 +137,7 @@ function crearBD()
                ('Pedro', 'Sánchez', 'pedro@example.com', '1As2345678'),
                ('Laura', 'López', 'laura@example.com', '1As2345678');",
 
-               "INSERT INTO PERFIL_CLIENTE (id_cliente, fecha_nac_cliente, miembro_desde, telefono, provincia, localidad, direccion_envio, codigo_postal) VALUES
+            "INSERT INTO PERFIL_CLIENTE (id_cliente, fecha_nac_cliente, miembro_desde, telefono, provincia, localidad, direccion_envio, codigo_postal) VALUES
                (1, '1990-05-15', '2024-03-10', '123456789', 'Madrid', 'Madrid', 'Calle Principal 123', '28001'),
                (2, '1985-08-25', '2024-02-15', '987654321', 'Barcelona', 'Barcelona', 'Avenida Central 456', '08001'),
                (3, '1978-12-10', '2023-08-22', '456789123', 'Sevilla', 'Sevilla', 'Plaza Mayor 789', '41001'),
@@ -228,13 +222,6 @@ function crearBD()
                (30, '40'), (30, '41'), (30, '42'), (30, '43'), (30, '44'), (30, '45'),
                (31, 'S'), (31, 'M'), (31, 'L'), (31, 'XL'),
                (32, 'S'), (32, 'M'), (32, 'L'), (32, 'XL');",
-
-            // Insertar datos en la tabla FAVORITOS
-            "INSERT INTO FAVORITOS (id_cliente, id_producto) VALUES
-               (1, 1),
-               (1, 3),
-               (2, 2),
-               (3, 4);",
 
             // Insertar datos en la tabla CARRITO
             "INSERT INTO CARRITO (id_cliente, id_producto, cantidad, talla) VALUES
@@ -346,25 +333,11 @@ function crearBD()
 
 
             // Insertar datos en la tabla DETALLES_PEDIDO
-            "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
-               (1, 2),
-               (2, 1),
-               (3, 3),
-               (4, 1);",
-
-            // Insertar datos en la tabla DIRECCION_ENVIO
-            "INSERT INTO DIRECCION_ENVIO (id_pedido, direccion) VALUES
-               (1, 'Calle Principal 123, Ciudad'),
-               (2, 'Avenida Central 456, Ciudad'),
-               (3, 'Plaza Mayor 789, Ciudad'),
-               (4, 'Calle Secundaria 321, Ciudad');",
-
-            // Insertar datos en la tabla METODO_PAGO
-            "INSERT INTO METODO_PAGO (id_pedido, n_tarjeta, fecha, nombre) VALUES
-               (1, '1234-5678-9012-3456', '2024-05-02', 'Juan González'),
-               (2, '2345-6789-0123-4567', '2024-05-02', 'María Martínez'),
-               (3, '3456-7890-1234-5678', '2024-05-02', 'Pedro Sánchez'),
-               (4, '4567-8901-2345-6789', '2024-05-02', 'Laura López');"
+            // "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
+            //    (1, 2),
+            //    (2, 1),
+            //    (3, 3),
+            //    (4, 1);"
          ];
 
          // Ejecutar las consultas de inserción de datos
