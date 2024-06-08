@@ -187,7 +187,9 @@ function crearBD()
                ('Camiseta Tirantes', 'Camiseta transpirable para gimnasio', 10.50, './img/ropa/camiseta_tirantes.webp', 'Hombre'),
                ('Sudadera Anti Social', 'Anti Social Lifting Club', 50.90, './img/ropa/sudadera_antisocial.webp', 'Unisex'),
                ('Botas Boxeo Everlast', 'Botas ajustables cómodas', 80.99, './img/calzado/zapatillas_everlast.webp', 'Hombre'),
-               ('Botas Boxeo Everlast', 'Botas de mujer ajustables cómodas', 80.99, './img/calzado/zapatillas_everlast_mujer.webp', 'Mujer');",
+               ('Botas Boxeo Everlast', 'Botas de mujer ajustables cómodas', 80.99, './img/calzado/zapatillas_everlast_mujer.webp', 'Mujer'),
+               ('Camiseta Jiu Jitsu', 'Camiseta transpirable cómoda', 34.99, './img/ropa/camiseta_jiujitsu.webp', 'Mujer'),
+               ('Pantalón Boxeo', 'Pantalón cómodo para pelea', 30.99, './img/ropa/pantalones_boxeo_mujer.webp', 'Mujer');",
 
             "INSERT INTO VARIANTE (id_producto, talla) VALUES
                (1, 'S'), (1, 'M'), (1, 'L'), (1, 'XL'),
@@ -231,7 +233,9 @@ function crearBD()
                (39, 'S'),(39, 'M'),(39, 'L'),(39, 'XL'),
                (40, 'S'),(40, 'M'),(40, 'L'),(40, 'XL'),
                (41, '40'), (41, '41'), (41, '42'), (41, '43'), (41, '44'), (41, '45'),
-               (42, '36'), (42, '37'), (42, '38'), (42, '39'), (42, '40'), (42, '41');",
+               (42, '36'), (42, '37'), (42, '38'), (42, '39'), (42, '40'), (42, '41'),
+               (43, 'S'),(43, 'M'),(43, 'L'),(43, 'XL'),
+               (44, 'S'),(44, 'M'),(44, 'L'),(44, 'XL');",
 
             // Insertar datos en la tabla CARRITO
             "INSERT INTO CARRITO (id_cliente, id_producto, cantidad, talla) VALUES
@@ -289,7 +293,9 @@ function crearBD()
             (39, 2), -- Camiseta tirantes
             (40, 2), -- Sudadera antisocial
             (41, 1), -- Botas boxeo Everlast
-            (42, 1); -- Botas boxeo Everlast mujer",
+            (42, 1), -- Botas boxeo Everlast mujer,
+            (43, 2), -- Camiseta JiuJitsu mujer
+            (44, 2); -- Pantalon boxeo mujer",
 
             "INSERT INTO DEPORTE (deporte) VALUES 
                ('Running'), 
@@ -339,7 +345,9 @@ function crearBD()
                (39, 2), -- Camiseta Tirantes - Gym
                (40, 2), -- Sudadera Anti Social - Gym
                (41, 3), -- Botas Boxeo Everlast (Hombre) - Deportes de contacto
-               (42, 3); -- Botas Boxeo Everlast (Mujer) - Deportes de contacto",
+               (42, 3), -- Botas Boxeo Everlast (Mujer) - Deportes de contacto
+               (43, 3), -- Camiseta JiuJitsu mujer - Deportes de contacto
+               (44, 3); -- Pantalon boxeo mujer - Deportes de contacto",
 
 
             // Insertar datos en la tabla DETALLES_PEDIDO

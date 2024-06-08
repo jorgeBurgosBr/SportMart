@@ -211,7 +211,7 @@ if (isset($_SESSION['nombre'])) {
     </div>
     <h2 class="h2">¿Qué te interesa?</h2>
     <div class="clothes-shoes-accessories">
-      <a href="">
+      <a href="productos.php?categoria=Ropa&deporte=Running">
         <div class="clothes">
           <img src="img/clothes.png" alt="Running clothes" />
           <div class="sub-contenedor">
@@ -228,7 +228,7 @@ if (isset($_SESSION['nombre'])) {
       </a>
     </div>
     <div class="accessories">
-      <a href="">
+      <a href="productos.php?categoria=Accesorios&deporte=Running">
         <img src="img/accessories.png" alt="Running accessories" />
         <div class="sub-contenedor">
           <h4 class="sub-titulo">Accesorios</h4>
