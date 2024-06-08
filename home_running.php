@@ -90,21 +90,21 @@ if (isset($_SESSION['nombre'])) {
           <div class="row">
             <div class="column">
               <h3>Running</h3>
-              <a class="nav-button" href="">Zapatillas</a>
-              <a class="nav-button" href="">Camisetas</a>
-              <a class="nav-button" href="">Accesorios</a>
+              <a class="nav-button" href="productos.php?categoria=Calzado&deporte=Running">Zapatillas</a>
+              <a class="nav-button" href="productos.php?categoria=Ropa&deporte=Running">Ropa</a>
+              <a class="nav-button" href="productos.php?categoria=Accesorios&deporte=Running">Accesorios</a>
             </div>
             <div class="column">
               <h3>Gimnasio</h3>
-              <a class="nav-button" href="">Zapatillas</a>
-              <a class="nav-button" href="">Camisetas</a>
-              <a class="nav-button" href="">Accesorios</a>
+              <a class="nav-button" href="productos.php?categoria=Calzado&deporte=Gym">Zapatillas</a>
+              <a class="nav-button" href="productos.php?categoria=Ropa&deporte=Gym">Ropa</a>
+              <a class="nav-button" href="productos.php?categoria=Accesorios&deporte=Gym">Accesorios</a>
             </div>
             <div class="column">
               <h3>Boxeo y MMA</h3>
-              <a class="nav-button" href="">Zapatillas</a>
-              <a class="nav-button" href="">Camisetas</a>
-              <a class="nav-button" href="">Accesorios</a>
+              <a class="nav-button" href="productos.php?categoria=Calzado&deporte=Deportes de contacto">Zapatillas</a>
+              <a class="nav-button" href="productos.php?categoria=Ropa&deporte=Deportes de contacto">Ropa</a>
+              <a class="nav-button" href="productos.php?categoria=Accesorios&deporte=Deportes de contacto">Accesorios</a>
             </div>
           </div>
         </div>
@@ -261,7 +261,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/accesorios/reloj_garmin.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="13">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -278,7 +278,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/calzado/zapatillas_asics.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="14">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -295,7 +295,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/accesorios/gafas_oakley.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="15">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -312,7 +312,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/ropa/leggins_nike.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="16">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -329,7 +329,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/ropa/camiseta_hoka.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="17">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -346,7 +346,7 @@ if (isset($_SESSION['nombre'])) {
             <div class="slide-img">
               <img src="img/calzado/zapatillas_newbalance.webp" alt="" />
               <div class="overlay">
-                <a href="#" class="buy-btn">Comprar</a>
+                <a href="#" class="buy-btn" data-id="18">Comprar</a>
               </div>
             </div>
             <div class="detail-box">
@@ -384,45 +384,45 @@ if (isset($_SESSION['nombre'])) {
     </div>
 
     <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="aboutus.php">Sobre Nosotros</a></li>
-              <li><a href="privacidad.php">Politicas</a></li>
-              <li><a href="tallas.php">Tallas</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Get Help</h4>
-            <ul>
-              <li><a href="faqs.php">Preguntas Frequentes</a></li>
-              <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-              <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-              <li><a href="contacto.php">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Online Shop</h4>
-            <ul>
-              <li><a href="home_gym.php">Menu Gimnasio</a></li>
-              <li><a href="home_boxeo.php">Menu Boxeo</a></li>
-              <li><a href="home_running.php">Menu Correr</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Follow Us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="aboutus.php">Sobre Nosotros</a></li>
+            <li><a href="privacidad.php">Políticas</a></li>
+            <li><a href="tallas.php">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="faqs.php">Preguntas Frequentes</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Tienda online</h4>
+          <ul>
+            <li><a href="home_gym.php">Menú Gimnasio</a></li>
+            <li><a href="home_boxeo.php">Menú Boxeo</a></li>
+            <li><a href="home_running.php">Menú Running</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes sociales</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
     <!-- ------------------------ LOGIN ------------------------ -->
     <div class="popup">
       <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
