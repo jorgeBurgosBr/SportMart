@@ -292,6 +292,8 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </footer>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
+
   <script src="js/script_home.js"></script>
 </body>
 

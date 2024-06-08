@@ -464,6 +464,8 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
+  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>"></div>
+
   <!-- <script src="js/script_carrusel_boxeo.js"></script> -->
   <script src="js/libreria/jquery.js"></script>
   <script src="js/libreria/lightslider.js"></script>

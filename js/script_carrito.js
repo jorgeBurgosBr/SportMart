@@ -32,20 +32,13 @@ function ready() {
             // Attach change event listeners after products are added to the cart
             attachQuantityChangeListeners();
         })
-        // .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error));
 
     // Add to Cart
     var addCart = document.getElementsByClassName('add-cart');
     for (var i = 0; i < addCart.length; i++) {
         var button = addCart[i];
         button.addEventListener('click', addToCartClicked);
-    }
-
-    // Add to Wishlist
-    var addWishlist = document.getElementsByClassName('add-wishlist');
-    for (var i = 0; i < addWishlist.length; i++) {
-        var button = addWishlist[i];
-        button.addEventListener('click', addToWishlistClicked);
     }
 
     // Buy Button Work
@@ -66,11 +59,17 @@ function attachQuantityChangeListeners() {
 
 // Buy Button
 function buyButtonClicked() {
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    if (cartContent.children.length === 0) {
+        alert('El carrito está vacío. Por favor, añada productos al carrito antes de proceder al pago.');
+        return;
+    }
+
     fetch('php/check_address.php')
     .then(response => response.json())
         .then(data => {
         if (data.address_filled == true) {
-            window.location.href = 'pagos.html';
+            window.location.href = 'pagos.php';
         } else {
             // Show popup
             var popup = document.getElementById('address-popup');
@@ -85,8 +84,8 @@ function buyButtonClicked() {
             };
         }
     })
-    .catch(error => console.error('Error:', error));
-    // var cartContent = document.getElementsByClassName('cart-content')[0];
+        .catch(error => console.error('Error:', error));
+     // var cartContent = document.getElementsByClassName('cart-content')[0];
     // while (cartContent.hasChildNodes()) {
     //     cartContent.removeChild(cartContent.firstChild);
     // }
@@ -110,7 +109,6 @@ function removeCartItem(event) {
     })
     .then(response => response.text())
     .then(data => {
-        console.log(data);
         if (data === 'success') { // Assuming your backend returns 'success' on successful deletion
             cartBox.remove(); // Remove item from the cart UI
             updateTotal(); // Update the total price
@@ -198,47 +196,6 @@ function updateTotal() {
     // If price contains some cents value
     total = Math.round(total * 100) / 100;
     document.getElementsByClassName('total-price')[0].innerText = total + " €";
-}
-
-// Add to Wishlist
-function addToWishlistClicked(event) {
-    var button = event.target;
-    var shopProducts = button.parentElement;
-    var title = shopProducts.getElementsByClassName('product-title')[0].innerText;
-    var price = shopProducts.getElementsByClassName('price')[0].innerText;
-    var productImg = shopProducts.getElementsByClassName('product-img')[0].src;
-    addProductToWishlist(title, price, productImg);
-}
-
-function addProductToWishlist(title, price, productImg) {
-    var wishlistBox = document.createElement("div");
-    wishlistBox.classList.add('wishlist-box');
-    var wishlistItems = document.getElementsByClassName("wishlist-content")[0];
-    var wishlistItemsNames = wishlistItems.getElementsByClassName("wishlist-product-title");
-    for (var i = 0; i < wishlistItemsNames.length; i++) {
-        if (wishlistItemsNames[i].innerText == title) {
-            alert("You have already added this item to the wishlist");
-            return;
-        }
-    }
-    var wishlistBoxContent = `
-        <img src="${productImg}" alt="" class="wishlist-img" />
-        <div class="detail-box">
-            <div class="wishlist-product-title">${title}</div>
-            <div class="wishlist-price">${price}</div>
-        </div>
-        <!-- Remove Wishlist -->
-        <i class="bx bxs-trash-alt wishlist-remove"></i>
-    `;
-    wishlistBox.innerHTML = wishlistBoxContent;
-    wishlistItems.append(wishlistBox);
-    wishlistBox.getElementsByClassName('wishlist-remove')[0].addEventListener('click', removeWishlistItem);
-}
-
-// Remove Items From Wishlist
-function removeWishlistItem(event) {
-    var buttonClicked = event.target;
-    buttonClicked.parentElement.remove();
 }
 
 document.addEventListener('DOMContentLoaded', function() {

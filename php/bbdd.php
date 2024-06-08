@@ -108,11 +108,25 @@ function crearBD()
                FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto),
                FOREIGN KEY (id_deporte) REFERENCES DEPORTE(id_deporte)
             );",
-            "CREATE TABLE DETALLES_PEDIDO (
+            "CREATE TABLE PEDIDO (
                id_pedido INT AUTO_INCREMENT,
+               id_cliente INT,
+               direccion VARCHAR(255),
+               fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+               total DECIMAL(10, 2) NOT NULL,
+               PRIMARY KEY (id_pedido),
+               FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente)
+            );",
+            "CREATE TABLE DETALLES_PEDIDO (
+               id_detalle INT AUTO_INCREMENT,
+               id_pedido INT,
                id_producto INT NOT NULL,
-               cantidad INT  NOT NULL,
-               PRIMARY KEY (id_pedido)
+               cantidad INT NOT NULL,
+               precio DECIMAL(10, 2) NOT NULL,
+               talla VARCHAR(50),
+               PRIMARY KEY (id_detalle),
+               FOREIGN KEY (id_pedido) REFERENCES PEDIDO(id_pedido) ON DELETE CASCADE,
+               FOREIGN KEY (id_producto) REFERENCES PRODUCTO(id_producto)
             );"
          ];
          $insertSql = [
@@ -319,11 +333,11 @@ function crearBD()
 
 
             // Insertar datos en la tabla DETALLES_PEDIDO
-            "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
-               (1, 2),
-               (2, 1),
-               (3, 3),
-               (4, 1);"
+            // "INSERT INTO DETALLES_PEDIDO (id_producto, cantidad) VALUES
+            //    (1, 2),
+            //    (2, 1),
+            //    (3, 3),
+            //    (4, 1);"
          ];
 
          // Ejecutar las consultas de inserción de datos
