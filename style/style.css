@@ -164,7 +164,7 @@ body > nav {
   font-weight: 500;
 }
 
-.nav-button:not(:first-child):hover {
+.nav-button:hover {
   color: var(--contraste);
 }
 
@@ -532,7 +532,8 @@ ul{
   }
 
   .logo-nav img {
-    max-width: 100px;
+    max-width: 150px;
+    height: 100%;
   }
 
   .drop-menu {
@@ -588,6 +589,10 @@ ul{
     height: 5vh;
   }
 
+  .banner-ppal {
+    padding: 1rem 0 1rem;
+  }
+
   .search-nav input[type="search"] {
     height: 12px;
   }
@@ -600,6 +605,10 @@ ul{
     font-size: 10px;
   }
 
+  .logo-nav {
+    margin-top: 10px;
+  }
+
   .menu-ppal.active {
     display: block;
   }
@@ -610,7 +619,8 @@ ul{
 
   .search-nav {
     display: flex;
-    width: 55%;
+    align-items: center;
+    justify-content: center;
     margin-right: 50px;
   }
 
@@ -621,7 +631,6 @@ ul{
   .menu-toggle {
     display: block;
     position: absolute;
-    top: 0;
     right: 0;
     padding: 1rem;
     cursor: pointer;

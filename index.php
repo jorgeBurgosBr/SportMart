@@ -57,14 +57,15 @@ if (isset($_SESSION['nombre'])) {
   <nav class="navbar">
     <div class="container-nav">
       <div class="logo-nav">
+        <a href="index.php">
         <img src="img/sportmart.png" alt="" />
+        </a>
       </div>
       <div class="menu-toggle">
         <i class="ri-menu-line"></i>
       </div>
       <div class="drop-menu">
         <div class="menu-ppal">
-          <a class="nav-button" href="index.php">Novedades</a>
           <a class="nav-button" href="home_running.php">Running</a>
           <a class="nav-button" href="home_gym.php">Gimnasio</a>
           <a class="nav-button" href="home_boxeo.php">Boxeo/MMA</a>
@@ -72,30 +73,27 @@ if (isset($_SESSION['nombre'])) {
         <div class="drop-content">
           <div class="row">
             <div class="column">
-              <h3>Últimas novedades</h3>
+              <h3>Running</h3>
               <a class="nav-button" href="">Zapatillas</a>
               <a class="nav-button" href="">Camisetas</a>
               <a class="nav-button" href="">Accesorios</a>
             </div>
             <div class="column">
-              <h3>Suplementación</h3>
-              <a class="nav-button" href="">Pre-entreno</a>
-              <a class="nav-button" href="">Post-entreno</a>
-              <a class="nav-button" href="">Barritas energéticas</a>
+              <h3>Gimnasio</h3>
+              <a class="nav-button" href="">Zapatillas</a>
+              <a class="nav-button" href="">Camisetas</a>
+              <a class="nav-button" href="">Accesorios</a>
             </div>
             <div class="column">
-              <h3>Artes marciales</h3>
-              <a class="nav-button" href="">Guantes</a>
-              <a class="nav-button" href="">Bucales</a>
+              <h3>Boxeo y MMA</h3>
+              <a class="nav-button" href="">Zapatillas</a>
+              <a class="nav-button" href="">Camisetas</a>
               <a class="nav-button" href="">Accesorios</a>
             </div>
           </div>
         </div>
       </div>
       <div class="search-nav">
-        <input type="search" name="search" id="" placeholder="Buscar" autocomplete="off" />
-        <i class="ri-search-line"></i>
-        <button class="btn-nav"><i class="ri-heart-line"></i></button>
         <button class="btn-nav" id="cart-icon"><i class="ri-shopping-cart-line"></i></button>
         <!-- Cart Icon -->
         <!-- Cart -->
@@ -116,10 +114,6 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </nav>
-
-
-
-
 
   <!--Esto es el apartado de las 5 cartas -->
   <h2 class="h2">Comprar</h2>
@@ -157,7 +151,7 @@ if (isset($_SESSION['nombre'])) {
       <div class="clothes">
         <img src="img/c1.jpg" alt="Running clothes" />
         <div class="sub-contenedor">
-          <h4 class="sub-titulo">Ropa Gym</h4>
+          <h4 class="sub-titulo">Ropa Gimnasio</h4>
         </div>
     </a>
   </div>
@@ -179,28 +173,7 @@ if (isset($_SESSION['nombre'])) {
   </div>
   </div>
 
-
-
   <br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- CONTENIDO -->
   <section class="banner-ppal"><img src="img/port.jpg" alt="" /></section>

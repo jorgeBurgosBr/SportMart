@@ -115,6 +115,12 @@
     }
 }
 
+@media (max-width: 480px) {
+  .ver-mas {
+    font-size: 16px;
+  }
+}
+
 
 /* RUNNING */
 .clothes-shoes-accessories {
