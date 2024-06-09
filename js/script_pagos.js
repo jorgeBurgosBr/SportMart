@@ -19,7 +19,7 @@ function ready() {
                 addProductToCart(producto.nombre, producto.precio, producto.imagen, producto.cantidad, producto.id_producto, producto.talla)
             });
         })
-        // .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error));
 
 }
 function addProductToCart(title, price, productImg, cantidad, id_producto, talla) {

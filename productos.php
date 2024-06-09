@@ -303,7 +303,7 @@ if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
 
   <div id="address-popup" class="popup">
     <div class="popup-content">
-      <p>Tienes que rellenar la dirección de tu perfil.</p>
+      <p>Tienes que rellenar la dirección de tu perfil</p>
       <div class="contenedor">
         <button id="popup-cancel">Cancelar</button>
         <button id="popup-accept">Aceptar</button>

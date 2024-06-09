@@ -69,7 +69,6 @@ function addToCartClickedd(event) {
             body: `id_cliente=${id_cliente}&id_producto=${id_producto}&cantidad=${cantidad}&talla=${talla}`
         })
         .then(response => response.text())
-        .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
     }
 }
@@ -160,5 +159,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
             preparado();            
         })
-        // .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error));
 });

@@ -84,12 +84,7 @@ function buyButtonClicked() {
             };
         }
     })
-        // .catch(error => console.error('Error:', error));
-     // var cartContent = document.getElementsByClassName('cart-content')[0];
-    // while (cartContent.hasChildNodes()) {
-    //     cartContent.removeChild(cartContent.firstChild);
-    // }
-    // updateTotal();
+        .catch(error => console.error('Error:', error));
 }
 
 // Remove Items From Cart

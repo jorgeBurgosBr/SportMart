@@ -144,7 +144,11 @@ function loadProducts(filterParams) {
             container.innerHTML = ''; // Limpiar productos existentes
 
             if (data.length === 0) {
-                container.innerHTML = '<h2 class="center-title">No hay productos que mostrar</h2>';
+                container.innerHTML = `
+                        <h2 class="center-title">No hay productos que mostrar</h2>
+                        <img src="img/sportmart.png" alt="No hay productos" class="center-image">
+                    `;                
+
             } else {
                 data.forEach(producto => {
                     const productoDiv = document.createElement('div');
@@ -178,5 +182,5 @@ function loadProducts(filterParams) {
                 preparado();
             }
         })
-        // .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error));
 }
