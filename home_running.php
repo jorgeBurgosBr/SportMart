@@ -362,28 +362,6 @@ if (isset($_SESSION['nombre'])) {
       </ul>
     </div>
 
-    <h2 class="h2">Por superficie</h2>
-    <div class="road-trail-track">
-      <div class="road">
-        <img src="img/road.png" alt="Road" />
-        <div class="sub-contenedor">
-          <h4 class="sub-titulo">Carretera</h4>
-        </div>
-      </div>
-      <div class="trail">
-        <img src="img/trail.png" alt="Trail" />
-        <div class="sub-contenedor">
-          <h4 class="sub-titulo">Trail</h4>
-        </div>
-      </div>
-      <div class="track">
-        <img src="img/track.png" alt="Track" />
-        <div class="sub-contenedor">
-          <h4 class="sub-titulo">Pistas</h4>
-        </div>
-      </div>
-    </div>
-
     <footer class="footer">
       <div class="container">
         <div class="row">
