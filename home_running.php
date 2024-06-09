@@ -51,7 +51,7 @@ if (isset($_SESSION['nombre'])) {
   <style>
     .popup-regis.active2,
     .popup.activa {
-      top: 10%;
+      top: 14%;
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
     }

@@ -8,6 +8,16 @@ if (isset($_SESSION['nombre'])) {
    $textoBotonLogin = "Inicia sesión";
    $textoBotonRegistrarse = "Regístrate";
 }
+
+$provincias_espana = array(
+   'A Coruña', 'Álava', 'Albacete', 'Alicante', 'Almería', 'Asturias', 'Ávila',
+   'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Cádiz', 'Cantabria', 'Castellón',
+   'Ciudad Real', 'Córdoba', 'Cuenca', 'Girona', 'Granada', 'Guadalajara', 'Gipuzkoa',
+   'Huelva', 'Huesca', 'Illes Balears', 'Jaén', 'La Rioja', 'Las Palmas', 'León',
+   'Lleida', 'Lugo', 'Madrid', 'Málaga', 'Murcia', 'Navarra', 'Ourense', 'Palencia',
+   'Pontevedra', 'Salamanca', 'Santa Cruz de Tenerife', 'Segovia', 'Sevilla', 'Soria',
+   'Tarragona', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 'Bizkaia', 'Zamora', 'Zaragoza'
+);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -281,7 +291,7 @@ if (isset($_SESSION['nombre'])) {
          </div>
       </div>
    </div>
-   <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
+   <div style="display: none;" id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
    <script src="js/script_home.js"></script>
    <script src="js/script_carrito.js"></script>
    <script src="js/script_perfil.js"></script>

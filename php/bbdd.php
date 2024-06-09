@@ -21,15 +21,6 @@ function existeBBDD()
    $bd->cerrar();
    return $flag;
 }
-$provincias_espana = array(
-   'A Coruña', 'Álava', 'Albacete', 'Alicante', 'Almería', 'Asturias', 'Ávila',
-   'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Cádiz', 'Cantabria', 'Castellón',
-   'Ciudad Real', 'Córdoba', 'Cuenca', 'Girona', 'Granada', 'Guadalajara', 'Gipuzkoa',
-   'Huelva', 'Huesca', 'Illes Balears', 'Jaén', 'La Rioja', 'Las Palmas', 'León',
-   'Lleida', 'Lugo', 'Madrid', 'Málaga', 'Murcia', 'Navarra', 'Ourense', 'Palencia',
-   'Pontevedra', 'Salamanca', 'Santa Cruz de Tenerife', 'Segovia', 'Sevilla', 'Soria',
-   'Tarragona', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 'Bizkaia', 'Zamora', 'Zaragoza'
-);
 function crearBD()
 {
    $bd = new BaseDeDatos();
@@ -132,16 +123,28 @@ function crearBD()
          $insertSql = [
             // Insertar datos en la tabla CLIENTE
             "INSERT INTO CLIENTE (nombre, apellidos, correo, password) VALUES
-               ('Juan', 'González', 'juan@example.com','1As2345678'),
-               ('María', 'Martínez', 'maria@example.com', '1As2345678'),
-               ('Pedro', 'Sánchez', 'pedro@example.com', '1As2345678'),
-               ('Laura', 'López', 'laura@example.com', '1As2345678');",
+               ('Carlos', 'Hernández', 'carlos@gmail.com', '\$2y\$10\$pRJIBhX6la2/zZ7VXn8eiusEcGBimf0SOH5voQAC4ymRTKHic/QUK'),
+               ('Ana', 'Fernández', 'ana@outlook.com', '\$2y\$10\$cGSlfnhuIvHgZ6qM3w/m/.zVlXcmrIfbwcDNuJlu.GDXdJTaHEAGG'),
+               ('Luis', 'García', 'luis@gmail.com', '\$2y\$10\$Hlmwy8SbpnFag/8OSPLdpOrUYmID9n7Y4JHW2aoOPLElzdvYSj4Fi'),
+               ('Elena', 'Torres', 'elena@outlook.com', '\$2y\$10\$tsFVuxv6tIV.cQNpKK4DB.1qNeY.1kC6MqrFr2k4xOJsJqmvXjlfy'),
+               ('Miguel', 'Ramírez', 'miguel@gmail.com', '\$2y\$10\$I6F6mIxDPWZIC85uSQ5yeejz2xu/tHmkEg9n7kGE0khh8JXrnkyRO'),
+               ('Lucía', 'Jiménez', 'lucia@outlook.com', '$2y$10$5aLDVLRrPdq1AHbArFeq6.h/pnI1P6oHkN73QzCacmR7n9fFua4cS'),
+               ('Javier', 'Moreno', 'javier@gmail.com', '$2y$10$9mfFOPJZ/5C..kxEp3uJt.GYowSzA4izZ7aG4.a5kbGPhS/cm.iDu'),
+               ('Sofía', 'Ruiz', 'sofia@outlook.com', '$2y$10\$eJ5DW1Q0xyl.91/EmPBobuLVyPbQkDP8M0pWVqrt0Q.7zVWQOoAVK'),
+               ('Alberto', 'Molina', 'alberto@gmail.com', '$2y$10\$TgFncd8G52cBzOoUyrUN0.kkAGKB.ZL7xM9us62nfJTHjbZvz8Z.y'),
+               ('Sara', 'Navarro', 'sara@outlook.com', '$2y$10\$Fa87prkVZGruH6.D/Hiu6OpvGFgtLvZtdoecYZ0mpKHhLGdW9q9/q');",
 
             "INSERT INTO PERFIL_CLIENTE (id_cliente, fecha_nac_cliente, miembro_desde, telefono, provincia, localidad, direccion_envio, codigo_postal) VALUES
-               (1, '1990-05-15', '2024-03-10', '123456789', 'Madrid', 'Madrid', 'Calle Principal 123', '28001'),
-               (2, '1985-08-25', '2024-02-15', '987654321', 'Barcelona', 'Barcelona', 'Avenida Central 456', '08001'),
-               (3, '1978-12-10', '2023-08-22', '456789123', 'Sevilla', 'Sevilla', 'Plaza Mayor 789', '41001'),
-               (4, '1992-03-20', '2024-01-13', '789123456', 'Valencia', 'Valencia', 'Calle Secundaria 321', '46001');
+               (1, '1992-11-20', '2024-06-01', '612345678', 'Madrid', 'Madrid', 'Calle de Alcalá 10', '28002'),
+               (2, '1989-07-18', '2024-05-15', '622345678', 'Barcelona', 'Barcelona', 'Rambla Cataluña 15', '08002'),
+               (3, '1985-02-25', '2024-04-22', '632345678', 'Sevilla', 'Sevilla', 'Avenida de la Constitución 12', '41002'),
+               (4, '1993-09-12', '2024-03-18', '642345678', 'Valencia', 'Valencia', 'Calle Colón 8', '46002'),
+               (5, '1980-03-30', '2024-02-10', '652345678', 'Bizkaia', 'Bilbao', 'Gran Vía 1', '48002'),
+               (6, '1996-06-22', '2024-01-05', '662345678', 'Zaragoza', 'Zaragoza', 'Paseo Independencia 5', '50002'),
+               (7, '1987-10-05', '2023-12-20', '672345678', 'Málaga', 'Málaga', 'Calle Larios 3', '29002'),
+               (8, '1983-04-14', '2023-11-10', '682345678', 'Murcia', 'Murcia', 'Gran Vía 4', '30002'),
+               (9, '1990-12-01', '2023-10-15', '692345678', 'Valladolid', 'Valladolid', 'Calle Santiago 6', '47002'),
+               (10, '1984-08-19', '2023-09-30', '602345678', 'Las Palmas', 'Palma', 'Avenida Jaime III 7', '07002');
             ",
 
             // Insertar datos en la tabla PRODUCTO

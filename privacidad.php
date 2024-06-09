@@ -22,6 +22,17 @@ if (isset($_SESSION['nombre'])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <title>SportMart</title>
+
+  <style>
+        .popup.activa, .popup-regis.active2 {
+      top: 12%;
+    }
+    @media screen and (max-width: 480px) {
+      .popup.activa, .popup-regis.active2 {
+      top: 7%;
+    }
+    }
+  </style>
   <script>
     function loadGoogleTranslate() {
       var script = document.createElement('script');

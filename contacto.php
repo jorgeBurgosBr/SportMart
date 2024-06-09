@@ -46,10 +46,13 @@ if (isset($_SESSION['nombre'])) {
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
+        .popup.activa, .popup-regis.active2 {
+      top: 34%;
+    }
     @media screen and (max-width: 480px) {
-      .popup-regis.active2 {
-        top: 16%;
-      }
+      .popup.activa, .popup-regis.active2 {
+      top: 24%;
+    }
     }
 
     .popup-message {
@@ -390,8 +393,55 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </footer>
+    <!-- ------------------------ LOGIN ------------------------ -->
+    <div class="popup">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Inicia sesión</p>
+    <form id="form-login">
+      <div class="form-element">
+        <input required name="email-login" id="email_login" type="text">
+        <label>Email</label>
+      </div>
+      <div class="form-element">
+        <input required name="password-login" id="password_login" type="password">
+        <label>Contraseña</label>
+      </div>
+      <span id="error-login"></span>
+      <button class="btn-submit">Enviar</button>
+    </form>
+    <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
+  </div>
 
-
+  <!-- ------------------------ REGISTRO ------------------------ -->
+  <div class="popup-regis">
+    <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
+    <p>Regístrate</p>
+    <form id="form-signup">
+      <div class="form-element">
+        <input required name="nombre" id="nombre-signup" type="text">
+        <label>Nombre</label>
+        <span id="error-nombre-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="apellidos" id="apellidos-signup" type="text">
+        <label>Apellidos</label>
+        <span id="error-apellidos-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="email" id="email-signup" type="text">
+        <label>Correo</label>
+        <span id="error-email-signup"></span>
+      </div>
+      <div class="form-element">
+        <input required name="password" id="password-signup" type="password">
+        <label>Contraseña</label>
+        <ul id="error-password-signup"></ul>
+      </div>
+      <button type="submit" class="btn-submit">Enviar</button>
+    </form>
+    <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
+  </div>
+  <script src="js/script_home.js"></script>
 </body>
 
 </html>

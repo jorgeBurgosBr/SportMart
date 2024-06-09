@@ -238,7 +238,7 @@ body > nav {
 /* CONTENIDO PRINCIAPAL */
 .content-ppal {
   grid-area: content;
-  height: auto;
+  height: 470px;
   overflow: hidden;
 }
 
@@ -645,6 +645,7 @@ ul{
     padding: 5px;
   }
 
+
   .logo-nav img {
     max-width: 100px;
   }
@@ -684,6 +685,13 @@ ul{
 
 .popup p:last-child, .popup-regis p:last-child {
   font-size: 12px;
+}
+
+
+.profile-and-form-container {
+  flex-direction: column;
+  gap: 50px;
+  padding: 40px;
 }
 
 .popup .form-element label, .popup-regis .form-element label {
@@ -810,5 +818,8 @@ ul{
 
 .first-column-form, .second-column-form {
   gap: 2px;
+}
+.content-ppal {
+  height: auto;
 }
 }

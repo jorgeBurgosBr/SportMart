@@ -1456,4 +1456,6 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
     <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
+    <script src="js/script_home.js"></script>
   </body>
+  </html>
