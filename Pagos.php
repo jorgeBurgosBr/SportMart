@@ -139,7 +139,9 @@ if (isset($_SESSION['nombre'])) {
 
     <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD" data-sdk-integration-source="button-factory"></script>
     <script>
-        function initPayPalButton() {
+        var num = 2;
+
+        function initPayPalButton(num) {
             paypal.Buttons({
                 style: {
                     shape: 'rect',
@@ -154,7 +156,7 @@ if (isset($_SESSION['nombre'])) {
                             "description": "SportMart",
                             "amount": {
                                 "currency_code": "USD",
-                                "value": 15
+                                "value": num
                             }
                         }]
                     });
@@ -170,7 +172,7 @@ if (isset($_SESSION['nombre'])) {
                 }
             }).render('#paypal-button-container');
         }
-        initPayPalButton();
+        initPayPalButton(num);
     </script>
     <div id="payment-success-modal" class="modal">
         <div class="modal-content">
