@@ -363,11 +363,8 @@
   .shop-content {
     grid-template-columns: repeat(3, 1fr);
   }
-
-
 }
 @media screen and (max-width: 480px) {
-
   #cart-icon {
     font-size: initial;
   }

@@ -84,7 +84,7 @@ function buyButtonClicked() {
             };
         }
     })
-        .catch(error => console.error('Error:', error));
+        // .catch(error => console.error('Error:', error));
      // var cartContent = document.getElementsByClassName('cart-content')[0];
     // while (cartContent.hasChildNodes()) {
     //     cartContent.removeChild(cartContent.firstChild);
@@ -198,6 +198,12 @@ function updateTotal() {
     document.getElementsByClassName('total-price')[0].innerText = total + " €";
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    ready();
+document.addEventListener('DOMContentLoaded', function () {
+    var customerInfo = document.getElementById('customer-info');
+    var clienteId = customerInfo.getAttribute('data-id-cliente');
+
+    if (clienteId) {
+        ready();
+    }
+    
 });
