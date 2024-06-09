@@ -175,9 +175,7 @@
   background-image: url('../img/diet.jpg');
 }
 
-.carta.carta5 {
-  background-image: url('../img/ex.jpg');
-}
+
 .carta::after {
   content: "";
   position: absolute;

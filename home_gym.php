@@ -231,7 +231,7 @@ if (isset($_SESSION['nombre'])) {
     </div>
     <div class="carta carta4">
 
-<a href="https://www.youtube.com/channel/UCX9w8xxngL792wvKzj9WxTw" class="ver-mas">Youtube</a>
+<a href="https://www.youtube.com/channel/UCX9w8xxngL792wvKzj9WxTw" class="ver-mas">Dietas Rutinas</a>
 </div>
   </div>
 
