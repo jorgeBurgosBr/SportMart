@@ -222,7 +222,7 @@ if (isset($_SESSION['nombre'])) {
 
     <div class="carta carta2">
 
-      <a href="productos.php?categoria=Calzado&deporte=Gym"class="ver-mas">Zapatillas</a>
+      <a href="productos.php?categoria=Calzado&deporte=Gym" class="ver-mas">Zapatillas</a>
     </div>
 
     <div class="carta carta3">
@@ -471,11 +471,20 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
   </footer>
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
-    <script src="js/script_running.js"></script>
-    <script src="js/script_home.js"></script>
-    <script src="js/script_carrito.js"></script>
-    <script src="js/script_redirect_slider.js"></script>
+  <div id="address-popup" class="popup">
+    <div class="popup-content">
+      <p>Tienes que rellenar la dirección de tu perfil</p>
+      <div class="contenedor">
+        <button id="popup-cancel">Cancelar</button>
+        <button id="popup-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
+  <script src="js/script_running.js"></script>
+  <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+  <script src="js/script_redirect_slider.js"></script>
 
 </body>
 

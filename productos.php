@@ -310,7 +310,7 @@ if ($deporte) $filterParams .= ($filterParams ? '&' : '') . "deporte=$deporte";
       </div>
     </div>
   </div>
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
+  <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
 </body>
 <script src="js/script_home.js"></script>
 <script src="js/script_running.js"></script>

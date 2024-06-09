@@ -142,7 +142,7 @@ function crearPedido() {
             alert(data.message);
         }
     })
-   //  .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error));
 }
 
 document.getElementById('close-modal').addEventListener('click', function() {

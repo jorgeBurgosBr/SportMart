@@ -242,10 +242,19 @@ if (isset($_SESSION['nombre'])) {
       <p id="popup-text"></p>
     </div>
   </div>
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
-    <script src="js/script_home.js"></script>
-    <script src="js/script_carrito.js"></script>
-    <script src="js/script_running.js"></script>
+  <div id="address-popup" class="popup">
+    <div class="popup-content">
+      <p>Tienes que rellenar la dirección de tu perfil</p>
+      <div class="contenedor">
+        <button id="popup-cancel">Cancelar</button>
+        <button id="popup-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
+  <script src="js/script_home.js"></script>
+  <script src="js/script_carrito.js"></script>
+  <script src="js/script_running.js"></script>
 
 </body>
 

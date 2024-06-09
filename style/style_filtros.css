@@ -82,7 +82,7 @@
   padding-left: 96px;
 }
 .breadcrumb a,
-span {
+.breadcrumb span {
   font-family: var(--texto);
   font-size: 18px;
   text-decoration: none;
