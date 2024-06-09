@@ -44,6 +44,16 @@ if (isset($_SESSION['nombre'])) {
       loadGoogleTranslate();
     });
   </script>
+    <style>
+        .popup.activa, .popup-regis.active2 {
+      top: 24%;
+    }
+    @media screen and (max-width: 480px) {
+      .popup.activa, .popup-regis.active2 {
+      top: 15%;
+    }
+    }
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 

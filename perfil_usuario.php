@@ -291,7 +291,7 @@ $provincias_espana = array(
          </div>
       </div>
    </div>
-   <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
+   <div style="display: none;" id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
    <script src="js/script_home.js"></script>
    <script src="js/script_carrito.js"></script>
    <script src="js/script_perfil.js"></script>
