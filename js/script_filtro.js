@@ -144,12 +144,13 @@ function loadProducts(filterParams) {
             container.innerHTML = ''; // Limpiar productos existentes
 
             if (data.length === 0) {
+                container.classList.add('no-products');
                 container.innerHTML = `
-                        <h2 class="center-title">No hay productos que mostrar</h2>
-                        <img src="img/sportmart.png" alt="No hay productos" class="center-image">
-                    `;                
-
+                    <h2 class="center-title">No hay productos que mostrar</h2>
+                    <img src="img/sportmart.png" alt="No hay productos" class="center-image">
+                `;
             } else {
+                container.classList.remove('no-products');
                 data.forEach(producto => {
                     const productoDiv = document.createElement('div');
                     productoDiv.className = 'product-box';
