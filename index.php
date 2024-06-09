@@ -149,9 +149,9 @@ if (isset($_SESSION['nombre'])) {
   <div class="clothes-shoes-accessories">
     <a href="productos.php?categoria=Ropa&deporte=Gym">
       <div class="clothes">
-        <img src="img/c1.jpg" alt="Gym clothes" />
+        <img src="img/c1.jpg" alt="Gym clothes" class="img-cont"/>
         <div class="sub-contenedor">
-          <h4 class="sub-titulo">Ropa Gimnasio</h4>
+          <h4 class="sub-titulo">Ropa de Gimnasio</h4>
         </div>
     </a>
   </div>
