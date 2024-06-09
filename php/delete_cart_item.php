@@ -3,7 +3,6 @@ session_start();
 require_once 'conecta.php';
 
 $bd = new BaseDeDatos();
-// $id_cliente = $_SESSION['id_cliente'];
 
 if ($bd->conectar()) {
    $conn = $bd->getConexion();

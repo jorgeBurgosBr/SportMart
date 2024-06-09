@@ -2,7 +2,7 @@
 session_start();
 require_once 'conecta.php';
 
-$id_cliente = $_SESSION['id_cliente'];
+// $id_cliente = $_SESSION['id_cliente'];
 
 
 
@@ -37,10 +37,10 @@ function agregarProductoAlCarrito($id_carrito, $id_cliente, $id_producto, $canti
             throw new Exception("Error preparando la consulta: " . $conn->error);
          }
 
-      // Generar el ID del carrito
-      $ultimo_id_query = mysqli_query($conn, "SELECT MAX(id_carrito) AS max_id FROM carrito");
-      $ultimo_id_result = mysqli_fetch_assoc($ultimo_id_query);
-      $id_carrito = $ultimo_id_result['max_id'] + 1;
+         // Generar el ID del carrito
+         $ultimo_id_query = mysqli_query($conn, "SELECT MAX(id_carrito) AS max_id FROM carrito");
+         $ultimo_id_result = mysqli_fetch_assoc($ultimo_id_query);
+         $id_carrito = $ultimo_id_result['max_id'] + 1;
 
          // Bind de los parámetros
          $stmt->bind_param("iiiis", $id_carrito, $id_cliente, $id_producto, $cantidad, $talla);

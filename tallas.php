@@ -1437,14 +1437,23 @@ if (isset($_SESSION['nombre'])) {
           <div class="footer-col">
             <h4>Redes sociales</h4>
             <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100077577033519&sk=about"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/sportmart_"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sportmart_1/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCX9w8xxngL792wvKzj9WxTw"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
+    <div id="address-popup" class="popup">
+      <div class="popup-content">
+        <p>Tienes que rellenar la dirección de tu perfil</p>
+        <div class="contenedor">
+          <button id="popup-cancel">Cancelar</button>
+          <button id="popup-accept">Aceptar</button>
+        </div>
+      </div>
+    </div>
+    <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
   </body>

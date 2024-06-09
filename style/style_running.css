@@ -100,6 +100,9 @@ a {
   overflow: hidden;
   margin: 10px;
 }
+.slider {
+  margin-bottom: 40px;
+}
 .slide-img {
   height: 550px;
   position: relative;
@@ -382,9 +385,11 @@ ul {
   .tutulo-centrado {
     font-size: 20px;
     padding: 30px 0 50px;
- }
-  
-  .clothes, .shoes, .accessories {
+  }
+
+  .clothes,
+  .shoes,
+  .accessories {
     width: 100%;
     margin-right: 0;
   }

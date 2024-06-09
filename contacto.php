@@ -51,13 +51,44 @@ if (isset($_SESSION['nombre'])) {
         top: 16%;
       }
     }
-  </style>
 
+    .popup-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .popup-message .close-popup-message {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
 </head>
 
-
 <body>
-  <header>
+<header>
     <button id="show-help">Ayuda</button>
     <button id="show-login" <?php echo isset($_SESSION['nombre']) ? '' : ''; ?> class="<?php echo isset($_SESSION['nombre']) ? 'disabled-button' : ''; ?>"><?php echo $textoBotonLogin; ?></button>
     <button id="show-regis" class="bttn-regis"><?php echo $textoBotonRegistrarse; ?></button>
@@ -157,6 +188,7 @@ if (isset($_SESSION['nombre'])) {
       </div>
     </div>
 
+
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const formulario = document.querySelector('.contacto-formulario');
@@ -180,12 +212,14 @@ if (isset($_SESSION['nombre'])) {
         });
 
         formulario.addEventListener('submit', function(event) {
+          event.preventDefault(); // Evita el envío del formulario
+
           const errorEmail = validarMail();
           const errorNombre = validarName();
           const errorMotivo = validarMotivo();
 
-          if (errorEmail || errorNombre || errorMotivo) {
-            event.preventDefault();
+          if (!errorEmail && !errorNombre && !errorMotivo) {
+            mostrarPopup();
           }
         });
 
@@ -281,111 +315,82 @@ if (isset($_SESSION['nombre'])) {
 
           return false;
         }
+
+        function mostrarPopup() {
+          const popup = document.querySelector('.popup-message');
+          const overlay = document.querySelector('.overlay');
+          popup.style.display = 'block';
+          overlay.style.display = 'block';
+
+          // Redirigir a index.php después de cerrar el popup
+          const closePopup = document.querySelector('.close-popup-message');
+          closePopup.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+            window.location.href = 'index.php';
+          });
+        }
       });
     </script>
-    <!-- ------------------------ LOGIN ------------------------ -->
-    <div class="popup">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Inicia sesión</p>
-      <form id="form-login">
-        <div class="form-element">
-          <input required name="email-login" id="email_login" type="text">
-          <label>Email</label>
-        </div>
-        <div class="form-element">
-          <input required name="password-login" id="password_login" type="password">
-          <label>Contraseña</label>
-        </div>
-        <span id="error-login"></span>
-        <button class="btn-submit">Enviar</button>
-      </form>
-      <p>¿No tienes cuenta? <a href="" id="registrate" class="a2">Regístrate!</a></p>
-    </div>
-
-    <!-- ------------------------ REGISTRO ------------------------ -->
-    <div class="popup-regis">
-      <div class="close-btn"><i class="ri-close-circle-fill"></i></div>
-      <p>Regístrate</p>
-      <form id="form-signup">
-        <div class="form-element">
-          <input required name="nombre" id="nombre-signup" type="text">
-          <label>Nombre</label>
-          <span id="error-nombre-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="apellidos" id="apellidos-signup" type="text">
-          <label>Apellidos</label>
-          <span id="error-apellidos-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="email" id="email-signup" type="text">
-          <label>Correo</label>
-          <span id="error-email-signup"></span>
-        </div>
-        <div class="form-element">
-          <input required name="password" id="password-signup" type="password">
-          <label>Contraseña</label>
-          <ul id="error-password-signup"></ul>
-        </div>
-        <button type="submit" class="btn-submit">Enviar</button>
-      </form>
-      <p>¿Tienes cuenta? <a href="" id="acceder-login" class="a2">Accede!</a></p>
-    </div>
-
-    <div class="popup-message">
-      <div class="popup-content">
-        <span class="close-popup-message">&times;</span>
-        <p id="popup-text"></p>
-      </div>
-    </div>
-    <script src="js/script_home.js"></script>
-    <script src="js/script_carrito.js"></script>
-    <script src="js/script_running.js"></script>
-    <br><br><br>
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            <h4>Empresa</h4>
-            <ul>
-              <li><a href="aboutus.php">Sobre Nosotros</a></li>
-              <li><a href="privacidad.php">Políticas</a></li>
-              <li><a href="tallas.php">Tallas</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Ayuda</h4>
-            <ul>
-              <li><a href="faqs.php">Preguntas Frequentes</a></li>
-              <li><a href="PagosInfo.php">Métodos de Pago</a></li>
-              <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
-              <li><a href="contacto.php">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Tienda online</h4>
-            <ul>
-              <li><a href="home_gym.php">Menú Gimnasio</a></li>
-              <li><a href="home_boxeo.php">Menú Boxeo</a></li>
-              <li><a href="home_running.php">Menú Running</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Redes sociales</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
   </div>
-  <div id="customer-info" data-id-cliente="<?php echo $_SESSION['id_cliente']; ?>">
-    <script src="js/script_running.js"></script>
-    <script src="js/script_home.js"></script>
+
+  <div class="popup-message">
+    <span class="close-popup-message">&times;</span>
+    <p>Formulario enviado con éxito.</p>
+  </div>
+  <div class="overlay"></div>
+  <div id="address-popup" class="popup">
+    <div class="popup-content">
+      <p>Tienes que rellenar la dirección de tu perfil</p>
+      <div class="contenedor">
+        <button id="popup-cancel">Cancelar</button>
+        <button id="popup-accept">Aceptar</button>
+      </div>
+    </div>
+  </div>
+  <div id="customer-info" data-id-cliente="<?php echo isset($_SESSION['id_cliente']) ? $_SESSION['id_cliente'] : ''; ?>"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="aboutus.php">Sobre Nosotros</a></li>
+            <li><a href="privacidad.php">Políticas</a></li>
+            <li><a href="tallas.php">Tallas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="faqs.php">Preguntas Frequentes</a></li>
+            <li><a href="PagosInfo.php">Métodos de Pago</a></li>
+            <li><a href="PagosYDevoluciones.php">Devoluciones</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Tienda online</h4>
+          <ul>
+            <li><a href="home_gym.php">Menú Gimnasio</a></li>
+            <li><a href="home_boxeo.php">Menú Boxeo</a></li>
+            <li><a href="home_running.php">Menú Running</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes sociales</h4>
+          <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=100077577033519&sk=about"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/sportmart_"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sportmart_1/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCX9w8xxngL792wvKzj9WxTw"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 
 </body>
 

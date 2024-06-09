@@ -19,8 +19,7 @@ function ready() {
                 addProductToCart(producto.nombre, producto.precio, producto.imagen, producto.cantidad, producto.id_producto, producto.talla)
             });
         })
-        // .catch(error => console.error('Error:', error));
-
+        .catch(error => console.error('Error:', error));
 }
 function addProductToCart(title, price, productImg, cantidad, id_producto, talla) {
     var cartShopBox = document.createElement("div");
@@ -142,7 +141,7 @@ function crearPedido() {
             alert(data.message);
         }
     })
-   //  .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error));
 }
 
 document.getElementById('close-modal').addEventListener('click', function() {
@@ -150,24 +149,23 @@ document.getElementById('close-modal').addEventListener('click', function() {
 });
 
 
-        // Agregar el event listener al botón de "Salir"
-    document.getElementById('close-modal').addEventListener('click', function() {
-        window.location.href = 'index.php';
-    });
+// Agregar el event listener al botón de "Salir"
+document.getElementById('close-modal').addEventListener('click', function() {
+    window.location.href = 'index.php';
+});
 
-                document.querySelectorAll('.panel-title a').forEach(function(element) {
-            element.addEventListener('click', function(e) {
-                e.preventDefault();
-                var panelCollapse = this.getAttribute('href');
-                var panel = document.querySelector(panelCollapse);
-
-                if (panel.classList.contains('show')) {
-                    panel.classList.remove('show');
-                } else {
-                    document.querySelectorAll('.panel-collapse').forEach(function(panel) {
-                        panel.classList.remove('show');
-                    });
-                    panel.classList.add('show');
-                }
+document.querySelectorAll('.panel-title a').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+            e.preventDefault();
+            var panelCollapse = this.getAttribute('href');
+            var panel = document.querySelector(panelCollapse);
+        if (panel.classList.contains('show')) {
+            panel.classList.remove('show');
+        } else {
+            document.querySelectorAll('.panel-collapse').forEach(function(panel) {
+                panel.classList.remove('show');
             });
-        });
+            panel.classList.add('show');
+        }
+    });
+});
