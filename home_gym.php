@@ -229,22 +229,11 @@ if (isset($_SESSION['nombre'])) {
 
       <a href="productos.php?categoria=Accesorios&deporte=Gym" class="ver-mas">Accesorios</a>
     </div>
+    <div class="carta carta4">
+
+<a href="https://www.youtube.com/channel/UCX9w8xxngL792wvKzj9WxTw" class="ver-mas">Youtube</a>
+</div>
   </div>
-
-  <!-- Separación entre las cartas -->
-  <div style="margin-top: 20px;"></div>
-
-  <!-- Cartas más grandes -->
-  <div class="contenedor">
-    <div class="carta carta-grande carta4">
-      <a class="ver-mas">Rutina</a>
-    </div>
-
-    <div class="carta carta-grande carta5">
-      <a class="ver-mas">Dieta</a>
-    </div>
-  </div>
-  <br><br>
 
   <h2 class="h2">Lo más vendido</h2>
   <div class="slider">

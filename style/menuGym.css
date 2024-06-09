@@ -99,69 +99,65 @@
   scale: 0.8;
 }
 .contenedor {
-    display: flex;
-    justify-content: space-around;
-   
-
-    margin-left: 40px; /* Margen izquierdo */
-    margin-right: 40px; /* Margen derecho */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las cartas se envuelvan en varias líneas */
+  justify-content: space-around;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .carta {
-    width: calc(50% - 20px); /* Ancho del 50% con margen */
-    height: 300px; /* Nuevo tamaño de altura */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
-    background-size: cover;
-    background-position: center;
-    margin: 10px; /* Espacio entre las cartas */
-    position: relative;
-    overflow: hidden; /* Para ocultar el desenfoque en hover */
-    
+  width: calc(50% - 20px);
+  /* Se establece el ancho al 50% para mostrar dos cartas por fila */
+  height: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-
-
 .carta-grande {
-    height: 400px; /* Mayor altura para las cartas más grandes */
+  height: 400px;
 }
 
 .carta:hover h2 {
-    opacity: 0; /* Ocultar el título en hover */
+  opacity: 0;
 }
 
 .carta:hover .ver-mas {
-    opacity: 1; /* Mostrar el botón al hacer hover en la carta */
+  opacity: 1;
 }
 
 .carta h2 {
-    margin: 0;
-    color: #888; /* Color gris para el título */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1; /* Mostrar el título por defecto */
-    transition: opacity 0.3s ease; /* Transición para el hover */
+  margin: 0;
+  color: #888;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .ver-mas {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    opacity: 0; /* Ocultar el botón por defecto */
-    transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-
 /* Definición de las imágenes de fondo para cada carta */
 .carta.carta1 {
   background-image: url('../img/cami1.jpg');
@@ -182,34 +178,33 @@
 .carta.carta5 {
   background-image: url('../img/ex.jpg');
 }
-/* Efecto de desenfoque solo para la imagen de fondo */
 .carta::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center;
-    filter: blur(4px); /* Aplicar desenfoque a la imagen de fondo */
-    z-index: -2; /* Colocar detrás del contenido de la carta */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  z-index: -2;
 }
 
-
-/* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
-    .contenedor {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
+  .contenedor {
+      flex-direction: column; /* Cambia la dirección del flexbox a columnas */
+      align-items: center; /* Centra las cartas en la columna */
+      margin-left: 5px;
+      margin-right: 5px;
+  }
 
-    .carta {
-        width: calc(100% - 10px); /* Ancho del 100% con margen */
-    }
+  .carta {
+      width: calc(100% - 20px); /* Ancho del 100% con margen */
+      margin-bottom: 20px; /* Espacio entre las cartas */
+  }
 }
-
 
 
 .arrow {
