@@ -162,7 +162,6 @@ function loadProducts(filterParams) {
                         <p class="product-description">${producto.descripcion}</p>
                         <span class="price">${producto.precio} €</span>
                         <i class="bx bx-shopping-bag add-cart"></i>
-                        <i class="bx bx-heart add-wishlist"></i>
                     `;
 
                     const tallasDiv = productoDiv.querySelector('.tallas');
